@@ -1,0 +1,38 @@
+---
+permalink: s3/benefits-of-active-http-connections.html 
+sidebar: sidebar 
+keywords: active http connection benefits 
+summary: 'Para conexões diretamente para nós de armazenamento ou para o serviço CLB (obsoleto) em nós de Gateway, você deve limitar a duração de uma conexão HTTP ativa a um máximo de 10 minutos, mesmo que a conexão HTTP realize transações continuamente.' 
+---
+= Benefícios de conexões HTTP ativas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para conexões diretamente aos nós de armazenamento ou ao serviço CLB (obsoleto) em nós de Gateway, você deve limitar a duração de uma conexão HTTP ativa a um máximo de 10 minutos, mesmo que a conexão HTTP realize transações continuamente.
+
+Determinar a duração máxima em que uma conexão deve ser mantida aberta é um trade-off entre os benefícios da persistência da conexão e a alocação ideal da conexão aos recursos internos do sistema.
+
+Para conexões de cliente a nós de armazenamento ou ao serviço CLB, limitar conexões HTTP ativas fornece os seguintes benefícios:
+
+* Permite o balanceamento de carga ideal em todo o sistema StorageGRID.
++
+Ao usar o serviço CLB, você deve evitar conexões TCP/IP de longa duração para otimizar o balanceamento de carga em todo o sistema StorageGRID. Você deve configurar aplicativos cliente para controlar a duração de cada conexão HTTP e fechar a conexão HTTP após um tempo definido para que a conexão HTTP possa ser restabelecida e reequilibrada.
+
++
+O serviço CLB equilibra a carga em todo o sistema StorageGRID no momento em que um aplicativo cliente estabelece uma conexão HTTP. Ao longo do tempo, uma conexão HTTP pode não ser mais ótima, pois os requisitos de balanceamento de carga mudam. O sistema executa seu melhor balanceamento de carga quando os aplicativos clientes estabelecem uma conexão HTTP separada para cada transação, mas isso nega os ganhos muito mais valiosos associados às conexões persistentes.
+
++
+
+NOTE: O serviço CLB está obsoleto.
+
+* Permite que aplicativos cliente direcionem transações HTTP para serviços LDR que têm espaço disponível.
+* Permite iniciar os procedimentos de manutenção.
++
+Alguns procedimentos de manutenção começam somente depois que todas as conexões HTTP em andamento estiverem concluídas.
+
+
+
+Para conexões de clientes ao serviço Load Balancer, limitar a duração das conexões abertas pode ser útil para permitir que alguns procedimentos de manutenção sejam iniciados prontamente. Se a duração das conexões do cliente não for limitada, pode levar vários minutos para que as conexões ativas sejam automaticamente encerradas.

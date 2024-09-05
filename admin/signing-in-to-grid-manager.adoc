@@ -1,0 +1,127 @@
+---
+permalink: admin/signing-in-to-grid-manager.html 
+sidebar: sidebar 
+keywords: grid manager, sign in, log in 
+summary: 'Você acessa a página de login do Gerenciador de Grade inserindo o nome de domínio totalmente qualificado (FQDN) ou o endereço IP de um nó Admin na barra de endereços de um navegador da Web suportado.' 
+---
+= Faça login no Gerenciador de Grade
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você acessa a página de login do Gerenciador de Grade inserindo o nome de domínio totalmente qualificado (FQDN) ou o endereço IP de um nó Admin na barra de endereços de um navegador da Web compatível.
+
+.O que você vai precisar
+* Você tem suas credenciais de login.
+* Você tem o URL para o Gerenciador de Grade.
+* Você está usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Os cookies são ativados no seu navegador.
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+Cada sistema StorageGRID inclui um nó de administração principal e qualquer número de nós de administração não primários. Você pode entrar no Gerenciador de Grade em qualquer nó de administrador para gerenciar o sistema StorageGRID. No entanto, os nós de administração não são exatamente os mesmos:
+
+* Reconhecimentos de alarmes (sistema legado) feitos em um nó Admin não são copiados para outros nós Admin. Por esse motivo, as informações exibidas para alarmes podem não ter a mesma aparência em cada nó de administração.
+* Alguns procedimentos de manutenção só podem ser executados a partir do nó de administração principal.
+
+
+Se os nós de administração estiverem incluídos em um grupo de alta disponibilidade (HA), você se conetará usando o endereço IP virtual do grupo de HA ou um nome de domínio totalmente qualificado que mapeia para o endereço IP virtual. O nó de administração principal deve ser selecionado como a interface principal do grupo, de modo que, quando você acessa o Gerenciador de grade, você o acessa no nó de administração principal, a menos que o nó de administração principal não esteja disponível.
+
+.Passos
+. Inicie um navegador da Web compatível.
+. Na barra de endereços do navegador, insira o URL do Gerenciador de Grade:
++
+`https://_FQDN_or_Admin_Node_IP_/`
+
++
+ `_FQDN_or_Admin_Node_IP_`Onde está um nome de domínio totalmente qualificado ou o endereço IP de um nó Admin ou o endereço IP virtual de um grupo de HA de nós Admin.
+
++
+Se você precisar acessar o Gerenciador de Grade em uma porta diferente da porta padrão para HTTPS (443), digite o seguinte, onde `_FQDN_or_Admin_Node_IP_` é um nome de domínio totalmente qualificado ou endereço IP, e a porta é o número da porta:
+
++
+`https://_FQDN_or_Admin_Node_IP:port_/`
+
+. Se for solicitado um alerta de segurança, instale o certificado usando o assistente de instalação do navegador (xref:using-storagegrid-security-certificates.adoc[Sobre certificados de segurança]consulte ).
+. Entre no Gerenciador de Grade:
++
+** Se o logon único (SSO) não estiver sendo usado para seu sistema StorageGRID:
++
+... Insira seu nome de usuário e senha para o Gerenciador de Grade.
+... Selecione *entrar*.
++
+image::../media/sign_in_grid_manager_no_sso.gif[Iniciar sessão na página]
+
+
+
+** Se o SSO estiver ativado para o seu sistema StorageGRID e esta é a primeira vez que você acessou o URL neste navegador:
++
+... Selecione *entrar*. Você pode deixar o campo ID da conta em branco.
++
+image::../media/sso_sign_in_first_time.gif[Ecrã de início de sessão se o SSO estiver ativado e sem cookies]
+
+... Insira suas credenciais SSO padrão na página de login SSO da sua organização. Por exemplo:
++
+image::../media/sso_organization_page.gif[Exemplo de página de login da organização para SSO]
+
+
+
+** Se o SSO estiver ativado para o seu sistema StorageGRID e você tiver acessado anteriormente o Gerenciador de Grade ou uma conta de locatário:
++
+... Faça um dos seguintes procedimentos:
++
+**** Digite *0* (o ID da conta do Gerenciador de Grade) e selecione *entrar*.
+**** Selecione *Gerenciador de Grade* se aparecer na lista de contas recentes e selecione *entrar*.
++
+image::../media/sign_in_grid_manager_sso.gif[Selecione Gerenciador de Grade na lista de contas recentes se o SSO estiver ativado]
+
+
+
+... Inicie sessão com as suas credenciais SSO padrão na página de início de sessão SSO da sua organização. Quando você estiver conetado, a página inicial do Gerenciador de Grade será exibida, que inclui o Painel de Controle. Para saber quais informações são fornecidas, xref:../monitor/viewing-dashboard.adoc[Veja o Dashboard]consulte .
+
+
+
+
++
+image::../media/grid_manager_dashboard.png[Painel de instrumentos]
+
+. Se você quiser entrar em outro nó de administração:
++
+[cols="1a,2a"]
+|===
+| Opção | Passos 
+
+
+ a| 
+SSO não ativado
+ a| 
+.. Na barra de endereços do navegador, insira o nome de domínio totalmente qualificado ou o endereço IP do outro nó de administração. Inclua o número da porta conforme necessário.
+.. Insira seu nome de usuário e senha para o Gerenciador de Grade.
+.. Selecione *entrar*.
+
+
+
+
+ a| 
+SSO ativado
+ a| 
+Na barra de endereços do navegador, insira o nome de domínio totalmente qualificado ou o endereço IP do outro nó de administração.
+
+Se você tiver feito login em um nó de administrador, poderá acessar outros nós de administrador sem ter que fazer login novamente. No entanto, se sua sessão SSO expirar, você será solicitado a fornecer suas credenciais novamente.
+
+*Observação:* SSO não está disponível na porta do Gerenciador de Grade restrito. Você deve usar a porta HTTPS padrão (443) se quiser que os usuários se autentiquem com logon único.
+
+|===
+
+
+.Informações relacionadas
+* xref:controlling-access-through-firewalls.adoc[Controle o acesso através de firewalls]
+* xref:configuring-sso.adoc[Configurar o logon único]
+* xref:managing-admin-groups.adoc[Gerenciar grupos de administradores]
+* xref:managing-high-availability-groups.adoc[Gerenciar grupos de alta disponibilidade]
+* xref:../tenant/index.adoc[Use uma conta de locatário]
+* xref:../monitor/index.adoc[Monitorar e solucionar problemas]
+

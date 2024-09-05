@@ -1,0 +1,37 @@
+---
+permalink: s3/benefits-of-concurrent-http-connections.html 
+sidebar: sidebar 
+keywords: concurrent http connection benefits 
+summary: Você deve manter várias conexões TCP/IP ao sistema StorageGRID abertas para permitir paralelismo, o que aumenta o desempenho. O número ideal de conexões paralelas depende de uma variedade de fatores. 
+---
+= Benefícios de conexões HTTP simultâneas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve manter várias conexões TCP/IP ao sistema StorageGRID abertas para permitir paralelismo, o que aumenta o desempenho. O número ideal de conexões paralelas depende de uma variedade de fatores.
+
+As conexões HTTP simultâneas oferecem os seguintes benefícios:
+
+* Latência reduzida
++
+As transações podem começar imediatamente em vez de esperar que outras transações sejam concluídas.
+
+* Maior taxa de transferência
++
+O sistema StorageGRID pode executar transações paralelas e aumentar a taxa de transferência de transações agregadas.
+
+
+
+Os aplicativos clientes devem estabelecer várias conexões HTTP. Quando um aplicativo cliente tem que executar uma transação, ele pode selecionar e usar imediatamente qualquer conexão estabelecida que não esteja processando uma transação no momento.
+
+A topologia de cada sistema StorageGRID tem um throughput de pico diferente para transações e conexões simultâneas antes que o desempenho comece a degradar. A taxa de transferência de pico depende de fatores como recursos de computação, recursos de rede, recursos de armazenamento e links WAN. O número de servidores e serviços e o número de aplicativos suportados pelo sistema StorageGRID também são fatores.
+
+Os sistemas StorageGRID geralmente suportam vários aplicativos clientes. Você deve ter isso em mente quando determinar o número máximo de conexões simultâneas usadas por um aplicativo cliente. Se o aplicativo cliente consistir em várias entidades de software que estabelecem conexões com o sistema StorageGRID, você deve adicionar todas as conexões entre as entidades. Talvez seja necessário ajustar o número máximo de conexões simultâneas nas seguintes situações:
+
+* A topologia do sistema StorageGRID afeta o número máximo de transações simultâneas e conexões que o sistema pode suportar.
+* Os aplicativos clientes que interagem com o sistema StorageGRID em uma rede com largura de banda limitada podem ter que reduzir o grau de simultaneidade para garantir que as transações individuais sejam concluídas em um tempo razoável.
+* Quando muitos aplicativos clientes compartilham o sistema StorageGRID, você pode ter que reduzir o grau de simultaneidade para evitar exceder os limites do sistema.
+

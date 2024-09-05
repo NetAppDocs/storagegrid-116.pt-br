@@ -1,0 +1,59 @@
+---
+permalink: audit/object-retrieve-transactions.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, Object retrieve, messages, transaction, transactions, s3, swift, trace, SGET, WGET 
+summary: 'Você pode identificar transações de recuperação de objetos no log de auditoria localizando mensagens de auditoria específicas da API (S3 e Swift).' 
+---
+= Recuperar transações objeto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode identificar transações de recuperação de objetos no log de auditoria localizando mensagens de auditoria específicas da API (S3 e Swift).
+
+Nem todas as mensagens de auditoria geradas durante uma transação de recuperação são listadas nas tabelas a seguir. Apenas as mensagens necessárias para rastrear a transação de recuperação são incluídas.
+
+
+
+== S3 mensagens de auditoria de recuperação
+
+[cols="1a,1a,2a,1a,1a"]
+|===
+| Código | Nome | Descrição | Traçado | Consulte 
+
+
+ a| 
+SGET
+ a| 
+S3 GET
+ a| 
+Solicitação feita para recuperar um objeto de um bucket.
+ a| 
+CBID, S3BK, S3KY
+ a| 
+xref:sget-s3-get.adoc[SGET: S3 GET]
+
+|===
+
+
+== Mensagens de auditoria de recuperação rápida
+
+[cols="1a,1a,2a,1a,1a"]
+|===
+| Código | Nome | Descrição | Traçado | Consulte 
+
+
+ a| 
+WGET
+ a| 
+Swift GET
+ a| 
+Solicitação feita para recuperar um objeto de um contentor.
+ a| 
+CBID, WCON, WOBJ
+ a| 
+xref:wget-swift-get.adoc[WGET: Rápido]
+
+|===

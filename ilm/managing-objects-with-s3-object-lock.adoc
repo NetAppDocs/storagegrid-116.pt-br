@@ -1,0 +1,143 @@
+---
+permalink: ilm/managing-objects-with-s3-object-lock.html 
+sidebar: sidebar 
+keywords: s3 object lock, manage objects with object lock 
+summary: Como administrador de grade, você pode ativar o bloqueio de objeto S3 para seu sistema StorageGRID e implementar uma política ILM compatível para ajudar a garantir que os objetos em buckets S3 específicos não sejam excluídos ou substituídos por um período de tempo especificado. 
+---
+= Gerencie objetos com o S3 Object Lock
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Como administrador de grade, você pode ativar o bloqueio de objeto S3 para seu sistema StorageGRID e implementar uma política ILM compatível para ajudar a garantir que os objetos em buckets S3 específicos não sejam excluídos ou substituídos por um período de tempo especificado.
+
+
+
+== O que é S3 Object Lock?
+
+O recurso bloqueio de objetos do StorageGRID S3 é uma solução de proteção de objetos equivalente ao bloqueio de objetos do S3 no Amazon Simple Storage Service (Amazon S3).
+
+Como mostrado na figura, quando a configuração global de bloqueio de objeto S3D está ativada para um sistema StorageGRID, uma conta de locatário S3D pode criar buckets com ou sem bloqueio de objeto S3D ativado. Se um bucket tiver o bloqueio de objeto S3 ativado, os aplicativos cliente S3 podem, opcionalmente, especificar configurações de retenção para qualquer versão de objeto nesse bucket. Uma versão de objeto deve ter configurações de retenção especificadas para ser protegida pelo bloqueio de objeto S3. Além disso, cada bucket com o bloqueio de objetos S3 ativado pode, opcionalmente, ter um modo de retenção padrão e um período de retenção, que se aplicam se objetos forem adicionados ao bucket sem suas próprias configurações de retenção.
+
+image::../media/s3_object_lock_architecture.png[S3 arquitetura de bloqueio de objetos]
+
+O recurso bloqueio de objetos do StorageGRID S3 fornece um modo de retenção único equivalente ao modo de conformidade do Amazon S3. Por padrão, uma versão de objeto protegido não pode ser substituída ou excluída por nenhum usuário. O recurso bloqueio de objetos do StorageGRID S3 não suporta um modo de governança e não permite que usuários com permissões especiais ignorem as configurações de retenção ou excluam objetos protegidos.
+
+Se um bucket tiver o bloqueio de objeto S3 ativado, o aplicativo cliente S3 pode, opcionalmente, especificar uma ou ambas as seguintes configurações de retenção no nível do objeto ao criar ou atualizar um objeto:
+
+* *Retent-until-date*: Se a data de retent-until de uma versão de objeto for no futuro, o objeto pode ser recuperado, mas não pode ser modificado ou excluído. Conforme necessário, a data de retenção até um objeto pode ser aumentada, mas essa data não pode ser diminuída.
+* *Retenção legal*: Aplicar uma retenção legal a uma versão de objeto bloqueia imediatamente esse objeto. Por exemplo, você pode precisar colocar uma retenção legal em um objeto relacionado a uma investigação ou disputa legal. Uma retenção legal não tem data de expiração, mas permanece em vigor até que seja explicitamente removida. As obrigações legais são independentes da retenção até à data.
+
+
+Para obter detalhes sobre as configurações de retenção de objetos, vá para xref:../s3/using-s3-object-lock.adoc[Use o bloqueio de objetos S3D.].
+
+Para obter detalhes sobre as configurações padrão de retenção do balde, vá para xref:../s3/use-s3-object-lock-default-bucket-retention.adoc[Use retenção padrão do bucket do bloqueio de objetos S3].
+
+
+
+== Comparação do S3 Object Lock com a conformidade legada
+
+O bloqueio de objetos S3 substitui o recurso de conformidade que estava disponível em versões anteriores do StorageGRID. Como o recurso de bloqueio de objetos S3 está em conformidade com os requisitos do Amazon S3, ele deprecia o recurso proprietário de conformidade do StorageGRID, que agora é conhecido como ""conformidade legada"".
+
+Se você ativou anteriormente a configuração de conformidade global, a configuração global S3 Object Lock foi ativada automaticamente. Os usuários do locatário não poderão mais criar novos buckets com a conformidade ativada. No entanto, conforme necessário, os usuários do locatário podem continuar a usar e gerenciar quaisquer buckets em conformidade existentes, o que inclui a execução das seguintes tarefas:
+
+* Inserir novos objetos em um bucket existente que tenha a conformidade legada habilitada.
+* Aumento do período de retenção de um bucket existente que tem a conformidade legada habilitada.
+* Alterar a configuração de exclusão automática para um bucket existente que tenha conformidade legada ativada.
+* Colocar uma retenção legal em um bucket existente que tenha a conformidade legada habilitada.
+* Levantar uma retenção legal.
+
+
+ https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["Base de Conhecimento da NetApp: Como gerenciar buckets em conformidade com o legado no StorageGRID 11,5"^]Consulte para obter instruções.
+
+Se você usou o recurso de conformidade legado em uma versão anterior do StorageGRID, consulte a tabela a seguir para saber como ele se compara ao recurso bloqueio de objetos S3 no StorageGRID.
+
+[cols="1a,1a,1a"]
+|===
+|  | S3 bloqueio de objetos (novo) | Conformidade (legado) 
+
+
+ a| 
+Como o recurso é ativado globalmente?
+ a| 
+No Gerenciador de Grade, selecione *CONFIGURATION* > *System* > *S3 Object Lock*.
+ a| 
+Já não é suportado.
+
+*Observação:* se você ativou a configuração de conformidade global usando uma versão anterior do StorageGRID, a configuração bloqueio de objeto S3 será ativada no StorageGRID 11,6. Você pode continuar usando o StorageGRID para gerenciar as configurações dos buckets em conformidade existentes. No entanto, não é possível criar novos buckets em conformidade.
+
+
+
+ a| 
+Como o recurso está habilitado para um bucket?
+ a| 
+Os usuários devem habilitar o bloqueio de objeto S3 ao criar um novo bucket usando o Gerenciador de locatário, a API de gerenciamento de locatário ou a API REST S3.
+ a| 
+Os usuários não podem mais criar novos buckets com a conformidade ativada. No entanto, eles podem continuar adicionando novos objetos aos buckets em conformidade existentes.
+
+
+
+ a| 
+O controle de versão do bucket é suportado?
+ a| 
+Sim. O controle de versão do bucket é necessário e é ativado automaticamente quando o bloqueio de objetos S3 é ativado para o bucket.
+ a| 
+Não. O recurso de conformidade legado não permite o controle de versão do bucket.
+
+
+
+ a| 
+Como a retenção de objetos é definida?
+ a| 
+Os usuários podem definir uma data de retenção até cada versão do objeto.
+ a| 
+Os usuários devem definir um período de retenção para todo o bucket. O período de retenção aplica-se a todos os objetos no balde.
+
+
+
+ a| 
+Um bucket pode ter configurações padrão para retenção e retenção legal?
+ a| 
+Sim. Os buckets do StorageGRID que têm o bloqueio de objeto S3 ativado podem ter um período de retenção padrão que é aplicado a versões de objetos que não têm suas próprias configurações de retenção especificadas durante a ingestão.
+ a| 
+Sim
+
+
+
+ a| 
+O período de retenção pode ser alterado?
+ a| 
+A data de retenção até uma versão de objeto pode ser aumentada, mas nunca diminuída.
+ a| 
+O período de retenção do balde pode ser aumentado, mas nunca diminuído.
+
+
+
+ a| 
+Onde é controlada a guarda legal?
+ a| 
+Os usuários podem colocar uma retenção legal ou levantar uma retenção legal para qualquer versão de objeto no bucket.
+ a| 
+Uma retenção legal é colocada no balde e afeta todos os objetos no balde.
+
+
+
+ a| 
+Quando os objetos podem ser excluídos?
+ a| 
+Uma versão de objeto pode ser excluída após a data de retenção ser alcançada, assumindo que o objeto não está sob retenção legal.
+ a| 
+Um objeto pode ser excluído após o período de retenção expirar, supondo que o intervalo não esteja sob retenção legal. Os objetos podem ser excluídos automaticamente ou manualmente.
+
+
+
+ a| 
+A configuração do ciclo de vida do bucket é suportada?
+ a| 
+Sim
+ a| 
+Não
+
+|===

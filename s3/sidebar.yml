@@ -1,0 +1,134 @@
+---
+section: s3
+title: Use S3
+entries:
+- title: Visão geral
+  pdf-filename: Use S3 com StorageGRID
+  url: "/s3/index.html"
+  entries:
+  - title: Alterações ao suporte à API REST do S3
+    url: "/s3/changes-to-s3-rest-api-support.html"
+  - title: Versões suportadas
+    url: "/s3/supported-versions.html"
+  - title: Suporte para serviços de plataforma StorageGRID
+    url: "/s3/support-for-storagegrid-platform-services.html"
+- title: Configurar contas de inquilino e conexões
+  url: "/s3/configuring-tenant-accounts-and-connections.html"
+- title: Como o StorageGRID implementa a API REST do S3
+  url: "/s3/how-storagegrid-implements-s3-rest-api.html"
+  entries:
+  - title: Solicitações de cliente conflitantes
+    url: "/s3/conflicting-client-requests.html"
+  - title: Controles de consistência
+    url: "/s3/consistency-controls.html"
+  - title: Como as regras do StorageGRID ILM gerenciam objetos
+    url: "/s3/how-storagegrid-ilm-rules-manage-objects.html"
+  - title: Controle de versão de objetos
+    url: "/s3/object-versioning.html"
+  - title: Recomendações para a implementação da API REST do S3
+    url: "/s3/recommendations-for-implementing-s3-rest-api.html"
+- title: S3 operações e limitações suportadas pela API REST
+  url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
+  entries:
+  - title: Autenticar solicitações
+    url: "/s3/authenticating-requests.html"
+  - title: Operações no serviço
+    url: "/s3/operations-on-the-service.html"
+  - title: Operações em baldes
+    url: "/s3/operations-on-buckets.html"
+    entries:
+    - title: Crie a configuração do ciclo de vida do S3
+      url: "/s3/create-s3-lifecycle-configuration.html"
+    - title: Use retenção padrão do bucket do bloqueio de objetos S3
+      url: "/s3/use-s3-object-lock-default-bucket-retention.html"
+    - title: Operações personalizadas em buckets
+      url: "/s3/custom-operations-on-buckets.html"
+  - title: Operações em objetos
+    url: "/s3/operations-on-objects.html"
+    entries:
+    - title: Use o bloqueio de objetos S3D.
+      url: "/s3/using-s3-object-lock.html"
+    - title: Utilize S3 Select (Selecionar)
+      url: "/s3/use-s3-select.html"
+    - title: Use criptografias do lado do servidor
+      url: "/s3/using-server-side-encryption.html"
+    - title: Objeto GET
+      url: "/s3/get-object.html"
+    - title: Objeto HEAD
+      url: "/s3/head-object.html"
+    - title: Restauração PÓS-objeto
+      url: "/s3/post-object-restore.html"
+    - title: Objeto PUT
+      url: "/s3/put-object.html"
+    - title: COLOCAR Objeto - Copiar
+      url: "/s3/put-object-copy.html"
+    - title: Selecione ObjectContent
+      url: "/s3/select-object-content.html"
+  - title: Operações para uploads de várias partes
+    url: "/s3/operations-for-multipart-uploads.html"
+    entries:
+    - title: Listar carregamentos Multipart
+      url: "/s3/list-multipart-uploads.html"
+    - title: Inicie o carregamento de várias peças
+      url: "/s3/initiate-multipart-upload.html"
+    - title: Carregar artigo
+      url: "/s3/upload-part.html"
+    - title: Carregar artigo - Copiar
+      url: "/s3/upload-part-copy.html"
+    - title: Concluir carregamento Multipart
+      url: "/s3/complete-multipart-upload.html"
+  - title: Respostas de erro
+    url: "/s3/error-responses.html"
+- title: Operações da API REST do StorageGRID S3
+  url: "/s3/storagegrid-s3-rest-api-operations.html"
+  entries:
+  - title: OBTER pedido de consistência de balde
+    url: "/s3/get-bucket-consistency-request.html"
+  - title: COLOCAR pedido consistência balde
+    url: "/s3/put-bucket-consistency-request.html"
+  - title: OBTER último pedido de tempo de acesso do Bucket
+    url: "/s3/get-bucket-last-access-time-request.html"
+  - title: COLOCAR o último pedido de tempo de acesso do balde
+    url: "/s3/put-bucket-last-access-time-request.html"
+  - title: EXCLUIR solicitação de configuração de notificação de metadados do bucket
+    url: "/s3/delete-bucket-metadata-notification-configuration-request.html"
+  - title: OBTER solicitação de configuração de notificação de metadados do bucket
+    url: "/s3/get-bucket-metadata-notification-configuration-request.html"
+  - title: COLOCAR solicitação de configuração de notificação de metadados do bucket
+    url: "/s3/put-bucket-metadata-notification-configuration-request.html"
+  - title: OBTER solicitação de uso de armazenamento
+    url: "/s3/get-storage-usage-request.html"
+  - title: Solicitações de bucket obsoletas para conformidade legada
+    url: "/s3/deprecated-bucket-requests-for-legacy-compliance.html"
+    entries:
+    - title: Obsoleto - COLOCAR modificações de solicitação de balde para conformidade
+      url: "/s3/deprecated-put-bucket-request-modifications-for-compliance.html"
+    - title: Obsoleto - OBTER solicitação de conformidade de bucket
+      url: "/s3/deprecated-get-bucket-compliance-request.html"
+    - title: Obsoleto - COLOCAR solicitação de conformidade de balde
+      url: "/s3/deprecated-put-bucket-compliance-request.html"
+- title: Políticas de acesso ao bucket e ao grupo
+  url: "/s3/bucket-and-group-access-policies.html"
+- title: Configurar a segurança para API REST
+  url: "/s3/configuring-security-for-rest-api.html"
+- title: Monitorar e auditar operações
+  url: "/s3/monitoring-and-auditing-operations.html"
+  entries:
+  - title: Monitorar taxas de ingestão e recuperação de objetos
+    url: "/s3/monitoring-object-ingest-and-retrieval-rates.html"
+  - title: Acesse e revise logs de auditoria
+    url: "/s3/accessing-and-reviewing-audit-logs.html"
+    entries:
+    - title: S3 operações rastreadas em logs de auditoria
+      url: "/s3/s3-operations-tracked-in-audit-logs.html"
+- title: Benefícios de conexões HTTP ativas, ociosas e simultâneas
+  url: "/s3/benefits-of-active-idle-and-concurrent-http-connections.html"
+  entries:
+  - title: Benefícios de manter conexões HTTP ociosas abertas
+    url: "/s3/benefits-of-keeping-idle-http-connections-open.html"
+  - title: Benefícios de conexões HTTP ativas
+    url: "/s3/benefits-of-active-http-connections.html"
+  - title: Benefícios de conexões HTTP simultâneas
+    url: "/s3/benefits-of-concurrent-http-connections.html"
+  - title: Separação de pools de conexão HTTP para operações de leitura e gravação
+    url: "/s3/separation-of-http-connection-pools-for-read-and-write-operations.html"

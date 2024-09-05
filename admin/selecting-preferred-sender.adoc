@@ -1,0 +1,54 @@
+---
+permalink: admin/selecting-preferred-sender.html 
+sidebar: sidebar 
+keywords: preferred sender, admin nodes, primary admin node 
+summary: Se a implantação do StorageGRID incluir vários nós de administração, você poderá selecionar qual nó de administração deve ser o remetente preferido de notificações. Por padrão, o nó Admin principal é selecionado, mas qualquer nó Admin pode ser o remetente preferido. 
+---
+= Selecione um remetente preferido
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a implantação do StorageGRID incluir vários nós de administração, você poderá selecionar qual nó de administração deve ser o remetente preferido de notificações. Por padrão, o nó Admin principal é selecionado, mas qualquer nó Admin pode ser o remetente preferido.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+A página *CONFIGURATION* > *System* > *Display OPTIONS* mostra qual Admin Node está atualmente selecionado para ser o remetente preferido. O nó de administração principal é selecionado por padrão.
+
+Em operações normais do sistema, apenas o remetente preferido envia as seguintes notificações:
+
+* Mensagens AutoSupport
+* Notificações SNMP
+* E-mails de alerta
+* E-mails de alarme (sistema legado)
+
+
+No entanto, todos os outros nós Admin (remetentes de reserva) monitoram o remetente preferido. Se for detetado um problema, um remetente em espera também pode enviar essas notificações.
+
+Tanto o remetente preferido quanto um remetente em espera podem enviar notificações nestes casos:
+
+* Se os nós de administrador se tornarem "'desembarcados'" uns dos outros, tanto o remetente preferido quanto o remetente de reserva tentarão enviar notificações, e várias cópias de notificações podem ser recebidas.
+* Depois que um remetente em espera detetar problemas com o remetente preferido e começar a enviar notificações, o remetente preferido pode recuperar sua capacidade de enviar notificações. Se isso ocorrer, notificações duplicadas podem ser enviadas. O remetente em espera deixará de enviar notificações quando não detetar mais erros no remetente preferido.
+
+
+
+NOTE: Quando você testa notificações de alarme e mensagens AutoSupport, todos os nós de administração enviam o e-mail de teste. Ao testar notificações de alerta, você deve entrar em cada nó de administração para verificar a conetividade.
+
+.Passos
+. Selecione *CONFIGURATION* > *System* > *Display OPTIONS*.
+. No menu Opções de exibição, selecione *Opções*.
+. Selecione o nó Admin que deseja definir como o remetente preferido na lista suspensa.
++
+image::../media/display_options_preferred_sender.gif[Exibir página Opções]
+
+. Selecione *aplicar alterações*.
++
+O Admin Node é definido como o remetente preferido de notificações.
+
+

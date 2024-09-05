@@ -1,0 +1,14 @@
+---
+permalink: sg100-1000/configuring-bmc-interface-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, BMC, baseboard management controller, configure, setup, set up 
+summary: 'A interface do usuário para o controlador de gerenciamento de placa base (BMC) no utilitário de serviços fornece informações de status sobre o hardware e permite que você configure as configurações SNMP e outras opções para o utilitário de serviços.' 
+---
+= Configurar a interface BMC (SG100 e SG1000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A interface do usuário do controlador de gerenciamento de placa base (BMC) no utilitário de serviços fornece informações de status sobre o hardware e permite que você configure as configurações SNMP e outras opções para o utilitário de serviços.

@@ -1,0 +1,88 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+sidebar: sidebar 
+keywords: grid management api, api, api version, swagger, rest api 
+summary: O StorageGRID 11,6 usa a versão 3 da API de gerenciamento de grade. A versão 3 desconsidera a versão 2; no entanto, a versão 1 e a versão 2 ainda são suportadas. 
+---
+= Alterações na API Grid Management
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O StorageGRID 11,6 usa a versão 3 da API de gerenciamento de grade. A versão 3 desconsidera a versão 2; no entanto, a versão 1 e a versão 2 ainda são suportadas.
+
+
+IMPORTANT: Você pode continuar usando a versão 1 e a versão 2 da API de gerenciamento com o StorageGRID 11,6; no entanto, o suporte para essas versões da API será removido em uma versão futura do StorageGRID. Depois de atualizar para o StorageGRID 11,6, as APIs v1 e v2 obsoletas podem ser desativadas usando a `PUT /grid/config/management` API.
+
+Para saber mais, xref:../admin/using-grid-management-api.adoc[Use a API de gerenciamento de grade]acesse .
+
+
+
+== Pode acessar documentos Swagger para operações de API privadas
+
+Agora você pode acessar os documentos do Swagger para a API privada do Gerenciador de Grade. Para ver as operações disponíveis, selecione o ícone de ajuda do Gerenciador de Grade e selecione *Documentação da API*. Em seguida, selecione *ir para a documentação da API privada* na página da API de gerenciamento do StorageGRID.
+
+As APIs privadas da StorageGRID estão sujeitas a alterações sem aviso prévio. Os endpoints privados do StorageGRID também ignoram a versão da API da solicitação.
+
+
+
+== APIs baseadas em alarme obsoletas
+
+A versão 11,6 obsoleta todas as APIs baseadas em alarme. As seguintes APIs são afetadas por esta alteração:
+
+* `GET /grid/alarms`: Totalmente obsoleto
+* `GET /grid/health/topology`: Totalmente obsoleto
+* `GET /grid/health`: A `alarm-counts` seção da resposta está obsoleta
+
+
+
+
+== Pode importar S3 teclas de acesso
+
+Agora você pode usar a API de gerenciamento de grade para importar chaves de acesso S3 para usuários locatários. Por exemplo, você pode migrar chaves de acesso de outro provedor S3 para o StorageGRID ou usar esse recurso para manter as credenciais do usuário iguais entre grades.
+
+
+IMPORTANT: Quando esse recurso está ativado, qualquer usuário do Grid Manager com a permissão alterar senha de root do locatário tem acesso total aos dados do locatário. Desative esse recurso imediatamente após o uso para proteger os dados do locatário.
+
+
+
+== Operações de novas contas
+
+Três novas `grid/account` operações de API foram adicionadas:
+
+* `POST /grid​/account-enable-s3-key-import`: Esta solicitação ativa o recurso Importar credenciais do S3. Você deve ter a permissão de acesso root para habilitar esse recurso.
+* `POST /grid​/accounts​/{id}​/users​/{user_id}​/s3-access-keys`: Esta solicitação importa credenciais S3 para um determinado usuário em uma conta de locatário. Você deve ter acesso root ou alterar a permissão de senha de raiz do locatário e deve saber o ID de usuário e o ID da conta do locatário.
+* `POST /grid​/account-disable-s3-key-import`: Esta solicitação desativa o recurso Importar credenciais S3. Você deve ter a permissão de acesso root para desativar esse recurso.
+
+
+
+
+== Método DE CORREÇÃO obsoleto
+
+O método DE PATCH agora foi obsoleto e será removido em uma versão futura. Conforme necessário, execute uma operação PUT para substituir um recurso em vez de usar uma operação DE PATCH para modificar o recurso.
+
+
+
+== Adições ao `grid/logs/collect` endpoint
+
+Quatro valores booleanos foram adicionados ao `grid/logs/collect` endpoint:
+
+* `applicationLogs`: Logs específicos do aplicativo que o suporte técnico utiliza com mais frequência para solução de problemas. Os registos recolhidos são um subconjunto dos registos de aplicações disponíveis. A predefinição é `true`.
+* `auditLogs`: Logs contendo as mensagens de auditoria geradas durante a operação normal do sistema. A predefinição é `true`.
+* `networkTrace`: Logs usados para depuração de rede. A predefinição é `false`.
+* `prometheusDatabase`: Métricas de séries temporais dos serviços em todos os nós. A predefinição é `false`.
+
+
+
+
+==  `​node-details /grid​/service-ids`Novo endpoint
+
+O novo `​/grid​/service-ids` endpoint fornece um mapeamento de UUIDs de nó para os nomes de nó, IDs de serviço e tipos de serviço associados.
+
+
+
+== Pode recuperar senhas de console de nó de grade
+
+Agora você pode usar `POST ​/grid​/node-console-passwords` para recuperar a lista de nós de grade e suas senhas de console associadas.

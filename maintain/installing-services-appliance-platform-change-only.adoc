@@ -1,0 +1,29 @@
+---
+permalink: maintain/installing-services-appliance-platform-change-only.html 
+sidebar: sidebar 
+keywords: storagegrid, recover services appliance, recover appliance, recovering appliance, recovering services appliance, install services appliance, installing services appliance, services appliance 
+summary: Quando você estiver recuperando um nó de grade com falha hospedado no VMware ou em um host Linux e estiver usando um dispositivo de serviços SG100 ou SG1000 para o nó de substituição, primeiro instale o novo hardware do dispositivo usando o mesmo nome do nó que o nó com falha. 
+---
+= Instalar dispositivo de serviços (somente mudança de plataforma)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você estiver recuperando um nó de grade com falha hospedado no VMware ou em um host Linux e estiver usando um dispositivo de serviços SG100 ou SG1000 para o nó de substituição, primeiro instale o novo hardware do dispositivo usando o mesmo nome do nó que o nó com falha.
+
+Você deve ter as seguintes informações sobre o nó com falha:
+
+* *Nome do nó*: Você deve instalar o utilitário de serviços usando o mesmo nome do nó que o nó com falha.
+* *Endereços IP*: Você pode atribuir ao utilitário de serviços os mesmos endereços IP que o nó com falha, que é a opção preferida, ou você pode selecionar um novo endereço IP não utilizado em cada rede.
+
+
+Execute este procedimento somente se você estiver recuperando um nó com falha hospedado no VMware ou Linux e estiver substituindo-o por um nó hospedado em um dispositivo de serviços.
+
+. Siga as instruções para instalar um novo dispositivo de serviços SG100 ou SG1000.
+. Quando for solicitado um nome de nó, use o nome do nó do nó com falha.
+
+
+.Informações relacionadas
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]

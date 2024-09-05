@@ -1,0 +1,48 @@
+---
+permalink: primer/controlling-storagegrid-access.html 
+sidebar: sidebar 
+keywords: grid manager, administrator access, single sign on, sso, users, groups, client certificates, passwords, passphrase 
+summary: Você controla quem pode acessar o StorageGRID e quais tarefas os usuários podem executar criando ou importando grupos e usuários e atribuindo permissões a cada grupo. Opcionalmente, você pode ativar o logon único, criar certificados de cliente e alterar senhas de grade. 
+---
+= Controle o acesso à StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você controla quem pode acessar o StorageGRID e quais tarefas os usuários podem executar criando ou importando grupos e usuários e atribuindo permissões a cada grupo. Opcionalmente, você pode ativar o logon único (SSO), criar certificados de cliente e alterar senhas de grade.
+
+
+
+== Controle o acesso ao Gerenciador de Grade
+
+Você determina quem pode acessar o Gerenciador de Grade e a API de Gerenciamento de Grade importando grupos e usuários de um serviço de federação de identidade ou configurando grupos locais e usuários locais.
+
+O uso da federação de identidade torna a configuração de grupos e usuários mais rápida e permite que os usuários façam login no StorageGRID usando credenciais familiares. Você pode configurar a federação de identidade se usar o ative Directory, OpenLDAP ou Oracle Directory Server.
+
+
+NOTE: Contacte o suporte técnico se pretender utilizar outro serviço LDAP v3.
+
+Você determina quais tarefas cada usuário pode executar atribuindo permissões diferentes a cada grupo. Por exemplo, você pode querer que os usuários de um grupo possam gerenciar regras ILM e usuários de outro grupo para executar tarefas de manutenção. Um usuário deve pertencer a pelo menos um grupo para acessar o sistema.
+
+Opcionalmente, você pode configurar um grupo para ser somente leitura. Os usuários em um grupo somente leitura só podem exibir configurações e recursos. Eles não podem fazer alterações ou executar quaisquer operações no Gerenciador de Grade ou na API de Gerenciamento de Grade.
+
+
+
+== Ative o logon único
+
+O sistema StorageGRID suporta logon único (SSO) usando o padrão de linguagem de marcação de asserção de Segurança 2,0 (SAML 2,0). Quando o SSO está ativado, todos os usuários devem ser autenticados por um provedor de identidade externo antes que possam acessar o Gerenciador de Grade, o Gerenciador de Locatário, a API de Gerenciamento de Grade ou a API de Gerenciamento de Locatário. Os utilizadores locais não podem iniciar sessão no StorageGRID.
+
+Quando o SSO está ativado e os usuários entram no StorageGRID, eles são redirecionados para a página SSO da sua organização para validar suas credenciais. Quando os usuários fazem logout de um nó de administrador, eles são automaticamente excluídos de todos os nós de administração.
+
+
+
+== Alterar senhas de grade
+
+A senha de provisionamento é necessária para muitos procedimentos de instalação e manutenção e para baixar o Pacote de recuperação do StorageGRID. A senha também é necessária para fazer o download de backups das informações de topologia de grade e chaves de criptografia para o sistema StorageGRID. Pode alterar esta frase-passe conforme necessário.
+
+.Informações relacionadas
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+* xref:../tenant/index.adoc[Use uma conta de locatário]
+

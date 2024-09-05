@@ -1,0 +1,55 @@
+---
+permalink: vmware/troubleshooting-installation-issues.html 
+sidebar: sidebar 
+keywords: how to troubleshoot installation issues 
+summary: Se ocorrerem problemas durante a instalação do sistema StorageGRID, pode aceder aos ficheiros de registo de instalação. 
+---
+= Solucionar problemas de instalação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se ocorrerem problemas durante a instalação do sistema StorageGRID, pode aceder aos ficheiros de registo de instalação.
+
+A seguir estão os principais arquivos de log de instalação, que suporte técnico pode precisar para resolver problemas.
+
+* `/var/local/log/install.log` (encontrado em todos os nós da grade)
+* `/var/local/log/gdu-server.log` (Encontrado no nó de administração principal)
+
+
+Para saber como aceder aos ficheiros de registo, consulte o xref:../monitor/index.adoc[Instruções para monitoramento e solução de problemas do StorageGRID]. Para obter ajuda para solucionar problemas de instalação do aparelho, consulte as instruções de instalação e manutenção dos seus aparelhos. Se precisar de ajuda adicional, entre em Contato com o suporte técnico.
+
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+
+xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+https://mysupport.netapp.com/site/global/dashboard["Suporte à NetApp"^]
+
+
+
+== A reserva de recursos da máquina virtual requer ajuste
+
+Os arquivos OVF incluem uma reserva de recursos projetada para garantir que cada nó de grade tenha RAM e CPU suficientes para operar com eficiência. Se você criar máquinas virtuais implantando esses arquivos OVF no VMware e o número predefinido de recursos não estiver disponível, as máquinas virtuais não serão iniciadas.
+
+.Sobre esta tarefa
+Se você tiver certeza de que o host da VM tem recursos suficientes para cada nó de grade, ajuste manualmente os recursos alocados para cada máquina virtual e tente iniciar as máquinas virtuais.
+
+.Passos
+. Na árvore cliente do VMware vSphere Hypervisor, selecione a máquina virtual que não foi iniciada.
+. Clique com o botão direito do rato na máquina virtual e selecione *Edit Settings* (Editar definições).
+. Na janela Propriedades de máquinas virtuais, selecione a guia *recursos*.
+. Ajuste os recursos alocados à máquina virtual:
++
+.. Selecione *CPU* e, em seguida, use o controle deslizante de reserva para ajustar o MHz reservado para esta máquina virtual.
+.. Selecione *memória* e, em seguida, use o controle deslizante reserva para ajustar o MB reservado para esta máquina virtual.
+
+
+. Clique em *OK*.
+. Repita conforme necessário para outras máquinas virtuais hospedadas no mesmo host da VM.
+

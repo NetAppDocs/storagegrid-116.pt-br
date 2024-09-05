@@ -1,0 +1,199 @@
+---
+permalink: fabricpool/using-storagegrid-ilm-with-fabricpool-data.html 
+sidebar: sidebar 
+keywords: FabricPool, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure-coding, replication, cloud storage pool, glacier 
+summary: Se você estiver usando o FabricPool para categorizar dados no StorageGRID, você deve entender os requisitos para criar regras de gerenciamento de ciclo de vida de informações do StorageGRID e uma política de ILM para gerenciar dados do FabricPool. Você deve garantir que as regras de ILM que se aplicam aos dados do FabricPool não sejam disruptivas. 
+---
+= Use o gerenciamento do ciclo de vida das informações do StorageGRID com os dados do FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando o FabricPool para categorizar dados no StorageGRID, entenda os requisitos para criar regras de gerenciamento do ciclo de vida das informações (ILM) do StorageGRID e uma política de ILM para gerenciar dados do FabricPool. Você deve garantir que as regras de ILM que se aplicam aos dados do FabricPool não sejam disruptivas.
+
+
+IMPORTANT: A FabricPool não tem conhecimento das regras ou políticas do StorageGRID ILM. A perda de dados pode ocorrer se a política ILM do StorageGRID estiver mal configurada. Consulte xref:../ilm/index.adoc[Gerenciar objetos com ILM] para obter instruções detalhadas do ILM.
+
+Revise essas diretrizes para garantir que suas regras de ILM e sua política de ILM sejam adequadas para dados do FabricPool e seus requisitos de negócios. Se você já estiver usando o StorageGRID ILM, talvez seja necessário atualizar sua política ILM ativa para atender a essas diretrizes.
+
+* Você pode usar qualquer combinação de regras de replicação e codificação de apagamento para proteger os dados de categorias de nuvem.
++
+A prática recomendada é usar a codificação de apagamento 2-1 em um site para proteção de dados econômica. A codificação de apagamento usa mais CPU, mas oferece significativamente menos capacidade de storage do que a replicação. Os esquemas 4-1 e 6-1 utilizam menos capacidade do que o esquema 2-1. No entanto, os esquemas 4-1 e 6-1 são menos flexíveis se você precisar adicionar nós de storage durante a expansão da grade. Para obter detalhes, xref:../expand/adding-storage-capacity-for-erasure-coded-objects.adoc[Adicionar capacidade de storage para objetos codificados por apagamento]consulte .
+
+* Cada regra aplicada a dados do FabricPool deve usar codificação de apagamento ou criar pelo menos duas cópias replicadas.
++
+
+IMPORTANT: Uma regra de ILM que cria apenas uma cópia replicada para qualquer período de tempo coloca os dados em risco de perda permanente. Se houver apenas uma cópia replicada de um objeto, esse objeto será perdido se um nó de armazenamento falhar ou tiver um erro significativo. Você também perde temporariamente o acesso ao objeto durante procedimentos de manutenção, como atualizações.
+
+* Não use uma regra de ILM que expirará ou excluirá dados de nível de nuvem do FabricPool. Defina o período de retenção em cada regra ILM como "Forever" para garantir que os objetos FabricPool não sejam excluídos pelo StorageGRID ILM.
+* Não crie regras que movam os dados da camada de nuvem do FabricPool do bucket para outro local. Você não pode usar regras ILM para arquivar dados do FabricPool em fita usando um nó de arquivamento ou usar um pool de armazenamento em nuvem para mover dados do FabricPool para outro armazenamento de objetos.
++
+
+NOTE: O uso de pools de armazenamento em nuvem com FabricPool não é suportado devido à latência adicional para recuperar um objeto do destino de pool de armazenamento em nuvem.
+
+* A partir do ONTAP 9.8, você pode, opcionalmente, criar tags de objeto para ajudar a classificar e classificar dados em camadas para facilitar o gerenciamento. Por exemplo, você pode definir tags apenas em volumes FabricPool anexados ao StorageGRID. Em seguida, quando você cria regras ILM no StorageGRID, você pode usar o filtro avançado Etiqueta de Objeto para selecionar e colocar esses dados.
+
+
+
+
+== Exemplo de política de ILM para dados do FabricPool
+
+Use esta política de exemplo simples como ponto de partida para suas próprias regras e políticas ILM.
+
+Este exemplo pressupõe que você esteja projetando as regras de ILM e uma política de ILM para um sistema StorageGRID que tenha quatro nós de storage em um único data center em Denver, Colorado. Os dados do FabricPool neste exemplo usam um bucket `fabricpool-bucket` chamado .
+
+
+CAUTION: As seguintes regras e políticas do ILM são apenas exemplos. Existem muitas maneiras de configurar regras ILM. Antes de ativar uma nova política, simule a política proposta para confirmar que ela funcionará como a intenção de proteger o conteúdo contra perda. Para saber mais, xref:../ilm/index.adoc[Gerenciar objetos com ILM]consulte .
+
+.Passos
+. Crie um pool de armazenamento chamado *DEN*. Selecione o site de Denver.
+. Crie um perfil de codificação de apagamento chamado *2 plus 1*. Selecione o esquema de codificação de apagamento 2-1 e o pool de armazenamento *DEN*.
+. Crie uma regra ILM que se aplique apenas aos dados no `fabricpool-bucket`. esta regra de exemplo cria cópias codificadas por apagamento.
++
+[cols="1a,2a"]
+|===
+| Definição de regra | Exemplo de valor 
+
+
+ a| 
+Nome da regra
+ a| 
+Codificação de apagamento 2 mais 1 para dados FabricPool
+
+
+
+ a| 
+Nome do balde
+ a| 
+`fabricpool-bucket`
+
+Você também pode filtrar na conta de locatário do FabricPool.
+
+
+
+ a| 
+Filtragem avançada
+ a| 
+Tamanho do objeto (MB) superior a 0,2 MB.
+
+*Observação:* o FabricPool só grava objetos de 4 MB, mas você deve adicionar um filtro de tamanho de objeto porque essa regra usa codificação de apagamento.
+
+
+
+ a| 
+Tempo de referência
+ a| 
+Tempo de ingestão
+
+
+
+ a| 
+Colocação
+ a| 
+Desde o dia 0 loja para sempre
+
+
+
+ a| 
+Tipo
+ a| 
+Codificar para apagamento
+
+
+
+ a| 
+Localização
+ a| 
+DEN (2 mais 1)
+
+
+
+ a| 
+Comportamento de ingestão
+ a| 
+Equilibrado
+
+|===
+. Crie uma regra ILM que criará duas cópias replicadas de quaisquer objetos não correlacionados com a primeira regra. Não selecione um filtro básico (conta de locatário ou nome do bucket) ou quaisquer filtros avançados.
++
+[cols="1a,2a"]
+|===
+| Definição de regra | Exemplo de valor 
+
+
+ a| 
+Nome da regra
+ a| 
+Duas cópias replicadas
+
+
+
+ a| 
+Nome do balde
+ a| 
+_none_
+
+
+
+ a| 
+Filtragem avançada
+ a| 
+_none_
+
+
+
+ a| 
+Tempo de referência
+ a| 
+Tempo de ingestão
+
+
+
+ a| 
+Colocação
+ a| 
+Desde o dia 0 loja para sempre
+
+
+
+ a| 
+Tipo
+ a| 
+Replicado
+
+
+
+ a| 
+Localização
+ a| 
+DEN
+
+
+
+ a| 
+Cópias
+ a| 
+2
+
+
+
+ a| 
+Comportamento de ingestão
+ a| 
+Equilibrado
+
+|===
+. Crie uma política de ILM proposta e selecione as duas regras. Como a regra de replicação não usa filtros, ela pode ser a regra padrão (última) para a política.
+. Ingira objetos de teste na grade.
+. Simule a política com os objetos de teste para verificar o comportamento.
+. Ative a política.
+
+
+Quando esta política é ativada, o StorageGRID coloca os dados de objeto da seguinte forma:
+
+* Os dados dispostos em camadas em FabricPool in `fabricpool-bucket` serão codificados para apagamento usando o esquema de codificação de apagamento 2-1. Dois fragmentos de dados e um fragmento de paridade serão colocados em três nós de storage diferentes.
+* Todos os objetos em todos os outros buckets serão replicados. Duas cópias serão criadas e colocadas em dois nós de storage diferentes.
+* As cópias codificadas por apagamento e replicadas serão mantidas no StorageGRID até que sejam excluídas pelo cliente S3. StorageGRID ILM nunca excluirá esses itens.
+

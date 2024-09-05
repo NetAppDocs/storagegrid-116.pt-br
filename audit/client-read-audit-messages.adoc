@@ -1,0 +1,64 @@
+---
+permalink: audit/client-read-audit-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, messages, client read, SGET, SHEA, WGET, WHEA, S3, swift 
+summary: As mensagens de auditoria de leitura do cliente são registradas quando um aplicativo cliente S3 ou Swift faz uma solicitação para recuperar um objeto. 
+---
+= O cliente lê mensagens de auditoria
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As mensagens de auditoria de leitura do cliente são registradas quando um aplicativo cliente S3 ou Swift faz uma solicitação para recuperar um objeto.
+
+|===
+| Código | Descrição | Usado por | Consulte 
+
+
+ a| 
+SGET
+ a| 
+S3 GET: Registra uma transação bem-sucedida para recuperar um objeto ou listar os objetos em um bucket.
+
+*Nota:* se a transação operar em um subrecurso, a mensagem de auditoria incluirá o campo S3SR.
+ a| 
+Cliente S3
+ a| 
+xref:sget-s3-get.adoc[SGET: S3 GET]
+
+
+
+ a| 
+SHEA
+ a| 
+S3 HEAD: Registra uma transação bem-sucedida para verificar a existência de um objeto ou bucket.
+ a| 
+Cliente S3
+ a| 
+xref:shea-s3-head.adoc[SHEA: S3 CABEÇA]
+
+
+
+ a| 
+WGET
+ a| 
+Swift GET: Registra uma transação bem-sucedida para recuperar um objeto ou listar os objetos em um contentor.
+ a| 
+Cliente Swift
+ a| 
+xref:wget-swift-get.adoc[WGET: Rápido]
+
+
+
+ a| 
+BEM-VINDO
+ a| 
+Swift head: Registra uma transação bem-sucedida para verificar a existência de um objeto ou contentor.
+ a| 
+Cliente Swift
+ a| 
+xref:whea-swift-head.adoc[WHEA: CABEÇA rápida]
+
+|===

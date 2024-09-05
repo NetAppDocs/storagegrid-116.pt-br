@@ -1,0 +1,95 @@
+---
+permalink: sg100-1000/accessing-storagegrid-appliance-installer-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, appliance installer, installer, access, accessing, start, starting 
+summary: 'Você deve acessar o Instalador do StorageGRID Appliance para configurar as conexões entre o appliance e as três redes StorageGRID: A rede de Grade, a rede Admin (opcional) e a rede cliente (opcional).' 
+---
+= Acesse o Instalador de dispositivos StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve acessar o Instalador do StorageGRID Appliance para configurar as conexões entre o appliance e as três redes StorageGRID: A rede de grade, a rede de administração (opcional) e a rede de cliente (opcional).
+
+.O que você vai precisar
+* Você está usando qualquer cliente de gerenciamento que possa se conetar à rede de administração do StorageGRID.
+* O cliente tem um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* O dispositivo de serviços está conetado a todas as redes StorageGRID que você planeja usar.
+* Você sabe o endereço IP, o gateway e a sub-rede do utilitário de serviços nessas redes.
+* Configurou os comutadores de rede que pretende utilizar.
+
+
+.Sobre esta tarefa
+Para acessar inicialmente o Instalador de dispositivos StorageGRID, você pode usar o endereço IP atribuído por DHCP para a porta de rede Admin no utilitário de serviços (supondo que ele esteja conetado à rede Admin), ou você pode conetar um laptop de serviço diretamente ao utilitário de serviços.
+
+.Passos
+. Se possível, use o endereço DHCP para a porta de rede de administrador no utilitário de serviços para acessar o instalador do dispositivo StorageGRID.
++
+*SG100 porta de rede Admin*
+
++
+image:../media/sg100_admin_network_port.png["Porta de rede Admin no SG100"]
+
++
+*SG1000 porta de rede Admin*
+
++
+image::../media/sg1000_admin_network_port.png[Porta de rede Admin no SG1000]
+
++
+.. Localize a etiqueta de endereço MAC na parte frontal do dispositivo serrvices e determine o endereço MAC da porta Admin Network.
++
+O rótulo de endereço MAC lista o endereço MAC da porta de gerenciamento BMC.
+
++
+Para determinar o endereço MAC da porta Admin Network, você deve adicionar *2* ao número hexadecimal na etiqueta. Por exemplo, se o endereço MAC na etiqueta terminar em *09*, o endereço MAC da porta Admin terminaria em *0B*. Se o endereço MAC na etiqueta terminar em *(_y_)FF*, o endereço MAC da porta Admin terminaria em *(_y_(1)01*. Você pode facilmente fazer esse cálculo abrindo o Calculator no Windows, definindo-o para o modo Programador, selecionando Hex, digitando o endereço MAC e, em seguida, digitando * 2 *.
+
+.. Forneça o endereço MAC ao administrador da rede para que ele possa procurar o endereço DHCP do dispositivo na rede Admin.
+.. No cliente, insira esta URL para o instalador do StorageGRID Appliance
+`*https://_services-appliance_IP_:8443*`
++
+Para `_services-appliance_IP_`, utilize o endereço DHCP.
+
+.. Se for solicitado um alerta de segurança, exiba e instale o certificado usando o assistente de instalação do navegador.
++
+O alerta não aparecerá na próxima vez que você acessar este URL.
+
++
+A página inicial do instalador do dispositivo StorageGRID é exibida. As informações e as mensagens mostradas quando você acessa esta página pela primeira vez dependem de como o dispositivo está conetado atualmente às redes StorageGRID. Podem aparecer mensagens de erro que serão resolvidas em etapas posteriores.
+
+
+
+. Em alternativa, se não conseguir obter um endereço IP utilizando DHCP, utilize uma ligação local para aceder ao Instalador de aplicações StorageGRID.
++
+.. Conete um laptop de serviço diretamente à porta RJ-45 mais à direita do dispositivo de serviços, usando um cabo Ethernet.
++
+*SG100 ligação local*
+
++
+image::../media/sg100_link_local_port.png[SG100 ligação local]
+
++
+*SG1000 ligação local*
+
++
+image::../media/sg1000_link_local_port.png[SG1000 ligação local]
+
+.. Abra um navegador da Web.
+.. Digite este URL para o instalador do StorageGRID Appliance
+`*\https://169.254.0.1:8443*`
++
+A página inicial do instalador do dispositivo StorageGRID é exibida. As informações e as mensagens mostradas quando você acessa esta página pela primeira vez dependem de como o dispositivo está conetado atualmente às redes StorageGRID. Podem aparecer mensagens de erro que serão resolvidas em etapas posteriores.
+
++
+
+NOTE: Se não conseguir aceder à página inicial através de uma ligação local, configure o endereço IP do computador portátil de serviço como `169.254.0.2`, e tente novamente.
+
+
+
+. Reveja as mensagens apresentadas na página inicial e configure a configuração da ligação e a configuração IP, conforme necessário.
++
+image::../media/appliance_installer_home_services_appliance.png[Página inicial do Instalador de dispositivos - SG100 e SG1000]
+
+

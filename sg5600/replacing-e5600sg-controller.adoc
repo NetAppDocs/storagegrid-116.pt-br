@@ -1,0 +1,81 @@
+---
+permalink: sg5600/replacing-e5600sg-controller.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, hardware, Replacing, replace, E5600sg, controller, remove, removing, removal, install, installing, installation 
+summary: Talvez seja necessário substituir o controlador E5600SG. 
+---
+= Substitua o controlador E5600SG
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Talvez seja necessário substituir o controlador E5600SG.
+
+.O que você vai precisar
+Você deve ter acesso aos seguintes recursos:
+
+* Informações de substituição de hardware do e-Series no site de suporte da NetApp em mais http://mysupport.netapp.com/["mysupport.NetApp.com"^]
+* E5600 documentação no site de suporte
+* O aparelho foi xref:placing-appliance-into-maintenance-mode.adoc[colocado modo de manutenção].
+
+
+.Sobre esta tarefa
+Se ambos os controladores estiverem funcionando o suficiente para permitir um desligamento controlado, você poderá desligar o controlador E5600SG primeiro para interromper a conetividade com o controlador E2700.
+
+
+NOTE: Se você estiver substituindo o controlador antes de instalar o software StorageGRID, talvez você não consiga acessar o instalador do StorageGRID Appliance imediatamente após concluir este procedimento. Embora você possa acessar o Instalador de dispositivos StorageGRID de outros hosts na mesma sub-rede que o appliance, você não pode acessá-lo de hosts em outras sub-redes. Esta condição deve resolver-se dentro de 15 minutos (quando qualquer entrada de cache ARP para o tempo limite do controlador original), ou você pode limpar a condição imediatamente, limpando quaisquer entradas de cache ARP antigas manualmente do roteador ou gateway local.
+
+.Passos
+. Use proteção antiestática.
+. Identifique cada cabo conetado ao controlador E5600SG para que você possa reconetar os cabos corretamente.
++
+
+IMPORTANT: Para evitar um desempenho degradado, não torça, dobre, aperte ou pise nos cabos. Não dobre os cabos com mais firmeza do que um raio de 5 cm (2 pol.).
+
+. Quando o aparelho tiver sido colocado no modo de manutenção, desligue o controlador E5600SG.
++
+.. Faça login no nó da grade:
++
+... Introduza o seguinte comando: `ssh admin@_grid_node_IP_`
+... Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+... Digite o seguinte comando para mudar para root: `su -`
+... Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
++
+Quando você estiver conetado como root, o prompt mudará de `$` para `#`.
+
+
+
+.. Desligue o controlador E5600SG
+`*shutdown -h now*`
+
+
+. Desligue a alimentação do compartimento e aguarde até que todas as atividades de exibição de LED e sete segmentos na parte traseira do controlador tenham parado.
+. Retire os cabos.
+. Remova o controlador, conforme descrito na documentação do controlador E5600SG.
+. Insira o novo controlador, conforme descrito na documentação do controlador E5600SG.
+. Substitua todos os cabos.
+. Volte a ligar a alimentação ao compartimento.
+. Monitorize os códigos de sete segmentos.
++
+** Controlador E2700:
++
+O estado final do LED é `99`.
+
+** Controlador E5600SG:
++
+O estado final do LED é `HA`.
+
+
+
+. Monitore o status do nó de armazenamento do dispositivo no Gerenciador de Grade.
++
+Verifique se os nós de storage do dispositivo retornam ao status esperado.
+
+
+
+.Informações relacionadas
+https://mysupport.netapp.com/info/web/ECMP11751516.html["Procedimentos de substituição de hardware do NetApp e-Series e EF-Series"^]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61893["Documentação do NetApp: Série E5600"^]

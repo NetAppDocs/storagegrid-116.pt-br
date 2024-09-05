@@ -1,0 +1,29 @@
+---
+permalink: maintain/recovering-from-admin-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, admin node failure 
+summary: O processo de recuperação para um nó Admin depende se é o nó Admin primário ou um nó Admin não primário. 
+---
+= Recuperar de falhas no Admin Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O processo de recuperação para um nó Admin depende se é o nó Admin primário ou um nó Admin não primário.
+
+.Sobre esta tarefa
+As etapas de alto nível para recuperar um nó de administração primário ou não primário são as mesmas, embora os detalhes das etapas sejam diferentes.
+
+image::../media/overview_admin_node_recovery.png[Visão geral da recuperação para nó de administração primário ou não primário]
+
+Siga sempre o procedimento de recuperação correto para o nó Admin que está a recuperar. Os procedimentos parecem os mesmos em um nível alto, mas diferem nos detalhes.
+
+.Informações relacionadas
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+.Opções
+* xref:recovering-from-primary-admin-node-failures.adoc[Recuperação de falhas do nó de administração principal]
+* xref:recovering-from-non-primary-admin-node-failures.adoc[Recuperação de falhas não primárias no nó de administração]
+

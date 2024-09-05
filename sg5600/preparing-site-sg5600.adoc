@@ -1,0 +1,75 @@
+---
+permalink: sg5600/preparing-site-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, install, installation, site prep, site preparating, preparing site, site requirements, requirements, site, dimensions, weight, weights, temperature, humidity, altitude, airflow, heat, wiring, power, grounding, facility 
+summary: Antes de instalar o aparelho, certifique-se de que o local e o gabinete ou rack que pretende utilizar cumprem as especificações de um dispositivo StorageGRID. 
+---
+= Local de preparação (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o aparelho, certifique-se de que o local e o gabinete ou rack que pretende utilizar cumprem as especificações de um dispositivo StorageGRID.
+
+.Passos
+. Confirme se o local atende aos requisitos de temperatura, umidade, faixa de altitude, fluxo de ar, dissipação de calor, fiação, energia e aterramento. Consulte o NetApp Hardware Universe para obter mais informações.
+. Obtenha um gabinete ou rack de 19 polegadas (48,3 cm) para encaixar prateleiras deste tamanho (sem cabos):
++
+|===
+| Modelo do aparelho | Altura | Largura | Profundidade | Peso máximo 
+
+
+ a| 
+SG5612
+
+(12 unidades)
+ a| 
+3,40 pol.
+
+(8,64 cm)
+ a| 
+19,0 pol.
+
+(48,26 cm)
+ a| 
+21,75 pol.
+
+(55,25 cm)
+ a| 
+13 59,5 lb
+
+(27 kg)
+
+
+
+ a| 
+SG5660
+
+(60 unidades)
+ a| 
+7,00 pol.
+
+(17,78 cm)
+ a| 
+17,75 pol.
+
+(45,08 cm)
+ a| 
+32,50 pol.
+
+(82,55 cm)
+ a| 
+13 236,2 lb.
+
+(107,1 kg)
+
+|===
+. Instale todos os switches de rede necessários. Consulte a ferramenta de Matriz de interoperabilidade do NetApp para obter informações sobre compatibilidade.
+
+
+.Informações relacionadas
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+https://mysupport.netapp.com/NOW/products/interoperability["Interoperabilidade do NetApp"^]

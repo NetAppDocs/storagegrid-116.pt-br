@@ -1,0 +1,50 @@
+---
+permalink: sg6000/accessing-bmc-interface-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, BMC, baseboard management controller, access, open, login 
+summary: Você pode acessar a interface BMC no controlador SG6000-CN usando o DHCP ou o endereço IP estático para a porta de gerenciamento BMC. 
+---
+= Acesse a interface BMC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode acessar a interface BMC no controlador SG6000-CN usando o DHCP ou o endereço IP estático para a porta de gerenciamento BMC.
+
+.O que você vai precisar
+* A porta de gerenciamento BMC no controlador SG6000-CN está conetada à rede de gerenciamento que você planeja usar.
++
+image::../media/sg6000_cn_bmc_management_port.gif[Porta de gerenciamento BMC no controlador SG6000-CN]
+
+* O cliente de gerenciamento está usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Passos
+. Digite o URL para a interface do BMC
+`*https://_BMC_Port_IP_*`
++
+Para `_BMC_Port_IP_`, utilize o DHCP ou o endereço IP estático para a porta de gestão BMC.
+
++
+É apresentada a página de início de sessão do BMC.
+
++
+
+NOTE: Se ainda não tiver configurado `BMC_Port_IP`, siga as instruções em xref:configuring-bmc-interface-sg6000.adoc[Configurar interface BMC (SG6000)]. Se você não conseguir seguir esse procedimento devido a um problema de hardware e ainda não tiver configurado um endereço IP BMC, talvez você ainda consiga acessar o BMC. Por padrão, o BMC obtém um endereço IP usando DHCP. Se o DHCP estiver ativado na rede BMC, o administrador da rede poderá fornecer o endereço IP atribuído ao MAC BMC, que é impresso na etiqueta na parte frontal do controlador SG6000-CN. Se o DHCP não estiver ativado na rede BMC, o BMC não responderá após alguns minutos e atribuirá a si próprio o IP estático padrão `192.168.0.120` . Talvez seja necessário conetar o laptop diretamente à porta BMC e alterar a configuração de rede para atribuir um IP ao laptop, como `192.168.0.200/24`, para navegar até `192.168.0.120`.
+
+. Introduza o nome de utilizador e a palavra-passe raiz, utilizando a palavra-passe definida quando xref:changing-root-password-for-bmc-interface-sg6000.adoc[alterou a senha padrão do root]:
++
+image::../media/bmc_signin_page.gif[Página de login do BMC]
+
+. Selecione *entrar*.
++
+image::../media/bmc_dashboard.gif[Painel do BMC]
+
+. Opcionalmente, crie usuários adicionais selecionando *Configurações* *Gerenciamento de usuários* e clicando em qualquer usuário "habilitado".
++
+
+NOTE: Quando os usuários entram pela primeira vez, eles podem ser solicitados a alterar sua senha para aumentar a segurança.
+
+

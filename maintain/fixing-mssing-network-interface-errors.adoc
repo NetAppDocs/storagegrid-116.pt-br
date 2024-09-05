@@ -1,0 +1,27 @@
+---
+permalink: maintain/fixing-mssing-network-interface-errors.html 
+sidebar: sidebar 
+keywords: storagegrid, network interface, network interface error 
+summary: Se a rede host não estiver configurada corretamente ou se um nome estiver incorreto, um erro ocorre quando o StorageGRID verifica o mapeamento especificado no arquivo /etc/StorageGRID/node-name.conf. 
+---
+= Corrigir erros de interface de rede ausentes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a rede host não estiver configurada corretamente ou se um nome estiver incorreto, ocorrerá um erro quando o StorageGRID verificar o mapeamento especificado no `/etc/storagegrid/nodes/_node-name_.conf` arquivo.
+
+Você pode ver um erro ou aviso correspondente a este padrão:
+
+`Checking configuration file `/etc/storagegrid/nodes/_node-name_.conf` para o nó _node-name_...»
+`ERROR: _node-name_: GRID_NETWORK_TARGET = _host-interface-name_` _Node-name_: Interface '_host-interface-name_' não existe
+
+O erro pode ser reportado para a rede de Grade, a rede Admin ou a rede Cliente. Esse erro significa que o `/etc/storagegrid/nodes/_node-name_.conf` arquivo mapeia a rede StorageGRID indicada para a interface do host chamada `_host-interface-name_`, mas não há nenhuma interface com esse nome no host atual.
+
+Se você receber esse erro, verifique se concluiu as etapas em xref:deploying-new-linux-hosts.adoc[Implante novos hosts Linux]. Use os mesmos nomes para todas as interfaces de host que foram usadas no host original.
+
+Se você não conseguir nomear as interfaces do host para corresponder ao arquivo de configuração do nó, você pode editar o arquivo de configuração do nó e alterar o valor do GRID_network_TARGET, ADMIN_network_TARGET ou CLIENT_network_TARGET para corresponder a uma interface de host existente.
+
+Certifique-se de que a interface do host forneça acesso à porta de rede física ou VLAN apropriada e que a interface não faça referência direta a um dispositivo de ligação ou ponte. Você deve configurar uma VLAN (ou outra interface virtual) em cima do dispositivo de ligação no host ou usar um par bridge e Ethernet virtual (vete).

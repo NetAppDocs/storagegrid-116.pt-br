@@ -1,0 +1,24 @@
+---
+permalink: sg5600/storagegrid-appliance-features.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, features 
+summary: O dispositivo StorageGRID SG5600 fornece uma solução de storage integrada para a criação de um novo sistema StorageGRID ou para a expansão da capacidade de um sistema existente. 
+---
+= Recursos do dispositivo StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O dispositivo StorageGRID SG5600 fornece uma solução de storage integrada para a criação de um novo sistema StorageGRID ou para a expansão da capacidade de um sistema existente.
+
+O dispositivo StorageGRID fornece os seguintes recursos:
+
+* Combina a computação do nó de storage da StorageGRID e elementos de storage em uma solução única, eficiente e integrada
+* Simplifica a instalação e configuração de um nó de storage, automatizando a maior parte do processo necessário
+* Fornece uma solução de storage de alta densidade com duas opções de compartimento: Uma 2U e uma 4U
+* Usa interfaces IP de 10 GbE diretamente no nó de storage, sem a necessidade de interfaces de storage intermediárias, como FC ou iSCSI
+* Pode ser usado em um ambiente de grade híbrida que usa dispositivos StorageGRID e nós de storage virtuais (baseados em software)
+* Inclui armazenamento pré-configurado e vem pré-carregado com o Instalador de dispositivos StorageGRID (no controlador E5600SG) para implementação e integração de software prontos para o campo
+

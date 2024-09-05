@@ -1,0 +1,14 @@
+---
+permalink: audit/audit-file-and-message-formats.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, log file formats, log formats, message formats, log file format, log format ,message format 
+summary: Você pode usar logs de auditoria para coletar informações sobre o seu sistema e solucionar problemas. Você deve entender o formato do arquivo de log de auditoria e o formato geral usado para mensagens de auditoria. 
+---
+= Faça auditoria de arquivos de log e formatos de mensagens
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar logs de auditoria para coletar informações sobre o seu sistema e solucionar problemas. Você deve entender o formato do arquivo de log de auditoria e o formato geral usado para mensagens de auditoria.

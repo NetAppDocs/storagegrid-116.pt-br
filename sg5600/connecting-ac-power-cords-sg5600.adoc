@@ -1,0 +1,38 @@
+---
+permalink: sg5600/connecting-ac-power-cords-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, wire, wiring, cabling, cable, Connecting, connect, power cords, power, ac, ac power 
+summary: É necessário conetar os cabos de alimentação CA à fonte de alimentação externa e ao conetor de alimentação CA em cada controlador. Depois de conetar os cabos de energia, você pode ligar a energia. 
+---
+= Conete os cabos de alimentação CA (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+É necessário conetar os cabos de alimentação CA à fonte de alimentação externa e ao conetor de alimentação CA em cada controlador. Depois de conetar os cabos de energia, você pode ligar a energia.
+
+.O que você vai precisar
+Ambos os interrutores de alimentação do aparelho devem estar desligados antes de ligar a alimentação.
+
+
+CAUTION: *Risco de choque elétrico* -- antes de ligar os cabos de alimentação, certifique-se de que os dois interrutores de alimentação do aparelho estão desligados.
+
+.Sobre esta tarefa
+* Você deve usar fontes de alimentação separadas para cada fonte de alimentação.
++
+A ligação a fontes de alimentação independentes mantém a redundância de energia.
+
+* Você pode usar os cabos de alimentação enviados com o controlador com tomadas típicas usadas no país de destino, como tomadas de parede de uma fonte de alimentação ininterrupta (UPS).
++
+No entanto, esses cabos de alimentação não se destinam a ser usados na maioria dos gabinetes compatíveis com EIA.
+
+
+
+.Passos
+. Desligue os interruptores de energia no gabinete ou chassi.
+. Desligue os interrutores de alimentação dos controladores.
+. Conete os cabos de alimentação primários do gabinete às fontes de alimentação externas.
+. Conete os cabos de alimentação ao conetor de alimentação CA em cada controlador.
+

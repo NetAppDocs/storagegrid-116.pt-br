@@ -1,0 +1,149 @@
+---
+permalink: primer/performing-maintenance-procedures.html 
+sidebar: sidebar 
+keywords: software upgrade, hotfix, santricity 
+summary: Executa vários procedimentos de manutenção para manter o sistema StorageGRID atualizado e para garantir que está a funcionar de forma eficiente. O Gerenciador de Grade fornece ferramentas e opções para facilitar o processo de execução de tarefas de manutenção. 
+---
+= Efectue a manutenção
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Executa vários procedimentos de manutenção para manter o sistema StorageGRID atualizado e para garantir que está a funcionar de forma eficiente. O Gerenciador de Grade fornece ferramentas e opções para facilitar o processo de execução de tarefas de manutenção.
+
+
+
+== Atualizações de software
+
+Você pode executar três tipos de atualizações de software na página Atualização de Software no Gerenciador de Grade:
+
+* Atualização do software StorageGRID
+* Hotfix do StorageGRID
+* Atualização do sistema operacional SANtricity
+
+
+
+
+== Atualizações de software StorageGRID
+
+Quando uma nova versão do recurso StorageGRID está disponível, a página Atualização de software orienta você pelo processo de upload do arquivo necessário e atualização do sistema StorageGRID. É necessário atualizar todos os nós de grade para todos os locais de data center a partir do nó de administração principal.
+
+Durante uma atualização do software StorageGRID, os aplicativos clientes podem continuar a obter e obter dados de objetos.
+
+
+
+== Hotfixes
+
+Se os problemas com o software forem detetados e resolvidos entre versões de recursos, talvez seja necessário aplicar um hotfix ao sistema StorageGRID.
+
+Os hotfixes do StorageGRID contêm alterações de software que são disponibilizadas fora de uma versão de recurso ou patch. As mesmas alterações estão incluídas em uma versão futura.
+
+A página de hotfix do StorageGRID, mostrada abaixo, permite que você carregue um arquivo de hotfix.
+
+image::../media/hotfix_choose_file.png[StorageGRID primeira página de correção]
+
+O hotfix é aplicado primeiro ao nó de administração principal. Em seguida, você deve aprovar o aplicativo do hotfix para outros nós de grade até que todos os nós do sistema StorageGRID estejam executando a mesma versão de software. Você pode personalizar a sequência de aprovação selecionando para aprovar nós de grade individuais, grupos de nós de grade ou todos os nós de grade.
+
+
+NOTE: Embora todos os nós de grade sejam atualizados com a nova versão de hotfix, as alterações reais em um hotfix podem afetar apenas serviços específicos em tipos específicos de nós. Por exemplo, um hotfix pode afetar apenas o serviço LDR em nós de armazenamento.
+
+
+
+== Atualizações do sistema operacional SANtricity
+
+Talvez seja necessário atualizar o software SANtricity os nos controladores de storage dos dispositivos de storage, se os controladores não estiverem funcionando corretamente. Você pode fazer o upload do arquivo do SANtricity os para o nó de administrador principal no sistema StorageGRID e aplicar a atualização do Gerenciador de Grade.
+
+A página SANtricity, mostrada abaixo, permite que você carregue o arquivo de atualização do SANtricity os.
+
+image::../media/santricity_os_upgrade_first.png[StorageGRID primeira página do SANtricity os]
+
+Depois de fazer o upload do arquivo, você pode aprovar a atualização em nós de storage individuais ou em todos os nós. A capacidade de aprovar seletivamente nós torna mais fácil para você agendar a atualização. Depois de aprovar um nó para atualização, o sistema executa uma verificação de integridade e instala a atualização, se aplicável ao nó.
+
+
+
+== Procedimentos de expansão
+
+Você pode expandir um sistema StorageGRID adicionando volumes de storage aos nós de storage, adicionando novos nós de grade a um local existente ou adicionando um novo local de data center. Se você tiver nós de storage que usam o dispositivo de storage SG6060 ou SG6060X, poderá adicionar uma ou duas gavetas de expansão para dobrar ou triplicar a capacidade de storage do nó.
+
+Você pode realizar expansões sem interromper a operação do seu sistema atual. Quando você adiciona nós ou um site, primeiro você implanta os novos nós e, em seguida, executa o procedimento de expansão na página expansão de Grade.
+
+image::../media/grid_expansion_progress.png[Esta imagem é explicada pelo texto circundante.]
+
+
+
+== Procedimentos de recuperação do nó
+
+Os nós de grade podem falhar se uma falha de hardware, virtualização, sistema operacional ou software tornar o nó inoperável ou não confiável.
+
+As etapas para recuperar um nó de grade dependem da plataforma onde o nó de grade está hospedado e do tipo de nó de grade. Cada tipo de nó de grade tem um procedimento de recuperação específico, que você deve seguir exatamente. Geralmente, você tenta preservar os dados do nó de grade com falha, sempre que possível, reparar ou substituir o nó com falha, usar a página recuperação para configurar o nó de substituição e restaurar os dados do nó.
+
+Por exemplo, este fluxograma mostra o procedimento de recuperação se um nó Admin tiver falhado.
+
+image::../media/overview_admin_node_recovery.png[Visão geral: Admin Node Recovery]
+
+
+
+== Procedimentos de desativação
+
+Você pode querer remover permanentemente nós de grade ou um site inteiro de data center do seu sistema StorageGRID.
+
+Por exemplo, você pode querer desativar um ou mais nós de grade nestes casos:
+
+* Você adicionou um nó de storage maior ao sistema e deseja remover um ou mais nós de storage menores, preservando ao mesmo tempo objetos.
+* Você exige menos storage total.
+* Não é mais necessário um nó de gateway ou um nó de administrador não primário.
+* Sua grade inclui um nó desconetado que você não pode recuperar ou trazer de volta on-line.
+
+
+Você pode usar a página Decommission Nodes no Gerenciador de Grade para remover os seguintes tipos de nós de grade:
+
+* Nós de storage, a menos que não haja nós suficientes, permaneceriam no local para dar suporte a certos requisitos
+* Nós de gateway
+* Nós de administração não primários
+
+
+image::../media/decommission_nodes_page_all_connected.png[Screenshot da página Decommission]
+
+Você pode usar a página Decommission Site no Gerenciador de Grade para remover um site. A desativação de um site conetado remove um site operacional e preserva os dados. A desativação de um site desconetado remove um site com falha, mas não preserva os dados. O assistente Decommission Site orienta você pelo processo de seleção do site, visualização de detalhes do site, revisão da política ILM, remoção de referências de sites de regras ILM e resolução de conflitos de nó.
+
+image::../media/decommission_site_step_select_site.png[Desativar local passo 1]
+
+
+
+== Procedimentos de manutenção da rede
+
+Alguns dos procedimentos de manutenção de rede que você pode precisar executar incluem o seguinte:
+
+* Atualizando as sub-redes na rede de Grade
+* Usando a ferramenta alterar IP para alterar a configuração de rede que foi inicialmente definida durante a implantação da grade
+* Adicionar, remover ou atualizar servidores DNS (sistema de nomes de domínio)
+* Adicionar, remover ou atualizar servidores NTP (Network Time Protocol) para garantir que os dados sejam sincronizados com precisão entre nós de grade
+* Restaurar a conetividade de rede para nós que podem ter ficado isolados do resto da grade
+
+
+
+
+== Procedimentos de nível de host e middleware
+
+Alguns procedimentos de manutenção são específicos para nós StorageGRID que são implantados no Linux ou VMware, ou são específicos para outros componentes da solução StorageGRID. Por exemplo, você pode querer migrar um nó de grade para um host Linux diferente ou executar manutenção em um nó de arquivo conetado ao Tivoli Storage Manager (TSM).
+
+
+
+== Clonagem do nó do dispositivo
+
+A clonagem do nó do dispositivo permite substituir facilmente um nó do dispositivo existente na grade por um dispositivo de design mais recente ou mais funcionalidades que fazem parte do mesmo site de StorageGRID lógico. O processo transfere todos os dados para o novo dispositivo, colocando-os em serviço para substituir o nó antigo do dispositivo e deixando o dispositivo antigo em um estado de pré-instalação. A clonagem fornece um processo de atualização de hardware fácil de executar e fornece um método alternativo para a substituição de dispositivos.
+
+
+
+== Procedimentos do nó de grade
+
+Talvez seja necessário executar determinados procedimentos em um nó de grade específico. Por exemplo, talvez seja necessário reinicializar um nó de grade ou parar e reiniciar manualmente um serviço de nó de grade específico. Alguns procedimentos de nó de grade podem ser executados a partir do Gerenciador de Grade; outros exigem que você faça login no nó de grade e use a linha de comando do nó.
+
+.Informações relacionadas
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+* xref:../upgrade/index.adoc[Atualizar o software]
+* xref:../expand/index.adoc[Expanda sua grade]
+* xref:../maintain/index.adoc[Recuperar e manter]
+

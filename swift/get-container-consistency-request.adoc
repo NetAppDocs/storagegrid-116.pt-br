@@ -1,0 +1,121 @@
+---
+permalink: swift/get-container-consistency-request.html 
+sidebar: sidebar 
+keywords: get container consistency request 
+summary: Os controles de consistência fornecem um equilíbrio entre a disponibilidade dos objetos e a consistência desses objetos em diferentes nós de storage e locais. A solicitação GET Container Consistency permite que você determine o nível de consistência que está sendo aplicado a um contentor específico. 
+---
+= OBTER solicitação de consistência de contêiner
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os controles de consistência fornecem um equilíbrio entre a disponibilidade dos objetos e a consistência desses objetos em diferentes nós de storage e locais. A solicitação GET Container Consistency permite que você determine o nível de consistência que está sendo aplicado a um contentor específico.
+
+
+
+== Pedido
+
+|===
+| Solicitar cabeçalho HTTP | Descrição 
+
+
+ a| 
+`X-Auth-Token`
+ a| 
+Especifica o token de autenticação Swift para a conta a ser usada para a solicitação.
+
+
+
+ a| 
+`x-ntap-sg-consistency`
+ a| 
+Especifica o tipo de solicitação, onde `true` OBTÉM consistência de contentor e `false` OBTÉM contentor.
+
+
+
+ a| 
+`Host`
+ a| 
+O nome do host para o qual a solicitação é direcionada.
+
+|===
+
+
+== Exemplo de solicitação
+
+[listing]
+----
+GET /v1/28544923908243208806/Swift container
+X-Auth-Token: SGRD_3a877009a2d24cb1801587bfa9050f29
+x-ntap-sg-consistency: true
+Host: test.com
+----
+
+
+== Resposta
+
+|===
+| Cabeçalho HTTP de resposta | Descrição 
+
+
+ a| 
+`Date`
+ a| 
+A data e a hora da resposta.
+
+
+
+ a| 
+`Connection`
+ a| 
+Se a conexão com o servidor está aberta ou fechada.
+
+
+
+ a| 
+`X-Trans-Id`
+ a| 
+O identificador de transação exclusivo para a solicitação.
+
+
+
+ a| 
+`Content-Length`
+ a| 
+O comprimento do corpo de resposta.
+
+
+
+ a| 
+`x-ntap-sg-consistency`
+ a| 
+O nível de controle de consistência que está sendo aplicado ao recipiente. Os seguintes valores são suportados:
+
+* *Todos*: Todos os nós recebem os dados imediatamente ou a solicitação falhará.
+* *Strong-global*: Garante consistência de leitura após gravação para todas as solicitações de clientes em todos os sites.
+* * Strong-site*: Garante consistência de leitura-após-gravação para todas as solicitações de clientes dentro de um site.
+* *Read-after-novo-write*: Fornece consistência de leitura-após-gravação para novos objetos e eventual consistência para atualizações de objetos. Oferece alta disponibilidade e garantias de proteção de dados.
++
+*Nota*: Se o aplicativo usar SOLICITAÇÕES HEAD em objetos que não existem, você pode receber um número alto de erros de servidor interno 500 se um ou mais nós de armazenamento não estiverem disponíveis. Para evitar esses erros, use o nível "disponível".
+
+* *Available* (eventual consistência para OPERAÇÕES DE CABEÇA): Comporta-se da mesma forma que o nível de consistência "read-after-new-write", mas apenas fornece consistência eventual para operações DE CABEÇA. Oferece maior disponibilidade para OPERAÇÕES HEAD do que "read-after-novo-write" se os nós de storage não estiverem disponíveis.
+
+
+|===
+
+
+== Exemplo de resposta
+
+[listing]
+----
+HTTP/1.1 204 No Content
+Date: Sat, 29 Nov 2015 01:02:18 GMT
+Connection: CLOSE
+X-Trans-Id: 1936575373
+Content-Length: 0
+x-ntap-sg-consistency: strong-site
+----
+.Informações relacionadas
+xref:../tenant/index.adoc[Use a conta de locatário]

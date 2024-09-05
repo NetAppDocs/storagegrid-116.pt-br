@@ -1,0 +1,34 @@
+---
+permalink: sg6000/hardware-setup-appears-to-hang.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, troubleshoot, troubleshooting, hardware, setup, hang, hangs, fails, failure, stop, terminate, terminates, stuck 
+summary: O Instalador de dispositivos StorageGRID pode não estar disponível se falhas de hardware ou erros de cabeamento impedirem que os controladores de armazenamento ou o controlador SG6000-CN concluam seu processamento de inicialização. 
+---
+= A configuração do hardware parece travar (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Instalador de dispositivos StorageGRID pode não estar disponível se falhas de hardware ou erros de cabeamento impedirem que os controladores de armazenamento ou o controlador SG6000-CN concluam seu processamento de inicialização.
+
+.Passos
+. Para os controladores de storage, observe os códigos nos monitores de sete segmentos.
++
+Enquanto o hardware está sendo inicializado durante a inicialização, os dois visores de sete segmentos mostram uma sequência de códigos. Quando o hardware é inicializado com êxito, as duas telas de sete segmentos mostram `99`.
+
+. Revise os LEDs no controlador SG6000-CN e os códigos de inicialização e erro exibidos no BMC.
+. Se você precisar de ajuda para resolver um problema, entre em Contato com o suporte técnico.
+
+
+.Informações relacionadas
+xref:viewing-boot-up-status-codes-for-sg6000-storage-controllers.adoc[Exibir códigos de status de inicialização para controladores de storage SG6000]
+
+https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["Guia de monitorização do sistema E5700 e E2800"^]
+
+xref:viewing-status-indicators-and-buttons-on-sg6000-cn-controller.adoc[Visualizar indicadores de status e botões no controlador SG6000-CN]
+
+xref:viewing-boot-up-codes-for-sg6000-cn-controller.adoc[Veja os códigos de inicialização para o controlador SG6000-CN]
+
+xref:viewing-error-codes-for-sg6000-cn-controller.adoc[Ver códigos de erro para o controlador SG6000-CN]

@@ -1,0 +1,53 @@
+---
+permalink: admin/what-admin-node-is.html 
+sidebar: sidebar 
+keywords: admin nodes 
+summary: Os nós de administração fornecem serviços de gerenciamento, como configuração, monitoramento e log do sistema. Cada grade deve ter um nó de administração principal e pode ter qualquer número de nós de administração não primários para redundância. 
+---
+= O que é um nó Admin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os nós de administração fornecem serviços de gerenciamento, como configuração, monitoramento e log do sistema. Cada grade deve ter um nó de administração principal e pode ter qualquer número de nós de administração não primários para redundância.
+
+Quando você entra no Gerenciador de Grade ou no Gerenciador de Tenant, você está se conetando a um nó Admin. Você pode se conetar a qualquer nó de administrador e cada nó de administrador exibe uma exibição semelhante do sistema StorageGRID. No entanto, os procedimentos de manutenção devem ser executados usando o nó de administração principal.
+
+Os nós Admin também podem ser usados para equilibrar o tráfego de clientes S3 e Swift.
+
+Os nós de administração hospedam os seguintes serviços:
+
+* Serviço AMS
+* Serviço CMN
+* Serviço NMS
+* Prometheus serviço
+* Load Balancer e serviços de alta disponibilidade (para suportar tráfego de clientes S3 e Swift)
+
+
+Os Admin Nodes também suportam a Management Application Program Interface (mgmt-api) para processar solicitações da API Grid Management e da API Tenant Management. xref:using-grid-management-api.adoc[Use a API de gerenciamento de grade]Consulte .
+
+
+
+== O que é o serviço AMS
+
+O serviço do sistema de Gestão de Auditoria (AMS) controla a atividade e os eventos do sistema.
+
+
+
+== O que é o serviço CMN
+
+O serviço CMN (Configuration Management Node) gerencia configurações de conetividade e recursos de protocolo em todo o sistema necessárias para todos os serviços. Além disso, o serviço CMN é usado para executar e monitorar tarefas de grade. Há apenas um serviço CMN por implantação do StorageGRID. O nó Admin que hospeda o serviço CMN é conhecido como nó Admin principal.
+
+
+
+== O que é o serviço NMS
+
+O serviço do sistema de Gerenciamento de rede (NMS) alimenta as opções de monitoramento, relatórios e configuração que são exibidas através do Gerenciador de Grade, a interface baseada no navegador do sistema StorageGRID.
+
+
+
+== O que é o serviço Prometheus
+
+O serviço Prometheus coleta métricas de séries temporais dos serviços em todos os nós.

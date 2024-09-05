@@ -1,0 +1,85 @@
+---
+permalink: ubuntu/where-to-go-next.html 
+sidebar: sidebar 
+keywords: after installation 
+summary: Depois de concluir uma instalação, você deve executar uma série de etapas de integração e configuração. Alguns passos são necessários; outros são opcionais. 
+---
+= Onde ir a seguir
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de concluir uma instalação, você deve executar uma série de etapas de integração e configuração. Alguns passos são necessários; outros são opcionais.
+
+
+
+== Tarefas necessárias
+
+* Crie uma conta de locatário para cada protocolo de cliente (Swift ou S3) que será usado para armazenar objetos em seu sistema StorageGRID.
+* Controle o acesso ao sistema configurando grupos e contas de usuário. Opcionalmente, você pode configurar uma fonte de identidade federada (como ative Directory ou OpenLDAP), para que você possa importar grupos de administração e usuários. Ou, você pode criar grupos e usuários locais.
+* Integre e teste os aplicativos cliente API S3 ou Swift que você usará para fazer upload de objetos para seu sistema StorageGRID.
+* Quando estiver pronto, configure as regras de gerenciamento do ciclo de vida das informações (ILM) e a política de ILM que você deseja usar para proteger os dados do objeto.
++
+
+NOTE: Quando você instala o StorageGRID, a política ILM padrão, Diretiva de cópias de linha de base 2, está ativa. Esta política inclui a regra ILM (fazer 2 cópias) e aplica-se se nenhuma outra política tiver sido ativada.
+
+* Se a instalação incluir nós de storage do dispositivo, use o software SANtricity para concluir as seguintes tarefas:
++
+** Ligue a cada dispositivo StorageGRID.
+** Verifique a receção dos dados do AutoSupport.
+
+
+* Se o seu sistema StorageGRID incluir quaisquer nós de arquivamento, configure a conexão do nó de arquivamento ao sistema de storage de arquivamento externo de destino.
+
+
+
+NOTE: Se algum nó de arquivamento usar o Tivoli Storage Manager como o sistema de armazenamento de arquivamento externo, você também deve configurar o Tivoli Storage Manager.
+
+* Revise e siga as diretrizes de fortalecimento do sistema StorageGRID para eliminar os riscos de segurança.
+* Configurar notificações por e-mail para alertas do sistema.
+
+
+
+
+== Tarefas opcionais
+
+* Se você quiser receber notificações do sistema de alarme (legado), configure listas de e-mail e notificações por e-mail para alarmes.
+* Atualize os endereços IP do nó da grade se eles tiverem sido alterados desde que você planejou sua implantação e gerou o Pacote de recuperação. Consulte as informações sobre como alterar endereços IP nas instruções de recuperação e manutenção.
+* Configure a criptografia de armazenamento, se necessário.
+* Configure a compactação de armazenamento para reduzir o tamanho dos objetos armazenados, se necessário.
+* Configurar acesso de cliente de auditoria. Você pode configurar o acesso ao sistema para fins de auditoria por meio de um compartilhamento de arquivos NFS ou CIFS. Consulte as instruções para administrar o StorageGRID.
+
+
+
+NOTE: A exportação de auditoria por meio do CIFS/Samba foi obsoleta e será removida em uma futura versão do StorageGRID.
+
+.Informações relacionadas
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+xref:../s3/index.adoc[Use S3]
+
+xref:../swift/index.adoc[Use Swift]
+
+xref:../ilm/index.adoc[Gerenciar objetos com ILM]
+
+xref:../monitor/index.adoc[Monitorar e solucionar problemas]
+
+xref:../maintain/index.adoc[Recuperar e manter]
+
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+
+xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+xref:../release-notes/index.adoc[Notas de lançamento]
+
+xref:../harden/index.adoc[Endurecimento do sistema]
+
+xref:../audit/index.adoc[Rever registos de auditoria]
+
+xref:../upgrade/index.adoc[Atualizar o software]

@@ -1,0 +1,24 @@
+---
+permalink: monitor/index.html 
+sidebar: sidebar 
+keywords: monitor StorageGRID 
+summary: Use estas instruções para monitorar um sistema StorageGRID e avaliar e resolver problemas que possam ocorrer. 
+---
+= Monitorar e solucionar problemas: Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use estas instruções para monitorar um sistema StorageGRID e avaliar e resolver problemas que possam ocorrer.
+
+
+
+== Sobre estas instruções
+
+Estas instruções descrevem como usar o Gerenciador de Grade para monitorar um sistema StorageGRID. Você aprenderá quais informações você deve monitorar regularmente, como gerenciar alertas e alarmes legados, como usar o SNMP para monitoramento e como obter dados adicionais do StorageGRID, incluindo métricas e diagnósticos.
+
+Essas instruções também descrevem como solucionar problemas de um sistema StorageGRID e descrever todos os alertas do sistema, alarmes legados e arquivos de log.
+
+Use estas instruções se você estiver monitorando e apoiando um sistema StorageGRID depois que ele for instalado.

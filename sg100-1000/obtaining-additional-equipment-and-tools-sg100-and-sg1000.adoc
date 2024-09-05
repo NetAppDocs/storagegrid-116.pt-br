@@ -1,0 +1,132 @@
+---
+permalink: sg100-1000/obtaining-additional-equipment-and-tools-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, additional, equipment, tools 
+summary: Antes de instalar o dispositivo StorageGRID, confirme se tem todo o equipamento e ferramentas adicionais de que necessita. 
+---
+= Obter equipamentos e ferramentas adicionais (SG100 e SG1000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o dispositivo StorageGRID, confirme se tem todo o equipamento e ferramentas adicionais de que necessita.
+
+Você precisa do seguinte equipamento adicional para instalar e configurar o hardware:
+
+* *Chaves de fenda*
++
+image::../media/screwdrivers.gif[Duas chaves de parafusos]
+
++
+Chave de fendas Phillips n.o 2
+
++
+Chave de parafusos plana média
+
+* * Pulseira antiestática*
++
+image::../media/appliance_wriststrap.gif[Pulseira antiestática]
+
+* * Cabos óticos e transcetores*
++
+image::../media/fc_cable_and_sfp.gif[Cabo ótico e transcetor QSFP]
+
++
+** Cabo
++
+*** Twinax/cobre (1 a 4)
++
+ou
+
+*** Fibra/ótica (1 a 4)
+
+
+** 1 a 4 de cada um desses transcetores/adaptadores baseados na velocidade do link (velocidades mistas não são suportadas)
++
+*** SG100:
++
+|===
+| Velocidade da ligação (GbE) | Equipamento necessário 
+
+
+ a| 
+10
+ a| 
+Transceptor SFP
+
+
+
+ a| 
+25
+ a| 
+Transcetor SFP28
+
+|===
+*** SG1000:
++
+|===
+| Velocidade da ligação (GbE) | Equipamento necessário 
+
+
+ a| 
+10
+ a| 
+Adaptador QSFP-para-SFP (QSA) e transcetor SFP
+
+
+
+ a| 
+25
+ a| 
+Adaptador QSFP-para-SFP (QSA) e transcetor SFP28
+
+
+
+ a| 
+40
+ a| 
+Transceptor QSFP
+
+
+
+ a| 
+100
+ a| 
+Transcetor QFSP28
+
+|===
+
+
+
+
+* *Cabos Ethernet RJ-45 (Cat5/Cat5e/Cat6/Cat6a)*
++
+image::../media/ethernet_cables.png[Cabo Ethernet]
+
+* * Serviço de laptop*
++
+image::../media/sam_management_client.gif[Serviço de laptop]
+
++
+xref:../admin/web-browser-requirements.adoc[Navegador da Web suportado]
+
++
+Porta de 1 GbE (RJ-45)
+
++
+
+NOTE: Algumas portas podem não suportar velocidades Ethernet de 10/100Mbps.
+
+* *Ferramentas opcionais*
++
+image::../media/optional_tools.gif[Furadeira elétrica e lanterna]
+
++
+Broca elétrica com ponta Phillips
+
++
+Lanterna
+
+

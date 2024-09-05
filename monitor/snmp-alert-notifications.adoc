@@ -1,0 +1,31 @@
+---
+permalink: monitor/snmp-alert-notifications.html 
+sidebar: sidebar 
+keywords: how to use snmp notifications for alerts 
+summary: Se você quiser que o StorageGRID envie notificações SNMP quando ocorrerem alertas, você deverá ativar o agente SNMP do StorageGRID e configurar um ou mais destinos de intercetação. 
+---
+= Configurar notificações SNMP para alertas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você quiser que o StorageGRID envie notificações SNMP quando ocorrerem alertas, você deverá ativar o agente SNMP do StorageGRID e configurar um ou mais destinos de intercetação.
+
+Você pode usar a opção *CONFIGURATION* *Monitoring* *SNMP Agent* no Gerenciador de Grade ou os endpoints SNMP da API de Gerenciamento de Grade para habilitar e configurar o agente SNMP do StorageGRID. O agente SNMP suporta todas as três versões do protocolo SNMP.
+
+Para saber como configurar o agente SNMP, xref:using-snmp-monitoring.adoc[Utilize a monitorização SNMP]consulte .
+
+Depois de configurar o agente SNMP do StorageGRID, dois tipos de notificações orientadas a eventos podem ser enviados:
+
+* Traps são notificações enviadas pelo agente SNMP que não requerem confirmação pelo sistema de gerenciamento. Traps servem para notificar o sistema de gerenciamento de que algo aconteceu dentro do StorageGRID, como um alerta sendo acionado. Traps são suportados em todas as três versões do SNMP.
+* Os informes são semelhantes aos traps, mas requerem reconhecimento pelo sistema de gestão. Se o agente SNMP não receber uma confirmação dentro de um determinado período de tempo, ele reenvia a informação até que uma confirmação seja recebida ou o valor máximo de tentativa tenha sido atingido. As informações são suportadas em SNMPv2c e SNMPv3.
+
+
+Notificações de intercetação e informação são enviadas quando um alerta padrão ou personalizado é acionado em qualquer nível de gravidade. Para suprimir notificações SNMP para um alerta, tem de configurar um silêncio para o alerta. xref:silencing-alert-notifications.adoc[Silenciar notificações de alerta]Consulte .
+
+As notificações de alerta são enviadas por qualquer nó Admin configurado para ser o remetente preferido. Por padrão, o nó de administração principal é selecionado. Consulte xref:../admin/index.adoc[Instruções para administrar o StorageGRID].
+
+
+NOTE: Notificações de intercetação e informação também são enviadas quando certos alarmes (sistema legado) são acionados em níveis de gravidade especificados ou superiores; no entanto, as notificações SNMP não são enviadas para cada alarme ou para cada gravidade de alarme. xref:alarms-that-generate-snmp-notifications.adoc[Alarmes que geram notificações SNMP (sistema legado)]Consulte .

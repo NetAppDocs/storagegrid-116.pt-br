@@ -1,0 +1,52 @@
+---
+permalink: admin/specifying-node-client-network-is-untrusted.html 
+sidebar: sidebar 
+keywords: how to specify if client network is untrusted, what is untrusted client network 
+summary: Se você estiver usando uma rede de cliente, poderá especificar se a rede de cliente de cada nó é confiável ou não confiável. Você também pode especificar a configuração padrão para novos nós adicionados em uma expansão. 
+---
+= Especificar rede cliente do nó não é confiável
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando uma rede de cliente, poderá especificar se a rede de cliente de cada nó é confiável ou não confiável. Você também pode especificar a configuração padrão para novos nós adicionados em uma expansão.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem a permissão de acesso root.
+* Se você quiser que um nó de administrador ou nó de gateway aceite o tráfego de entrada somente em endpoints configurados explicitamente, você definiu os endpoints do balanceador de carga.
++
+
+NOTE: As conexões de cliente existentes podem falhar se os pontos de extremidade do balanceador de carga não tiverem sido configurados.
+
+
+
+.Passos
+. Selecione *CONFIGURATION* > *Security* > *UnTrusted Client Networks*.
++
+A página redes de clientes não confiáveis lista todos os nós do seu sistema StorageGRID. A coluna motivo indisponível inclui uma entrada se a rede do cliente no nó tiver de ser fidedigna.
+
++
+image::../media/untrusted_client_networks_page.png[Redes de clientes não confiáveis]
+
+. Na seção *Definir novo padrão de nó*, especifique qual deve ser a configuração padrão quando novos nós forem adicionados à grade em um procedimento de expansão.
++
+** *Trusted*: Quando um nó é adicionado em uma expansão, sua rede de clientes é confiável.
+** *Não confiável*: Quando um nó é adicionado em uma expansão, sua rede cliente não é confiável. Conforme necessário, você pode retornar a esta página para alterar a configuração de um novo nó específico.
+
+
++
+
+NOTE: Esta configuração não afeta os nós existentes no seu sistema StorageGRID.
+
+. Na seção *Selecione nós de rede de cliente não confiáveis*, selecione os nós que devem permitir conexões de cliente somente em pontos de extremidade do balanceador de carga configurados explicitamente.
++
+Você pode selecionar ou desmarcar a caixa de seleção no título para selecionar ou desmarcar todos os nós.
+
+. Selecione *Guardar*.
++
+As novas regras de firewall são imediatamente adicionadas e aplicadas. As conexões de cliente existentes podem falhar se os pontos de extremidade do balanceador de carga não tiverem sido configurados.
+
+

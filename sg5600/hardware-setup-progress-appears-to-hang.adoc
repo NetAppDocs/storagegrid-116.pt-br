@@ -1,0 +1,62 @@
+---
+permalink: sg5600/hardware-setup-progress-appears-to-hang.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, troubleshoot, troubleshooting, hardware, setup, hang, hangs, fails, failure, stop, terminate, terminates, stuck 
+summary: O Instalador de dispositivos StorageGRID pode não estar disponível se falhas de hardware ou erros de cabeamento impedirem que a controladora E5600SG conclua seu processamento de inicialização. 
+---
+= A configuração do hardware parece travar (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Instalador de dispositivos StorageGRID pode não estar disponível se falhas de hardware ou erros de cabeamento impedirem que a controladora E5600SG conclua seu processamento de inicialização.
+
+.Passos
+. Verifique o LED precisa de atenção em qualquer um dos controladores e procure um código de erro intermitente.
++
+Durante a inicialização, os LEDs Ação de Serviço permitida e Ação de Serviço necessária são ligados enquanto o hardware está sendo inicializado. O ponto decimal superior do dígito inferior, chamado de _LED de diagnóstico_, também se acende. O visor de sete segmentos percorre uma sequência de códigos comuns para ambos os controladores. Isso é normal e não é uma indicação de erro. Quando o hardware é inicializado com êxito, os LEDs de Ação de Serviço são desligados e os monitores são acionados pelo firmware.
+
+. Reveja os códigos no visor de sete segmentos para o controlador E5600SG.
++
+
+NOTE: A instalação e o provisionamento demoram. Algumas fases de instalação não relatam atualizações para o instalador do StorageGRID Appliance por vários minutos.
+
++
+Se ocorrer um erro, o visor de sete segmentos pisca uma sequência, COMO HE.
+
+. Para entender o que esses códigos significam, consulte os seguintes recursos:
++
+|===
+| Controlador | Referência 
+
+
+ a| 
+Controlador E5600SG
+ a| 
+** "HE error: Erro ao sincronizar com o software SANtricity os"
+** "'E5600SG controlador de sete segmentos de códigos de exibição ""
+
+
+
+
+ a| 
+Controlador E2700
+ a| 
+Documentação do e-Series
+
+*Nota:* os códigos descritos para o controlador e-Series E5600 não se aplicam ao controlador E5600SG no aparelho.
+
+|===
+. Se isso não resolver o problema, entre em Contato com o suporte técnico.
+
+
+.Informações relacionadas
+xref:e5600sg-controller-seven-segment-display-codes.adoc[E5600SG códigos de exibição de sete segmentos do controlador]
+
+xref:he-error-error-synchronizing-with-santricity-os-software.adoc[Erro HE: Erro ao sincronizar com o software SANtricity os]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2344477["E2700 Guia de instalação da bandeja de unidades e controlador relacionado"^]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61765["Documentação do NetApp: Série E2700"^]

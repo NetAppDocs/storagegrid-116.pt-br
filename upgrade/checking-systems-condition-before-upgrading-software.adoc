@@ -1,0 +1,41 @@
+---
+permalink: upgrade/checking-systems-condition-before-upgrading-software.html 
+sidebar: sidebar 
+keywords: upgrade, grid tasks, firewall, ports 
+summary: Antes de atualizar um sistema StorageGRID, você deve verificar se o sistema está pronto para acomodar a atualização. Você deve garantir que o sistema esteja funcionando normalmente e que todos os nós de grade estejam operacionais. 
+---
+= Verifique o estado do sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de atualizar um sistema StorageGRID, você deve verificar se o sistema está pronto para acomodar a atualização. Você deve garantir que o sistema esteja funcionando normalmente e que todos os nós de grade estejam operacionais.
+
+.Passos
+. Faça login no Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+. Verifique e resolva quaisquer alertas ativos.
++
+Para obter informações sobre alertas específicos, consulte o xref:../monitor/alerts-reference.adoc[Referência de alertas].
+
+. Confirme se não há tarefas de grade conflitantes ativas ou pendentes.
++
+.. Selecione *SUPPORT* > *Tools* > *Grid topology*.
+.. Selecione *_site_* *_Main Admin Node_* *CMN* *Grid Tasks* *Configuration*.
++
+As tarefas de avaliação de gerenciamento do ciclo de vida das informações (ILME) são as únicas tarefas de grade que podem ser executadas simultaneamente com a atualização do software.
+
+.. Se quaisquer outras tarefas de grade estiverem ativas ou pendentes, aguarde até que elas terminem ou liberem seu bloqueio.
++
+
+NOTE: Contacte o suporte técnico se uma tarefa não terminar ou libertar o respetivo bloqueio.
+
+
+
+. xref:../network/internal-grid-node-communications.adoc[Comunicações internas do nó da grade]Consulte e xref:../network/external-communications.adoc[Comunicações externas] para garantir que todas as portas necessárias para o StorageGRID 11,6 estejam abertas antes de atualizar.
++
+
+IMPORTANT: Se tiver aberto quaisquer portas de firewall personalizadas, será notificado durante a pré-verificação da atualização. Você deve entrar em Contato com o suporte técnico antes de prosseguir com a atualização.
+
+

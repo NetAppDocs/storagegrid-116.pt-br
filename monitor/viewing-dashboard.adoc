@@ -1,0 +1,125 @@
+---
+permalink: monitor/viewing-dashboard.html 
+sidebar: sidebar 
+keywords: how to view the dashboard 
+summary: Ao iniciar sessão pela primeira vez no Gestor de grelha, pode utilizar o Painel para monitorizar rapidamente as atividades do sistema. O Dashboard inclui informações sobre integridade do sistema, métricas de uso e tendências e gráficos operacionais. 
+---
+= Veja o Dashboard
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao iniciar sessão pela primeira vez no Gestor de grelha, pode utilizar o Painel para monitorizar rapidamente as atividades do sistema. O Dashboard inclui informações sobre integridade do sistema, métricas de uso e tendências e gráficos operacionais.
+
+image::../media/grid_manager_dashboard.png[Painel do Grid Manager]
+
+
+
+== Campo de pesquisa
+
+O campo *Search* na barra de cabeçalho permite que você navegue rapidamente para uma página específica ou entrada da barra lateral dentro do Gerenciador de Grade. Por exemplo, você pode inserir *key* para acessar a página Key Management Server.
+
+
+
+== Painel de saúde
+
+|===
+| Descrição | Veja detalhes adicionais | Saiba mais 
+
+
+ a| 
+Resume a saúde do sistema. Uma marca de seleção verde significa que não há alertas atuais e todos os nós de grade estão conetados. Qualquer outro ícone significa que há pelo menos um alerta atual ou nó desconetado.
+ a| 
+Você pode ver um ou mais dos seguintes links:
+
+* *Detalhes da grade*: Aparece se algum nó estiver desconetado (estado de conexão desconhecido ou administrativamente inativo). Clique no link ou clique no ícone azul ou cinza para determinar que nó ou nós são afetados.
+* *Alertas atuais*: Aparece se algum alerta estiver ativo no momento. Clique no link ou clique em *Crítica*, *Principal* ou *menor* para ver os detalhes na página *ALERTAS* *atual*.
+* *Alertas resolvidos recentemente*: Aparece se algum alerta acionado na semana passada estiver resolvido. Clique no link para ver os detalhes na página *ALERTAS* *resolvidos*.
+* *Alarms Legacy*: Aparece se algum alarme (sistema legado) estiver ativo no momento. Clique no link para ver os detalhes na página *SUPORTE* *Alarmes (legado)* *Alarmes atuais*.
+* *Licença*: Aparece se houver um problema com a licença de software para este sistema StorageGRID. Clique no link para ver os detalhes na página *MANUTENÇÃO* *sistema* *Licença*.
+
+ a| 
+* xref:monitoring-node-connection-states.adoc[Monitorar os estados de conexão do nó]
+* xref:viewing-current-alerts.adoc[Ver alertas atuais]
+* xref:viewing-resolved-alerts.adoc[Exibir alertas resolvidos]
+* xref:viewing-legacy-alarms.adoc[Ver alarmes legados]
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+
+
+|===
+
+
+== Painel de armazenamento disponível
+
+|===
+| Descrição | Veja detalhes adicionais | Saiba mais 
+
+
+ a| 
+Exibe a capacidade de armazenamento disponível e usada em toda a grade, não incluindo Mídia de arquivamento.
+
+O gráfico geral apresenta totais em toda a grade. Se esta for uma grade de vários locais, gráficos adicionais serão exibidos para cada local do data center.
+
+Você pode usar essas informações para comparar o armazenamento usado com o armazenamento disponível. Se você tem uma grade de vários locais, você pode determinar qual site está consumindo mais armazenamento.
+ a| 
+* Para visualizar a capacidade, coloque o cursor sobre as seções de capacidade disponível e usada do gráfico.
+* Para exibir tendências de capacidade em um intervalo de datas, clique no ícone de gráfico image:../media/icon_chart_new_for_11_5.png["Ícone de carta"]da grade geral ou em um local de data center.
+* Para ver detalhes, selecione *NÓS*. Em seguida, exiba a guia Storage (armazenamento) para toda a grade, um site inteiro ou um nó de armazenamento único.
+
+ a| 
+* xref:viewing-storage-tab.adoc[Exibir a guia armazenamento]
+* xref:monitoring-storage-capacity.adoc[Monitorar a capacidade de armazenamento]
+
+
+|===
+
+
+== Painel ILM (Information Lifecycle Management)
+
+|===
+| Descrição | Veja detalhes adicionais | Saiba mais 
+
+
+ a| 
+Exibe as operações ILM atuais e as filas ILM para o seu sistema. Você pode usar essas informações para monitorar a carga de trabalho do sistema.
+
+* *Aguardando - Cliente*: O número total de objetos aguardando avaliação ILM das operações do cliente (por exemplo, ingest).
+* *Aguardando - taxa de avaliação*: A taxa atual na qual os objetos são avaliados em relação à política ILM na grade.
+* *Período de digitalização - estimado*: O tempo estimado para concluir uma varredura ILM completa de todos os objetos. *Nota:* Uma verificação completa não garante que o ILM tenha sido aplicado a todos os objetos.
+
+ a| 
+* Para ver detalhes, selecione *NÓS*. Em seguida, exiba a guia ILM para toda a grade, um site inteiro ou um nó de armazenamento único.
+* Para ver as regras existentes do ILM, selecione *ILM* *Rules*.
+* Para ver as políticas ILM existentes, selecione *ILM* *Policies*.
+
+ a| 
+* xref:viewing-ilm-tab.adoc[Veja a guia ILM]
+* xref:../admin/index.adoc[Administrar o StorageGRID].
+
+
+|===
+
+
+== Painel Protocol Operations (operações de protocolo)
+
+|===
+| Descrição | Veja detalhes adicionais | Saiba mais 
+
+
+ a| 
+Exibe o número de operações específicas do protocolo (S3 e Swift) executadas pelo seu sistema.
+
+Use essas informações para monitorar os workloads e a eficiência do sistema. As taxas de protocolo são médias nos últimos dois minutos.
+ a| 
+* Para ver detalhes, selecione *NÓS*. Em seguida, exiba a guia objetos para toda a grade, um site inteiro ou um nó de armazenamento único.
+* Para ver tendências ao longo de um intervalo de datas, clique no ícone de gráfico image:../media/icon_chart_new_for_11_5.png["Ícone de carta"]à direita da taxa de protocolo S3 ou Swift.
+
+ a| 
+* xref:viewing-objects-tab.adoc[Exibir a guia objetos]
+* xref:../s3/index.adoc[Use S3]
+* xref:../swift/index.adoc[Use Swift]
+
+
+|===

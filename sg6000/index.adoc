@@ -1,0 +1,35 @@
+---
+permalink: sg6000/index.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, overview, models, features 
+summary: Os dispositivos StorageGRID SG6000 são plataformas de storage e computação integradas que operam como nós de storage em um sistema StorageGRID. Esses dispositivos podem ser usados em um ambiente de grade híbrida que combina nós de storage de dispositivo e nós de storage virtuais baseados em software. 
+---
+= Aparelhos SG6000: Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os dispositivos StorageGRID SG6000 são plataformas de storage e computação integradas que operam como nós de storage em um sistema StorageGRID. Esses dispositivos podem ser usados em um ambiente de grade híbrida que combina nós de storage do dispositivo e nós de storage virtuais (baseados em software).
+
+Os aparelhos SG6000 oferecem as seguintes caraterísticas:
+
+* Disponível em três modelos:
++
+** O SG6060, que inclui 60 unidades, é compatível com compartimentos de expansão e usa controladoras E2800A.
+** O SG6060X, que inclui 60 unidades, é compatível com compartimentos de expansão e usa controladoras E2800B.
++
+
+NOTE: O SG6060 e o SG6060X têm especificações e funções idênticas, exceto para a localização das portas de interconexão nos controladores de armazenamento.
+
+** SGF6024, que oferece 24 unidades de estado sólido (SSDs).
+
+
+* Integre os elementos de storage e computação para um nó de storage StorageGRID.
+* Inclua o instalador do dispositivo StorageGRID para simplificar a implantação e a configuração do nó de storage.
+* Inclua o Gerenciador de sistema do SANtricity para gerenciar e monitorar controladores de storage e unidades.
+* Inclua um controlador de gerenciamento de placa base (BMC) para monitorar e diagnosticar o hardware no controlador de computação.
+* Suporte até quatro conexões de 10 GbE ou 25 GbE à rede de Grade StorageGRID e à rede de Cliente.
+* Dar suporte a unidades FIPS (Federal Information Processing Standard). Quando essas unidades são usadas com o recurso de Segurança da Unidade no Gerenciador de sistema do SANtricity, o acesso não autorizado aos dados é impedido.
+

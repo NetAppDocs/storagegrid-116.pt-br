@@ -1,0 +1,92 @@
+---
+permalink: monitor/troubleshooting-low-object-data-storage-alert.html 
+sidebar: sidebar 
+keywords: how to troubleshoot the Low object data storage alert 
+summary: O alerta *armazenamento de dados de objeto baixo* monitora quanto espaço está disponível para armazenar dados de objeto em cada nó de armazenamento. 
+---
+= Solucionar problemas do alerta de armazenamento de dados de objetos baixos
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O alerta *armazenamento de dados de objeto baixo* monitora quanto espaço está disponível para armazenar dados de objeto em cada nó de armazenamento.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve ter permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+O alerta *armazenamento de dados de objeto baixo* é acionado quando a quantidade total de dados de objeto codificados replicados e apagados em um nó de armazenamento atende a uma das condições configuradas na regra de alerta.
+
+Por padrão, um alerta principal é acionado quando essa condição é avaliada como verdadeira:
+
+[listing]
+----
+(storagegrid_storage_utilization_data_bytes/
+(storagegrid_storage_utilization_data_bytes + storagegrid_storage_utilization_usable_space_bytes)) >=0.90
+----
+Nesta condição:
+
+* `storagegrid_storage_utilization_data_bytes` É uma estimativa do tamanho total dos dados de objetos codificados de apagamento e replicados para um nó de storage.
+* `storagegrid_storage_utilization_usable_space_bytes` É a quantidade total de espaço de storage de objetos restante para um nó de storage.
+
+
+Se um alerta maior ou menor *armazenamento de dados de objeto baixo* for acionado, você deve executar um procedimento de expansão o mais rápido possível.
+
+.Passos
+. Selecione *ALERTAS* *current*.
++
+A página Alertas é exibida.
+
+. Na tabela de alertas, expanda o grupo de alertas *armazenamento de dados de objeto baixo*, se necessário, e selecione o alerta que deseja exibir.
++
+
+NOTE: Selecione o alerta e não o cabeçalho de um grupo de alertas.
+
+. Revise os detalhes na caixa de diálogo e observe o seguinte:
++
+** Tempo acionado
+** O nome do site e do nó
+** Os valores atuais das métricas para este alerta
+
+
+. Selecione *NÓS* *_Storage Node ou Site_* *Storage*.
+. Passe o cursor sobre o gráfico Storage Used - Object Data (armazenamento usado - dados do objeto).
++
+São apresentados os seguintes valores:
+
++
+** *Usado (%)*: A porcentagem do espaço utilizável total que foi usado para dados do objeto.
+** *Usado*: A quantidade de espaço utilizável total que foi usado para dados de objeto.
+** *Dados replicados*: Uma estimativa da quantidade de dados de objetos replicados neste nó, site ou grade.
+** *Dados codificados por apagamento*: Uma estimativa da quantidade de dados de objetos codificados por apagamento neste nó, site ou grade.
+** *Total*: A quantidade total de espaço utilizável neste nó, site ou grade. O valor usado é a `storagegrid_storage_utilization_data_bytes` métrica.
+
+
++
+image::../media/nodes_page_storage_used_object_data.png[Dados de objetos usados no storage de páginas de nós]
+
+. Selecione os controles de tempo acima do gráfico para exibir o uso do armazenamento em diferentes períodos de tempo.
++
+Analisar o uso do armazenamento ao longo do tempo pode ajudá-lo a entender quanto armazenamento foi usado antes e depois do alerta ser acionado e pode ajudá-lo a estimar quanto tempo pode levar para que o espaço restante do nó fique cheio.
+
+. Assim que possível, execute um procedimento de expansão para adicionar capacidade de armazenamento.
++
+Você pode adicionar volumes de storage (LUNs) aos nós de storage existentes ou adicionar novos nós de storage.
+
++
+
+NOTE: Para gerenciar um nó de storage completo, consulte as instruções de administração do StorageGRID.
+
+
+
+.Informações relacionadas
+xref:troubleshooting-storage-status-alarm.adoc[Solucione o problema do alarme de Status de armazenamento (SSTS)]
+
+xref:../expand/index.adoc[Expanda sua grade]
+
+xref:../admin/index.adoc[Administrar o StorageGRID]

@@ -1,0 +1,27 @@
+---
+permalink: maintain/recovering-nodes-that-fail-to-start-normally.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, node did not start, node fail to start 
+summary: Se um nó StorageGRID não se juntar novamente à grade normalmente e não aparecer como recuperável, ele pode estar corrompido. Você pode forçar o nó para o modo de recuperação. 
+---
+= Recupere nós que não forem iniciados normalmente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se um nó StorageGRID não se juntar novamente à grade normalmente e não aparecer como recuperável, ele pode estar corrompido. Você pode forçar o nó para o modo de recuperação.
+
+Para forçar o nó para o modo de recuperação:
+
+`sudo storagegrid node force-recovery _node-name_`
+
+
+TIP: Antes de emitir este comando, confirme se a configuração de rede do nó está correta; pode ter falhado em reingressar na grade devido a mapeamentos de interface de rede incorretos ou um endereço IP ou gateway de rede de Grade incorreto.
+
+
+IMPORTANT: Depois de emitir o `storagegrid node force-recovery _node-name_` comando, você deve executar etapas adicionais de recuperação para _node-name_.
+
+.Informações relacionadas
+xref:whats-next-performing-additional-recovery-steps-if-required.adoc[O que vem a seguir: Execute etapas adicionais de recuperação, se necessário]

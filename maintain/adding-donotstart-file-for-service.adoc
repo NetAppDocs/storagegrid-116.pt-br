@@ -1,0 +1,47 @@
+---
+permalink: maintain/adding-donotstart-file-for-service.html 
+sidebar: sidebar 
+keywords: storagegrid, add do not start file, adding do not start file, service 
+summary: Você pode impedir que um serviço individual comece adicionando um arquivo DoNotStart ao diretório desse serviço em um nó de grade. 
+---
+= Adicione o arquivo DoNotStart para o serviço
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode impedir que um serviço individual comece adicionando um arquivo DoNotStart ao diretório desse serviço em um nó de grade.
+
+.O que você vai precisar
+Tem de ter o `Passwords.txt` ficheiro.
+
+.Passos
+. Faça login no nó da grade:
++
+.. Introduza o seguinte comando: `ssh admin@_grid_node_IP_`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+.. Digite o seguinte comando para mudar para root: `su -`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+
+
++
+Quando você estiver conetado como root, o prompt mudará de `$` para `#`.
+
+. Adicione um arquivo DoNotStart: `touch /etc/sv/_service_/DoNotStart`
++
+ `service`onde está o nome do serviço a ser impedido de iniciar. Por exemplo,
+
++
+[listing]
+----
+touch /etc/sv/ldr/DoNotStart
+----
++
+É criado um ficheiro DoNotStart. Nenhum conteúdo de arquivo é necessário.
+
++
+Quando o Gerenciador de servidor ou o nó de grade é reiniciado, o Gerenciador de servidor será reiniciado, mas o serviço não será reiniciado.
+
+. Faça logout do shell de comando: `exit`
+

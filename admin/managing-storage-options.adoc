@@ -1,0 +1,18 @@
+---
+permalink: admin/managing-storage-options.html 
+sidebar: sidebar 
+keywords: storage options 
+summary: 'As opções de armazenamento incluem as definições de segmentação de objetos, os valores atuais para marcas d"água de volume de armazenamento e a definição espaço reservado de metadados. Você também pode exibir as portas S3 e Swift usadas pelo serviço CLB obsoleto em nós de Gateway e pelo serviço LDR em nós de armazenamento.' 
+---
+= Gerenciar opções de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As opções de armazenamento incluem as definições de segmentação de objetos, os valores atuais para marcas d'água de volume de armazenamento e a definição espaço reservado de metadados. Você também pode exibir as portas S3 e Swift usadas pelo serviço CLB obsoleto em nós de Gateway e pelo serviço LDR em nós de armazenamento.
+
+Para obter informações sobre atribuições de portas, xref:summary-ip-addresses-and-ports-for-client-connections.adoc[Resumo: Endereços IP e portas para conexões de clientes]consulte .
+
+image::../media/storage_options.png[Opções de armazenamento]

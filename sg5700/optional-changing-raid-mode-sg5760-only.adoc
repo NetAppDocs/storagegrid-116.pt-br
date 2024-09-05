@@ -1,0 +1,45 @@
+---
+permalink: sg5700/optional-changing-raid-mode-sg5760-only.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, raid, raid mode, change, changing, modify, DDP, ddp16, raid6 
+summary: Se tiver um SG5760 com 60 unidades, pode mudar para um modo RAID diferente para acomodar os seus requisitos de armazenamento e recuperação. Você só pode alterar o modo antes de implantar o nó de storage do dispositivo StorageGRID. 
+---
+= Opcional: Alterar o modo RAID (apenas SG5760)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se tiver um SG5760 com 60 unidades, pode mudar para um modo RAID diferente para acomodar os seus requisitos de armazenamento e recuperação. Você só pode alterar o modo antes de implantar o nó de storage do dispositivo StorageGRID.
+
+.O que você vai precisar
+* Você tem um SG5760. Se tiver um SG5712, tem de utilizar o modo DDP.
+* Você está usando qualquer cliente que possa se conetar ao StorageGRID.
+* O cliente tem um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Sobre esta tarefa
+Antes de implantar o dispositivo SG5760 como nó de storage, você pode escolher uma das seguintes opções de configuração de volume:
+
+* *DDP*: Esse modo usa duas unidades de paridade para cada oito unidades de dados. Este é o modo padrão e recomendado para todos os aparelhos. Em comparação com o RAID6, o DDP oferece melhor performance do sistema, tempos de reconstrução reduzidos após falhas de unidade e facilidade de gerenciamento. O DDP também fornece proteção contra perda de gaveta em dispositivos de 60 unidades.
+* *DDP16*: Esse modo usa duas unidades de paridade para cada unidade de dados de 16 TB, o que resulta em maior eficiência de storage em comparação com o DDP. Em comparação com o RAID6, o DDP16 oferece melhor desempenho do sistema, tempos de reconstrução reduzidos após falhas de unidade, facilidade de gerenciamento e eficiência de storage comparável. Para usar o modo DDP16, sua configuração deve conter pelo menos 20 unidades. DDP16 não fornece proteção contra perda de gaveta.
+* *RAID6*: Este modo usa duas unidades de paridade para cada 16 ou mais unidades de dados. Para usar o modo RAID 6, sua configuração deve conter pelo menos 20 unidades. Embora o RAID6 possa aumentar a eficiência de storage do dispositivo em comparação com o DDP, ele não é recomendado para a maioria dos ambientes StorageGRID.
+
+
+
+IMPORTANT: Se algum volume já tiver sido configurado ou se o StorageGRID tiver sido instalado anteriormente, a alteração do modo RAID fará com que os volumes sejam removidos e substituídos. Quaisquer dados sobre esses volumes serão perdidos.
+
+.Passos
+. Usando o laptop de serviço, abra um navegador da Web e acesse o Instalador do StorageGRID Appliance
+`*https://_E5700SG_Controller_IP_:8443*`
++
+ `_E5700SG_Controller_IP_`Onde está qualquer um dos endereços IP para o controlador E5700SG.
+
+. Selecione *Avançado* *modo RAID*.
+. Na página *Configurar modo RAID*, selecione o modo RAID desejado na lista suspensa modo.
+. Clique em *Salvar*.
+
+
+.Informações relacionadas
+http://mysupport.netapp.com/info/web/ECMP1658252.html["Site de Documentação de sistemas NetApp e-Series"^]

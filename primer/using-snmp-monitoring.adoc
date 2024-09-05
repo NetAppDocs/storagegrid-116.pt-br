@@ -1,0 +1,39 @@
+---
+permalink: primer/using-snmp-monitoring.html 
+sidebar: sidebar 
+keywords: snmp, simple network management protocol, agent, trap, inform, mib 
+summary: Se você quiser monitorar o StorageGRID usando o Protocolo de Gerenciamento de rede simples, você pode usar o Gerenciador de Grade para configurar o agente SNMP. 
+---
+= Utilize a monitorização SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você quiser monitorar o StorageGRID usando o Protocolo de Gerenciamento de rede simples (SNMP), você pode usar o Gerenciador de Grade para configurar o agente SNMP.
+
+Cada nó do StorageGRID executa um agente SNMP, ou daemon, que fornece uma base de informações de gerenciamento (MIB). O MIB do StorageGRID contém definições de tabela e notificação para alertas e alarmes. Cada nó StorageGRID também suporta um subconjunto de objetos MIB-II.
+
+Inicialmente, o SNMP está desativado em todos os nós. Quando você configura o agente SNMP, todos os nós do StorageGRID recebem a mesma configuração.
+
+O agente SNMP do StorageGRID suporta todas as três versões do protocolo SNMP. O agente fornece acesso MIB somente leitura para consultas e pode enviar dois tipos de notificações orientadas a eventos para um sistema de gerenciamento:
+
+* *Traps* são notificações enviadas pelo agente SNMP que não requerem confirmação pelo sistema de gerenciamento. Traps servem para notificar o sistema de gerenciamento de que algo aconteceu dentro do StorageGRID, como um alerta sendo acionado. Traps são suportados em todas as três versões do SNMP.
+* *Informa* são semelhantes às armadilhas, mas requerem reconhecimento pelo sistema de gestão. Se o agente SNMP não receber uma confirmação dentro de um determinado período de tempo, ele reenvia a informação até que uma confirmação seja recebida ou o valor máximo de tentativa tenha sido atingido. As informações são suportadas em SNMPv2c e SNMPv3.
+
+
+Notificações de intercetação e informação são enviadas nos seguintes casos:
+
+* Um alerta padrão ou personalizado é acionado em qualquer nível de gravidade. Para suprimir notificações SNMP para um alerta, tem de configurar um silêncio para o alerta. As notificações de alerta são enviadas por qualquer nó Admin configurado para ser o remetente preferido.
+* Certos alarmes (sistema legado) são acionados em níveis de gravidade especificados ou superiores.
++
+
+NOTE: As notificações SNMP não são enviadas para cada alarme ou para cada gravidade do alarme.
+
+
+
+*Informações relacionadas*
+
+* xref:../monitor/index.adoc[Monitorar e solucionar problemas]
+

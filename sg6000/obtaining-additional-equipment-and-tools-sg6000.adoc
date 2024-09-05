@@ -1,0 +1,72 @@
+---
+permalink: sg6000/obtaining-additional-equipment-and-tools-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, additional, equipment, tools 
+summary: Antes de instalar o dispositivo StorageGRID, confirme se tem todo o equipamento e ferramentas adicionais de que necessita. 
+---
+= Obter equipamentos e ferramentas adicionais (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o dispositivo StorageGRID, confirme se tem todo o equipamento e ferramentas adicionais de que necessita.
+
+Você precisa do seguinte equipamento adicional para instalar e configurar o hardware:
+
+* *Chaves de fenda*
++
+image::../media/screwdrivers.gif[Duas chaves de parafusos]
+
++
+Chave de fendas Phillips n.o 2
+
++
+Chave de parafusos plana média
+
+* * Pulseira antiestática*
++
+image::../media/appliance_wriststrap.gif[Pulseira antiestática]
+
+* * Cabos óticos e transcetores SFP*
++
+image::../media/fc_cable_and_sfp.gif[Cabo ótico e transcetor SFP]
+
++
+Você precisa de uma das seguintes opções:
+
++
+** Um a quatro cabos Twinax ou cabos óticos para as portas 10/25-GbE que você planeja usar no controlador SG6000-CN
+** Um a quatro transcetores SFP mais para as portas de 10/25 GbE se você usar cabos óticos e velocidade de link de 10 GbE
+** Um a quatro transcetores SFP28 para as portas de 10/25 GbE se você usar cabos óticos e velocidade de link de 25 GbE
+
+
+* *Cabos Ethernet RJ-45 (Cat5/Cat5e/Cat6)*
++
+image::../media/ethernet_cables.png[Cabos Ethernet]
+
+* * Serviço de laptop*
++
+image::../media/sam_management_client.gif[Serviço de laptop]
+
++
+xref:../admin/web-browser-requirements.adoc[Navegador da Web suportado]
+
++
+Porta de 1 GbE (RJ-45)
+
+* *Ferramentas opcionais*
++
+image::../media/optional_tools.gif[Furadeira elétrica e lanterna]
+
++
+Broca elétrica com ponta Phillips
+
++
+Lanterna
+
++
+Elevador mecanizado para prateleiras de 60 unidades
+
+

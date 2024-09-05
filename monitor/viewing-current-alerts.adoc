@@ -1,0 +1,136 @@
+---
+permalink: monitor/viewing-current-alerts.html 
+sidebar: sidebar 
+keywords: how to view current alerts 
+summary: Quando um alerta é acionado, um ícone de alerta é exibido no Painel de instrumentos. Um ícone de alerta também é exibido para o nó na página nós. Uma notificação por e-mail também pode ser enviada, a menos que o alerta tenha sido silenciado. 
+---
+= Ver alertas atuais
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando um alerta é acionado, um ícone de alerta é exibido no Painel de instrumentos. Um ícone de alerta também é exibido para o nó na página nós. Uma notificação por e-mail também pode ser enviada, a menos que o alerta tenha sido silenciado.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Opcionalmente, você assistiu o vídeo: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2680a74f-070c-41c2-bcd3-acc5013c9cdd["Vídeo: Visão geral dos alertas"^].
++
+[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2680a74f-070c-41c2-bcd3-acc5013c9cdd]
+image::../media/video-screenshot-alert-overview.png[Vídeo: Visão geral dos alertas]
+
+
+
+.Passos
+. Se um ou mais alertas estiverem ativos, execute um dos seguintes procedimentos:
++
+** No painel Saúde do Painel, clique no ícone de alerta ou clique em *alertas atuais*. (Um ícone de alerta e o link *alertas atuais* aparecem somente se pelo menos um alerta estiver ativo.)
+** Selecione *ALERTAS* *current*.
++
+A página Alertas atuais é exibida. Ele lista todos os alertas que afetam o seu sistema StorageGRID atualmente.
+
++
+image::../media/alerts_current_page.png[Página de alertas atuais]
+
++
+Por padrão, os alertas são exibidos da seguinte forma:
+
+** Os alertas acionados mais recentemente são apresentados primeiro.
+** Vários alertas do mesmo tipo são mostrados como um grupo.
+** Os alertas silenciados não são apresentados.
+** Para um alerta específico em um nó específico, se os limites forem atingidos por mais de uma gravidade, somente o alerta mais grave será exibido. Ou seja, se os limites de alerta forem atingidos para as gravidades menor, maior e crítica, somente o alerta crítico será exibido.
+
+
++
+A página Alertas atuais é atualizada a cada dois minutos.
+
+. Reveja as informações na tabela.
++
+[cols="1a,3a"]
+|===
+| Cabeçalho da coluna | Descrição 
+
+
+ a| 
+Nome
+ a| 
+O nome do alerta e sua descrição.
+
+
+
+ a| 
+Gravidade
+ a| 
+A gravidade do alerta. Se vários alertas forem agrupados, a linha de título mostrará quantas instâncias desse alerta estão ocorrendo em cada gravidade.
+
+** *Crítico* image:../media/icon_alert_red_critical.png["Ícone Alerta Vermelho crítico"]: existe uma condição anormal que interrompeu as operações normais de um nó ou serviço StorageGRID. Você deve abordar o problema subjacente imediatamente. A interrupção do serviço e a perda de dados podem resultar se o problema não for resolvido.
+** *Major* image:../media/icon_alert_orange_major.png["Ícone Alerta Laranja maior"]: existe uma condição anormal que está afetando as operações atuais ou se aproximando do limite para um alerta crítico. Você deve investigar os principais alertas e resolver quaisquer problemas subjacentes para garantir que a condição anormal não pare a operação normal de um nó ou serviço StorageGRID.
+** *Minor* image:../media/icon_alert_yellow_minor.png["Ícone Alerta Amarelo menor"]: o sistema está operando normalmente, mas existe uma condição anormal que pode afetar a capacidade do sistema de operar se ele continuar. Você deve monitorar e resolver alertas menores que não sejam claros por conta própria para garantir que eles não resultem em um problema mais sério.
+
+
+
+
+ a| 
+Tempo acionado
+ a| 
+Há quanto tempo o alerta foi acionado. Se vários alertas forem agrupados, a linha de título mostrará horas para a instância mais recente do alerta (_newest_) e a instância mais antiga do alerta (_older_).
+
+
+
+ a| 
+Local/nó
+ a| 
+O nome do site e do nó onde o alerta está ocorrendo. Se vários alertas forem agrupados, os nomes do site e do nó não serão exibidos na linha de título.
+
+
+
+ a| 
+Estado
+ a| 
+Se o alerta está ativo ou foi silenciado. Se vários alertas forem agrupados e *todos os alertas* estiverem selecionados na lista suspensa, a linha de título mostrará quantas instâncias desse alerta estão ativas e quantas instâncias foram silenciadas.
+
+
+
+ a| 
+Valores atuais
+ a| 
+O valor atual da métrica que fez com que o alerta fosse acionado. Para alguns alertas, são apresentados valores adicionais para o ajudar a compreender e investigar o alerta. Por exemplo, os valores mostrados para um alerta *armazenamento de dados de objeto baixo* incluem a porcentagem de espaço em disco usado, a quantidade total de espaço em disco e a quantidade de espaço em disco usado.
+
+*Nota:* se vários alertas estiverem agrupados, os valores atuais não serão exibidos na linha de título.
+
+|===
+. Para expandir e recolher grupos de alertas:
++
+** Para mostrar os alertas individuais em um grupo, clique no cursor para baixo image:../media/icon_alert_caret_down.png["ícone do cursor para baixo"]no cabeçalho ou clique no nome do grupo.
+** Para ocultar os alertas individuais em um grupo, clique no cursor para cima image:../media/icon_alert_caret_up.png["Ícone de cuidado para cima"]no cabeçalho ou clique no nome do grupo.
++
+image::../media/alerts_page_expanded_alert_group.png[Grupo de alertas expandido]
+
+
+
+. Para exibir alertas individuais em vez de grupos de alertas, desmarque a caixa de seleção *alertas de grupo* na parte superior da tabela.
++
+image::../media/alerts_page_group_alerts_button.png[Botão de alertas de grupo]
+
+. Para classificar alertas ou grupos de alertas, clique nas setas para cima/para baixo image:../media/icon_alert_sort_column.png["Ícone de setas de ordenação"]em cada cabeçalho de coluna.
++
+** Quando *alertas de grupo* é selecionado, tanto os grupos de alerta quanto os alertas individuais dentro de cada grupo são classificados. Por exemplo, você pode querer classificar os alertas em um grupo por *tempo disparado* para encontrar a instância mais recente de um alerta específico.
+** Quando *Alerta de grupo* não está selecionado, toda a lista de alertas é classificada. Por exemplo, você pode querer classificar todos os alertas por *nó/Site* para ver todos os alertas que afetam um nó específico.
+
+
+. Para filtrar os alertas por status, use o menu suspenso na parte superior da tabela.
++
+image::../media/alerts_page_active_drop_down.png[Lista pendente de estado de alerta]
+
++
+** Selecione *todos os alertas* para visualizar todos os alertas atuais (alertas ativos e silenciados).
+** Selecione *Ativo* para exibir somente os alertas atuais ativos.
+** Selecione *silenciado* para visualizar apenas os alertas atuais que foram silenciados. xref:silencing-alert-notifications.adoc[Silenciar notificações de alerta]Consulte .
+
+
+. Para ver detalhes de um alerta específico, selecione-o na tabela.
++
+É apresentada uma caixa de diálogo para o alerta. xref:viewing-specific-alert.adoc[Veja um alerta específico]Consulte .
+
+

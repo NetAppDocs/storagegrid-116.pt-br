@@ -1,0 +1,63 @@
+---
+permalink: sg5700/troubleshooting-connection-issues.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, troubleshoot, troubleshooting, connection 
+summary: Se você encontrar problemas de conexão durante a instalação do StorageGRID Appliance, execute as etapas de ação corretiva listadas. 
+---
+= Solucionar problemas de conexão (SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você encontrar problemas de conexão durante a instalação do StorageGRID Appliance, execute as etapas de ação corretiva listadas.
+
+
+
+== Não foi possível ligar ao aparelho
+
+Se não conseguir ligar ao dispositivo, poderá haver um problema de rede ou a instalação do hardware poderá não ter sido concluída com êxito.
+
+.Passos
+. Se você não conseguir se conetar ao Gerenciador do sistema do SANtricity:
++
+.. Tente fazer ping no dispositivo usando o endereço IP do controlador E2800 na rede de gerenciamento para o Gerenciador de sistema SANtricity
+`*ping _E2800_Controller_IP_*`
+.. Se não receber resposta do ping, confirme que está a utilizar o endereço IP correto.
++
+Use o endereço IP para a porta de gerenciamento 1 no controlador E2800.
+
+.. Se o endereço IP estiver correto, verifique o cabeamento do dispositivo e a configuração da rede.
++
+Se isso não resolver o problema, entre em Contato com o suporte técnico.
+
+.. Se o ping foi bem-sucedido, abra um navegador da Web.
+.. Digite o URL para o Gerenciador de sistema do SANtricity
+`*https://_E2800_Controller_IP_*`
++
+É apresentada a página de início de sessão do Gestor do sistema SANtricity.
+
+
+
+. Se não conseguir ligar ao controlador E5700SG:
++
+.. Tente fazer ping no aparelho usando o endereço IP do controlador E5700SG
+`*ping _E5700SG_Controller_IP_*`
+.. Se não receber resposta do ping, confirme que está a utilizar o endereço IP correto.
++
+Pode utilizar o endereço IP do dispositivo na rede de grelha, na rede de administração ou na rede de cliente.
+
+.. Se o endereço IP estiver correto, verifique o cabeamento do dispositivo, os transcetores SFP e a configuração da rede.
++
+Se isso não resolver o problema, entre em Contato com o suporte técnico.
+
+.. Se o ping foi bem-sucedido, abra um navegador da Web.
+.. Digite o URL do instalador do StorageGRID Appliance
+`*https://_E5700SG_Controller_IP_:8443*`
++
+A página inicial é exibida.
+
+
+
+

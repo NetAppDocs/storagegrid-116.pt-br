@@ -1,0 +1,26 @@
+---
+permalink: network/appliance-nodes.html 
+sidebar: sidebar 
+keywords: networking for appliance, port bond mode 
+summary: Você pode configurar as portas de rede nos dispositivos StorageGRID para usar os modos de ligação de porta que atendem aos seus requisitos de taxa de transferência, redundância e failover. 
+---
+= Nós do dispositivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode configurar as portas de rede nos dispositivos StorageGRID para usar os modos de ligação de porta que atendem aos seus requisitos de taxa de transferência, redundância e failover.
+
+As portas 10/25-GbE nos dispositivos StorageGRID podem ser configuradas no modo de ligação fixa ou agregada para conexões à rede de Grade e à rede do cliente.
+
+As portas de rede de administração de 1 GbE podem ser configuradas no modo Independent (independente) ou ative-Backup (ative-Backup) para conexões à rede de administração.
+
+Consulte as informações sobre os modos de ligação de porta nas instruções de instalação e manutenção do seu aparelho:
+
+* xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+* xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+* xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+* xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+

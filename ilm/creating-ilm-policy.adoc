@@ -1,0 +1,29 @@
+---
+permalink: ilm/creating-ilm-policy.html 
+sidebar: sidebar 
+keywords: create ILM policy, information lifecycle policy considerations 
+summary: Quando você cria uma política ILM, você começa selecionando e organizando as regras ILM. Em seguida, você verifica o comportamento de sua política proposta simulando-a contra objetos previamente ingeridos. Quando estiver satisfeito de que a política proposta está a funcionar conforme pretendido, pode ativá-la para criar a política ativa. 
+---
+= Criar política ILM: Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você cria uma política ILM, você começa selecionando e organizando as regras ILM. Em seguida, você verifica o comportamento de sua política proposta simulando-a contra objetos previamente ingeridos. Quando estiver satisfeito de que a política proposta está a funcionar conforme pretendido, pode ativá-la para criar a política ativa.
+
+
+CAUTION: Uma política de ILM que foi configurada incorretamente pode resultar em perda de dados irrecuperável. Antes de ativar uma política ILM, revise cuidadosamente a política ILM e suas regras ILM e simule a política ILM. Confirme sempre que a política de ILM funcionará como pretendido.
+
+
+
+== Considerações para criar uma política ILM
+
+* Utilize a política incorporada do sistema, a Política de cópias da linha de base 2, apenas em sistemas de teste. A regra fazer cópias 2 nesta política usa o pool de storage todos os nós de storage, que contém todos os sites. Se o seu sistema StorageGRID tiver mais de um local, duas cópias de um objeto poderão ser colocadas no mesmo local.
+* Ao projetar uma nova política, considere todos os diferentes tipos de objetos que podem ser ingeridos em sua grade. Certifique-se de que a política inclui regras para corresponder e colocar esses objetos conforme necessário.
+* Mantenha a política ILM o mais simples possível. Isso evita situações potencialmente perigosas em que os dados de objetos não são protegidos como pretendido quando as alterações são feitas no sistema StorageGRID ao longo do tempo.
+* Certifique-se de que as regras da política estão na ordem correta. Quando a política é ativada, objetos novos e existentes são avaliados pelas regras na ordem listada, começando na parte superior. Por exemplo, se a primeira regra de uma política corresponder a um objeto, essa regra não será avaliada por nenhuma outra regra.
+* A última regra em cada política ILM é a regra ILM padrão, que não pode usar nenhum filtro. Se um objeto não tiver sido correspondido por outra regra, a regra padrão controla onde esse objeto é colocado e por quanto tempo ele é retido.
+* Antes de ativar uma nova política, revise todas as alterações que a política está fazendo no posicionamento de objetos existentes. Alterar a localização de um objeto existente pode resultar em problemas de recursos temporários quando os novos posicionamentos são avaliados e implementados.
+

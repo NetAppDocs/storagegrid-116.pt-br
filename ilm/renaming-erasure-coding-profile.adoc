@@ -1,0 +1,52 @@
+---
+permalink: ilm/renaming-erasure-coding-profile.html 
+sidebar: sidebar 
+keywords: rename erasure coding profile, ec profile 
+summary: Você pode querer renomear um perfil de codificação de apagamento para torná-lo mais óbvio o que o perfil faz. 
+---
+= Renomear um perfil de codificação de apagamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode querer renomear um perfil de codificação de apagamento para torná-lo mais óbvio o que o perfil faz.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Passos
+. Selecione *ILM* > *codificação de apagamento*.
++
+A página Perfis de codificação de apagamento é exibida. Os botões *Renomear* e *Desativar* estão desativados.
+
++
+image::../media/ec_profiles_rename_deactivate_disabled.png[Apagar Perfis de codificação Renomear Desactivado]
+
+. Selecione o perfil que deseja renomear.
++
+Os botões *Renomear* e *Desativar* ficam ativados.
+
+. Selecione *Renomear*.
++
+A caixa de diálogo Renomear perfil EC é exibida.
+
++
+image::../media/ec_profile_rename.png[Mudar o nome do perfil de codificação de apagamento]
+
+. Introduza um nome exclusivo para o perfil de codificação de apagamento.
++
+O nome do perfil de codificação de apagamento é anexado ao nome do pool de armazenamento na instrução de colocação de uma regra ILM.
+
++
+image::../media/storage_pool_and_erasure_coding_profile.png[Pool de armazenamento e nome do perfil EC]
+
++
+
+NOTE: Os nomes de perfis de codificação de apagamento devem ser exclusivos. Um erro de validação ocorre se você usar o nome de um perfil existente, mesmo que esse perfil tenha sido desativado.
+
+. Selecione *Guardar*.
+

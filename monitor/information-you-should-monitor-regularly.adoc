@@ -1,0 +1,84 @@
+---
+permalink: monitor/information-you-should-monitor-regularly.html 
+sidebar: sidebar 
+keywords: monitor, monitoring, StorageGRID, 
+summary: O StorageGRID é um sistema de storage distribuído e tolerante a falhas que foi projetado para continuar operando mesmo quando ocorrem erros ou quando nós ou sites não estão disponíveis. Você precisa monitorar proativamente a integridade do sistema, os workloads e as estatísticas de uso, para que você possa agir para resolver possíveis problemas antes que eles afetem a eficiência ou a disponibilidade da grade. 
+---
+= Informações que você deve monitorar regularmente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O StorageGRID é um sistema de storage distribuído e tolerante a falhas que foi projetado para continuar operando mesmo quando ocorrem erros ou quando nós ou sites não estão disponíveis. Você precisa monitorar proativamente a integridade do sistema, os workloads e as estatísticas de uso, para que você possa agir para solucionar possíveis problemas antes que eles afetem a eficiência ou a disponibilidade da grade.
+
+Um sistema ocupado gera grandes quantidades de informações. Esta secção fornece orientações sobre as informações mais importantes a monitorizar de forma contínua.
+
+[cols="2a,1a"]
+|===
+| O que monitorar | Frequência 
+
+
+ a| 
+O xref:monitoring-system-health.adoc[dados de integridade do sistema] mostrado no Painel do Gerenciador de Grade. Observe se alguma coisa mudou do dia anterior.
+ a| 
+Diariamente
+
+
+
+ a| 
+Taxa em que xref:monitoring-storage-capacity.adoc[Capacidade de metadados e objetos do nó de storage]está sendo consumido
+ a| 
+Semanalmente
+
+
+
+ a| 
+xref:monitoring-information-lifecycle-management.adoc[Operações de gerenciamento do ciclo de vida das informações]
+ a| 
+Semanalmente
+
+
+
+ a| 
+xref:monitoring-network-connections-and-performance.adoc[Conexões de rede e desempenho]
+ a| 
+Semanalmente
+
+
+
+ a| 
+xref:monitoring-node-level-resources.adoc[Recursos em nível de nó]
+ a| 
+Semanalmente
+
+
+
+ a| 
+xref:monitoring-tenant-activity.adoc[Atividade do locatário]
+ a| 
+Semanalmente
+
+
+
+ a| 
+xref:monitoring-archival-capacity.adoc[Capacidade do sistema de armazenamento de arquivos externo]
+ a| 
+Semanalmente
+
+
+
+ a| 
+xref:monitoring-load-balancing-operations.adoc[Operações de balanceamento de carga]
+ a| 
+Após a configuração inicial e após quaisquer alterações de configuração
+
+
+
+ a| 
+xref:applying-hotfixes-or-upgrading-software-if-necessary.adoc[Disponibilidade de hotfixes de software e atualizações de software]
+ a| 
+Mensalmente
+
+|===

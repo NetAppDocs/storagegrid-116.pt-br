@@ -1,0 +1,93 @@
+---
+permalink: tenant/creating-s3-bucket.html 
+sidebar: sidebar 
+keywords: how to create S3 bucket 
+summary: Você pode usar o Gerenciador do locatário para criar buckets do S3 para dados de objetos. Ao criar um intervalo, você deve especificar o nome e a região do intervalo. Se a configuração global de bloqueio de objetos S3D estiver ativada para o sistema StorageGRID, você poderá ativar opcionalmente o bloqueio de objetos S3D para o bucket. 
+---
+= Crie um balde S3D.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o Gerenciador do locatário para criar buckets do S3 para dados de objetos. Ao criar um intervalo, você deve especificar o nome e a região do intervalo. Se a configuração global de bloqueio de objetos S3D estiver ativada para o sistema StorageGRID, você poderá ativar opcionalmente o bloqueio de objetos S3D para o bucket.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você pertence a um grupo de usuários que tem a permissão Gerenciar todos os buckets ou acesso root. Essas permissões substituem as configurações de permissões em políticas de grupo ou bucket.
++
+
+NOTE: As permissões para definir ou modificar as propriedades de bloqueio de objetos S3D de buckets ou objetos podem ser concedidas pelo xref:../s3/bucket-and-group-access-policies.adoc[política de bucket ou política de grupo].
+
+* Se você planeja criar um bucket com o bloqueio de objeto S3, ativou a configuração global de bloqueio de objeto S3 para o sistema StorageGRID e revisou os requisitos para buckets e objetos do bloqueio de objeto S3.
++
+xref:using-s3-object-lock.adoc[Use o bloqueio de objetos S3D.]
+
+
+
+.Passos
+. Selecione *STORAGE (S3)* > *Buckets*.
+. Selecione *criar bucket*.
++
+image::../media/bucket_create_compliance_disabled.png[Conformidade criação balde desativada]
+
+. Introduza um nome exclusivo para o intervalo.
++
+
+IMPORTANT: Não é possível alterar o nome do bucket depois de criar o bucket.
+
++
+Os nomes dos buckets devem cumprir com estas regras:
+
++
+** Deve ser exclusivo em cada sistema StorageGRID (não apenas exclusivo na conta do locatário).
+** Deve ser compatível com DNS.
+** Deve conter pelo menos 3 e não mais de 63 carateres.
+** Cada rótulo deve começar e terminar com uma letra minúscula ou um número e só pode usar letras minúsculas, números e hífens.
+** Não deve usar períodos em solicitações de estilo hospedadas virtuais. Os períodos causarão problemas com a verificação do certificado curinga do servidor.
+
+
++
+
+NOTE: Para obter mais informações, consulte https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Documentação da Amazon Web Services (AWS) sobre regras de nomenclatura de bucket"^] .
+
+. Selecione a região para este intervalo.
++
+O administrador do StorageGRID gerencia as regiões disponíveis. A região de um bucket pode afetar a política de proteção de dados aplicada a objetos. Por padrão, todos os buckets são criados na `us-east-1` região.
+
++
+
+IMPORTANT: Não é possível alterar a região depois de criar o intervalo.
+
+. Selecione *continuar*.
+. Opcionalmente, habilite o controle de versão de objetos para o bucket.
++
+Ative o controle de versão de objetos se você quiser armazenar todas as versões de cada objeto neste intervalo. Em seguida, você pode recuperar versões anteriores de um objeto, conforme necessário.
+
+. Se a seção S3 Object Lock aparecer, ative opcionalmente o S3 Object Lock para o bucket.
++
+
+IMPORTANT: Não é possível ativar ou desativar o bloqueio de objetos S3 depois de criar o bucket.
+
++
+A seção S3 Object Lock (bloqueio de objetos) só será exibida se a configuração global S3 Object Lock estiver ativada.
+
++
+O bloqueio de objetos S3 deve ser ativado para o bucket antes que um aplicativo cliente S3 possa especificar as configurações de retenção legal e de retenção para os objetos adicionados ao bucket.
+
++
+Se você ativar o bloqueio de objeto S3 para um bucket, o controle de versão do bucket será ativado automaticamente. Você também pode xref:../s3/operations-on-buckets.adoc#using-s3-object-lock-default-bucket-retention[especifique um modo de retenção padrão e um período de retenção padrão para o bucket]aplicar a cada objeto ingerido ao bucket que não especifica suas próprias configurações de retenção.
+
+. Selecione *criar bucket*.
++
+O bucket é criado e adicionado à tabela na página Buckets.
+
+
+
+.Informações relacionadas
+xref:../ilm/index.adoc[Gerenciar objetos com ILM]
+
+xref:understanding-tenant-management-api.adoc[Entenda a API de gerenciamento do locatário]
+
+xref:../s3/index.adoc[Use S3]

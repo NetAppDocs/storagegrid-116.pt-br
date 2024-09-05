@@ -1,0 +1,14 @@
+---
+permalink: maintain/appliance-node-cloning.html 
+sidebar: sidebar 
+keywords: node cloning, clone node 
+summary: Você pode clonar um nó de dispositivo no StorageGRID para usar um dispositivo de design mais recente ou recursos aprimorados. A clonagem transfere todas as informações do nó existente para o novo dispositivo, fornece um processo de atualização de hardware fácil de executar e fornece uma alternativa à desativação e expansão para a substituição de dispositivos. 
+---
+= Clonagem do nó do dispositivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode clonar um nó de dispositivo no StorageGRID para usar um dispositivo de design mais recente ou recursos aprimorados. A clonagem transfere todas as informações do nó existente para o novo dispositivo, fornece um processo de atualização de hardware fácil de executar e fornece uma alternativa à desativação e expansão para a substituição de dispositivos.

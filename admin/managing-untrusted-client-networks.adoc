@@ -1,0 +1,41 @@
+---
+permalink: admin/managing-untrusted-client-networks.html 
+sidebar: sidebar 
+keywords: untrusted client network 
+summary: Se você estiver usando uma rede cliente, você pode ajudar a proteger o StorageGRID contra ataques hostis aceitando tráfego de clientes de entrada apenas em endpoints configurados explicitamente. 
+---
+= Gerenciar redes de clientes não confiáveis: Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando uma rede cliente, você pode ajudar a proteger o StorageGRID contra ataques hostis aceitando tráfego de clientes de entrada apenas em endpoints configurados explicitamente.
+
+Por padrão, a rede do cliente em cada nó de grade é _confiável_. Ou seja, por padrão, o StorageGRID confia em conexões de entrada para cada nó de grade em todas as portas externas disponíveis (consulte as informações sobre comunicações externas no xref:../network/index.adoc[Diretrizes de rede]).
+
+Você pode reduzir a ameaça de ataques hostis em seu sistema StorageGRID especificando que a rede de clientes em cada nó seja _não confiável_. Se a rede de cliente de um nó não for confiável, o nó só aceita conexões de entrada em portas explicitamente configuradas como pontos de extremidade do balanceador de carga. xref:configuring-load-balancer-endpoints.adoc[Configurar pontos de extremidade do balanceador de carga]Consulte .
+
+
+
+== Exemplo 1: O Gateway Node aceita apenas solicitações HTTPS S3
+
+Suponha que você queira que um nó de gateway recuse todo o tráfego de entrada na rede do cliente, exceto para solicitações HTTPS S3. Você executaria estes passos gerais:
+
+. Na página Load Balancer Endpoints, configure um ponto de extremidade do balanceador de carga para S3 em HTTPS na porta 443.
+. Na página redes de clientes não confiáveis, especifique que a rede de cliente no nó de gateway não é confiável.
+
+
+Depois de salvar sua configuração, todo o tráfego de entrada na rede de clientes do nó de Gateway será descartado, exceto para solicitações HTTPS S3 na porta 443 e ICMP echo (ping).
+
+
+
+== Exemplo 2: O nó de storage envia S3 solicitações de serviços de plataforma
+
+Suponha que você queira ativar o tráfego de serviço de plataforma S3 de saída de um nó de armazenamento, mas você deseja impedir quaisquer conexões de entrada para esse nó de armazenamento na rede cliente. Você executaria este passo geral:
+
+* Na página redes de clientes não confiáveis, indique que a rede de cliente no nó de armazenamento não é confiável.
+
+
+Depois de salvar sua configuração, o nó de armazenamento não aceita mais nenhum tráfego de entrada na rede do cliente, mas continua a permitir solicitações de saída para a Amazon Web Services.

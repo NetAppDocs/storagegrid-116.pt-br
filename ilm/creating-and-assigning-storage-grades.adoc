@@ -1,0 +1,70 @@
+---
+permalink: ilm/creating-and-assigning-storage-grades.html 
+sidebar: sidebar 
+keywords: what is a storage grade, create storage grade 
+summary: Os graus de armazenamento identificam o tipo de armazenamento usado por um nó de armazenamento. Você pode criar graus de storage se quiser que as regras de ILM coloquem certos objetos em determinados nós de storage, em vez de em todos os nós no local. Por exemplo, você pode querer que certos objetos sejam armazenados em seus nós de storage mais rápidos, como dispositivos de storage all-flash StorageGRID. 
+---
+= Criar e atribuir notas de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os graus de armazenamento identificam o tipo de armazenamento usado por um nó de armazenamento. Você pode criar graus de storage se quiser que as regras de ILM coloquem certos objetos em determinados nós de storage, em vez de em todos os nós no local. Por exemplo, você pode querer que certos objetos sejam armazenados em seus nós de storage mais rápidos, como dispositivos de storage all-flash StorageGRID.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+Se você usar mais de um tipo de armazenamento, você pode criar opcionalmente um nível de armazenamento para identificar cada tipo. A criação de classes de armazenamento permite selecionar um tipo específico de nó de armazenamento ao configurar pools de armazenamento.
+
+Se o nível de storage não for uma preocupação (por exemplo, todos os nós de storage são idênticos), você poderá ignorar este procedimento e usar o nível de storage padrão de todos os nós de storage ao configurar pools de storage.
+
+Quando você adiciona um novo nó de storage em uma expansão, esse nó é adicionado ao nível de storage padrão de todos os nós de storage. Como resultado:
+
+* Se uma regra de ILM usar um pool de storage com o nível todos os nós de storage, o novo nó poderá ser usado imediatamente após a conclusão da expansão.
+* Se uma regra de ILM usar um pool de armazenamento com um grau de armazenamento personalizado, o novo nó não será usado até que você atribua manualmente o grau de armazenamento personalizado ao nó, conforme descrito abaixo.
+
+
+
+NOTE: Ao criar classes de armazenamento, não crie mais classes de armazenamento do que o necessário. Por exemplo, não crie um nível de storage para cada nó de storage. Em vez disso, atribua cada nível de storage a dois ou mais nós. Os graus de armazenamento atribuídos a apenas um nó podem causar backlogs de ILM se esse nó ficar indisponível.
+
+.Passos
+. Selecione *ILM* > *classes de armazenamento*.
+. Criar um grau de armazenamento:
++
+.. Para cada grau de armazenamento que você precisa definir, selecione *Insert* image:../media/icon_nms_insert.gif["insira o ícone"] para adicionar uma linha e insira um rótulo para o grau de armazenamento.
++
+O grau de armazenamento predefinido não pode ser modificado. Ele é reservado para novos nós de storage adicionados durante a expansão do sistema StorageGRID.
+
++
+image::../media/editing_storage_grades.gif[Página de classes de armazenamento]
+
+.. Para editar uma nota de armazenamento existente, selecione *Editar* image:../media/icon_nms_edit.gif["ícone de edição"] e modifique a etiqueta conforme necessário.
++
+
+NOTE: Não é possível eliminar graus de armazenamento.
+
+.. Selecione *aplicar alterações*.
++
+Esses tipos de storage agora estão disponíveis para atribuição aos nós de storage.
+
+
+
+. Atribuir um nível de storage a um nó de storage:
++
+.. Para cada serviço LDR do nó de armazenamento, selecione *Edit* image:../media/icon_nms_edit.gif["ícone de edição"] e selecione um grau de armazenamento na lista.
++
+image::../media/assigning_storage_grades_to_storage_nodes.gif[Página de classes de armazenamento]
+
++
+
+IMPORTANT: Atribua um nível de storage a um determinado nó de storage somente uma vez. Um nó de armazenamento recuperado de falha mantém o grau de armazenamento atribuído anteriormente. Não altere esta atribuição depois de a política ILM estar ativada. Se a atribuição for alterada, os dados serão armazenados com base no novo nível de armazenamento.
+
+.. Selecione *aplicar alterações*.
+
+
+

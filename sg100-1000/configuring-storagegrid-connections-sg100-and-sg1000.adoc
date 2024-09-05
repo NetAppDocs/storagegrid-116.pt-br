@@ -1,0 +1,14 @@
+---
+permalink: sg100-1000/configuring-storagegrid-connections-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, storagegrid connections, connections, configure, setup, set up 
+summary: Antes de implantar o dispositivo de serviços como um nó em um sistema StorageGRID, você deve configurar as conexões entre o dispositivo e as redes que você planeja usar. Você pode configurar a rede navegando até o Instalador de dispositivos StorageGRID, que está pré-instalado no utilitário de serviços. 
+---
+= Configurar conexões StorageGRID (SG100 e SG1000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de implantar o dispositivo de serviços como um nó em um sistema StorageGRID, você deve configurar as conexões entre o dispositivo e as redes que você planeja usar. Você pode configurar a rede navegando até o Instalador de dispositivos StorageGRID, que está pré-instalado no utilitário de serviços.

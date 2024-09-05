@@ -1,0 +1,82 @@
+---
+permalink: admin/what-is-autosupport.html 
+sidebar: sidebar 
+keywords: autosupport, technical support, storagegrid health, system status, active iq 
+summary: O recurso AutoSupport permite que o sistema StorageGRID envie mensagens de status e integridade para o suporte técnico. 
+---
+= O que é o AutoSupport?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O recurso AutoSupport permite que o sistema StorageGRID envie mensagens de status e integridade para o suporte técnico.
+
+O uso do AutoSupport pode acelerar significativamente a determinação e resolução de problemas. O suporte técnico também pode monitorar as necessidades de storage do seu sistema e ajudá-lo a determinar se precisa adicionar novos nós ou sites. Opcionalmente, você pode configurar as mensagens do AutoSupport para serem enviadas para um destino adicional.
+
+
+
+== Informações incluídas nas mensagens do AutoSupport
+
+As mensagens do AutoSupport incluem informações como as seguintes:
+
+* Versão do software StorageGRID
+* Versão do sistema operativo
+* Informações sobre atributos no nível do sistema e no nível da localização
+* Alertas e alarmes recentes (sistema legado)
+* Status atual de todas as tarefas de grade, incluindo dados históricos
+* Utilização da base de dados do Admin Node
+* Número de objetos perdidos ou perdidos
+* Definições de configuração da grelha
+* Entidades NMS
+* Política ILM ativa
+* Arquivo de especificação de grade provisionada
+* Métricas de diagnóstico
+
+
+Você pode ativar o recurso AutoSupport e as opções individuais do AutoSupport quando instalar o StorageGRID pela primeira vez, ou ativá-los posteriormente. Se o AutoSupport não estiver habilitado, uma mensagem será exibida no Painel do Gerenciador de Grade. A mensagem inclui um link para a página de configuração do AutoSupport.
+
+image::../media/autosupport_disabled_message.png[Mensagem AutoSupport desativada]
+
+Se você fechar a mensagem, ela não aparecerá novamente até que o cache do navegador seja limpo, mesmo que o AutoSupport permaneça desativado.
+
+
+
+== O que é o Active IQ?
+
+O Active IQ é um consultor digital baseado na nuvem que utiliza as análises preditivas e o conhecimento da comunidade da base instalada da NetApp. Suas avaliações de risco contínuas, alertas preditivos, orientações prescritivas e ações automatizadas ajudam a evitar problemas antes que eles ocorram, levando a uma melhor integridade do sistema e maior disponibilidade do sistema.
+
+Você deve habilitar o AutoSupport se quiser usar os painéis e a funcionalidade do Active IQ no site de suporte da NetApp.
+
+https://docs.netapp.com/us-en/active-iq/index.html["Documentação do consultor digital da Active IQ"^]
+
+
+
+== Protocolos para envio de mensagens AutoSupport
+
+Você pode escolher um dos três protocolos para enviar mensagens AutoSupport:
+
+* HTTPS
+* HTTP
+* SMTP
+
+
+Se você enviar mensagens AutoSupport usando HTTPS ou HTTP, poderá configurar um servidor proxy não transparente entre nós de administração e suporte técnico.
+
+Se utilizar SMTP como protocolo para mensagens AutoSupport, tem de configurar um servidor de correio SMTP.
+
+
+
+== Opções de AutoSupport
+
+Você pode usar qualquer combinação das seguintes opções para enviar mensagens do AutoSupport para o suporte técnico:
+
+* *Semanal*: Enviar automaticamente mensagens AutoSupport uma vez por semana. Predefinição: Activado.
+* *Event-dispolled*: Envie automaticamente mensagens AutoSupport a cada hora ou quando ocorrerem eventos significativos do sistema. Predefinição: Activado.
+* *Sob demanda*: Permita que o suporte técnico solicite que seu sistema StorageGRID envie mensagens AutoSupport automaticamente, o que é útil quando eles estão trabalhando ativamente em um problema (requer protocolo de transmissão HTTPS AutoSupport). Predefinição: Desativada.
+* *Ativado pelo usuário*: Envie mensagens AutoSupport manualmente a qualquer momento.
+
+
+.Informações relacionadas
+https://mysupport.netapp.com/site/global/dashboard["Suporte à NetApp"^]

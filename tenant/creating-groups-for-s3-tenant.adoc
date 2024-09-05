@@ -1,0 +1,84 @@
+---
+permalink: tenant/creating-groups-for-s3-tenant.html 
+sidebar: sidebar 
+keywords: how to create S3 tenant groups 
+summary: Você pode gerenciar permissões para S3 grupos de usuários importando grupos federados ou criando grupos locais. 
+---
+= Crie grupos para um locatário do S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode gerenciar permissões para S3 grupos de usuários importando grupos federados ou criando grupos locais.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve pertencer a um grupo de usuários que tenha a permissão de acesso root. xref:tenant-management-permissions.adoc[Permissões de gerenciamento do locatário]Consulte .
+* Se você pretende importar um grupo federado, você configurou a federação de identidade e o grupo federado já existe na origem de identidade configurada.
+
+
+Para obter informações sobre o S3, xref:../s3/index.adoc[Use S3]consulte .
+
+.Passos
+. Selecione *GERENCIAMENTO DE ACESSO* *grupos*.
++
+image::../media/tenant_add_groups_example.png[Captura de tela mostrando a página grupos de controle de acesso]
+
+. Selecione *criar grupo*.
+. Selecione a guia *local group* para criar um grupo local ou selecione a guia *Federated group* para importar um grupo da origem de identidade configurada anteriormente.
++
+Se o logon único (SSO) estiver habilitado para o sistema StorageGRID, os usuários pertencentes a grupos locais não poderão fazer login no Gerenciador de locatários, embora possam usar aplicativos clientes para gerenciar os recursos do locatário, com base nas permissões de grupo.
+
+. Introduza o nome do grupo.
++
+** *Local group*: Insira um nome de exibição e um nome exclusivo. Pode editar o nome de apresentação mais tarde.
+** *Federated group*: Insira o nome exclusivo. Para o ative Directory, o nome exclusivo é o nome associado ao `sAMAccountName` atributo. Para OpenLDAP, o nome exclusivo é o nome associado ao `uid` atributo.
+
+
+. Selecione *continuar*.
+. Selecione um modo de acesso. Se um usuário pertencer a vários grupos e qualquer grupo estiver definido como somente leitura, o usuário terá acesso somente leitura a todas as configurações e recursos selecionados.
++
+** *Leitura-escrita* (padrão): Os usuários podem fazer login no Gerenciador do Tenant e gerenciar a configuração do locatário.
+** *Somente leitura*: Os usuários só podem visualizar configurações e recursos. Eles não podem fazer alterações nem executar nenhuma operação no Gerenciador do Locatário ou na API de Gerenciamento do Locatário. Os usuários locais só de leitura podem alterar suas próprias senhas.
+
+
+. Selecione as permissões de grupo para este grupo.
++
+Consulte as informações sobre permissões de gerenciamento de locatários.
+
+. Selecione *continuar*.
+. Selecione uma política de grupo para determinar quais permissões de acesso S3 os membros deste grupo terão.
++
+** *No S3 Access*: Padrão. Os usuários deste grupo não têm acesso a recursos do S3, a menos que o acesso seja concedido com uma política de bucket. Se você selecionar essa opção, somente o usuário root terá acesso aos recursos do S3 por padrão.
+** *Acesso somente leitura*: Os usuários deste grupo têm acesso somente leitura aos recursos do S3. Por exemplo, os usuários desse grupo podem listar objetos e ler dados, metadados e tags de objetos. Quando você seleciona essa opção, a cadeia de carateres JSON para uma política de grupo somente leitura aparece na caixa de texto. Não é possível editar esta cadeia de carateres.
+** *Acesso total*: Os usuários deste grupo têm acesso total aos recursos do S3, incluindo buckets. Quando você seleciona essa opção, a cadeia de carateres JSON para uma política de grupo de acesso total aparece na caixa de texto. Não é possível editar esta cadeia de carateres.
+** *Custom*: Os usuários do grupo recebem as permissões que você especificar na caixa de texto. Consulte as instruções para implementar um aplicativo cliente S3 para obter informações detalhadas sobre políticas de grupo, incluindo sintaxe de linguagem e exemplos.
+
+
+. Se você selecionou *Personalizado*, digite a política de grupo. Cada política de grupo tem um limite de tamanho de 5.120 bytes. Você deve inserir uma string formatada JSON válida.
++
+Neste exemplo, os membros do grupo só podem listar e acessar uma pasta que corresponda ao nome de usuário (prefixo de chave) no intervalo especificado. Observe que as permissões de acesso de outras políticas de grupo e a política de bucket devem ser consideradas ao determinar a privacidade dessas pastas.
+
++
+image::../media/tenant_add_group_custom.png[Adicionar política de grupo personalizada ao grupo de inquilinos]
+
+. Selecione o botão que aparece, dependendo se você está criando um grupo federado ou um grupo local:
++
+** Grupo federado: *Criar grupo*
+** Grupo local: *Continuar*
+
+
++
+Se você estiver criando um grupo local, a etapa 4 (Adicionar usuários) será exibida após selecionar *continuar*. Esta etapa não aparece para grupos federados.
+
+. Marque a caixa de seleção para cada usuário que deseja adicionar ao grupo e selecione *criar grupo*.
++
+Opcionalmente, você pode salvar o grupo sem adicionar usuários. Você pode adicionar usuários ao grupo mais tarde ou selecionar o grupo quando adicionar novos usuários.
+
+. Selecione *Finish*.
++
+O grupo criado aparece na lista de grupos. As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+

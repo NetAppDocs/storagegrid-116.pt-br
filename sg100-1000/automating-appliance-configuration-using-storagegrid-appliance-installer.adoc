@@ -1,0 +1,103 @@
+---
+permalink: sg100-1000/automating-appliance-configuration-using-storagegrid-appliance-installer.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, automate, automating, automation, automatic, configuration, configure, appliance installer 
+summary: Você pode automatizar a configuração de um appliance usando um arquivo JSON que contém as informações de configuração. Você carrega o arquivo usando o Instalador do StorageGRID Appliance. 
+---
+= Automatize a configuração do dispositivo usando o Instalador de dispositivos StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode automatizar a configuração de um appliance usando um arquivo JSON que contém as informações de configuração. Você carrega o arquivo usando o Instalador do StorageGRID Appliance.
+
+.O que você vai precisar
+* O seu dispositivo tem de estar no firmware mais recente compatível com o StorageGRID 11,5 ou superior.
+* Você deve estar conetado ao Instalador de dispositivos StorageGRID no dispositivo que você está configurando usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Sobre esta tarefa
+É possível automatizar as tarefas de configuração do dispositivo, como configurar o seguinte:
+
+* Rede de grade, rede de administração e endereços IP da rede de cliente
+* Interface BMC
+* Ligações de rede
++
+** Modo de ligação da porta
+** Modo de ligação de rede
+** Velocidade da ligação
+
+
+
+
+Configurar o dispositivo usando um arquivo JSON carregado geralmente é mais eficiente do que executar a configuração manualmente usando várias páginas no Instalador de dispositivos StorageGRID, especialmente se você tiver que configurar muitos nós. Você deve aplicar o arquivo de configuração para cada nó um de cada vez.
+
+
+NOTE: Usuários experientes que desejam automatizar tanto a instalação quanto a configuração de seus dispositivos podem xref:automating-installation-configuration-appliance-nodes-configure-sga-py-script.adoc[use o script configure-sga.py].
+
+.Passos
+. Gere o arquivo JSON usando uma das seguintes opções:
++
+** O https://configbuilder.netapp.com/["Aplicação ConfigBuilder"^].
+** O xref:automating-installation-configuration-appliance-nodes-configure-sga-py-script.adoc[script de configuração do dispositivo configure-sga.py]. Você pode fazer o download do script do Instalador do StorageGRID Appliance (*Ajuda* *Script de configuração do appliance*).
++
+Os nomes de nós no arquivo JSON devem seguir estes requisitos:
+
++
+*** Deve ser um nome de host válido contendo pelo menos 1 e não mais de 32 carateres
+*** Pode usar letras, números e hífens
+*** Não é possível iniciar ou terminar com um hífen
+*** Não pode conter apenas números
++
+
+IMPORTANT: Certifique-se de que os nomes dos nós (os nomes de nível superior) no arquivo JSON sejam únicos, ou você não poderá configurar mais de um nó usando o arquivo JSON.
+
+
+
+
+
+. Selecione *Avançado* *Atualizar Configuração do dispositivo*.
++
+É apresentada a página Update Appliance Configuration (Atualizar configuração do dispositivo).
+
++
+image::../media/update_appliance_configuration.png[Atualize a página de configuração do dispositivo]
+
+. Selecione o arquivo JSON com a configuração que você deseja carregar.
++
+.. Selecione *Procurar*.
+.. Localize e selecione o ficheiro.
+.. Selecione *Open*.
++
+O arquivo é carregado e validado. Quando o processo de validação estiver concluído, o nome do ficheiro é apresentado junto a uma marca de verificação verde.
+
++
+
+IMPORTANT: Você pode perder a conexão com o dispositivo se a configuração do arquivo JSON incluir seções para "link_config", "redes" ou ambos. Se você não estiver conetado novamente dentro de 1 minuto, insira novamente o URL do dispositivo usando um dos outros endereços IP atribuídos ao dispositivo.
+
++
+image::../media/update_appliance_configuration_valid_json.png[Atualizar configuração do dispositivo JSON carregado]
+
++
+A lista suspensa *Nome do nó* é preenchida com os nomes de nós de nível superior definidos no arquivo JSON.
+
++
+
+NOTE: Se o arquivo não for válido, o nome do arquivo será exibido em vermelho e uma mensagem de erro será exibida em um banner amarelo. O ficheiro inválido não é aplicado ao dispositivo. Você pode usar o ConfigBuilder para garantir que você tenha um arquivo JSON válido.
+
+
+
+. Selecione um nó na lista suspensa *Nome do nó*.
++
+O botão *Apply JSON Configuration* está ativado.
+
++
+image::../media/update_appliance_configuration_apply_button_enabled.png[Botão de aplicação de configuração do dispositivo de atualização ativado]
+
+. Selecione *Apply JSON Configuration*.
++
+A configuração é aplicada ao nó selecionado.
+
+

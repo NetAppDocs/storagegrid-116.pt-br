@@ -1,0 +1,14 @@
+---
+permalink: sg6000/configuring-bmc-interface-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, sg6000-cn, storage node, storage appliance, BMC, baseboard management controller, configure, setup, set up 
+summary: 'A interface do usuário para o controlador de gerenciamento de placa base (BMC) no controlador SG6000-CN fornece informações de status sobre o hardware e permite que você configure as configurações SNMP e outras opções para o controlador SG6000-CN.' 
+---
+= Configurar interface BMC (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A interface do usuário do controlador de gerenciamento de placa base (BMC) no controlador SG6000-CN fornece informações de status sobre o hardware e permite configurar configurações SNMP e outras opções para o controlador SG6000-CN.

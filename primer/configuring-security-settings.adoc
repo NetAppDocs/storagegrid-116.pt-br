@@ -1,0 +1,56 @@
+---
+permalink: primer/configuring-security-settings.html 
+sidebar: sidebar 
+keywords: how to configure security settings 
+summary: Você pode configurar várias configurações de segurança do Gerenciador de Grade para ajudar a proteger seu sistema StorageGRID. 
+---
+= Configure as definições de segurança
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode configurar várias configurações de segurança do Gerenciador de Grade para ajudar a proteger seu sistema StorageGRID.
+
+
+
+== Certificados
+
+O StorageGRID usa dois tipos de certificados de segurança:
+
+* Certificados de servidor são necessários quando você usa conexões HTTPS. Os certificados de servidor são usados para estabelecer conexões seguras entre clientes e servidores, autenticando a identidade de um servidor para seus clientes e fornecendo um caminho de comunicação seguro para os dados. O servidor e o cliente têm uma cópia do certificado.
+* Os certificados de cliente autenticam uma identidade de cliente ou usuário no servidor, fornecendo autenticação mais segura do que senhas sozinhas. Os certificados de cliente não encriptam dados.
+
+
+Você pode visualizar todos os certificados StorageGRID na página *CONFIGURATION* *Security* *Certificates*.
+
+
+
+== Servidores de gerenciamento de chaves
+
+Você pode configurar um ou mais servidores de gerenciamento de chaves externos (KMS) para fornecer chaves de criptografia para serviços StorageGRID e dispositivos de armazenamento. Cada cluster de KMS ou KMS usa o Key Management Interoperability Protocol (KMIP) para fornecer uma chave de criptografia aos nós do dispositivo no site associado do StorageGRID. O uso de servidores de gerenciamento de chaves permite proteger os dados do StorageGRID mesmo que um dispositivo seja removido do data center. Depois que os volumes do dispositivo são criptografados, você não pode acessar nenhum dado no dispositivo, a menos que o nó possa se comunicar com o KMS.
+
+
+NOTE: Para usar o gerenciamento de chaves de criptografia, você deve habilitar a configuração *criptografia de nó* para cada dispositivo durante a instalação, antes que o dispositivo seja adicionado à grade.
+
+
+
+== Configurações de proxy
+
+Se você estiver usando serviços de plataforma S3 ou pools de storage em nuvem, poderá configurar um servidor proxy não transparente entre nós de storage e os pontos de extremidade externos do S3. Se você enviar mensagens AutoSupport usando HTTPS ou HTTP, poderá configurar um servidor proxy não transparente entre nós de administração e suporte técnico.
+
+image::../media/proxy_settings_menu_storage.png[Menu Configurações de proxy - armazenamento]
+
+
+
+== Redes de clientes não confiáveis
+
+Se você estiver usando uma rede cliente, você pode ajudar a proteger o StorageGRID contra ataques hostis especificando que a rede cliente em cada nó não é confiável. Se a rede de cliente de um nó não for confiável, o nó só aceita conexões de entrada em portas explicitamente configuradas como pontos de extremidade do balanceador de carga.
+
+Por exemplo, você pode querer que um nó de gateway recuse todo o tráfego de entrada na rede cliente, exceto para solicitações HTTPS S3. Ou, talvez você queira habilitar o tráfego de serviço de plataforma S3 de saída de um nó de armazenamento, ao mesmo tempo em que evita conexões de entrada para esse nó de armazenamento na rede do cliente.
+
+.Informações relacionadas
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+* xref:managing-tenants-and-client-connections.adoc[Gerenciar locatários e conexões de clientes]
+

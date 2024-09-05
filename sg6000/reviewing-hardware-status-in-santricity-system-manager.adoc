@@ -1,0 +1,59 @@
+---
+permalink: sg6000/reviewing-hardware-status-in-santricity-system-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, SANtricity System Manager, SANtricity, System Manager, hardware, status, diagnostic, environment drives, drive, temperature 
+summary: Você pode usar o Gerenciador de sistema do SANtricity para monitorar e gerenciar componentes de hardware individuais no compartimento de controladora de storage e analisar informações ambientais e de diagnóstico de hardware, como temperaturas dos componentes, bem como problemas relacionados às unidades. 
+---
+= Revise o status do hardware no Gerenciador do sistema do SANtricity
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o Gerenciador de sistema do SANtricity para monitorar e gerenciar componentes de hardware individuais no compartimento de controladora de storage e analisar informações ambientais e de diagnóstico de hardware, como temperaturas dos componentes, bem como problemas relacionados às unidades.
+
+.O que você vai precisar
+* Você está usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Para acessar o Gerenciador de sistema do SANtricity por meio do Gerenciador de Grade, você deve ter a permissão Administrador do dispositivo de armazenamento ou a permissão de acesso à raiz.
+* Para acessar o Gerenciador de sistema do SANtricity usando o Instalador de dispositivos do StorageGRID, você deve ter o nome de usuário e a senha do administrador do Gerenciador de sistema do SANtricity.
+* Para acessar diretamente o Gerenciador de sistema do SANtricity usando um navegador da Web, você deve ter o nome de usuário e a senha do administrador do Gerenciador de sistema do SANtricity.
+
+
+
+NOTE: Você deve ter o firmware SANtricity 8,70 (11,70) ou superior para acessar o Gerenciador de sistemas SANtricity usando o Gerenciador de Grade ou o Instalador de dispositivos StorageGRID.
+
+
+IMPORTANT: O acesso ao Gerenciador de sistema do SANtricity a partir do Gerenciador de Grade ou do Instalador de dispositivos é geralmente destinado apenas para monitorar seu hardware e configurar o e-Series AutoSupport. Muitos recursos e operações no Gerenciador de sistemas do SANtricity, como atualização de firmware, não se aplicam ao monitoramento do dispositivo StorageGRID. Para evitar problemas, siga sempre as instruções de instalação e manutenção do hardware do seu aparelho.
+
+.Passos
+. xref:setting-up-and-accessing-santricity-system-manager.adoc[Acesse o Gerenciador do sistema do SANtricity].
+. Introduza o nome de utilizador e a palavra-passe do administrador, se necessário.
+. Clique em *Cancelar* para fechar o assistente de configuração e exibir a página inicial do Gerenciador do sistema SANtricity.
++
+É apresentada a página inicial do Gestor do sistema SANtricity. No Gerenciador de sistemas do SANtricity, o compartimento de controladora é chamado de storage array.
+
++
+image::../media/sam_home_page.gif[Captura de tela da página inicial do Gerenciador de sistema do SANtricity]
+
+. Revise as informações exibidas para o hardware do dispositivo e confirme se todos os componentes de hardware têm o status ideal.
++
+.. Clique na guia *hardware*.
+.. Clique em *Mostrar parte posterior da prateleira*.
++
+image::../media/sam_hardware_controllers_a_and_b.gif[Guia de status do hardware no Gerenciador de sistema do SANtricity]
+
++
+Na parte de trás da gaveta, você pode visualizar os dois controladores de armazenamento, a bateria em cada controlador de armazenamento, os dois coletores de energia, os dois coletores de ventilador e os compartimentos de expansão (se houver). Também pode visualizar as temperaturas dos componentes.
+
+.. Para ver as configurações de cada controlador de armazenamento, selecione o controlador e selecione *View settings* no menu de contexto.
+.. Para ver as configurações de outros componentes na parte de trás da prateleira, selecione o componente que deseja exibir.
+.. Clique em *Mostrar frente da prateleira* e selecione o componente que deseja exibir.
++
+Na parte da frente da gaveta, é possível visualizar as unidades e as gavetas de unidades da gaveta de controladora de armazenamento ou das gavetas de expansão (se houver).
+
+
+
+
+
+Se o status de qualquer componente for necessário atenção, siga as etapas no Recovery Guru para resolver o problema ou entre em Contato com o suporte técnico.

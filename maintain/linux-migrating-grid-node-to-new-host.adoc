@@ -1,0 +1,39 @@
+---
+permalink: maintain/linux-migrating-grid-node-to-new-host.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, linux, migrate node, migrating node, new host for node 
+summary: 'Você pode migrar os nós do StorageGRID de um host Linux para outro para executar a manutenção do host (como patches e reinicializações do sistema operacional) sem afetar a funcionalidade ou a disponibilidade da sua grade.' 
+---
+= Linux: Migrar o nó de grade para o novo host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode migrar os nós do StorageGRID de um host Linux para outro para executar a manutenção do host (como patches e reinicialização do sistema operacional) sem afetar a funcionalidade ou a disponibilidade da sua grade.
+
+Você migra um ou mais nós de um host Linux (o "host de origem") para outro host Linux (o "host de destino"). O host de destino deve ter sido preparado anteriormente para uso no StorageGRID.
+
+
+IMPORTANT: Você pode usar este procedimento somente se você planejou sua implantação do StorageGRID para incluir suporte à migração.
+
+Para migrar um nó de grade para um novo host, ambas as condições a seguir devem ser verdadeiras:
+
+* O storage compartilhado é usado para todos os volumes de storage por nó
+* As interfaces de rede têm nomes consistentes entre os hosts
+
+
+
+NOTE: Em uma implantação de produção, não execute mais de um nó de storage em um único host. O uso de um host dedicado para cada nó de storage fornece um domínio de falha isolado.
+
+Outros tipos de nós, como nós de administração ou nós de gateway, podem ser implantados no mesmo host. No entanto, se você tiver vários nós do mesmo tipo (dois nós de Gateway, por exemplo), não instale todas as instâncias no mesmo host.
+
+Para obter mais informações, consulte "requisitos de migração de nós" nas instruções de instalação do StorageGRID para o seu sistema operacional Linux.
+
+.Informações relacionadas
+xref:deploying-new-linux-hosts.adoc[Implante novos hosts Linux]
+
+xref:../rhel/index.adoc[Instale o Red Hat Enterprise Linux ou CentOS]
+
+xref:../ubuntu/index.adoc[Instale Ubuntu ou Debian]

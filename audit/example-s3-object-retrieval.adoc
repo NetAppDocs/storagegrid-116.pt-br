@@ -1,0 +1,35 @@
+---
+permalink: audit/example-s3-object-retrieval.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, example, S3, object retrieval 
+summary: 'Quando um cliente S3 recupera um objeto de um nó de armazenamento (serviço LDR), uma mensagem de auditoria é gerada e salva no log de auditoria.' 
+---
+= Exemplo: Recuperação de objeto S3D.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando um cliente S3 recupera um objeto de um nó de armazenamento (serviço LDR), uma mensagem de auditoria é gerada e salva no log de auditoria.
+
+Observe que nem todas as mensagens de auditoria geradas durante uma transação são listadas no exemplo abaixo. Apenas os relacionados à transação de recuperação S3 (SGET) estão listados.
+
+
+
+== SGET: S3 GET
+
+A recuperação de objetos começa quando o cliente envia uma SOLICITAÇÃO GET Object a um serviço LDR. A mensagem contém o intervalo do qual recuperar o objeto e a chave S3 do objeto, que é usada para identificar o objeto.
+
+[listing, subs="specialcharacters,quotes"]
+----
+2017-09-20T22:53:08.782605 [AUDT:[RSLT(FC32):SUCS][TIME(UI64):47807][SAIP(IPAD):"10.96.112.26"][S3AI(CSTR):"43979298178977966408"][SACC(CSTR):"s3-account-a"][S3AK(CSTR):"SGKHt7GzEcu0yXhFhT_rL5mep4nJt1w75GBh-O_FEw=="][SUSR(CSTR):"urn:sgws:identity::43979298178977966408:root"][SBAI(CSTR):"43979298178977966408"][SBAC(CSTR):"s3-account-a"]\[S3BK\(CSTR\):"bucket-anonymous"\]\[S3KY\(CSTR\):"Hello.txt"\][CBID(UI64):0x83D70C6F1F662B02][CSIZ(UI64):12][AVER(UI32):10][ATIM(UI64):1505947988782605]\[ATYP\(FC32\):SGET\][ANID(UI32):12272050][AMID(FC32):S3RQ][ATID(UI64):17742374343649889669]]
+----
+Se a política de bucket permitir, um cliente pode recuperar objetos anonimamente ou recuperar objetos de um bucket que é de propriedade de uma conta de locatário diferente. A mensagem de auditoria contém informações sobre a conta de locatário do proprietário do bucket para que você possa rastrear essas solicitações anônimas e entre contas.
+
+Na mensagem de exemplo a seguir, o cliente envia uma SOLICITAÇÃO GET Object para um objeto armazenado em um bucket que ele não possui. Os valores para SBAI e SBAC Registram o ID e o nome da conta do locatário do proprietário do bucket, que difere do ID da conta do locatário e do nome do cliente registrado em S3AI e SACC.
+
+[listing, subs="specialcharacters,quotes"]
+----
+2017-09-20T22:53:15.876415 [AUDT:[RSLT(FC32):SUCS][TIME(UI64):53244][SAIP(IPAD):"10.96.112.26"]\[S3AI\(CSTR\):"17915054115450519830"\]\[SACC\(CSTR\):"s3-account-b"\][S3AK(CSTR):"SGKHpoblWlP_kBkqSCbTi754Ls8lBUog67I2LlSiUg=="][SUSR(CSTR):"urn:sgws:identity::17915054115450519830:root"]\[SBAI\(CSTR\):"43979298178977966408"\]\[SBAC\(CSTR\):"s3-account-a"\][S3BK(CSTR):"bucket-anonymous"][S3KY(CSTR):"Hello.txt"][CBID(UI64):0x83D70C6F1F662B02][CSIZ(UI64):12][AVER(UI32):10][ATIM(UI64):1505947995876415][ATYP(FC32):SGET][ANID(UI32):12272050][AMID(FC32):S3RQ][ATID(UI64):6888780247515624902]]
+----

@@ -1,0 +1,25 @@
+---
+permalink: upgrade/changes-to-tenant-management-api.html 
+sidebar: sidebar 
+keywords: tenant management api, api, api version, swagger, rest api 
+summary: O StorageGRID 11,6 usa a versão 3 da API de gerenciamento do locatário. A versão 3 desconsidera a versão 2; no entanto, a versão 1 e a versão 2 ainda são suportadas. 
+---
+= Alterações na API de gerenciamento do locatário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O StorageGRID 11,6 usa a versão 3 da API de gerenciamento do locatário. A versão 3 desconsidera a versão 2; no entanto, a versão 1 e a versão 2 ainda são suportadas.
+
+
+IMPORTANT: Você pode continuar usando a versão 1 e a versão 2 da API de gerenciamento com o StorageGRID 11,6; no entanto, o suporte para essas versões da API será removido em uma versão futura do StorageGRID. Depois de atualizar para o StorageGRID 11,6, as APIs v1 e v2 obsoletas podem ser desativadas usando a `PUT /grid/config/management` API.
+
+Para saber mais, xref:../tenant/understanding-tenant-management-api.adoc[Entenda a API de gerenciamento do locatário]acesse .
+
+
+
+== Método DE CORREÇÃO obsoleto
+
+O método DE PATCH agora foi obsoleto e será removido em uma versão futura. Conforme necessário, execute uma operação PUT para substituir um recurso em vez de usar uma operação DE PATCH para modificar o recurso.

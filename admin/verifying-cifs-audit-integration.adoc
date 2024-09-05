@@ -1,0 +1,14 @@
+---
+permalink: admin/verifying-cifs-audit-integration.html 
+sidebar: sidebar 
+keywords: verify cifs, cift audit share 
+summary: O compartilhamento de auditoria é somente leitura. Os ficheiros de registo destinam-se a ser lidos por aplicações de computador e a verificação não inclui a abertura de um ficheiro. Considera-se verificação suficiente que os arquivos de log de auditoria apareçam em uma janela do Windows Explorer. Após a verificação de conexão, feche todas as janelas. 
+---
+= Verificar a integração da auditoria CIFS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O compartilhamento de auditoria é somente leitura. Os ficheiros de registo destinam-se a ser lidos por aplicações de computador e a verificação não inclui a abertura de um ficheiro. Considera-se verificação suficiente que os arquivos de log de auditoria apareçam em uma janela do Windows Explorer. Após a verificação de conexão, feche todas as janelas.

@@ -1,0 +1,69 @@
+---
+permalink: sg5700/unpacking-boxes-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, install, installation, unpack, unbox, prepare, inventory, components, contents 
+summary: Antes de instalar o dispositivo StorageGRID, desembale todas as caixas e compare o conteúdo com os itens no saco de embalagem. 
+---
+= Caixas de embalagem (SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o dispositivo StorageGRID, desembale todas as caixas e compare o conteúdo com os itens no saco de embalagem.
+
+* * SG5712 dispositivo com 12 unidades instaladas*
++
+image::../media/de212c_table_size.gif[SG5712 2U aparelho]
+
+* * SG5760 dispositivo sem unidades instaladas*
++
+image::../media/de460c_table_size.gif[SG5760 4U aparelho]
+
+* *Moldura frontal para o aparelho*
++
+image::../media/sg5700_front_bezels.gif[Molduras de SG5712 e SG5760]
+
+* *Kit de trilho com instruções*
++
+image::../media/rail_kit.gif[Kit de calha]
+
+* *SG5760: Sessenta unidades*
++
+image::../media/sg5760_drive.gif[Condução]
+
+* *SG5760: Alças*
++
+image::../media/handles.gif[SG5760 alças]
+
+* * SG5760: Suportes traseiros e porcas de gaiola para instalação de rack de furo quadrado*
++
+image::../media/back_brackets_table_size.gif[Suportes traseiros e porcas de gaiola para SG5760]
+
+
+
+
+
+== Cabos e conetores
+
+O envio para o dispositivo StorageGRID inclui os seguintes cabos e conetores:
+
+* * Dois cabos de alimentação para o seu país*
++
+image::../media/power_cords.gif[Cabos de energia]
+
++
+O gabinete pode ter cabos de alimentação especiais que você usa em vez dos cabos de alimentação fornecidos com o aparelho.
+
+* * Cabos óticos e transcetores SFP*
++
+image::../media/fc_cable_and_sfp.gif[Cabos óticos e SFPs]
+
++
+Dois cabos óticos para as portas de interconexão FC
+
++
+Oito transcetores SFP mais, compatíveis com as quatro portas de interconexão FC de 16GB GB/s e as quatro portas de rede de 10 GbE
+
+

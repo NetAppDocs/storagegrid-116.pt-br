@@ -1,0 +1,14 @@
+---
+permalink: sg6000/installing-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, hardware, install, installing 
+summary: A instalação de hardware implica a instalação do controlador SG6000-CN e da prateleira do controlador de armazenamento em um gabinete ou rack, conetando os cabos e aplicando energia. 
+---
+= Instalar hardware (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A instalação de hardware implica a instalação do controlador SG6000-CN e da prateleira do controlador de armazenamento em um gabinete ou rack, conetando os cabos e aplicando energia.

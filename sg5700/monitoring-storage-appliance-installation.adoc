@@ -1,0 +1,52 @@
+---
+permalink: sg5700/monitoring-storage-appliance-installation.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, installation, install, progress, monitor, status 
+summary: O Instalador de dispositivos StorageGRID fornece o status até que a instalação esteja concluída. Quando a instalação do software estiver concluída, o dispositivo é reinicializado. 
+---
+= Monitorar a instalação do dispositivo de storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Instalador de dispositivos StorageGRID fornece o status até que a instalação esteja concluída. Quando a instalação do software estiver concluída, o dispositivo é reinicializado.
+
+.Passos
+. Para monitorar o progresso da instalação, clique em *Monitor Installation*.
++
+A página Instalação do monitor mostra o progresso da instalação.
+
++
+image::../media/monitor_installation_configure_storage.gif[Esta imagem é explicada pelo texto circundante.]
+
++
+A barra de status azul indica qual tarefa está atualmente em andamento. As barras de estado verdes indicam tarefas concluídas com êxito.
+
++
+
+NOTE: O instalador garante que as tarefas concluídas em uma instalação anterior não sejam executadas novamente. Se você estiver reexecutando uma instalação, todas as tarefas que não precisam ser executadas novamente serão mostradas com uma barra de status verde e um status de ""pulado"".
+
+. Reveja o progresso das duas primeiras fases de instalação.
++
+*1. Configurar armazenamento*
+
++
+Durante essa etapa, o instalador se coneta ao controlador de armazenamento, limpa qualquer configuração existente, se comunica com o software SANtricity para configurar volumes e configura as configurações do host.
+
++
+*2. Instale o os*
+
++
+Durante esta fase, o instalador copia a imagem base do sistema operativo para o StorageGRID para o dispositivo.
+
+. Continue monitorando o progresso da instalação até que o estágio *Install StorageGRID* pare e uma mensagem seja exibida no console incorporado, solicitando que você aprove esse nó no nó Admin usando o Gerenciador de Grade. Vá para a próxima etapa.
++
+image::../media/monitor_installation_install_sgws.gif[Esta imagem é explicada pelo texto circundante.]
+
+. Vá para o Gerenciador de Grade do nó Admin principal, aprove o nó de armazenamento pendente e conclua o processo de instalação do StorageGRID.
++
+Quando você clica em *Install* no Gerenciador de Grade, o estágio 3 é concluído e o estágio 4, *Finalize a instalação*, começa. Quando a fase 4 é concluída, o controlador é reinicializado.
+
+

@@ -1,0 +1,66 @@
+---
+permalink: monitor/viewing-overview-tab.html 
+sidebar: sidebar 
+keywords: overview tab 
+summary: A guia Visão geral fornece informações básicas sobre cada nó. Ele também mostra todos os alertas que afetam o nó no momento. 
+---
+= Veja a guia Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A guia Visão geral fornece informações básicas sobre cada nó. Ele também mostra todos os alertas que afetam o nó no momento.
+
+A guia Visão geral é mostrada para todos os nós.
+
+
+
+== Informações do nó
+
+A seção informações do nó da guia Visão geral lista informações básicas sobre o nó da grade.
+
+image::../media/nodes_page_overview_tab.png[Guia Visão geral da página de nós]
+
+As informações de visão geral de um nó incluem o seguinte:
+
+* *Nome*: O nome do host atribuído ao nó e exibido no Gerenciador de Grade.
+* *Tipo*: O tipo de nó -- nó Admin, nó Admin primário, nó de armazenamento, nó de gateway ou nó de arquivo.
+* *ID*: O identificador exclusivo para o nó, que também é conhecido como UUID.
+* *Estado da conexão*: Um dos três estados. É apresentado o ícone para o estado mais grave.
++
+** *Desconhecido* image:../media/icon_alarm_blue_unknown.png["ícone de ponto de interrogação azul"]: o nó não está conetado à grade por um motivo desconhecido. Por exemplo, a conexão de rede entre nós foi perdida ou a energia está inativa. O alerta *não é possível se comunicar com o nó* também pode ser acionado. Outros alertas também podem estar ativos. Esta situação requer atenção imediata.
++
+
+NOTE: Um nó pode aparecer como desconhecido durante operações de desligamento gerenciado. Nesses casos, você pode ignorar o estado desconhecido.
+
+** *Administrativamente para baixo* image:../media/icon_alarm_gray_administratively_down.png["ícone de marca de interrogação cinzenta"]: o nó não está conetado à grade por um motivo esperado. Por exemplo, o nó, ou serviços no nó, foi desligado graciosamente, o nó está reiniciando ou o software está sendo atualizado. Um ou mais alertas também podem estar ativos.
+** *Conectado* image:../media/icon_alert_green_checkmark.png["ícone alerta verde marca de verificação"]: o nó está conetado à grade.
+
+
+* *Storage usado*: Somente para nós de storage.
++
+** *Dados do objeto*: A porcentagem do espaço utilizável total para dados de objeto que foram usados no nó de armazenamento.
+** *Metadados de objetos*: A porcentagem do espaço total permitido para metadados de objetos que foram usados no nó de armazenamento.
+
+
+* *Versão do software*: A versão do StorageGRID instalada no nó.
+* *Grupos de HA*: Somente para nó de administrador e nós de gateway. Mostrado se uma interface de rede no nó está incluída em um grupo de alta disponibilidade e se essa interface é a interface principal.
+* *Endereços IP*: Os endereços IP do nó. Clique em *Mostrar endereços IP adicionais* para visualizar os endereços IPv4 e IPv6 do nó e mapeamentos de interface.
+
+
+
+
+== Alertas
+
+A seção Alertas da guia Visão geral lista todos os alertas que atualmente afetam esse nó que não foram silenciados. Clique no nome do alerta para ver detalhes adicionais e ações recomendadas.
+
+image::../media/nodes_page_alerts_table.png[Tabela de alertas de página de nós]
+
+.Informações relacionadas
+xref:monitoring-node-connection-states.adoc[Monitorar os estados de conexão do nó]
+
+xref:viewing-current-alerts.adoc[Ver alertas atuais]
+
+xref:viewing-specific-alert.adoc[Veja um alerta específico]

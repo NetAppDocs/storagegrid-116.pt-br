@@ -1,0 +1,14 @@
+---
+permalink: audit/audit-message-categories.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, categories, category, group, groups, organization, class, classes 
+summary: Você deve estar familiarizado com as várias categorias nas quais as mensagens de auditoria são agrupadas. Esses grupos são organizados com base na classe de atividade que a mensagem representa. 
+---
+= Auditar categorias de mensagens
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve estar familiarizado com as várias categorias nas quais as mensagens de auditoria são agrupadas. Esses grupos são organizados com base na classe de atividade que a mensagem representa.

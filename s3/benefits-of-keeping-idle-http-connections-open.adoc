@@ -1,0 +1,26 @@
+---
+permalink: s3/benefits-of-keeping-idle-http-connections-open.html 
+sidebar: sidebar 
+keywords: idle connection benefits 
+summary: Você deve manter as conexões HTTP abertas mesmo quando os aplicativos cliente estiverem ociosos para permitir que os aplicativos cliente executem transações subsequentes pela conexão aberta. Com base nas medições do sistema e na experiência de integração, você deve manter uma conexão HTTP inativa aberta por um máximo de 10 minutos. O StorageGRID pode fechar automaticamente uma conexão HTTP que é mantida aberta e inativa por mais de 10 minutos. 
+---
+= Benefícios de manter conexões HTTP ociosas abertas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve manter as conexões HTTP abertas mesmo quando os aplicativos cliente estiverem ociosos para permitir que os aplicativos cliente executem transações subsequentes pela conexão aberta. Com base nas medições do sistema e na experiência de integração, você deve manter uma conexão HTTP inativa aberta por um máximo de 10 minutos. O StorageGRID pode fechar automaticamente uma conexão HTTP que é mantida aberta e inativa por mais de 10 minutos.
+
+Conexões HTTP abertas e ociosas fornecem os seguintes benefícios:
+
+* Latência reduzida desde o tempo em que o sistema StorageGRID determina que ele tem que executar uma transação HTTP para o tempo em que o sistema StorageGRID pode executar a transação
++
+A latência reduzida é a principal vantagem, especialmente pelo tempo necessário para estabelecer conexões TCP/IP e TLS.
+
+* Aumento da taxa de transferência de dados por priming do algoritmo de início lento TCP/IP com transferências realizadas anteriormente
+* Notificação instantânea de várias classes de condições de falha que interrompem a conetividade entre o aplicativo cliente e o sistema StorageGRID
+
+
+Determinar por quanto tempo manter uma conexão inativa aberta é uma troca entre os benefícios do início lento que está associado à conexão existente e à alocação ideal da conexão com os recursos internos do sistema.

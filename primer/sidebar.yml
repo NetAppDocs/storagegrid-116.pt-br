@@ -1,0 +1,61 @@
+---
+section: primer
+title: Primário de grelha
+entries:
+- title: Visão geral
+  pdf-filename: Primário de grelha StorageGRID
+  url: "/primer/index.html"
+- title: Nuvens híbridas com StorageGRID
+  url: "/primer/hybrid-clouds-with-storagegrid.html"
+- title: Arquitetura e topologia de rede
+  url: "/primer/storagegrid-architecture-and-network-topology.html"
+- title: Gerenciamento de objetos
+  entries:
+  - title: Como o StorageGRID gerencia dados
+    url: "/primer/how-storagegrid-manages-data.html"
+  - title: Ciclo de vida do objeto
+    entries:
+    - title: A vida de um objeto
+      url: "/primer/life-of-object.html"
+    - title: Ingira o fluxo de dados
+      url: "/primer/ingest-data-flow.html"
+    - title: Gerenciamento de cópias
+      url: "/primer/copy-management.html"
+    - title: Recuperar fluxo de dados
+      url: "/primer/retrieve-data-flow.html"
+    - title: Eliminar fluxo de dados
+      url: "/primer/delete-data-flow.html"
+- title: Como usar o StorageGRID
+  entries:
+  - title: Explore o Grid Manager
+    url: "/primer/exploring-grid-manager.html"
+  - title: Explore o Gestor de inquilinos
+    url: "/primer/exploring-tenant-manager.html"
+  - title: Controle o acesso à StorageGRID
+    url: "/primer/controlling-storagegrid-access.html"
+  - title: Gerenciar locatários e conexões de clientes
+    url: "/primer/managing-tenants-and-client-connections.html"
+  - title: Configure as definições de rede
+    url: "/primer/configuring-network-settings.html"
+  - title: Configure as definições de segurança
+    url: "/primer/configuring-security-settings.html"
+  - title: Configure as definições do sistema
+    url: "/primer/configuring-system-settings.html"
+  - title: Use o gerenciamento do ciclo de vida das informações
+    url: "/primer/using-information-lifecycle-management.html"
+  - title: Monitorar as operações
+    entries:
+    - title: Exibir a página de nós
+      url: "/primer/viewing-nodes-page.html"
+    - title: Monitorar e gerenciar alertas
+      url: "/primer/monitoring-and-managing-alerts.html"
+    - title: Utilize a monitorização SNMP
+      url: "/primer/using-snmp-monitoring.html"
+    - title: Rever mensagens de auditoria
+      url: "/primer/reviewing-audit-messages.html"
+  - title: Efectue a manutenção
+    url: "/primer/performing-maintenance-procedures.html"
+  - title: Baixar Recovery Package
+    url: "/primer/downloading-recovery-package.html"
+  - title: Use as opções de suporte
+    url: "/primer/using-storagegrid-support-options.html"

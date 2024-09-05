@@ -1,0 +1,34 @@
+---
+permalink: sg6000/expansion-shelves-do-not-appear-in-appliance-installer.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance troubleshooting, Expansion, shelves, do not appear, Appliance Installer, missing, not shown 
+summary: Se você tiver instalado prateleiras de expansão para o SG6060 ou SG6060X e elas não aparecerem no Instalador de dispositivos StorageGRID, verifique se as prateleiras foram completamente instaladas e ligadas. 
+---
+= As prateleiras de expansão não aparecem no Instalador de dispositivos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você tiver instalado prateleiras de expansão para o SG6060 ou SG6060X e elas não aparecerem no Instalador de dispositivos StorageGRID, verifique se as prateleiras foram completamente instaladas e ligadas.
+
+.Sobre esta tarefa
+Você pode verificar se os compartimentos de expansão estão conetados ao dispositivo visualizando as seguintes informações no Instalador de dispositivos StorageGRID:
+
+* A página *Home* contém uma mensagem sobre prateleiras de expansão.
++
+image::../media/expansion_shelf_home_page_msg.png[Mensagem de compartimentos de expansão]
+
+* A página *Avançado* *modo RAID* indica pelo número de unidades se o dispositivo inclui ou não compartimentos de expansão. Por exemplo, na captura de tela a seguir, dois SSDs e 178 HDDs são exibidos. Um SG6060 com dois compartimentos de expansão contém um total de 180 unidades.
+
+
+image::../media/expansion_shelves_shown_by_num_of_drives.png[Número de unidades]
+
+Se as páginas do Instalador do dispositivo StorageGRID não indicarem que as prateleiras de expansão estão presentes, siga este procedimento.
+
+.Passos
+. Verifique se xref:sg6060-cabling-optional-expansion-shelves.adoc[todos os cabos necessários foram ligados com firmeza].
+. Verifique se você xref:connecting-power-cords-and-applying-power-sg6000.adoc[ligado às prateleiras de expansão]tem o .
+. Se você precisar de ajuda para resolver um problema, entre em Contato com o suporte técnico.
+

@@ -1,0 +1,99 @@
+---
+permalink: ilm/creating-default-ilm-rule.html 
+sidebar: sidebar 
+keywords: create default ilm rule 
+summary: Antes de criar uma política de ILM, você deve criar uma regra padrão para colocar objetos não correspondidos por outra regra na política. A regra padrão não pode usar nenhum filtro. Ele deve se aplicar a todos os locatários, todos os buckets e todas as versões de objetos. 
+---
+= Crie uma regra ILM padrão
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de criar uma política de ILM, você deve criar uma regra padrão para colocar objetos não correspondidos por outra regra na política. A regra padrão não pode usar nenhum filtro. Ele deve se aplicar a todos os locatários, todos os buckets e todas as versões de objetos.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+A regra padrão é a última regra a ser avaliada em uma política ILM, portanto, ela não pode usar nenhum filtro ou o tempo de referência não atual. As instruções de posicionamento para a regra padrão são aplicadas a quaisquer objetos que não sejam correspondidos por outra regra na política.
+
+Nesta política de exemplo, a primeira regra aplica-se apenas a objetos pertencentes ao locatário A. a regra padrão, que é a última, aplica-se a objetos pertencentes a todas as outras contas de inquilino.
+
+image::../media/ilm_policies_page_default_rule.png[Regra padrão da página de políticas ILM]
+
+Ao criar a regra padrão, lembre-se destes requisitos:
+
+* A regra padrão é automaticamente colocada como a última regra na política.
+* A regra padrão não pode usar nenhum filtro básico ou avançado.
+* A regra padrão deve ser aplicada a todas as versões de objeto, portanto, não pode usar o tempo de referência de tempo não atual.
+* A regra padrão deve criar cópias replicadas.
++
+
+IMPORTANT: Não use uma regra que crie cópias codificadas por apagamento como regra padrão para uma política. As regras de codificação de apagamento devem usar um filtro avançado para evitar que objetos menores sejam codificados para apagamento.
+
+* Em geral, a regra padrão deve manter objetos para sempre.
+* Se você estiver usando (ou pretende ativar) a configuração global S3 Object Lock, a regra padrão para a política ativa ou proposta deve ser compatível.
+
+
+.Passos
+. Selecione *ILM* > *regras*.
++
+A página regras do ILM é exibida.
+
+. Selecione *criar*.
++
+A etapa 1 (Definir noções básicas) do assistente criar regra ILM é exibida.
+
+. Digite um nome exclusivo para a regra no campo *Nome*.
+. Opcionalmente, insira uma breve descrição para a regra no campo *Description*.
+. Deixe o campo *Contas do locatário* em branco.
++
+A regra padrão deve ser aplicada a todas as contas de locatário.
+
+. Deixe o campo *Bucket Name* em branco.
++
+A regra padrão deve ser aplicada a todos os buckets do S3 e contentores Swift.
+
+. Não selecione *filtragem avançada*
++
+A regra padrão não pode especificar nenhum filtro.
+
+. Selecione *seguinte*.
++
+É apresentado o passo 2 (Definir posicionamentos).
+
+. Para tempo de referência, selecione qualquer opção exceto *hora não atual*.
++
+A regra padrão deve aplicar todas as versões de objeto.
+
+. Especifique as instruções de colocação para a regra padrão.
++
+** A regra padrão deve manter objetos para sempre. Um aviso aparece quando você ativa uma nova política se a regra padrão não retiver objetos para sempre. Você deve confirmar que este é o comportamento que você espera.
+** A regra padrão deve criar cópias replicadas.
++
+
+IMPORTANT: Não use uma regra que crie cópias codificadas por apagamento como regra padrão para uma política. As regras de codificação de apagamento devem incluir o filtro avançado *Object Size (MB) maior que 0,2* para evitar que objetos menores sejam codificados para apagamento.
+
+** Se você estiver usando (ou pretende ativar) a configuração global S3 Object Lock, a regra padrão deve ser compatível:
++
+*** Ele precisa criar pelo menos duas cópias de objeto replicadas ou uma cópia codificada por apagamento.
+*** Essas cópias devem existir nos nós de storage durante toda a duração de cada linha nas instruções de posicionamento.
+*** As cópias de objeto não podem ser salvas em um pool de storage de nuvem.
+*** As cópias de objeto não podem ser guardadas nos nós de arquivo.
+*** Pelo menos uma linha das instruções de colocação deve começar no dia 0, usando o tempo de ingestão como o tempo de referência.
+*** Pelo menos uma linha das instruções de colocação deve ser "para sempre".
+
+
+
+
+. Selecione *Atualizar* para atualizar o Diagrama de retenção e confirmar as instruções de colocação.
+. Selecione *seguinte*.
++
+A etapa 3 (Definir comportamento de ingestão) é exibida.
+
+. Selecione a opção de proteção de dados a ser usada quando os objetos são ingeridos e selecione *Salvar*.
+

@@ -1,0 +1,105 @@
+---
+permalink: sg100-1000/installation-and-deployment-overview.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, Installation, deployment, Install, deploy, Installing, deploying 
+summary: Você pode instalar um ou mais dispositivos de serviços do StorageGRID quando implantar o StorageGRID pela primeira vez ou adicionar nós de dispositivos de serviços posteriormente como parte de uma expansão. 
+---
+= Visão geral da instalação e implantação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode instalar um ou mais dispositivos de serviços do StorageGRID quando implantar o StorageGRID pela primeira vez ou adicionar nós de dispositivos de serviços posteriormente como parte de uma expansão.
+
+.O que você vai precisar
+O seu sistema StorageGRID está a utilizar a versão necessária do software StorageGRID.
+
+[cols="1a,2a"]
+|===
+| Aparelho | Versão StorageGRID necessária 
+
+
+ a| 
+SG100
+ a| 
+11,4 ou posterior (correção mais recente recomendada)
+
+
+
+ a| 
+SG1000
+ a| 
+11,3 ou posterior (correção mais recente recomendada)
+
+|===
+
+
+== Tarefas de instalação e implantação
+
+Preparar e adicionar um dispositivo StorageGRID à grade inclui quatro etapas principais:
+
+. xref:preparing-for-installation-sg100-and-sg1000.adoc[Preparando-se para a instalação]:
++
+** Preparar o local de instalação
+** Desembalar as caixas e verificar o conteúdo
+** Obtenção de equipamentos e ferramentas adicionais
+** Verificando a configuração da rede
+** Opcional: Configurando um servidor de gerenciamento de chaves externo (KMS) se você planeja criptografar todos os dados do dispositivo. Consulte detalhes sobre o gerenciamento de chaves externas nas instruções de administração do StorageGRID.
+
+
+. xref:registering-hardware-sg100-and-sg1000.adoc[Instalar o hardware]:
++
+** Registar o hardware
+** Instalar o aparelho num armário ou num rack
+** Fazer o cabeamento do dispositivo
+** Ligar o cabo de alimentação e ligar a alimentação
+** Exibindo códigos de status de inicialização
+
+
+. xref:configuring-storagegrid-connections-sg100-and-sg1000.adoc[Configurar o hardware]:
++
+** Acessando o Instalador do StorageGRID Appliance e configurando as configurações de IP de rede e link necessárias para se conetar a redes StorageGRID
+** Acesso à interface do controlador de gerenciamento de placa base (BMC) no dispositivo.
+** Opcional: Habilitando a criptografia de nó se você planeja usar um KMS externo para criptografar dados do dispositivo.
+
+
+. Implantando um Gateway de dispositivo ou nó de administrador
++
+Depois que o hardware do dispositivo tiver sido instalado e configurado, você pode implantar o dispositivo como um nó de gateway e um nó de administrador em um sistema StorageGRID. Os dispositivos SG100 e SG1000 podem operar como nós de gateway e nós de administração (primários e não primários) ao mesmo tempo.
+
++
+[cols="2a,2a"]
+|===
+| Tarefa | Instruções 
+
+
+ a| 
+Implantação de um Gateway de dispositivo ou nó de administrador em um novo sistema StorageGRID
+ a| 
+xref:deploying-services-appliance-node.adoc[Implante um nó de dispositivo de serviços]
+
+
+
+ a| 
+Adicionar um Gateway de dispositivo ou nó de administrador a um sistema StorageGRID existente
+ a| 
+xref:../expand/index.adoc[Expanda um sistema StorageGRID]
+
+
+
+ a| 
+Implantação de um Gateway de dispositivo ou nó de administrador como parte de uma operação de recuperação de nó
+ a| 
+xref:../maintain/index.adoc[Recuperar e manter um sistema StorageGRID]
+
+|===
+
+
+.Informações relacionadas
+xref:../expand/index.adoc[Expanda sua grade]
+
+xref:../maintain/index.adoc[Recupere e mantenha sua grade]
+
+xref:../admin/index.adoc[Administrar o StorageGRID]

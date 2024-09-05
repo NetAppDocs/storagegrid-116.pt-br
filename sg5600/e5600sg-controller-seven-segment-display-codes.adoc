@@ -1,0 +1,299 @@
+---
+permalink: sg5600/e5600sg-controller-seven-segment-display-codes.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, seven-segment display, seven segment display, 7-segment display, 7 segment display, display, code, codes, status, error, boot-up, power-up, boot, e5600sg, Service Action Allowed LED, Service Action Required LED, Service Action Allowed, Service Action Required, LED, 19, 68, AA, FF, HI, PP, HP, RB, FP, HE, HC, HO, HA, 22, 23, 2A, 2B, 40, 41, 42, 51, 92, 93, 94, 95 96, A0, A1, A2 A3, AB, AE, EA, E8, EU, EP 
+summary: O visor de sete segmentos no controlador E5600SG mostra os códigos de estado e de erro enquanto o aparelho liga e enquanto o hardware está a ser inicializado. Você pode usar esses códigos para determinar o status e solucionar erros. 
+---
+= E5600SG códigos de exibição de sete segmentos do controlador
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O visor de sete segmentos no controlador E5600SG mostra os códigos de estado e de erro enquanto o aparelho liga e enquanto o hardware está a ser inicializado. Você pode usar esses códigos para determinar o status e solucionar erros.
+
+Ao analisar os códigos de status e de erro no controlador E5600SG, você deve observar os seguintes tipos de códigos:
+
+* *Códigos gerais de inicialização*
++
+Representar os eventos de inicialização padrão.
+
+* *Códigos de inicialização normais*
++
+Representa os eventos normais de arranque que ocorrem no aparelho.
+
+* *Códigos de erro*
++
+Indique problemas durante os eventos de inicialização.
+
+
+
+O StorageGRID controla apenas os seguintes LEDs no controlador E5600SG e apenas depois de o Instalador de dispositivos StorageGRID ter iniciado:
+
+* LED Ação de Serviço permitida
+* LED de ação de assistência necessária
+* Visor de sete segmentos
+
+
+image::../media/appliance_e5600_leds.gif[LEDs e display de sete segmentos no controlador E5600SG]
+
+Os pontos decimais no visor de sete segmentos não são utilizados pelo dispositivo StorageGRID:
+
+* O ponto decimal superior adjacente ao dígito menos significativo é o LED de diagnóstico da plataforma.
++
+Isso é ativado durante a reinicialização e a configuração inicial do hardware. Caso contrário, ele é desligado.
+
+* O ponto decimal inferior adjacente ao dígito mais significativo é desligado.
+
+
+Para diagnosticar outros problemas, você pode querer olhar para estes recursos:
+
+* Para ver todas as outras informações de diagnóstico ambiental e de hardware, consulte o diagnóstico de hardware do sistema operacional e-Series.
++
+Isso inclui a busca de problemas de hardware, como energia, temperatura e unidades de disco. O dispositivo depende do sistema operacional e-Series para monitorar todos os status ambientais da plataforma.
+
+* Para determinar problemas de firmware e driver, observe as luzes de link nas portas SAS e de rede.
++
+Para obter detalhes, consulte a documentação do e-Series E5600.
+
+
+
+
+
+== Códigos gerais de arranque
+
+Durante a inicialização ou após uma reinicialização total do hardware, os LEDs Ação de Serviço permitida e Ação de Serviço necessária acendem-se enquanto o hardware está sendo inicializado. O visor de sete segmentos mostra uma sequência de códigos iguais para o hardware e-Series e não específicos para o controlador E5600SG.
+
+Durante a inicialização, o Field Programmable Gate Array (FPGA) controla as funções e a inicialização do hardware.
+
+|===
+| Código | Indicação 
+
+
+ a| 
+19
+ a| 
+Inicialização do FPGA.
+
+
+
+ a| 
+68
+ a| 
+Inicialização do FPGA.
+
+
+
+ a| 
+...
+ a| 
+Inicialização FPGA. Esta é uma rápida sucessão de códigos.
+
+
+
+ a| 
+AA
+ a| 
+Inicialização do BIOS da plataforma.
+
+
+
+ a| 
+FF
+ a| 
+Inicialização do BIOS concluída. Este é um estado intermediário antes do controlador E5600SG inicializar e gerenciar LEDs para indicar o status.
+
+|===
+Depois que os códigos AA e FF aparecem, os códigos de inicialização normais aparecem ou os códigos de erro aparecem. Além disso, os LEDs Ação de Serviço permitida e Ação de Serviço necessária estão desligados.
+
+
+
+== Códigos de arranque normais
+
+Estes códigos representam os eventos normais de arranque que ocorrem no aparelho, por ordem cronológica.
+
+|===
+| Código | Indicação 
+
+
+ a| 
+OLÁ
+ a| 
+O script de inicialização mestre foi iniciado.
+
+
+
+ a| 
+DE PP
+ a| 
+O firmware da plataforma FPGA está verificando se há atualizações.
+
+
+
+ a| 
+HP
+ a| 
+A placa de interface do host (HIC) está verificando se há atualizações.
+
+
+
+ a| 
+RB
+ a| 
+Após atualizações de firmware, o sistema está reiniciando, se necessário.
+
+
+
+ a| 
+FP
+ a| 
+As verificações de atualização de firmware foram concluídas. Iniciar o processo (utmagent) para se comunicar e gerenciar o controlador E2700. Esse processo facilita o provisionamento de dispositivos.
+
+
+
+ a| 
+ELE
+ a| 
+O sistema está sincronizando com o sistema operacional e-Series.
+
+
+
+ a| 
+HC
+ a| 
+A instalação do StorageGRID está sendo verificada.
+
+
+
+ a| 
+HO
+ a| 
+O gerenciamento da instalação e a interface ativa estão ocorrendo.
+
+
+
+ a| 
+HA
+ a| 
+O sistema operacional Linux e o StorageGRID estão em execução.
+
+|===
+
+
+== E5600SG códigos de erro do controlador
+
+Estes códigos representam condições de erro que podem ser apresentadas no controlador E5600SG à medida que o aparelho arranca. Códigos hexadecimais de dois dígitos adicionais são exibidos se ocorrerem erros específicos de hardware de baixo nível. Se algum destes códigos persistir durante mais de um segundo ou dois, ou se não conseguir resolver o erro seguindo um dos procedimentos de resolução de problemas prescritos, contacte o suporte técnico.
+
+|===
+| Código | Indicação 
+
+
+ a| 
+22
+ a| 
+Nenhum Registro mestre de inicialização encontrado em qualquer dispositivo de inicialização.
+
+
+
+ a| 
+23
+ a| 
+Nenhuma unidade SATA instalada.
+
+
+
+ a| 
+2A, 2B
+ a| 
+Barramento preso, não é possível ler dados SPD do DIMM.
+
+
+
+ a| 
+40
+ a| 
+DIMMs inválidos.
+
+
+
+ a| 
+41
+ a| 
+DIMMs inválidos.
+
+
+
+ a| 
+42
+ a| 
+Falha no teste de memória.
+
+
+
+ a| 
+51
+ a| 
+Falha na leitura de SPD.
+
+
+
+ a| 
+92 a 96
+ a| 
+Inicialização do barramento PCI.
+
+
+
+ a| 
+A0 a A3
+ a| 
+Inicialização da unidade SATA.
+
+
+
+ a| 
+AB
+ a| 
+Código de inicialização alternativo.
+
+
+
+ a| 
+AE
+ a| 
+A arrancar o SO.
+
+
+
+ a| 
+EA
+ a| 
+DDR3 a formação falhou.
+
+
+
+ a| 
+E8
+ a| 
+Nenhuma memória instalada.
+
+
+
+ a| 
+UE
+ a| 
+O script de instalação não foi encontrado.
+
+
+
+ a| 
+EP
+ a| 
+O código "ManageSGA" indica que a comunicação pré-grid com o controlador E2700 falhou.
+
+|===
+.Informações relacionadas
+xref:troubleshooting-hardware-installation.adoc[Solução de problemas de instalação de hardware (SG5600)]
+
+https://mysupport.netapp.com/site/global/dashboard["Suporte à NetApp"^]

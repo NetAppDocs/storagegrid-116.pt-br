@@ -1,0 +1,28 @@
+---
+permalink: sg5600/service-laptop-requirements-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, service, laptop, console 
+summary: Antes de instalar o hardware do dispositivo StorageGRID, você deve verificar se o laptop de serviço tem os recursos mínimos necessários. 
+---
+= Requisitos de manutenção do laptop
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o hardware do dispositivo StorageGRID, você deve verificar se o laptop de serviço tem os recursos mínimos necessários.
+
+O laptop de serviço, que é necessário para a instalação de hardware, deve atender aos seguintes requisitos:
+
+* Sistema operativo Microsoft Windows
+* Porta de rede
+* xref:../admin/web-browser-requirements.adoc[Navegador da Web suportado]
+* NetApp SANtricity Storage Manager versão 11,40 ou posterior
+* Cliente SSH (por exemplo, PuTTY)
+
+
+.Informações relacionadas
+xref:../admin/web-browser-requirements.adoc[Requisitos do navegador da Web]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61197["Documentação do NetApp: SANtricity Storage Manager"^]

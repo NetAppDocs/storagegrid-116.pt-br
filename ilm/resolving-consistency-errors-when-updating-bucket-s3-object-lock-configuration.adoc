@@ -1,0 +1,38 @@
+---
+permalink: ilm/resolving-consistency-errors-when-updating-bucket-s3-object-lock-configuration.html 
+sidebar: sidebar 
+keywords: consistency error, s3 object lock and consistency 
+summary: Se um site de data center ou vários nós de storage em um local ficarem indisponíveis, talvez seja necessário ajudar S3 usuários de locatários a aplicar alterações ao bloqueio de objetos S3 ou à configuração de conformidade legada. 
+---
+= Resolva erros de consistência ao atualizar o bloqueio de objetos S3 ou a configuração de conformidade legada
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se um site de data center ou vários nós de storage em um local ficarem indisponíveis, talvez seja necessário ajudar S3 usuários de locatários a aplicar alterações ao bloqueio de objetos S3 ou à configuração de conformidade legada.
+
+Os usuários locatários que têm buckets com o bloqueio de objeto S3 (ou conformidade legada) habilitado podem alterar determinadas configurações. Por exemplo, um usuário de locatário usando o bloqueio de objeto S3 pode precisar colocar uma versão de objeto em retenção legal.
+
+Quando um usuário do locatário atualiza as configurações de um bucket do S3 ou uma versão de objeto, o StorageGRID tenta atualizar imediatamente o bucket ou metadados de objeto na grade. Se o sistema não conseguir atualizar os metadados porque um site de data center ou vários nós de storage não estão disponíveis, ele exibirá uma mensagem de erro. Especificamente:
+
+* Os usuários do Gerenciador de locatários veem a seguinte mensagem de erro:
++
+image::../media/bucket_configure_compliance_consistency_error.gif[captura de tela da mensagem de aviso se um serviço estiver inativo quando você alterar as configurações de conformidade do bucket]
+
+* Usuários de API de Gerenciamento de locatários e usuários de API S3 recebem um código de resposta de `503 Service Unavailable` texto de mensagem semelhante.
+
+
+Para resolver esse erro, siga estas etapas:
+
+. Tente disponibilizar novamente todos os nós de storage ou locais o mais rápido possível.
+. Se você não conseguir disponibilizar suficientes nós de storage em cada local, entre em Contato com o suporte técnico, que pode ajudá-lo a recuperar nós e garantir que as alterações sejam aplicadas consistentemente na grade.
+. Depois que o problema subjacente for resolvido, lembre o usuário do locatário de tentar novamente suas alterações de configuração.
+
+
+.Informações relacionadas
+* xref:../tenant/index.adoc[Use uma conta de locatário]
+* xref:../s3/index.adoc[Use S3]
+* xref:../maintain/index.adoc[Recuperar e manter]
+

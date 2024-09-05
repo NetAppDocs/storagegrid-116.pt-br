@@ -1,0 +1,67 @@
+---
+permalink: admin/editing-tenant-account.html 
+sidebar: sidebar 
+keywords: edit tenant account, change tenant name, allow platform services, tenant quota 
+summary: Você pode editar uma conta de locatário para alterar o nome de exibição, alterar a configuração de origem de identidade, permitir ou desativar serviços de plataforma ou inserir uma cota de armazenamento. 
+---
+= Editar conta de locatário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode editar uma conta de locatário para alterar o nome de exibição, alterar a configuração de origem de identidade, permitir ou desativar serviços de plataforma ou inserir uma cota de armazenamento.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Passos
+. Selecione *TENANTS*.
++
+image::../media/tenant_accounts_page.png[Página de contas de inquilino]
+
+. Selecione a conta de locatário que você deseja editar.
++
+Use a caixa de pesquisa para procurar uma conta de locatário por nome ou ID de locatário.
+
+. Na lista suspensa ações, selecione *Editar*.
++
+Este exemplo é para uma grade que não usa logon único (SSO). Essa conta de locatário não configurou sua própria origem de identidade.
+
++
+image::../media/edit_tenant_account.png[Editar conta do locatário]
+
+. Altere os valores para estes campos conforme necessário:
++
+** *Nome*
+** *Descrição*
+** *Tipo de cliente*
+** *Cota de armazenamento*
+
+
+. Selecione *continuar*.
+. Selecione ou desmarque as permissões para a conta de locatário.
++
+** Se você desabilitar *Serviços de plataforma* para um locatário que já os esteja usando, os serviços que eles configuraram para seus buckets do S3 deixarão de funcionar. Nenhuma mensagem de erro é enviada ao locatário. Por exemplo, se o locatário tiver configurado a replicação do CloudMirror para um bucket do S3, ele ainda poderá armazenar objetos no bucket, mas as cópias desses objetos não serão mais feitas no bucket externo do S3 configurado como um endpoint.
+** Altere a configuração da caixa de seleção *usa a própria origem de identidade* para determinar se a conta do locatário usará sua própria origem de identidade ou a origem de identidade que foi configurada para o Gerenciador de Grade.
++
+Se a caixa de verificação *usa a própria fonte de identidade* for:
+
++
+*** Desativado e verificado, o locatário já habilitou sua própria fonte de identidade. Um locatário deve desativar sua origem de identidade antes de poder usar a fonte de identidade que foi configurada para o Gerenciador de Grade.
+*** Desativado e desmarcado, SSO está ativado para o sistema StorageGRID. O locatário deve usar a fonte de identidade que foi configurada para o Gerenciador de Grade.
+
+
+** Ative ou desative *S3 Selecione* conforme necessário. xref:manage-s3-select-for-tenant-accounts.adoc[Gerenciar S3 Selecione para contas de inquilino]Consulte .
+
+
+. Selecione *Guardar*.
+
+
+.Informações relacionadas
+* xref:manage-platform-services-for-tenants.adoc[Gerencie os serviços de plataforma para contas de inquilino S3]
+* xref:../tenant/index.adoc[Use uma conta de locatário]
+

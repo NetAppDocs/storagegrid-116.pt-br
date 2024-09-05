@@ -1,0 +1,47 @@
+---
+permalink: sg100-1000/sg100-and-sg1000-applications.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, applications, how to use, services 
+summary: Você pode configurar os dispositivos de serviços StorageGRID de várias maneiras para fornecer serviços de gateway, bem como redundância de alguns serviços de administração de grade. 
+---
+= Aplicações SG100 e SG1000
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode configurar os dispositivos de serviços StorageGRID de várias maneiras para fornecer serviços de gateway, bem como redundância de alguns serviços de administração de grade.
+
+Os dispositivos podem ser implantados das seguintes maneiras:
+
+* Adicionar a uma grade nova ou existente como um nó de gateway
+* Adicione a uma nova grade como um nó de administração primário ou não primário ou a uma grade existente como um nó de administração não primário
+* Opere como um nó de gateway e um nó de administrador (primário ou não primário) ao mesmo tempo
+
+
+O dispositivo facilita o uso de grupos de alta disponibilidade (HA) e balanceamento de carga inteligente para conexões de caminho de dados S3 ou Swift.
+
+Os exemplos a seguir descrevem como você pode maximizar os recursos do dispositivo:
+
+* Use dois dispositivos SG100 ou dois SG1000 para fornecer serviços de gateway configurando-os como nós de gateway.
++
+
+IMPORTANT: Não implante os dispositivos de serviço SG100 e SG1000 no mesmo local. Pode resultar em performance imprevisível.
+
+* Use dois dispositivos SG100 ou dois SG1000 para fornecer redundância de alguns serviços de administração de rede. Faça isso configurando cada dispositivo como nós de administração.
+* Use dois dispositivos SG100 ou dois SG1000 para fornecer serviços de balanceamento de carga e modelagem de tráfego altamente disponíveis acessados por meio de um ou mais endereços IP virtuais. Faça isso configurando os dispositivos como qualquer combinação de nós de administrador ou nós de gateway e adicionando ambos os nós ao mesmo grupo de HA.
++
+
+IMPORTANT: Se você usar nós de administrador e nós de gateway no mesmo grupo de HA, as portas CLB (Connection Load Balancer) e as portas somente para nó de administrador não farão failover. Para obter instruções para configurar grupos de HA, consulte as instruções de administração do StorageGRID.
+
++
+
+NOTE: O serviço CLB está obsoleto.
+
+
+
+Quando usados com dispositivos de storage do StorageGRID, os dispositivos de serviços SG100 e SG1000 permitem a implantação de grades somente de dispositivos sem dependências em hipervisores externos ou hardware de computação.
+
+.Informações relacionadas
+xref:../admin/index.adoc[Administrar o StorageGRID]

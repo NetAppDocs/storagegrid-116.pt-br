@@ -1,0 +1,380 @@
+---
+permalink: admin/managing-admin-groups.html 
+sidebar: sidebar 
+keywords: what are admin groups, user permissions 
+summary: Você pode criar grupos de administração para gerenciar as permissões de segurança para um ou mais usuários de administração. Os usuários devem pertencer a um grupo para ter acesso ao sistema StorageGRID. 
+---
+= Gerenciar grupos de administradores
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criar grupos de administração para gerenciar as permissões de segurança para um ou mais usuários de administração. Os usuários devem pertencer a um grupo para ter acesso ao sistema StorageGRID.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+* Se você pretende importar um grupo federado, você configurou a federação de identidade e o grupo federado já existe na origem de identidade configurada.
+
+
+
+
+== Crie um grupo de administração
+
+Os grupos de administração permitem determinar quais usuários podem acessar quais recursos e operações no Gerenciador de Grade e na API de Gerenciamento de Grade.
+
+
+
+=== Acesse o assistente
+
+. Selecione *CONFIGURATION* > *Access Control* > *Admin Groups*.
+. Selecione *criar grupo*.
+
+
+
+
+=== Escolha um tipo de grupo
+
+Você pode criar um grupo local ou importar um grupo federado.
+
+* Crie um grupo local se quiser atribuir permissões a usuários locais.
+* Crie um grupo federado para importar usuários da origem da identidade.
+
+
+[role="tabbed-block"]
+====
+.Grupo local
+--
+. Selecione *local group*.
+. Introduza um nome de apresentação para o grupo, que pode atualizar posteriormente, conforme necessário. Por exemplo, "'usuários de Manutenção'" ou "'Administradores de ILM.'"
+. Introduza um nome exclusivo para o grupo, que não pode atualizar mais tarde.
+. Selecione *continuar*.
+
+
+--
+.Grupo federado
+--
+. Selecione *Federated Group*.
+. Introduza o nome do grupo que pretende importar, exatamente como aparece na origem de identidade configurada.
++
+** Para o ative Directory e Azure, use o sAMAccountName.
+** Para OpenLDAP, use o CN (Nome Comum).
+** Para outro LDAP, use o nome exclusivo apropriado para o servidor LDAP.
+
+
+. Selecione *continuar*.
+
+
+--
+====
+
+
+=== Gerenciar permissões de grupo
+
+. Para *modo de acesso*, selecione se os usuários do grupo podem alterar as configurações e executar operações no Gerenciador de Grade e na API de Gerenciamento de Grade ou se eles só podem exibir configurações e recursos.
++
+** *Leitura-escrita* (padrão): Os usuários podem alterar as configurações e executar as operações permitidas por suas permissões de gerenciamento.
+** *Somente leitura*: Os usuários só podem visualizar configurações e recursos. Eles não podem fazer alterações ou executar quaisquer operações no Gerenciador de Grade ou na API de Gerenciamento de Grade. Os usuários locais só de leitura podem alterar suas próprias senhas.
++
+
+NOTE: Se um usuário pertencer a vários grupos e qualquer grupo estiver definido como *somente leitura*, o usuário terá acesso somente leitura a todas as configurações e recursos selecionados.
+
+
+
+. Selecione um ou mais <<Permissões de grupo>>.
++
+Você deve atribuir pelo menos uma permissão a cada grupo; caso contrário, os usuários pertencentes ao grupo não poderão entrar no StorageGRID.
+
+. Se estiver criando um grupo local, selecione *continuar*. Se você estiver criando um grupo federado, selecione *criar grupo* e *concluir*.
+
+
+
+
+=== Adicionar utilizadores (apenas grupos locais)
+
+. Opcionalmente, selecione um ou mais usuários locais para este grupo.
++
+Se ainda não tiver criado utilizadores locais, pode guardar o grupo sem adicionar utilizadores. Pode adicionar este grupo ao utilizador na página utilizadores. xref:managing-users.adoc[Gerenciar usuários]Consulte para obter detalhes.
+
+. Selecione *criar grupo* e *concluir*.
+
+
+
+
+== Exibir e editar grupos de administração
+
+Você pode exibir detalhes de grupos existentes, modificar um grupo ou duplicar um grupo.
+
+* Para exibir informações básicas de todos os grupos, revise a tabela na página grupos.
+* Para exibir todos os detalhes de um grupo específico ou editar um grupo, use o menu *ações* ou a página de detalhes.
++
+[cols="1a, 2a,2a"]
+|===
+| Tarefa | Menu ações | Página de detalhes 
+
+
+ a| 
+Ver detalhes do grupo
+ a| 
+.. Marque a caixa de seleção do grupo.
+.. Selecione *ações* > *Exibir detalhes do grupo*.
+
+ a| 
+Selecione o nome do grupo na tabela.
+
+
+
+ a| 
+Editar nome de exibição (apenas grupos locais)
+ a| 
+.. Marque a caixa de seleção do grupo.
+.. Selecione *ações* > *Editar nome do grupo*.
+.. Introduza o novo nome.
+.. Selecione *Salvar alterações*.
+
+ a| 
+.. Selecione o nome do grupo para exibir os detalhes.
+.. Selecione o ícone de edição image:../media/icon_edit_tm.png["Ícone de edição"].
+.. Introduza o novo nome.
+.. Selecione *Salvar alterações*.
+
+
+
+
+ a| 
+Editar o modo de acesso ou permissões
+ a| 
+.. Marque a caixa de seleção do grupo.
+.. Selecione *ações* > *Exibir detalhes do grupo*.
+.. Opcionalmente, altere o modo de acesso do grupo.
+.. Opcionalmente, selecione ou <<Permissões de grupo>>desmarque .
+.. Selecione *Salvar alterações*.
+
+ a| 
+.. Selecione o nome do grupo para exibir os detalhes.
+.. Opcionalmente, altere o modo de acesso do grupo.
+.. Opcionalmente, selecione ou <<Permissões de grupo>>desmarque .
+.. Selecione *Salvar alterações*.
+
+
+|===
+
+
+
+
+== Duplicar um grupo
+
+. Marque a caixa de seleção do grupo.
+. Selecione *ações* > *grupo duplicado*.
+. Conclua o assistente de grupo duplicado.
+
+
+
+
+== Eliminar um grupo
+
+Você pode excluir um grupo de administração quando quiser remover o grupo do sistema e remover todas as permissões associadas ao grupo. A exclusão de um grupo de administração remove todos os usuários do grupo, mas não exclui os usuários.
+
+. Na página grupos, marque a caixa de seleção para cada grupo que deseja remover.
+. Selecione *ações* > *Excluir grupo*.
+. Selecione *Excluir grupos*.
+
+
+
+
+== Permissões de grupo
+
+Ao criar grupos de usuários admin, você seleciona uma ou mais permissões para controlar o acesso a recursos específicos do Gerenciador de Grade. Em seguida, você pode atribuir cada usuário a um ou mais desses grupos de administração para determinar quais tarefas o usuário pode executar.
+
+Você deve atribuir pelo menos uma permissão a cada grupo; caso contrário, os usuários pertencentes a esse grupo não poderão entrar no Gerenciador de Grade ou na API de Gerenciamento de Grade.
+
+Por padrão, qualquer usuário que pertença a um grupo que tenha pelo menos uma permissão pode executar as seguintes tarefas:
+
+* Faça login no Gerenciador de Grade
+* Veja o Dashboard
+* Exibir as páginas de nós
+* Monitore a topologia da grade
+* Ver alertas atuais e resolvidos
+* Visualizar alarmes atuais e históricos (sistema legado)
+* Alterar sua própria senha (somente usuários locais)
+* Visualize determinadas informações nas páginas Configuração e Manutenção
+
+
+
+
+=== Interação entre permissões e modo de acesso
+
+Para todas as permissões, a configuração *modo de acesso* do grupo determina se os usuários podem alterar configurações e executar operações ou se eles podem exibir somente as configurações e recursos relacionados. Se um usuário pertencer a vários grupos e qualquer grupo estiver definido como *somente leitura*, o usuário terá acesso somente leitura a todas as configurações e recursos selecionados.
+
+As seções a seguir descrevem as permissões que você pode atribuir ao criar ou editar um grupo de administradores. Qualquer funcionalidade não mencionada explicitamente requer a permissão *Root Access*.
+
+
+
+=== Acesso à raiz
+
+Essa permissão fornece acesso a todos os recursos de administração de grade.
+
+
+
+=== Reconhecer alarmes (legado)
+
+Esta permissão fornece acesso para reconhecer e responder a alarmes (sistema legado). Todos os usuários conetados podem visualizar alarmes atuais e históricos.
+
+Se você quiser que um usuário monitore a topologia da grade e reconheça somente alarmes, você deve atribuir essa permissão.
+
+
+
+=== Altere a senha raiz do locatário
+
+Essa permissão fornece acesso à opção *alterar senha de root* na página de locatários, permitindo que você controle quem pode alterar a senha para o usuário raiz local do locatário. Essa permissão também é usada para migrar chaves S3 quando o recurso de importação de chaves S3 estiver ativado. Os usuários que não têm essa permissão não podem ver a opção *alterar senha de root*.
+
+
+NOTE: Para conceder acesso à página de locatários, que contém a opção *alterar senha de root*, atribua também a permissão *Contas de locatário*.
+
+
+
+=== Configuração da página de topologia de grade
+
+Esta permissão fornece acesso às guias Configuração na página *SUPPORT* > *Tools* > *Grid topology*.
+
+
+
+=== ILM
+
+Esta permissão fornece acesso às seguintes opções de menu *ILM*:
+
+* Regras
+* Políticas
+* Codificação de apagamento
+* Regiões
+* Pools de armazenamento
+
+
+
+NOTE: Os usuários devem ter as permissões *outras configurações de grade* e *Configuração de página de topologia de grade* para gerenciar as notas de armazenamento.
+
+
+
+=== Manutenção
+
+Os usuários devem ter a permissão Manutenção para usar estas opções:
+
+* *CONFIGURAÇÃO* > *controlo de acesso*:
++
+** Senhas de grade
+
+
+* *MANUTENÇÃO* > *tarefas*:
++
+** Descomissionar
+** Expansão
+** Verificação de existência do objeto
+** Recuperação
+
+
+* *MANUTENÇÃO* > *sistema*:
++
+** Pacote de recuperação
+** Atualização de software
+
+
+* *SUPORTE* > *Ferramentas*:
++
+** Registos
+
+
+
+
+Os utilizadores que não têm a permissão Manutenção podem ver, mas não editar, estas páginas:
+
+* *MANUTENÇÃO* > *rede*:
++
+** Servidores DNS
+** Rede de rede
+** Servidores NTP
+
+
+* *MANUTENÇÃO* > *sistema*:
++
+** Licença
+
+
+* *CONFIGURAÇÃO* > *Segurança*:
++
+** Certificados
+** Nomes de domínio
+
+
+* *CONFIGURAÇÃO* > *Monitoramento*:
++
+** Servidor de auditoria e syslog
+
+
+
+
+
+
+=== Gerenciar alertas
+
+Essa permissão fornece acesso a opções de gerenciamento de alertas. Os usuários devem ter essa permissão para gerenciar silêncios, notificações de alerta e regras de alerta.
+
+
+
+=== Consulta de métricas
+
+Esta permissão fornece acesso à página *SUPPORT* > *Tools* > *Metrics*. Essa permissão também fornece acesso a consultas de métricas personalizadas do Prometheus usando a seção *Metrics* da API Grid Management.
+
+
+
+=== Pesquisa de metadados de objetos
+
+Esta permissão fornece acesso à página *ILM* > *Object metadata lookup*.
+
+
+
+=== Outra configuração de grade
+
+Esta permissão fornece acesso a opções de configuração de grade adicionais.
+
+
+IMPORTANT: Para ver essas opções adicionais, os usuários também devem ter a permissão *Grid topology page Configuration*.
+
+* *ILM*:
++
+** Classes de armazenamento
+
+
+* *CONFIGURAÇÃO* > *rede*:
++
+** Custo da ligação
+
+
+* *CONFIGURAÇÃO* > *sistema*:
++
+** Opções de visualização
+** Opções de grelha
+** Opções de armazenamento
+
+
+* *SUPORTE* > *Alarmes (legado)*:
++
+** Eventos personalizados
+** Alarmes globais
+** Configuração de e-mail legado
+
+
+
+
+
+
+=== Administrador do dispositivo de storage
+
+Essa permissão fornece acesso ao Gerenciador de sistemas do e-Series SANtricity em dispositivos de storage por meio do Gerenciador de Grade.
+
+
+
+=== Contas de inquilino
+
+Essa permissão fornece acesso à página de locatários, onde você pode criar, editar e remover contas de locatários. Essa permissão também permite que os usuários visualizem as políticas de classificação de tráfego existentes.

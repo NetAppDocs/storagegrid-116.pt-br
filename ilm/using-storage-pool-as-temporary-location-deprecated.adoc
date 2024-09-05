@@ -1,0 +1,22 @@
+---
+permalink: ilm/using-storage-pool-as-temporary-location-deprecated.html 
+sidebar: sidebar 
+keywords: storage pool temporary location 
+summary: Quando você cria uma regra ILM com um posicionamento de objeto que inclui um único pool de armazenamento, você será solicitado a especificar um segundo pool de armazenamento para usar como um local temporário. 
+---
+= Usar um pool de armazenamento como um local temporário (obsoleto)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você cria uma regra ILM com um posicionamento de objeto que inclui um único pool de armazenamento, você será solicitado a especificar um segundo pool de armazenamento para usar como um local temporário.
+
+Os locais temporários foram obsoletos e serão removidos em uma versão futura. Você não deve selecionar um pool de armazenamento como um local temporário para uma nova regra ILM.
+
+
+NOTE: Se você selecionar o comportamento de ingestão estrita (Etapa 3 do assistente criar regra ILM), o local temporário será ignorado.
+
+.Informações relacionadas
+xref:data-protection-options-for-ingest.adoc[Opções de proteção de dados para ingestão]

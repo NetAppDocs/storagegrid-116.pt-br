@@ -1,0 +1,14 @@
+---
+permalink: sg5600/installing-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, hardware, install, installing 
+summary: A instalação de hardware inclui várias tarefas importantes, incluindo a instalação de componentes de hardware, o cabeamento desses componentes e a configuração de portas. 
+---
+= Instalar hardware (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A instalação de hardware inclui várias tarefas importantes, incluindo a instalação de componentes de hardware, o cabeamento desses componentes e a configuração de portas.

@@ -1,0 +1,52 @@
+---
+permalink: s3/storagegrid-s3-rest-api-operations.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations 
+summary: Há operações adicionadas à API REST do S3 que são específicas do sistema StorageGRID. 
+---
+= Operações da API REST do StorageGRID S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Há operações adicionadas à API REST do S3 que são específicas do sistema StorageGRID.
+
+* xref:../s3/get-bucket-consistency-request.adoc[OBTER pedido de consistência de balde]
++
+A solicitação GET Bucket Consistency permite determinar o nível de consistência que está sendo aplicado a um determinado bucket.
+
+* xref:../s3/put-bucket-consistency-request.adoc[COLOCAR pedido consistência balde]
++
+A solicitação de consistência do PUT Bucket permite especificar o nível de consistência a ser aplicado às operações realizadas em um bucket.
+
+* xref:../s3/get-bucket-last-access-time-request.adoc[OBTER último pedido de tempo de acesso do Bucket]
++
+A solicitação de última hora de acesso do GET Bucket permite determinar se as atualizações da última hora de acesso estão ativadas ou desativadas para buckets individuais.
+
+* xref:../s3/put-bucket-last-access-time-request.adoc[COLOCAR o último pedido de tempo de acesso do balde]
++
+A solicitação de última hora de acesso do PUT Bucket permite ativar ou desativar as atualizações da última hora de acesso para intervalos individuais. A desativação das atualizações da última hora de acesso melhora o desempenho e é a configuração padrão para todos os buckets criados com a versão 10,3.0 ou posterior.
+
+* xref:../s3/delete-bucket-metadata-notification-configuration-request.adoc[EXCLUIR solicitação de configuração de notificação de metadados do bucket]
++
+A solicitação de configuração de notificação de metadados DELETE Bucket permite desativar o serviço de integração de pesquisa para buckets individuais excluindo o XML de configuração.
+
+* xref:../s3/get-bucket-metadata-notification-configuration-request.adoc[OBTER solicitação de configuração de notificação de metadados do bucket]
++
+A solicitação de configuração de notificação de metadados do GET Bucket permite recuperar o XML de configuração usado para configurar a integração de pesquisa para buckets individuais.
+
+* xref:../s3/put-bucket-metadata-notification-configuration-request.adoc[COLOCAR solicitação de configuração de notificação de metadados do bucket]
++
+A solicitação de configuração de notificação de metadados do PUT Bucket permite ativar o serviço de integração de pesquisa para buckets individuais. O XML de configuração de notificação de metadados que você fornece no corpo da solicitação especifica os objetos cujos metadados são enviados para o índice de pesquisa de destino.
+
+* xref:../s3/get-storage-usage-request.adoc[OBTER solicitação de uso de armazenamento]
++
+A solicitação OBTER uso do armazenamento informa a quantidade total de armazenamento em uso por uma conta e para cada bucket associado à conta.
+
+* xref:../s3/deprecated-bucket-requests-for-legacy-compliance.adoc[Pedidos de Bucket obsoletos para conformidade legada]
++
+Talvez seja necessário usar a API REST do StorageGRID S3 para gerenciar buckets criados com o recurso de conformidade legado.
+
+

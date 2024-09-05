@@ -1,0 +1,63 @@
+---
+permalink: audit/vlst-user-initiated-volume-lost.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, VLST, User Initiated Volume Lost 
+summary: Esta mensagem é emitida sempre que o comando /proc/CMSI/volume_lost é executado. 
+---
+= VLST: Volume iniciado pelo usuário perdido
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta mensagem é emitida sempre que o `/proc/CMSI/Volume_Lost` comando é executado.
+
+|===
+| Código | Campo | Descrição 
+
+
+ a| 
+VOLL
+ a| 
+Identificador de volume inferior
+ a| 
+A extremidade inferior do intervalo de volume afetado ou um único volume.
+
+
+
+ a| 
+VOLU
+ a| 
+Identificador de volume superior
+ a| 
+A extremidade superior do intervalo de volume afetado. Igual a VOLL se um único volume.
+
+
+
+ a| 
+NOID
+ a| 
+Código nó origem
+ a| 
+O ID do nó no qual os locais foram perdidos.
+
+
+
+ a| 
+LTYP
+ a| 
+Tipo de localização
+ a| 
+'CLDI' (Online) ou 'CLNL' (Nearline). Se não for especificado, o padrão é 'CLDI'.
+
+
+
+ a| 
+RSLT
+ a| 
+Resultado
+ a| 
+Sempre "NENHUM". RSLT é um campo de mensagem obrigatório, mas não é relevante para esta mensagem. 'NENHUM' é usado em vez de 'SUCS' para que esta mensagem não seja filtrada.
+
+|===

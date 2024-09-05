@@ -1,0 +1,131 @@
+---
+permalink: ilm/what-ilm-rule-is.html 
+sidebar: sidebar 
+keywords: what is information lifecycle rule, ilm rule 
+summary: Para gerenciar objetos, você cria um conjunto de regras de gerenciamento de ciclo de vida da informação e organiza-as em uma política ILM. Cada objeto ingerido no sistema é avaliado em relação à política ativa. Quando uma regra na política corresponde aos metadados de um objeto, as instruções na regra determinam quais ações o StorageGRID executa para copiar e armazenar esse objeto. 
+---
+= O que é uma regra ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para gerenciar objetos, você cria um conjunto de regras de gerenciamento do ciclo de vida das informações (ILM) e as organiza em uma política ILM. Cada objeto ingerido no sistema é avaliado em relação à política ativa. Quando uma regra na política corresponde aos metadados de um objeto, as instruções na regra determinam quais ações o StorageGRID executa para copiar e armazenar esse objeto.
+
+As regras do ILM definem:
+
+* Quais objetos devem ser armazenados. Uma regra pode ser aplicada a todos os objetos ou você pode especificar filtros para identificar quais objetos uma regra se aplica. Por exemplo, uma regra só pode se aplicar a objetos associados a determinadas contas de locatário, buckets específicos do S3 ou contentores Swift ou valores específicos de metadados.
+* O tipo de armazenamento e a localização. Os objetos podem ser armazenados em nós de storage, em pools de storage de nuvem ou em nós de arquivamento.
+* O tipo de cópias de objeto feitas. As cópias podem ser replicadas ou codificadas para apagamento.
+* Para cópias replicadas, o número de cópias feitas.
+* Para cópias codificadas de apagamento, o esquema de codificação de apagamento usado.
+* As alterações ao longo do tempo para o local de armazenamento de um objeto e tipo de cópias.
+* Como os dados do objeto são protegidos à medida que os objetos são ingeridos na grade (colocação síncrona ou commit duplo).
+
+
+Observe que os metadados de objetos não são gerenciados pelas regras do ILM. Em vez disso, os metadados de objetos são armazenados em um banco de dados Cassandra no que é conhecido como armazenamento de metadados. Três cópias dos metadados de objetos são mantidas automaticamente em cada local para proteger os dados da perda. As cópias são distribuídas uniformemente por todos os nós de storage.
+
+
+
+== Elementos de uma regra ILM
+
+Uma regra ILM tem três elementos:
+
+* *Critérios de filtragem*: Os filtros básicos e avançados de uma regra definem a que objetos a regra se aplica. Se um objeto corresponder a todos os filtros, o StorageGRID aplicará a regra e criará as cópias de objeto especificadas nas instruções de colocação da regra.
+* *Instruções de colocação*: As instruções de colocação de uma regra definem o número, o tipo e a localização das cópias de objetos. Cada regra pode incluir uma sequência de instruções de posicionamento para alterar o número, o tipo e a localização das cópias de objetos ao longo do tempo. Quando o período de tempo para um posicionamento expira, as instruções na próxima colocação são aplicadas automaticamente pela próxima avaliação ILM.
+* *Comportamento de ingestão*: O comportamento de ingestão de uma regra define o que acontece quando um cliente S3 ou Swift salva um objeto na grade. O comportamento de ingestão controla se as cópias de objeto são imediatamente colocadas de acordo com as instruções na regra, ou se cópias provisórias são feitas e as instruções de posicionamento são aplicadas posteriormente.
+
+
+
+
+== O que é a filtragem de regras ILM
+
+Quando você cria uma regra ILM, você especifica filtros para identificar quais objetos a regra se aplica.
+
+No caso mais simples, uma regra pode não usar nenhum filtro. Qualquer regra que não use filtros se aplica a todos os objetos, portanto, deve ser a última regra (padrão) em uma política ILM. A regra padrão fornece instruções de armazenamento para objetos que não correspondem aos filtros em outra regra.
+
+Os filtros básicos permitem que você aplique regras diferentes a grupos grandes e distintos de objetos. Os filtros básicos na página Definir noções básicas do assistente criar regra ILM permitem aplicar uma regra a contas de locatário específicas, buckets específicos do S3 ou contentores Swift, ou ambos.
+
+image::../media/ilm_create_ilm_rule_wizard_1.png[Assistente ILM: Passo 1 de 3]
+
+Esses filtros básicos oferecem uma maneira simples de aplicar regras diferentes a um grande número de objetos. Por exemplo, os Registros financeiros da sua empresa podem precisar ser armazenados para atender aos requisitos regulatórios, enquanto os dados do departamento de marketing podem precisar ser armazenados para facilitar as operações diárias. Depois de criar contas de inquilino separadas para cada departamento ou depois de segregar dados dos diferentes departamentos em intervalos separados do S3, você pode facilmente criar uma regra que se aplica a todos os Registros financeiros e uma segunda regra que se aplica a todos os dados de marketing.
+
+A página *Advanced Filtering* do assistente Create ILM Rule fornece controle granular. Você pode criar filtros para selecionar objetos com base nas seguintes propriedades do objeto:
+
+* Tempo de ingestão
+* Último tempo de acesso
+* Todo ou parte do nome do objeto (chave)
+* S3 região do balde (restrição de localização)
+* Tamanho do objeto
+* Metadados do usuário
+* S3 tags de objeto
+
+
+Você pode filtrar objetos em critérios muito específicos. Por exemplo, os objetos armazenados pelo departamento de imagiologia de um hospital podem ser utilizados frequentemente quando têm menos de 30 dias de idade e pouco depois, enquanto os objetos que contêm informações sobre a visita do paciente podem precisar de ser copiados para o departamento de faturação na sede da rede de saúde. Você pode criar filtros que identificam cada tipo de objeto com base no nome, tamanho, tags de objeto S3D ou qualquer outro critério relevante e, em seguida, criar regras separadas para armazenar cada conjunto de objetos adequadamente.
+
+Você também pode combinar filtros básicos e avançados conforme necessário em uma única regra. Por exemplo, o departamento de marketing pode querer armazenar arquivos de imagem grandes de forma diferente dos Registros de seus fornecedores, enquanto o departamento de recursos humanos pode precisar armazenar Registros de pessoal em uma geografia específica e informações de políticas centralmente. Nesse caso, você pode criar regras que filtram por conta de locatário para segregar os Registros de cada departamento, enquanto usa filtros avançados em cada regra para identificar o tipo específico de objetos aos quais a regra se aplica.
+
+
+
+== Quais são as instruções de colocação de regras do ILM
+
+As instruções de posicionamento determinam onde, quando e como os dados do objeto são armazenados. Uma regra ILM pode incluir uma ou mais instruções de colocação. Cada instrução de colocação aplica-se a um único período de tempo.
+
+Ao criar instruções de colocação:
+
+* Você começa especificando o tempo de referência, que determina quando as instruções de colocação começam. O tempo de referência pode ser quando um objeto é ingerido, quando um objeto é acessado, quando um objeto versionado se torna não atual ou um tempo definido pelo usuário.
+* Em seguida, você especifica quando o posicionamento será aplicado, em relação ao tempo de referência. Por exemplo, uma colocação pode começar no dia 0 e continuar por 365 dias, em relação a quando o objeto foi ingerido.
+* Por fim, você especifica o tipo de cópias (replicação ou codificação de apagamento) e o local onde as cópias são armazenadas. Por exemplo, você pode querer armazenar duas cópias replicadas em dois sites diferentes.
+
+
+Cada regra pode definir vários posicionamentos para um único período de tempo e diferentes posicionamentos para diferentes períodos de tempo.
+
+* Para colocar objetos em vários locais durante um único período de tempo, selecione o ícone de sinal de adição image:../media/icon_plus_sign_black_on_white.gif["Ícone de sinal Plus Preto sobre Branco"]para adicionar mais de uma linha para esse período de tempo.
+* Para colocar objetos em diferentes locais em diferentes períodos de tempo, selecione o botão *Add* para adicionar o próximo período de tempo. Em seguida, especifique uma ou mais linhas dentro do período de tempo.
+
+
+O exemplo mostra a página Definir posicionamentos do assistente criar regra ILM.
+
+image::../media/ilm_rule_multiple_placements_in_single_time_period.png[Tela de posicionamentos ILM do Gerenciador de Grade]
+
+[cols="1a,3a"]
+|===
+
+
+ a| 
+image:../media/icon_number_1.png["ícone número 1"]
+ a| 
+A primeira instrução de colocação tem duas linhas para o primeiro ano:
+
+. A primeira linha cria duas cópias de objeto replicadas em dois locais de data center.
+. A segunda linha cria uma cópia codificada por apagamento de mais de 6 3 usando três locais de data center.
+
+
+
+
+ a| 
+image:../media/icon_number_2.png["ícone número 2"]
+ a| 
+A segunda instrução de colocação cria duas cópias arquivadas após um ano e mantém essas cópias para sempre.
+
+|===
+Quando você define o conjunto de instruções de colocação para uma regra, você deve garantir que pelo menos uma instrução de colocação comece no dia 0, que não haja lacunas entre os períodos de tempo definidos e que a instrução de colocação final continue para sempre ou até que você não precise mais nenhuma cópia de objeto.
+
+À medida que cada período de tempo na regra expira, as instruções de colocação de conteúdo para o próximo período de tempo são aplicadas. Novas cópias de objetos são criadas e todas as cópias desnecessárias são excluídas.
+
+
+
+== Exemplo de regra ILM
+
+Este exemplo de regra ILM aplica-se aos objetos pertencentes ao locatário A. Ele faz duas cópias replicadas desses objetos e armazena cada cópia em um local diferente. As duas cópias são retidas para sempre, o que significa que o StorageGRID não as apagará automaticamente. Em vez disso, o StorageGRID manterá esses objetos até que sejam excluídos por uma solicitação de exclusão de cliente ou pela expiração de um ciclo de vida de bucket.
+
+Esta regra usa a opção equilibrada para o comportamento de ingestão: A instrução de colocação de dois locais é aplicada assim que o locatário A salva um objeto no StorageGRID, a menos que não seja possível fazer imediatamente ambas as cópias necessárias. Por exemplo, se o local 2 estiver inacessível quando o locatário A salva um objeto, o StorageGRID fará duas cópias provisórias nos nós de storage no local 1. Assim que o Site 2 estiver disponível, a StorageGRID fará a cópia necessária nesse site.
+
+image::../media/ilm_example_rule_2_copies_tenant_a.png[Exemplo de regra ILM 2 cópias Tenant A]
+
+.Informações relacionadas
+* xref:data-protection-options-for-ingest.adoc[Opções de proteção de dados para ingestão]
+* xref:what-storage-pool-is.adoc[O que é um pool de armazenamento]
+* xref:what-cloud-storage-pool-is.adoc[O que é um Cloud Storage Pool]
+

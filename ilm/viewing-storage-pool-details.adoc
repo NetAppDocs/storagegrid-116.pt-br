@@ -1,0 +1,94 @@
+---
+permalink: ilm/viewing-storage-pool-details.html 
+sidebar: sidebar 
+keywords: storage pool, view details 
+summary: Você pode visualizar os detalhes de um pool de storage para determinar onde o pool de storage é usado e ver quais nós e categorias de storage estão incluídos. 
+---
+= Veja os detalhes do pool de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode visualizar os detalhes de um pool de storage para determinar onde o pool de storage é usado e ver quais nós e categorias de storage estão incluídos.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Passos
+. Selecione *ILM* > *Storage Pools*.
++
+A página conjuntos de armazenamento é exibida. Esta página lista todos os pools de armazenamento definidos.
+
++
+image::../media/storage_pools_page_with_pools.png[Página de pools de armazenamento com Pools.png]
+
++
+A tabela inclui as seguintes informações para cada pool de storage que inclui nós de storage:
+
++
+** *Nome*: O nome de exibição exclusivo do pool de armazenamento.
+** *Espaço usado*: A quantidade de espaço que está sendo usada atualmente para armazenar objetos no pool de armazenamento.
+** *Espaço livre*: A quantidade de espaço que permanece disponível para armazenar objetos no pool de armazenamento.
+** *Capacidade total*: O tamanho do pool de armazenamento, que é igual à quantidade total de espaço utilizável para dados de objetos para todos os nós do pool de armazenamento .
+** *Uso de ILM*: Como o pool de armazenamento está sendo usado atualmente. Um pool de storage pode não ser usado ou pode ser usado em uma ou mais regras do ILM, perfis de codificação de apagamento ou ambos.
++
+
+NOTE: Você não pode remover um pool de armazenamento se ele estiver sendo usado.
+
+
+
+. Para ver detalhes sobre um pool de armazenamento específico, selecione seu botão de opção e selecione *Exibir detalhes*.
++
+O modal Detalhes do conjunto de armazenamento é exibido.
+
+. Exiba a guia *nós incluídos* para saber mais sobre os nós de armazenamento ou nós de arquivamento incluídos no pool de armazenamento.
++
+image::../media/storage_pools_details_nodes.png[Nós de detalhes do pools de storage]
+
++
+A tabela inclui as seguintes informações para cada nó:
+
++
+** Nome do nó
+** Nome do local
+** Usado (%): Para nós de storage, a porcentagem do espaço utilizável total para dados de objetos que foram usados. Esse valor não inclui metadados de objetos.
++
+
+NOTE: O mesmo valor usado (%) também é mostrado no gráfico armazenamento usado - dados de objetos para cada nó de armazenamento (selecione *NÓS* > *_Storage Node_* > *Storage*).
+
+
+
+. Selecione a guia *uso de ILM* para determinar se o pool de armazenamento está sendo usado atualmente em quaisquer regras de ILM ou perfis de codificação de apagamento.
++
+Neste exemplo, o pool de armazenamento DC1 é usado em três regras ILM: Duas regras que estão na política ILM ativa e uma regra que não está na política ativa.
+
++
+image::../media/storage_pools_details_ilm.png[Detalhes de pools de storage ILM]
+
++
+
+NOTE: Você não pode remover um pool de armazenamento se ele for usado em uma regra ILM.
+
++
+Neste exemplo, o pool de armazenamento de todos os 3 sites é usado em um perfil de codificação de apagamento. Por sua vez, esse perfil de codificação de apagamento é usado por uma regra ILM na política ILM ativa.
+
++
+image::../media/storage_pools_details_ilm_ec.png[Detalhes do ILM EC]
+
++
+
+NOTE: Não é possível remover um pool de armazenamento se ele for usado em um perfil de codificação de apagamento.
+
+. Opcionalmente, vá para a página *regras ILM* para saber mais e gerenciar quaisquer regras que usem o pool de armazenamento.
++
+Consulte as instruções para trabalhar com regras ILM.
+
+. Quando terminar de visualizar os detalhes do conjunto de armazenamento, selecione *Fechar*.
+
+
+.Informações relacionadas
+xref:working-with-ilm-rules-and-ilm-policies.adoc[Trabalhe com regras ILM e políticas ILM]

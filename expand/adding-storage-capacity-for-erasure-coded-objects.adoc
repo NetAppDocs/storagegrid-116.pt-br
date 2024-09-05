@@ -1,0 +1,145 @@
+---
+permalink: expand/adding-storage-capacity-for-erasure-coded-objects.html 
+sidebar: sidebar 
+keywords: erasure coding, capacity, storage nodes, ec, expand, expansion 
+summary: Se a política de ILM incluir uma regra que faça cópias codificadas por apagamento, você deve Planejar onde adicionar um novo storage e quando adicionar um novo storage. A quantidade de armazenamento que você adiciona e o tempo da adição podem afetar a capacidade de armazenamento utilizável da grade. 
+---
+= Adicionar capacidade de storage para objetos codificados por apagamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a política de ILM incluir uma regra que faça cópias codificadas por apagamento, você deve Planejar onde adicionar um novo storage e quando adicionar um novo storage. A quantidade de armazenamento que você adiciona e o tempo da adição podem afetar a capacidade de armazenamento utilizável da grade.
+
+A primeira etapa no Planejamento de uma expansão de storage é examinar as regras da política de ILM que criam objetos codificados por apagamento. Como o StorageGRID cria fragmentos _k-m_ para cada objeto codificado de apagamento e armazena cada fragmento em um nó de storage diferente, você deve garantir que pelo menos os nós de storage _k-m_ tenham espaço para novos dados codificados de apagamento após a expansão. Se o perfil de codificação de apagamento fornecer proteção contra perda de site, você precisará adicionar storage a cada local. xref:../ilm/index.adoc[Gerenciar objetos com ILM]Consulte .
+
+O número de nós que você precisa adicionar também depende de quão cheios os nós existentes estão quando você executa a expansão.
+
+
+
+== Recomendação geral para adicionar capacidade de storage para objetos codificados por apagamento
+
+Se você quiser evitar cálculos detalhados, pode adicionar dois nós de storage por local quando os nós de storage existentes atingirem 70% de capacidade.
+
+Esta recomendação geral fornece resultados razoáveis em uma ampla variedade de esquemas de codificação de apagamento para grades de um único local e para grades onde a codificação de apagamento fornece proteção contra perda de site.
+
+Para entender melhor os fatores que levam a esta recomendação ou para desenvolver um plano mais preciso para o seu site, revise a próxima seção. Para obter uma recomendação personalizada otimizada para a sua situação, entre em Contato com o representante da sua conta NetApp.
+
+
+
+== Calcule o número de nós de storage de expansão a serem adicionados para objetos codificados por apagamento
+
+Para otimizar a forma como você expande uma implantação que armazena objetos codificados por apagamento, considere muitos fatores:
+
+* Esquema de codificação de apagamento em uso
+* Características do pool de storage usado para codificação de apagamento, incluindo o número de nós em cada local e a quantidade de espaço livre em cada nó
+* Se a grade foi expandida anteriormente (porque a quantidade de espaço livre por nó de storage pode não ser aproximadamente a mesma em todos os nós)
+* Natureza exata da política ILM, como se as regras ILM fazem objetos replicados e codificados por apagamento
+
+
+Os exemplos a seguir podem ajudar você a entender o impacto do esquema de codificação de apagamento, o número de nós no pool de storage e a quantidade de espaço livre em cada nó.
+
+Considerações semelhantes afetam os cálculos de uma política de ILM que armazena dados replicados e codificados por apagamento e os cálculos de uma grade que foi expandida anteriormente.
+
+
+IMPORTANT: Os exemplos nesta seção representam as práticas recomendadas para adicionar capacidade de storage a um sistema StorageGRID. Se você não conseguir adicionar o número recomendado de nós, talvez seja necessário executar o procedimento de rebalanceamento EC para permitir que objetos codificados de apagamento adicionais sejam armazenados. xref:considerations-for-rebalancing-erasure-coded-data.adoc[Rebalancear os dados codificados por apagamento]Consulte .
+
+
+
+== Exemplo 1: Expanda a grade de um site que usa codificação de apagamento 2-1
+
+Este exemplo mostra como expandir uma grade simples que inclui apenas três nós de storage.
+
+
+NOTE: Este exemplo usa apenas três nós de storage para simplificar. No entanto, o uso de apenas três nós de storage não é recomendado: Uma grade de produção real deve usar um mínimo de 1 nós de storage para redundância, o que equivale a quatro nós de storage (2-1-1) para este exemplo.
+
+Assuma o seguinte:
+
+* Todos os dados são armazenados usando o esquema de codificação de apagamento 2-1. Com o esquema de codificação de apagamento 2-1, cada objeto é armazenado como três fragmentos e cada fragmento é salvo em um nó de storage diferente.
+* Você tem um local com três nós de storage. Cada nó de storage tem uma capacidade total de 100 TB.
+* Você deseja expandir adicionando novos nós de storage de 100 TB.
+* No momento, você deseja equilibrar os dados codificados por apagamento entre os nós antigos e os novos.
+
+
+Você tem várias opções, com base em quão cheios os nós de storage estão quando você executa a expansão.
+
+* *Adicione três nós de storage de 100 TB quando os nós existentes estiverem 100% cheios*
++
+Neste exemplo, os nós existentes estão 100% cheios. Como não há capacidade livre, você precisa adicionar imediatamente três nós para continuar a codificação de apagamento em mais de 1 horas por dia, 2 dias por semana.
+
++
+Depois que a expansão for concluída, quando os objetos forem codificados para apagamento, todos os fragmentos serão colocados nos novos nós.
+
++
+image::../media/used_space_after_3_node_expansion.png[Espaço usado após a expansão de 3 nós]
+
++
+
+NOTE: Essa expansão adiciona nós _k m_. A adição de quatro nós é recomendada para redundância. Se você adicionar somente nós de armazenamento de expansão _k m_ quando os nós existentes estiverem 100% cheios, todos os novos objetos serão armazenados nos nós de expansão. Se algum dos novos nós ficar indisponível, mesmo temporariamente, o StorageGRID não poderá atender aos requisitos do ILM.
+
+* *Adicione dois nós de storage de 100 TB, quando os nós de storage existentes estiverem 67% completos*
++
+Neste exemplo, os nós existentes estão 67% cheios. Como há 100 TB de capacidade livre nos nós existentes (33 TB por nó), você só precisa adicionar dois nós se você executar a expansão agora.
+
++
+A adição de 200 TB de capacidade adicional permite que você continue 2 a codificação de apagamento de mais de 1 TB e, eventualmente, equilibrar os dados codificados por apagamento em todos os nós.
+
++
+image::../media/node_expansion_example_67_percent.png[Exemplo de expansão do nó 1 67 por cento]
+
+* *Adicione um nó de storage de 100 TB quando os nós de storage existentes estiverem 33% cheios*
++
+Neste exemplo, os nós existentes estão 33% cheios. Como há 200 TB de capacidade livre nos nós existentes (67 TB por nó), você só precisa adicionar um nó se você executar a expansão agora.
+
++
+A adição de 100 TB de capacidade adicional permite que você continue 2 a codificação de apagamento de mais de 1 TB e, eventualmente, equilibrar os dados codificados por apagamento em todos os nós.
+
++
+image::../media/node_expansion_example_33_percent.png[Exemplo de expansão do nó 1 33 por cento]
+
+
+
+
+
+== Exemplo 2: Expanda a grade de três locais que usa codificação de apagamento 6-3
+
+Este exemplo mostra como desenvolver um plano de expansão para uma grade multi-site que tenha um esquema de codificação de apagamento com um número maior de fragmentos. Apesar das diferenças entre esses exemplos, o plano de expansão recomendado é muito semelhante.
+
+Assuma o seguinte:
+
+* Todos os dados são armazenados usando o esquema de codificação de apagamento 6-3. Com o esquema de codificação de apagamento 6-3, cada objeto é armazenado como 9 fragmentos e cada fragmento é salvo em um nó de storage diferente.
+* Você tem três locais e cada local tem quatro nós de storage (12 nós no total). Cada nó tem uma capacidade total de 100 TB.
+* Você deseja expandir adicionando novos nós de storage de 100 TB.
+* No momento, você deseja equilibrar os dados codificados por apagamento entre os nós antigos e os novos.
+
+
+Você tem várias opções, com base em quão cheios os nós de storage estão quando você executa a expansão.
+
+* *Adicione nove nós de storage de 100 TB (três por local), quando os nós existentes estiverem 100% completos*
++
+Neste exemplo, os 12 nós existentes estão 100% cheios. Como não há capacidade livre, você precisa adicionar imediatamente nove nós (900 TB de capacidade adicional) para continuar a codificação de apagamento 6-3.
+
++
+Depois que a expansão for concluída, quando os objetos forem codificados para apagamento, todos os fragmentos serão colocados nos novos nós.
+
++
+
+NOTE: Essa expansão adiciona nós _k m_. A adição de 12 nós (quatro por local) é recomendada para redundância. Se você adicionar somente nós de armazenamento de expansão _k m_ quando os nós existentes estiverem 100% cheios, todos os novos objetos serão armazenados nos nós de expansão. Se algum dos novos nós ficar indisponível, mesmo temporariamente, o StorageGRID não poderá atender aos requisitos do ILM.
+
+* *Adicione seis nós de storage de 100 TB (dois por local), quando os nós existentes estiverem 75% completos*
++
+Neste exemplo, os 12 nós existentes estão 75% cheios. Como há 300 TB de capacidade livre (25 TB por nó), você só precisa adicionar seis nós se você executar a expansão agora. Você adicionaria dois nós a cada um dos três locais.
+
++
+A adição de 600 TB de capacidade de storage permitirá que você continue 6 a codificação de apagamento de mais de 3 TB e, eventualmente, equilibrar os dados codificados por apagamento em todos os nós.
+
+* *Adicione três nós de storage de 100 TB (um por local), quando os nós existentes estiverem 50% completos*
++
+Neste exemplo, os 12 nós existentes estão 50% cheios. Como há 600 TB de capacidade livre (50 TB por nó), você só precisa adicionar três nós se você executar a expansão agora. Você adicionaria um nó a cada um dos três locais.
+
++
+A adição de 300 TB de capacidade de storage permitirá que você continue 6 a codificação de apagamento de mais de 3 TB e, eventualmente, equilibrar os dados codificados por apagamento em todos os nós.
+
+

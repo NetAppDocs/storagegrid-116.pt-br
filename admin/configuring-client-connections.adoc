@@ -1,0 +1,35 @@
+---
+permalink: admin/configuring-client-connections.html 
+sidebar: sidebar 
+keywords: s3 connection, swift connection, connect to storagegrid 
+summary: Como administrador de grade, você gerencia as opções de configuração que controlam como os locatários S3 e Swift podem conetar aplicativos clientes ao seu sistema StorageGRID para armazenar e recuperar dados. Existem várias opções diferentes para atender a diferentes requisitos de cliente e locatário. 
+---
+= Sobre as conexões de clientes S3 e Swift
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Como administrador de grade, você gerencia as opções de configuração que controlam como os locatários S3 e Swift podem conetar aplicativos clientes ao seu sistema StorageGRID para armazenar e recuperar dados. Existem várias opções diferentes para atender a diferentes requisitos de cliente e locatário.
+
+Os aplicativos clientes podem armazenar ou recuperar objetos conetando-se a qualquer um dos seguintes:
+
+* O serviço Load Balancer em nós de administração ou nós de gateway, ou, opcionalmente, o endereço IP virtual de um grupo de alta disponibilidade (HA) de nós de administração ou nós de gateway
+* O serviço CLB em nós de Gateway, ou, opcionalmente, o endereço IP virtual de um grupo de nós de gateway de alta disponibilidade
++
+
+NOTE: O serviço CLB está obsoleto. Os clientes configurados antes da versão do StorageGRID 11,3 podem continuar a usar o serviço CLB nos nós de gateway. Todos os outros aplicativos clientes que dependem do StorageGRID para fornecer balanceamento de carga devem se conetar usando o serviço de balanceamento de carga.
+
+* Nós de storage, com ou sem um balanceador de carga externo
+
+
+Opcionalmente, você pode configurar os seguintes recursos em seu sistema StorageGRID:
+
+* * Interfaces VLAN*: Você pode criar interfaces LAN virtual (VLAN) em nós de administração e nós de gateway para isolar e particionar o tráfego de clientes e locatários para segurança, flexibilidade e desempenho. Depois de criar uma interface VLAN, você a adiciona a um grupo de alta disponibilidade (HA).
+* *Grupos de alta disponibilidade*: Você pode criar um grupo de HA das interfaces para nós de Gateway ou nós de administrador para criar uma configuração de backup ativo ou usar DNS de round-robin ou um balanceador de carga de terceiros e vários grupos de HA para obter uma configuração ativo-ativo. As conexões de cliente são feitas usando os endereços IP virtuais de grupos HA.
+* *Serviço de balanceamento de carga*: Você pode habilitar os clientes a usar o serviço de balanceamento de carga criando pontos de extremidade do balanceador de carga para conexões de cliente. Ao criar um endpoint de balanceador de carga, você especifica um número de porta, se o endpoint aceita conexões HTTP ou HTTPS, o tipo de cliente (S3 ou Swift) que usará o endpoint e o certificado a ser usado para conexões HTTPS (se aplicável).
+* *Rede Cliente não confiável*: Você pode tornar a rede Cliente mais segura configurando-a como não confiável. Quando a rede do cliente não é confiável, os clientes só podem se conetar usando pontos de extremidade do balanceador de carga.
+
+
+Você também pode habilitar o uso de HTTP para clientes que se conetam ao StorageGRID diretamente aos nós de armazenamento ou usando o serviço CLB (obsoleto), e você pode configurar nomes de domínio de endpoint de API S3 para clientes S3.

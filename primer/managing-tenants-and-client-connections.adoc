@@ -1,0 +1,69 @@
+---
+permalink: primer/managing-tenants-and-client-connections.html 
+sidebar: sidebar 
+keywords: tenant, client, connect, connection 
+summary: Como administrador de grade, você cria e gerencia as contas de locatário que os clientes S3 e Swift usam para armazenar e recuperar objetos e gerencia as opções de configuração que controlam como os clientes se conetam ao seu sistema StorageGRID. 
+---
+= Gerenciar locatários e conexões de clientes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Como administrador de grade, você cria e gerencia as contas de locatário que os clientes S3 e Swift usam para armazenar e recuperar objetos e gerencia as opções de configuração que controlam como os clientes se conetam ao seu sistema StorageGRID.
+
+
+
+== Contas de inquilino
+
+Uma conta de locatário permite que você especifique quem pode usar seu sistema StorageGRID para armazenar e recuperar objetos e qual funcionalidade está disponível para eles. As contas de locatário permitem que aplicativos clientes que suportam a API REST do S3 ou a API REST do Swift armazenem e recuperem objetos no StorageGRID. Cada conta de locatário usa o protocolo cliente S3 ou o protocolo cliente Swift.
+
+Você deve criar pelo menos uma conta de locatário para cada protocolo de cliente que será usado para armazenar objetos em seu sistema StorageGRID. Opcionalmente, você pode criar contas de locatário adicionais se quiser segregar os objetos armazenados em seu sistema por diferentes entidades. Cada conta de locatário tem seus próprios grupos e usuários federados ou locais, e seus próprios buckets (contentores para Swift) e objetos.
+
+Você pode usar o Gerenciador de Grade ou a API de Gerenciamento de Grade para criar contas de locatário. Ao criar uma conta de locatário, você especifica as seguintes informações:
+
+* Nome de exibição para o locatário (o ID da conta do locatário é atribuído automaticamente e não pode ser alterado).
+* Se a conta de locatário usará o S3 ou Swift.
+* Para contas de inquilino S3: Se a conta de inquilino tem permissão para usar serviços de plataforma. Se o uso de serviços de plataforma for permitido, a grade deve ser configurada para suportar seu uso.
+* Opcionalmente, uma cota de armazenamento para a conta de locatário - o número máximo de gigabytes, terabytes ou petabytes disponíveis para os objetos do locatário. A cota de armazenamento de um locatário representa uma quantidade lógica (tamanho do objeto), e não uma quantidade física (tamanho no disco).
+* Se a federação de identidade estiver ativada para o sistema StorageGRID, qual grupo federado tem permissão de acesso root para configurar a conta de locatário.
+* Se o logon único (SSO) não estiver em uso para o sistema StorageGRID, se a conta do locatário usará sua própria origem de identidade ou compartilhará a origem de identidade da grade e a senha inicial para o usuário raiz local do locatário.
+
+
+Se as contas de locatário do S3 precisarem cumprir os requisitos regulamentares, os administradores de grade poderão habilitar a configuração global de bloqueio de objetos do S3 para o sistema StorageGRID. Quando o bloqueio de objeto S3 está ativado para o sistema, todas as contas de inquilino S3 podem criar buckets com o bloqueio de objeto S3 ativado e, em seguida, especificar as configurações de retenção e retenção legal para as versões de objeto nesse bucket.
+
+Depois que uma conta de locatário for criada, os usuários do locatário poderão entrar no Gerenciador do locatário.
+
+
+
+== Conexões de cliente com nós StorageGRID
+
+Antes que os usuários do locatário possam usar clientes S3 ou Swift para armazenar e recuperar dados no StorageGRID, você deve decidir como esses clientes se conetarão aos nós do StorageGRID.
+
+Os aplicativos clientes podem armazenar ou recuperar objetos conetando-se a qualquer um dos seguintes:
+
+* O serviço Load Balancer em nós de administração ou nós de gateway. Esta é a ligação recomendada.
+* O serviço CLB nos nós de Gateway.
++
+
+NOTE: O serviço CLB está obsoleto.
+
+* Nós de storage, com ou sem um balanceador de carga externo.
+
+
+Ao configurar o StorageGRID para que os clientes possam usar o serviço Load Balancer, execute as seguintes etapas:
+
+. Configurar opcionalmente grupos de alta disponibilidade (HA). Se você criar um grupo de HA, as interfaces de vários nós de Admin e nós de Gateway serão colocadas em uma configuração de backup ativo. As conexões de cliente são feitas usando o endereço IP virtual do grupo HA.
+. Configure endpoints para o serviço Load Balancer. O serviço Load Balancer em nós de administração ou nós de gateway distribui conexões de rede recebidas de aplicativos clientes para nós de storage. Ao criar um endpoint de balanceador de carga, você especifica um número de porta, se o endpoint aceita conexões HTTP ou HTTPS, o tipo de cliente (S3 ou Swift) que usará o endpoint e o certificado a ser usado para conexões HTTPS (se aplicável).
+. Opcionalmente, especifique que a rede de cliente de um nó não é confiável para garantir que todas as conexões à rede de cliente do nó ocorram nos pontos de extremidade do balanceador de carga.
+
+
+.Informações relacionadas
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+* xref:../tenant/index.adoc[Use uma conta de locatário]
+* xref:../s3/index.adoc[Use S3]
+* xref:../swift/index.adoc[Use Swift]
+* xref:exploring-tenant-manager.adoc[Explore o Gestor do Locatário]
+* xref:configuring-network-settings.adoc[Configure as definições de rede]
+

@@ -1,0 +1,70 @@
+---
+permalink: tenant/changing-bucket-versioning.html 
+sidebar: sidebar 
+keywords: how to change bucket versioning, disabled versioning, enabled versioning, suspended versioning 
+summary: Se você estiver usando um locatário do S3, poderá usar o Gerenciador do locatário ou a API de gerenciamento do locatário para alterar o estado de controle de versão para buckets do S3. 
+---
+= Alterar o controle de versão de objetos para um bucket
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando um locatário do S3, poderá usar o Gerenciador do locatário ou a API de gerenciamento do locatário para alterar o estado de controle de versão para buckets do S3.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você pertence a um grupo de usuários que tem a permissão Gerenciar todos os buckets ou acesso root. Essas permissões substituem as configurações de permissões em políticas de grupo ou bucket.
++
+xref:tenant-management-permissions.adoc[Permissões de gerenciamento do locatário]
+
+
+
+.Sobre esta tarefa
+Você pode ativar ou suspender o controle de versão de objetos para um bucket. Depois de ativar o controle de versão para um bucket, ele não pode retornar a um estado não versionado. No entanto, você pode suspender o controle de versão para o bucket.
+
+* Desativado: O controle de versão nunca foi habilitado
+* Habilitado: O controle de versão está habilitado
+* Suspenso: O controle de versão foi ativado anteriormente e está suspenso
+
+
+xref:../s3/object-versioning.adoc[Controle de versão de objeto S3]
+
+xref:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.adoc[Regras e políticas do ILM para objetos com versão S3 (exemplo 4)]
+
+.Passos
+. Selecione *STORAGE (S3)* > *Buckets*.
+. Selecione o nome do intervalo na lista.
+. Selecione *Opções de balde* *versão de objetos*.
++
+image::../media/bucket_object_versioning.png[Controle de versão de Objeto alteração de bucket]
+
+. Selecione um estado de controle de versão para os objetos neste intervalo.
++
+
+NOTE: Se o bloqueio de objeto S3 ou a conformidade legada estiver ativada, as opções *versão de objeto* serão desativadas.
+
++
+[cols="1a,3a"]
+|===
+| Opção | Descrição 
+
+
+ a| 
+Habilite o controle de versão
+ a| 
+Ative o controle de versão de objetos se você quiser armazenar todas as versões de cada objeto neste intervalo. Em seguida, você pode recuperar versões anteriores de um objeto, conforme necessário.
+
+Os objetos que já estavam no bucket serão versionados quando forem modificados por um usuário.
+
+
+
+ a| 
+Suspenda o controle de versão
+ a| 
+Suspenda o controle de versão do objeto se você não quiser mais criar novas versões de objeto. Você ainda pode recuperar quaisquer versões de objetos existentes.
+
+|===
+. Selecione *Salvar alterações*.
+

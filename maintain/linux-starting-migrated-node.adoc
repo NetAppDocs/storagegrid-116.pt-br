@@ -1,0 +1,38 @@
+---
+permalink: maintain/linux-starting-migrated-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, linux, start node 
+summary: Depois de validar o nó migrado, você inicia o nó executando um comando no host Linux de destino. 
+---
+= Linux: Inicie o nó migrado
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de validar o nó migrado, você inicia o nó executando um comando no host Linux de destino.
+
+.Passos
+. Inicie o nó no novo host.
++
+[listing]
+----
+sudo storagegrid node start DC1-S3
+Starting node DC1-S3
+----
+. No Gerenciador de Grade, verifique se o status do nó está verde sem alarmes levantados contra ele.
++
+
+IMPORTANT: Verificar se o status do nó está verde garante que o nó migrado tenha reiniciado e se juntado novamente à grade. Se o status não estiver verde, não migre nenhum nó adicional para que você não tenha mais de um nó fora de serviço.
+
++
+Se você não conseguir acessar o Gerenciador de Grade, aguarde 10 minutos e execute o seguinte comando:
+
++
+`sudo storagegrid node status *_node-name_*`
+
++
+Confirme se o nó migrado tem um Estado de execução de `Running`.
+
+

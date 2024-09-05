@@ -1,0 +1,96 @@
+---
+permalink: admin/managing-tenants.html 
+sidebar: sidebar 
+keywords: manage tenants, tenant account, what is a tenant 
+summary: Como administrador de grade, você cria e gerencia as contas de locatário que os clientes S3 e Swift usam para armazenar e recuperar objetos, monitorar o uso do armazenamento e gerenciar as ações que os clientes podem executar usando seu sistema StorageGRID. 
+---
+= Gerenciar locatários
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Como administrador de grade, você cria e gerencia as contas de locatário que os clientes S3 e Swift usam para armazenar e recuperar objetos, monitorar o uso do armazenamento e gerenciar as ações que os clientes podem executar usando seu sistema StorageGRID.
+
+
+
+== O que são contas de inquilino?
+
+As contas de locatário permitem que aplicativos clientes que usam a API REST do Simple Storage Service (S3) ou a API REST Swift armazenem e recuperem objetos no StorageGRID.
+
+Cada conta de locatário suporta o uso de um único protocolo, que você especifica quando você cria a conta. Para armazenar e recuperar objetos em um sistema StorageGRID com ambos os protocolos, você deve criar duas contas de locatário: Uma para buckets e objetos do S3 e outra para contentores e objetos do Swift. Cada conta de locatário tem seu próprio ID de conta, grupos e usuários autorizados, buckets ou containers e objetos.
+
+Opcionalmente, você pode criar contas de locatário adicionais se quiser segregar os objetos armazenados em seu sistema por diferentes entidades. Por exemplo, você pode configurar várias contas de locatário em qualquer um desses casos de uso:
+
+* * Caso de uso corporativo:* se você estiver administrando um sistema StorageGRID em um aplicativo corporativo, talvez queira separar o armazenamento de objetos da grade pelos diferentes departamentos da sua organização. Nesse caso, você pode criar contas de inquilino para o departamento de marketing, o departamento de suporte ao cliente, o departamento de recursos humanos e assim por diante.
++
+
+NOTE: Se você usar o protocolo cliente S3, você pode simplesmente usar buckets e políticas de bucket do S3 para segregar objetos entre os departamentos de uma empresa. Você não precisa usar contas de locatário. Consulte as instruções para implementar aplicativos cliente S3 para obter mais informações.
+
+* * Caso de uso do provedor de serviços:* se você estiver administrando um sistema StorageGRID como provedor de serviços, você pode segregar o armazenamento de objetos da grade pelas diferentes entidades que alugarão o armazenamento em sua grade. Neste caso, você criaria contas de inquilino para a empresa A, empresa B, empresa C e assim por diante.
+
+
+
+
+== Criar e configurar contas de inquilino
+
+Ao criar uma conta de locatário, você especifica as seguintes informações:
+
+* Nome de exibição da conta de locatário.
+* Qual protocolo de cliente será usado pela conta de locatário (S3 ou Swift).
+* Para contas de locatário do S3: Se a conta de locatário tem permissão para usar serviços de plataforma com buckets do S3. Se você permitir que as contas de inquilino usem serviços de plataforma, você deve garantir que a grade esteja configurada para suportar seu uso. Consulte ""Gerenciando serviços de plataforma.""
+* Opcionalmente, uma cota de armazenamento para a conta de locatário - o número máximo de gigabytes, terabytes ou petabytes disponíveis para os objetos do locatário. Se a cota for excedida, o locatário não poderá criar novos objetos.
++
+
+NOTE: A cota de armazenamento de um locatário representa uma quantidade lógica (tamanho do objeto), e não uma quantidade física (tamanho no disco).
+
+* Se a federação de identidade estiver ativada para o sistema StorageGRID, qual grupo federado tem permissão de acesso root para configurar a conta de locatário.
+* Se o logon único (SSO) não estiver em uso para o sistema StorageGRID, se a conta do locatário usará sua própria origem de identidade ou compartilhará a origem de identidade da grade e a senha inicial para o usuário raiz local do locatário.
+
+
+Depois que uma conta de locatário for criada, você poderá executar as seguintes tarefas:
+
+* *Gerenciar serviços de plataforma para a grade*: Se você habilitar serviços de plataforma para contas de locatários, certifique-se de entender como as mensagens de serviços de plataforma são entregues e os requisitos de rede que o uso de serviços de plataforma coloca na implantação do StorageGRID.
+* *Monitorar o uso de armazenamento de uma conta de locatário*: Depois que os locatários começam a usar suas contas, você pode usar o Grid Manager para monitorar quanto armazenamento cada locatário consome.
++
+
+NOTE: Os valores de uso de storage de um locatário podem ficar desatualizados se os nós estiverem isolados de outros nós na grade. Os totais serão atualizados quando a conetividade de rede for restaurada.
+
++
+Se você tiver definido cotas para locatários, poderá ativar o alerta *uso alto da cota do locatário* para determinar se os locatários estão consumindo suas cotas. Se ativado, esse alerta é acionado quando um locatário usou 90% de sua cota. Para obter mais informações, consulte a referência de alertas nas instruções para monitoramento e solução de problemas do StorageGRID.
+
+* *Configurar operações do cliente*: Você pode configurar se alguns tipos de operações do cliente são proibidos.
+
+
+
+
+== Configurar locatários do S3
+
+Depois que uma conta de locatário do S3 for criada, os usuários do locatário poderão acessar o Gerenciador do locatário para executar tarefas como as seguintes:
+
+* Configurando a federação de identidade (a menos que a origem de identidade seja compartilhada com a grade) e criando grupos e usuários locais
+* Gerenciando chaves de acesso S3
+* Criação e gerenciamento de buckets do S3
+* Monitoramento do uso do storage
+* Usando serviços de plataforma (se ativado)
+
+
+
+IMPORTANT: Os usuários de locatários do S3 podem criar e gerenciar chaves de acesso do S3 e buckets com o Gerenciador de locatários, mas devem usar um aplicativo cliente do S3 para obter e gerenciar objetos.
+
+
+
+== Configurar os locatários Swift
+
+Depois que uma conta de locatário Swift for criada, o usuário raiz do locatário poderá acessar o Gerenciador do locatário para executar tarefas como as seguintes:
+
+* Configurando a federação de identidade (a menos que a origem de identidade seja compartilhada com a grade) e criando grupos e usuários locais
+* Monitoramento do uso do storage
+
+
+
+IMPORTANT: Os usuários Swift devem ter a permissão de acesso root para acessar o Gerenciador do locatário. No entanto, a permissão de acesso root não permite que os usuários se autentiquem na API REST do Swift para criar contentores e ingerir objetos. Os usuários devem ter a permissão Swift Administrator para se autenticar na API Swift REST.
+
+.Informações relacionadas
+xref:../tenant/index.adoc[Use uma conta de locatário]

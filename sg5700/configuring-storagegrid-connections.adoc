@@ -1,0 +1,23 @@
+---
+permalink: sg5700/configuring-storagegrid-connections.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, storagegrid connections, connections, configure, setup, set up 
+summary: 'Antes de implantar um dispositivo StorageGRID como nó de armazenamento em uma grade StorageGRID, você deve configurar as conexões entre o dispositivo e as redes que você planeja usar. Você pode configurar a rede navegando até o Instalador de dispositivos StorageGRID, que está incluído no controlador E5700SG (o controlador de computação no dispositivo).' 
+---
+= Configurar conexões StorageGRID (SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de implantar um dispositivo StorageGRID como nó de armazenamento em uma grade StorageGRID, você deve configurar as conexões entre o dispositivo e as redes que você planeja usar. Você pode configurar a rede navegando até o Instalador de dispositivos StorageGRID, que está incluído no controlador E5700SG (o controlador de computação no dispositivo).
+
+.Passos
+* xref:accessing-storagegrid-appliance-installer-sg5700.adoc[Acesse o Instalador de dispositivos StorageGRID]
+* xref:verifying-and-upgrading-storagegrid-appliance-installer-version.adoc[Verifique e atualize a versão do instalador do StorageGRID Appliance]
+* xref:configuring-network-links-sg5700.adoc[Configurar ligações de rede (SG5700)]
+* xref:setting-ip-configuration-sg5700.adoc[Defina a configuração IP]
+* xref:verifying-network-connections.adoc[Verifique as conexões de rede]
+* xref:verifying-port-level-network-connections.adoc[Verifique as conexões de rede no nível da porta]
+

@@ -1,0 +1,92 @@
+---
+permalink: sg5600/replacing-other-hardware-components-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, Replacing, replace, hardware, components, remove, removing, removal, install, installing, installation, drive, fan, power supply, battery 
+summary: Pode ser necessário substituir uma unidade, ventoinha, fonte de alimentação ou bateria no aparelho StorageGRID. 
+---
+= Substitua outros componentes de hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode ser necessário substituir uma unidade, ventoinha, fonte de alimentação ou bateria no aparelho StorageGRID.
+
+.O que você vai precisar
+* Você tem o procedimento de substituição de hardware do e-Series.
+* O aparelho foi xref:placing-appliance-into-maintenance-mode.adoc[colocado no modo de manutenção] feito se o procedimento de substituição de componentes exigir que desligue o aparelho.
+
+
+.Sobre esta tarefa
+Para substituir uma unidade, um recipiente do ventilador de alimentação, um recipiente do ventilador, um recipiente de alimentação, uma bateria ou uma gaveta de unidade, consulte os procedimentos padrão para os storages de armazenamento E2700 e E5600. Concentre-se nas instruções passo a passo para remover e substituir o hardware em si; muitos dos procedimentos do SANtricity Storage Manager não se aplicam a um dispositivo.
+
+
+
+== SG5612 instruções de substituição de componentes
+
+|===
+| FRU | Consulte 
+
+
+ a| 
+Condução
+ a| 
+Siga as etapas nas instruções do e-Series para substituir uma unidade nas bandejas de E2600, E2700, E5400, E5500, E5600 ou 12 unidades ou 24 unidades.
+
+
+
+ a| 
+Depósito da ventoinha de alimentação
+ a| 
+Siga as etapas nas instruções do e-Series para substituir um recipiente do ventilador de energia com falha na bandeja de unidades e controlador E5612 ou E5624
+
+
+
+ a| 
+Bateria no controlador E2700 (requer a remoção do controlador)
+ a| 
+Siga as etapas em xref:replacing-e2700-controller.adoc[Substitua o controlador E2700], mas instale a nova bateria no controlador existente.
+
+|===
+
+
+== SG5660 instruções de substituição de componentes
+
+|===
+| FRU | Consulte 
+
+
+ a| 
+Condução
+ a| 
+Siga as etapas nas instruções do e-Series para substituir uma unidade nas bandejas E2660, E2760, E5460, E5560 ou E5660.
+
+
+
+ a| 
+Depósito de alimentação
+ a| 
+Siga as etapas nas instruções do e-Series para substituir um recipiente de alimentação com falha na bandeja de unidades e controlador E5660
+
+
+
+ a| 
+Recipiente da ventoinha
+ a| 
+Siga as etapas nas instruções do e-Series para substituir um recipiente de ventilador com falha na bandeja de unidades e controlador E5660
+
+
+
+ a| 
+Bateria no controlador E2700 (requer a remoção do controlador)
+ a| 
+Siga as etapas em xref:replacing-e2700-controller.adoc[Substitua o controlador E2700], mas instale a nova bateria no controlador existente.
+
+|===
+.Informações relacionadas
+https://mysupport.netapp.com/info/web/ECMP11751516.html["Procedimentos de substituição de hardware do NetApp e-Series e EF-Series"^]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61765["Documentação do NetApp: Série E2700"^]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61893["Documentação do NetApp: Série E5600"^]

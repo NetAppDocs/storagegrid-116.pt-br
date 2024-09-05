@@ -1,0 +1,122 @@
+---
+permalink: sg6000/preparing-site-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, install, installation, site prep, site preparating, preparing site, site requirements, requirements, site, dimensions, weight, weights, temperature, humidity, altitude, airflow, heat, wiring, power, grounding, facility 
+summary: Antes de instalar o aparelho, certifique-se de que o local e o gabinete ou rack que pretende utilizar cumprem as especificações de um dispositivo StorageGRID. 
+---
+= Local de preparação (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o aparelho, certifique-se de que o local e o gabinete ou rack que pretende utilizar cumprem as especificações de um dispositivo StorageGRID.
+
+.Passos
+. Confirme se o local atende aos requisitos de temperatura, umidade, faixa de altitude, fluxo de ar, dissipação de calor, fiação, energia e aterramento. Consulte o NetApp Hardware Universe para obter mais informações.
+. Confirme se a sua localização fornece alimentação CA de 240 volts para a alimentação CA de SG6060 ou 120 volts para o SGF6024.
+. Obtenha um gabinete ou rack de 19 polegadas (48,3 cm) para encaixar prateleiras deste tamanho (sem cabos):
++
+|===
+| Tipo de prateleira | Altura | Largura | Profundidade | Peso máximo 
+
+
+ a| 
+* E2860 compartimento do controlador* para SG6060
+ a| 
+6,87 pol.
+
+(17,46 cm)
+ a| 
+17,66 pol.
+
+(44,86 cm)
+ a| 
+38,25 pol.
+
+(97,16 cm)
+ a| 
+13 250 lb.
+
+(113 kg)
+
+
+
+ a| 
+* Prateleira de expansão opcional* para SG6060 (um ou dois)
+ a| 
+6,87 pol.
+
+(17,46 cm)
+ a| 
+17,66 pol.
+
+(44,86 cm)
+ a| 
+38,25 pol.
+
+(97,16 cm)
+ a| 
+13 250 lb.
+
+(113 kg)
+
+
+
+ a| 
+* EF570 compartimento do controlador* para SGF6024
+ a| 
+3,35 pol.
+
+(8,50 cm)
+ a| 
+17,66 pol.
+
+(44,86 cm)
+ a| 
+19,00 pol.
+
+(48,26 cm)
+ a| 
+13 51,74 lb.
+
+(23,47 kg)
+
+
+
+ a| 
+*Controlador SG6000-CN* para cada aparelho
+ a| 
+1,70 pol.
+
+(4,32 cm)
+ a| 
+17,32 pol.
+
+(44,0 cm)
+ a| 
+32,0 pol.
+
+(81,3 cm)
+ a| 
+13 39 lb.
+
+(17,7 kg)
+
+|===
+. Decida onde vai instalar o aparelho.
++
+
+CAUTION: Ao instalar o compartimento do controlador E2860 ou as prateleiras de expansão opcionais, instale o hardware da parte inferior para a parte superior do rack ou gabinete para evitar que o equipamento tombe. Para garantir que o equipamento mais pesado esteja na parte inferior do gabinete ou rack, instale o controlador SG6000-CN acima da prateleira do controlador E2860 e das prateleiras de expansão.
+
++
+
+IMPORTANT: Antes de se comprometer com a instalação, verifique se os 0,5m cabos óticos fornecidos com o aparelho, ou os cabos que você fornecer, são longos o suficiente para o layout planejado.
+
+
+
+.Informações relacionadas
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+https://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoperabilidade do NetApp"^]

@@ -1,0 +1,75 @@
+---
+permalink: monitor/monitoring-storage-capacity-for-each-storage-node.html 
+sidebar: sidebar 
+keywords: monitor node storage capacity 
+summary: Você deve monitorar o espaço utilizável total para cada nó de storage para garantir que o nó tenha espaço suficiente para novos dados de objeto. 
+---
+= Monitore a capacidade de storage para cada nó de storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve monitorar o espaço utilizável total para cada nó de storage para garantir que o nó tenha espaço suficiente para novos dados de objeto.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Sobre esta tarefa
+Espaço utilizável é a quantidade de espaço de armazenamento disponível para armazenar objetos. O espaço utilizável total para um nó de storage é calculado adicionando o espaço disponível em todos os armazenamentos de objetos dentro do nó.
+
+image::../media/calculating_watermarks.gif[Desenho conceitual para espaço total utilizável]
+
+.Passos
+. Selecione *NÓS* *_Storage Node_* *Storage*.
++
+Os gráficos e tabelas para o nó aparecem.
+
+. Passe o cursor sobre o gráfico armazenamento usado - dados do objeto.
++
+São apresentados os seguintes valores:
+
++
+** *Usado (%)*: A porcentagem do espaço utilizável total que foi usado para dados do objeto.
+** *Usado*: A quantidade de espaço utilizável total que foi usado para dados de objeto.
+** *Dados replicados*: Uma estimativa da quantidade de dados de objetos replicados neste nó, site ou grade.
+** *Dados codificados por apagamento*: Uma estimativa da quantidade de dados de objetos codificados por apagamento neste nó, site ou grade.
+** *Total*: A quantidade total de espaço utilizável neste nó, site ou grade. O valor usado é a `storagegrid_storage_utilization_data_bytes` métrica.
+
+
++
+image::../media/nodes_page_storage_used_object_data.png[Dados de objetos usados no storage de páginas de nós]
+
+. Reveja os valores disponíveis nas tabelas volumes e objetos armazenados, abaixo dos gráficos.
++
+
+NOTE: Para visualizar gráficos destes valores, clique nos ícones de gráfico image:../media/icon_chart_new_for_11_5.png["Ícone de carta"]nas colunas disponíveis.
+
++
+image::../media/nodes_page_storage_tables.png[Objeto armazena tabelas]
+
+. Monitore os valores ao longo do tempo para estimar a taxa na qual o espaço de armazenamento utilizável está sendo consumido.
+. Para manter as operações normais do sistema, adicione nós de storage, adicione volumes de storage ou arquive dados de objetos antes que o espaço utilizável seja consumido.
++
+Ao Planejar o momento de uma expansão, considere quanto tempo levará para adquirir e instalar armazenamento adicional.
+
++
+
+NOTE: Se sua política de ILM usa codificação de apagamento, talvez você prefira expandir quando os nós de storage existentes estiverem aproximadamente 70% cheios para reduzir o número de nós que precisam ser adicionados.
+
++
+Para obter mais informações sobre como Planejar uma expansão de armazenamento, consulte as instruções para expandir o StorageGRID.
+
++
+O alerta *armazenamento de dados de objeto baixo* é acionado quando o espaço insuficiente permanece para armazenar dados de objeto em um nó de armazenamento.
+
+
+
+.Informações relacionadas
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+xref:troubleshooting-storagegrid-system.adoc[Solucionar problemas do alerta de armazenamento de dados de objetos baixos]
+
+xref:../expand/index.adoc[Expanda sua grade]

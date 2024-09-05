@@ -1,0 +1,31 @@
+---
+permalink: admin/changing-network-transfer-encryption.html 
+sidebar: sidebar 
+keywords: network transfer encryption, TLS algorithm 
+summary: 'O sistema StorageGRID usa a Segurança da camada de Transporte (TLS) para proteger o tráfego de controle interno entre nós de grade. A opção Network Transfer Encryption (encriptação de transferência de rede) define o algoritmo utilizado pelo TLS para encriptar o tráfego de controlo entre nós de grelha. Esta definição não afeta a encriptação de dados.' 
+---
+= Alterar a encriptação de transferência de rede
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O sistema StorageGRID usa a Segurança da camada de Transporte (TLS) para proteger o tráfego de controle interno entre nós de grade. A opção Network Transfer Encryption (encriptação de transferência de rede) define o algoritmo utilizado pelo TLS para encriptar o tráfego de controlo entre nós de grelha. Esta definição não afeta a encriptação de dados.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+Por padrão, a criptografia de transferência de rede usa o algoritmo AES256-SHA. O tráfego de controle também pode ser criptografado usando o algoritmo AES128-SHA.
+
+.Passos
+. Selecione *CONFIGURATION* > *System* > *Grid options*.
+. Na seção Opções de rede, altere criptografia de transferência de rede para *AES128-SHA* ou *AES256-SHA* (padrão).
++
+image::../media/network_transfer_encryption.png[Criptografia de rede de configuração de grade]
+
+. Selecione *Guardar*.
+

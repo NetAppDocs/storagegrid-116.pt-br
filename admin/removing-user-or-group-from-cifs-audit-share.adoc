@@ -1,0 +1,85 @@
+---
+permalink: admin/removing-user-or-group-from-cifs-audit-share.html 
+sidebar: sidebar 
+keywords: cifs audit client 
+summary: Não é possível remover o último usuário ou grupo permitido para acessar o compartilhamento de auditoria. 
+---
+= Remover um usuário ou grupo de um compartilhamento de auditoria CIFS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Não é possível remover o último usuário ou grupo permitido para acessar o compartilhamento de auditoria.
+
+.O que você vai precisar
+* Você tem o `Passwords.txt` arquivo com as senhas da conta root (disponível no REFERIDO pacote).
+* Você tem o `Configuration.txt` arquivo (disponível no REFERIDO pacote).
+
+
+.Sobre esta tarefa
+A exportação de auditoria por meio do CIFS/Samba foi obsoleta e será removida em uma futura versão do StorageGRID.
+
+.Passos
+. Faça login no nó de administração principal:
++
+.. Introduza o seguinte comando: `ssh admin@_primary_Admin_Node_IP_`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+.. Digite o seguinte comando para mudar para root: `su -`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
++
+Quando você estiver conetado como root, o prompt mudará de `$` para `#`.
+
+
+
+. Inicie o utilitário de configuração CIFS: `config_cifs.rb`
++
+[listing]
+----
+
+---------------------------------------------------------------------
+| Shares                 | Authentication         | Config          |
+---------------------------------------------------------------------
+| add-audit-share        | set-authentication     | validate-config |
+| enable-disable-share   | set-netbios-name       | help            |
+| add-user-to-share      | join-domain            | exit            |
+| remove-user-from-share | add-password-server    |                 |
+| modify-group           | remove-password-server |                 |
+|                        | add-wins-server        |                 |
+|                        | remove-wins-server     |                 |
+---------------------------------------------------------------------
+----
+. Comece a remover um usuário ou grupo: `remove-user-from-share`
++
+Uma lista numerada de compartilhamentos de auditoria disponíveis para o nó Admin é exibida. O compartilhamento de auditoria é rotulado auditoria-exportação.
+
+. Introduza o número da partilha de auditoria: `_audit_share_number_`
+. Quando solicitado a remover um usuário ou um grupo: `user` Ou `group`
++
+É apresentada uma lista numerada de utilizadores ou grupos para a partilha de auditoria.
+
+. Introduza o número correspondente ao utilizador ou grupo que pretende remover: `_number_`
++
+O compartilhamento de auditoria é atualizado e o usuário ou grupo não tem mais permissão para acessar o compartilhamento de auditoria. Por exemplo:
+
++
+[listing]
+----
+Enabled shares
+ 1. audit-export
+Select the share to change: 1
+Remove user or group? [User/group]: User
+Valid users for this share
+1. audituser
+2. newaudituser
+Select the user to remove: 1
+
+Removed user "audituser" from share "audit-export".
+
+Press return to continue.
+----
+. Feche o utilitário de configuração CIFS: `exit`
+. Se a implantação do StorageGRID incluir nós de administração em outros sites, desative o compartilhamento de auditoria em cada site, conforme necessário.
+. Faça logout de cada shell de comando quando a configuração estiver concluída: `exit`
+

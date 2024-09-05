@@ -1,0 +1,80 @@
+---
+permalink: monitor/monitoring-network-connections-and-performance.html 
+sidebar: sidebar 
+keywords: monitoring, monitoring network connections, network, network performance 
+summary: Os nós de grade devem ser capazes de se comunicar uns com os outros para permitir que a grade opere. A integridade da rede entre nós e locais, e a largura de banda da rede entre locais, são essenciais para operações eficientes. 
+---
+= Monitorar conexões de rede e desempenho
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os nós de grade devem ser capazes de se comunicar uns com os outros para permitir que a grade opere. A integridade da rede entre nós e locais, e a largura de banda da rede entre locais, são essenciais para operações eficientes.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve ter permissões de acesso específicas.
+
+
+A conetividade de rede e a largura de banda são especialmente importantes se a política de gerenciamento de ciclo de vida das informações (ILM) copiar objetos replicados entre sites ou armazenar objetos codificados por apagamento usando um esquema que fornece proteção contra perda de site. Se a rede entre sites não estiver disponível, a latência da rede for muito alta ou a largura de banda da rede for insuficiente, algumas regras do ILM podem não conseguir colocar objetos onde o esperado. Isso pode levar a falhas de ingestão (quando a opção de ingestão estrita é selecionada para regras de ILM), ou simplesmente a baixo desempenho de ingestão e backlogs de ILM.
+
+Você pode usar o Gerenciador de Grade para monitorar a conetividade e o desempenho da rede, para que você possa resolver quaisquer problemas imediatamente.
+
+Além disso, considere criar políticas de classificação de tráfego de rede para fornecer monitoramento e limitação para o tráfego relacionado a locatários específicos, buckets, sub-redes ou pontos de extremidade do balanceador de carga. Consulte xref:../admin/index.adoc[Instruções para administrar o StorageGRID].
+
+.Passos
+. Selecione *NODES*.
++
+A página nós é exibida. Cada nó na grade é listado no formato de tabela.
+
++
+image::../media/nodes_menu.png[Menu nós]
+
+. Selecione o nome da grade, um site específico de data center ou um nó de grade e, em seguida, selecione a guia *rede*.
++
+O gráfico tráfego de rede fornece um resumo do tráfego de rede geral para a grade como um todo, o site do data center ou para o nó.
+
++
+image::../media/nodes_page_network_traffic_graph.png[Gráfico de tráfego de rede da página de nós]
+
++
+.. Se você selecionou um nó de grade, role para baixo para revisar a seção *interfaces de rede* da página.
++
+image::../media/nodes_page_network_interfaces.png[Interfaces de rede da página de nós]
+
+.. Para nós de grade, role para baixo para rever a seção *Comunicação de rede* da página.
++
+As tabelas de receção e transmissão mostram quantos bytes e pacotes foram recebidos e enviados através de cada rede, bem como outras métricas de receção e transmissão.
+
++
+image::../media/nodes_page_network_communication.png[Comunicação de rede de Página de nós]
+
+
+
+. Use as métricas associadas às suas políticas de classificação de tráfego para monitorar o tráfego de rede.
++
+.. Selecione *CONFIGURATION* > *Network* > *Traffic Classification*.
++
+A página políticas de classificação de tráfego é exibida e as políticas existentes são listadas na tabela.
+
++
+image::../media/traffic_classification_policies_main_screen_w_examples.png[Política de tráfego para exemplo de gráfico]
+
+.. Para exibir gráficos que mostram as métricas de rede associadas a uma política, selecione o botão de opção à esquerda da política e clique em *métricas*.
+.. Reveja os gráficos para compreender o tráfego de rede associado à política.
++
+Se uma política de classificação de tráfego for projetada para limitar o tráfego de rede, analise a frequência com que o tráfego é limitado e decida se a política continua atendendo às suas necessidades. De tempos em tempos, ajuste cada política de classificação de tráfego conforme necessário.
+
++
+Para criar, editar ou excluir políticas de classificação de tráfego, consulte xref:../admin/index.adoc[Instruções para administrar o StorageGRID].
+
+
+
+
+
+.Informações relacionadas
+xref:viewing-network-tab.adoc[Veja a guia rede]
+
+xref:monitoring-node-connection-states.adoc[Monitorar os estados de conexão do nó]

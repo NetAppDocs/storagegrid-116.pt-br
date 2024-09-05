@@ -1,0 +1,46 @@
+---
+permalink: sg5600/optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, remapping, remap, map, mapping, network, ports 
+summary: Talvez seja necessário remapear as portas internas no nó de armazenamento do dispositivo para diferentes portas externas. Por exemplo, talvez seja necessário remapear as portas devido a um problema de firewall. 
+---
+= Opcional: Remapear as portas de rede para o dispositivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Talvez seja necessário remapear as portas internas no nó de armazenamento do dispositivo para diferentes portas externas. Por exemplo, talvez seja necessário remapear as portas devido a um problema de firewall.
+
+.O que você vai precisar
+* Você acessou anteriormente o Instalador de dispositivos StorageGRID.
+* Você não configurou e não planeja configurar pontos de extremidade do balanceador de carga.
++
+
+IMPORTANT: Se você remapear quaisquer portas, não poderá usar as mesmas portas para configurar pontos de extremidade do balanceador de carga. Se você quiser configurar pontos de extremidade do balanceador de carga e já tiver portas remapeadas, siga as etapas em xref:../maintain/removing-port-remaps.adoc[Remova os remapas de portas].
+
+
+
+.Passos
+. Na barra de menus do Instalador de dispositivos StorageGRID, clique em *Configurar rede* *Remapear portas*.
++
+É apresentada a página Remapear porta.
+
+. Na caixa suspensa *rede*, selecione a rede para a porta que deseja remapear: Grade, Admin ou Cliente.
+. Na caixa suspensa *Protocol* (Protocolo), selecione o protocolo IP: TCP ou UDP.
+. Na caixa suspensa *Remap Direction*, selecione qual direção de tráfego você deseja remapear para esta porta: Inbound, Outbound ou Bi-direcional.
+. Para *original Port*, insira o número da porta que deseja remapear.
+. Para *Mapped-to Port*, insira o número da porta que deseja usar.
+. Clique em *Adicionar regra*.
++
+O novo mapeamento de portas é adicionado à tabela e o remapeamento entra em vigor imediatamente.
+
++
+image::../media/remap_ports.gif[Captura de tela mostrando a opção de remapear portas no Instalador de dispositivos StorageGRID Webscale]
+
+. Para remover um mapeamento de portas, selecione o botão de opção da regra que deseja remover e clique em *Remover regra selecionada*.
+
+
+.Informações relacionadas
+xref:../maintain/index.adoc[Recuperar e manter]

@@ -1,0 +1,45 @@
+---
+permalink: tenant/deleting-another-users-s3-access-keys.html 
+sidebar: sidebar 
+keywords: how to delete access key for other user 
+summary: Se você estiver usando um locatário S3 e tiver permissões apropriadas, você poderá excluir as chaves de acesso S3 de outro usuário. Depois que uma chave de acesso for excluída, ela não poderá mais ser usada para acessar os objetos e buckets na conta do locatário. 
+---
+= Exclua as S3 chaves de acesso de outro usuário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando um locatário S3 e tiver permissões apropriadas, você poderá excluir as chaves de acesso S3 de outro usuário. Depois que uma chave de acesso for excluída, ela não poderá mais ser usada para acessar os objetos e buckets na conta do locatário.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve ter a permissão de acesso root. xref:tenant-management-permissions.adoc[Permissões de gerenciamento do locatário]Consulte .
+
+
+
+IMPORTANT: Os buckets e objetos do S3 pertencentes a um usuário podem ser acessados usando o ID da chave de acesso e a chave de acesso secreta exibidos para esse usuário no Gerenciador do locatário. Por esse motivo, proteja as chaves de acesso como faria com uma senha. Gire as chaves de acesso regularmente, remova quaisquer chaves não utilizadas da conta e nunca as compartilhe com outros usuários.
+
+.Passos
+. Selecione *GERENCIAMENTO DE ACESSO* *usuários*.
++
+A página usuários é exibida e lista os usuários existentes.
+
+. Selecione o usuário cujas chaves de acesso S3 você deseja gerenciar.
++
+É apresentada a página Detalhes do utilizador.
+
+. Selecione *teclas de acesso* e, em seguida, marque a caixa de seleção para cada chave de acesso que deseja excluir.
+. Selecione *ações* *Excluir tecla selecionada*.
++
+É apresentada uma caixa de diálogo de confirmação.
+
++
+image::../media/access_key_confirm_delete.png[Chave de acesso - confirmar exclusão]
+
+. Selecione *Delete key*.
++
+Uma mensagem de confirmação aparece no canto superior direito da página. As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+

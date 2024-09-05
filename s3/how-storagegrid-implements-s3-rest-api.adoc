@@ -1,0 +1,14 @@
+---
+permalink: s3/how-storagegrid-implements-s3-rest-api.html 
+sidebar: sidebar 
+keywords: implement s3 rest api 
+summary: Um aplicativo cliente pode usar S3 chamadas de API REST para se conetar ao StorageGRID para criar, excluir e modificar buckets, bem como armazenar e recuperar objetos. 
+---
+= Como o StorageGRID implementa a API REST do S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um aplicativo cliente pode usar S3 chamadas de API REST para se conetar ao StorageGRID para criar, excluir e modificar buckets, bem como armazenar e recuperar objetos.

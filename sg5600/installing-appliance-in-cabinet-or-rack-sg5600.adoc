@@ -1,0 +1,82 @@
+---
+permalink: sg5600/installing-appliance-in-cabinet-or-rack-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, install, installing, installation, cabinet, rack, rail, rails 
+summary: Tem de instalar calhas no armário ou no rack e, em seguida, deslizar o aparelho sobre os trilhos. Se você tiver um SG5660, você também deve instalar as unidades depois de instalar o aparelho. 
+---
+= Instalar o aparelho no gabinete ou rack (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tem de instalar calhas no armário ou no rack e, em seguida, deslizar o aparelho sobre os trilhos. Se você tiver um SG5660, você também deve instalar as unidades depois de instalar o aparelho.
+
+.O que você vai precisar
+* Você revisou o documento de Avisos de segurança incluído na caixa e entendeu as precauções para mover e instalar hardware.
+* Você tem as instruções de instalação do e-Series para o hardware.
+
+
+
+CAUTION: Instale o hardware a partir da parte inferior do rack ou gabinete ou rack para cima para evitar que o equipamento tombe.
+
+
+CAUTION: O SG5612 pesa aproximadamente 60 lb (27 kg) quando totalmente carregado com unidades. Duas pessoas ou um elevador mecanizado são necessários para mover com segurança o SG5612.
+
+
+CAUTION: O SG5660 pesa aproximadamente 132 lb (60 kg) sem unidades instaladas. Quatro pessoas ou um elevador mecanizado são necessários para mover com segurança um SG5660 vazio.
+
+
+CAUTION: Para evitar danificar o hardware, nunca mova um SG5660 se as unidades estiverem instaladas. Deve remover todas as unidades antes de mover o aparelho.
+
+.Sobre esta tarefa
+Execute as seguintes tarefas para instalar o dispositivo SG5660 em um gabinete ou rack.
+
+* *Instale os trilhos de montagem*
++
+Instale os trilhos de montagem no gabinete ou rack.
+
++
+Consulte as instruções de instalação do e-Series para o E2700 ou o E5600.
+
+* *Instale o aparelho no gabinete ou rack*
++
+Deslize o aparelho para dentro do gabinete ou rack e fixe-o.
+
++
+
+NOTE: Se estiver a levantar o SG5660 manualmente, fixe as quatro pegas nas laterais do chassis. Retire estas pegas enquanto desliza o aparelho sobre os trilhos.
+
+* *Instale as unidades*
++
+Se você tiver um SG5660, instale 12 unidades em cada uma das 5 gavetas de unidade.
+
++
+Você deve instalar todas as unidades 60 para garantir o funcionamento correto.
+
++
+.. Coloque a pulseira ESD e remova as unidades da embalagem.
+.. Solte as alavancas na gaveta superior da unidade e deslize a gaveta para fora usando as alavancas.
+.. Levante a alça da unidade para a vertical e alinhe os botões da unidade com os entalhes na gaveta.
++
+image::../media/appliance_drive_insertion.gif[Inserção da unidade]
+
+.. Pressionando suavemente a parte superior da unidade, gire a alça da unidade para baixo até que ela se encaixe no lugar.
+.. Depois de instalar as primeiras 12 unidades, deslize a gaveta para dentro, empurrando o centro e fechando ambas as alavancas com cuidado.
+.. Repita estes passos para as outras quatro gavetas.
+
+
+* *Fixe a moldura frontal*
++
+*SG5612*: Fixe as tampas das extremidades esquerda e direita à frente.
+
++
+*SG5660*: Fixe a moldura à frente.
+
+
+
+.Informações relacionadas
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2344477["E2700 Guia de instalação da bandeja de unidades e controlador relacionado"^]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1532527["E5600 Guia de instalação da bandeja de unidades e controlador relacionado"^]

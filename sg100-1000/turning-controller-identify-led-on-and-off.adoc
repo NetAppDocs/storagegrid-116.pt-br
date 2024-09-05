@@ -1,0 +1,50 @@
+---
+permalink: sg100-1000/turning-controller-identify-led-on-and-off.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, locate, find, locating, finding, identify, blue led, blue light 
+summary: O LED de identificação azul na parte frontal e traseira do controlador pode ser ligado para ajudar a localizar o aparelho em um data center. 
+---
+= Ligue e desligue o LED de identificação do controlador
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O LED de identificação azul na parte frontal e traseira do controlador pode ser ligado para ajudar a localizar o aparelho em um data center.
+
+.O que você vai precisar
+Tem de ter o endereço IP BMC do controlador que pretende identificar.
+
+.Passos
+. Acesse a interface BMC do controlador.
+. Selecione *identificação do servidor*.
+. Selecione *ON* e, em seguida, selecione *Perform Action*.
++
+image::../media/sg6060_service_identify_turn_on.jpg[Ligue o LED de identificação do controlador da BMC]
+
+
+
+.Resultado
+Os LEDs de identificação azul acendem-se na parte frontal (mostrada) e traseira do controlador.
+
+image::../media/sg6060_front_panel_service_led_on.jpg[LED de identificação dianteira - ligado]
+
+
+NOTE: Se um painel frontal estiver instalado no controlador, pode ser difícil ver o LED de identificação frontal.
+
+.Depois de terminar
+Para desligar o LED de identificação do controlador:
+
+* Pressione o interrutor Identify LED no painel frontal do controlador.
+* Na interface BMC do controlador, selecione *identificação do servidor*, selecione *OFF* e, em seguida, selecione *Perform Action*.
+
+
+Os LEDs de identificação azul na parte frontal e traseira do controlador apagam-se.
+
+image::../media/sg6060_front_panel_service_led_off.jpg[LED de identificação dianteira - desligado]
+
+.Informações relacionadas
+xref:locating-controller-in-data-center.adoc[Localize o controlador no data center]
+
+xref:accessing-bmc-interface-sg1000.adoc[Acesse a interface BMC]

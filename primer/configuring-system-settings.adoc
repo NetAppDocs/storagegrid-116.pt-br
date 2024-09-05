@@ -1,0 +1,42 @@
+---
+permalink: primer/configuring-system-settings.html 
+sidebar: sidebar 
+keywords: system settings, grid manager, configure, configuration, display options, grid options, key management server, S3 object lock, storage options 
+summary: Você pode configurar várias configurações do sistema a partir do Gerenciador de Grade para ajustar a operação do seu sistema StorageGRID. 
+---
+= Configure as definições do sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode configurar várias configurações do sistema a partir do Gerenciador de Grade para ajustar a operação do seu sistema StorageGRID.
+
+
+
+== Opções de visualização
+
+As opções de exibição permitem especificar o período de tempo limite para sessões do usuário e suprimir notificações de e-mail para alarmes legados e mensagens AutoSupport acionadas por eventos.
+
+
+
+== Opções de grelha
+
+Você pode usar Opções de Grade para configurar as configurações de todos os objetos armazenados no seu sistema StorageGRID, incluindo compactação de objetos armazenados, criptografia de objetos armazenados e hash de objetos armazenados.
+
+Você também pode usar essas opções para especificar configurações globais para operações de cliente S3 e Swift.
+
+
+
+== S3 bloqueio de objetos
+
+O recurso bloqueio de objetos do StorageGRID S3 é uma solução de proteção de objetos equivalente ao bloqueio de objetos do S3 no Amazon Simple Storage Service (Amazon S3). Você pode habilitar a configuração global de bloqueio de objeto S3 para um sistema StorageGRID para permitir que as contas de locatário S3 criem buckets com o bloqueio de objeto S3 ativado. O locatário pode então usar um aplicativo cliente S3 para especificar opcionalmente as configurações de retenção (reter até a data, retenção legal ou ambos) para os objetos nesses buckets. Além disso, cada bucket com o bloqueio de objetos S3 ativado pode, opcionalmente, ter um modo de retenção padrão e um período de retenção, que se aplicam se objetos forem adicionados ao bucket sem suas próprias configurações de retenção.
+
+image::../media/s3_object_lock_architecture.png[S3 arquitetura de bloqueio de objetos]
+
+
+
+== Opções de armazenamento
+
+As opções de armazenamento permitem controlar a segmentação de objetos e substituir as definições de marca d'água do volume de armazenamento para gerir o espaço de armazenamento utilizável de um nó de armazenamento.

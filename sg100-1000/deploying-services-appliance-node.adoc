@@ -1,0 +1,14 @@
+---
+permalink: sg100-1000/deploying-services-appliance-node.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, deploy node, deploying node, node, deploy, deploying 
+summary: 'Você pode implantar um dispositivo de serviços como nó de administração principal, um nó de administração não primário ou um nó de gateway. Os dispositivos SG100 e SG1000 podem operar como nós de gateway e nós de administrador (primários ou não primários) ao mesmo tempo.' 
+---
+= Nó do dispositivo de serviços de implantação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode implantar um dispositivo de serviços como nó de administração principal, um nó de administração não primário ou um nó de gateway. Os dispositivos SG100 e SG1000 podem operar como nós de gateway e nós de administração (primários ou não primários) ao mesmo tempo.

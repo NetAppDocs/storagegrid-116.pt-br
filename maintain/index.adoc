@@ -1,0 +1,45 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords: maintain overview, maintenance overview, about maintain, about maintenance 
+summary: Use estas instruções para manter seu sistema StorageGRID e para se recuperar de falhas. 
+---
+= Recuperar e manter: Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use estas instruções para manter seu sistema StorageGRID e para se recuperar de falhas.
+
+
+
+== Sobre estas instruções
+
+Estas instruções descrevem como aplicar um hotfix de software, recuperar nós de grade, recuperar um site com falha, desativar nós de grade ou um site inteiro, executar manutenção de rede, executar procedimentos de manutenção de nível de host e middleware e executar procedimentos de nó de grade.
+
+
+NOTE: Nestas instruções, "'Linux'" refere-se a uma implantação Red Hat Enterprise Linux, Ubuntu, CentOS ou Debian. Utilize o https://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoperabilidade do NetApp"^] para obter uma lista de versões suportadas.
+
+
+
+== Antes de começar
+
+* Você tem uma ampla compreensão do sistema StorageGRID.
+* Você revisou a topologia do seu sistema StorageGRID e entende a configuração da grade.
+* Você entende que deve seguir todas as instruções exatamente e atender a todos os avisos.
+* Você entende que os procedimentos de manutenção não descritos não são suportados ou exigem um envolvimento dos serviços.
+
+
+
+
+== Procedimentos de manutenção para aparelhos
+
+Para obter os procedimentos de hardware, consulte as instruções de instalação e manutenção do seu dispositivo StorageGRID.
+
+* xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+* xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+* xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+* xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+

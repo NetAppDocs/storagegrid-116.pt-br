@@ -1,0 +1,40 @@
+---
+permalink: sg6000/configuring-snmp-settings-for-sg6000-cn-controller.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, SNMP, configure, setup, set up, sg6000-cn 
+summary: Se estiver familiarizado com a configuração do SNMP para hardware, pode utilizar a interface BMC para configurar as definições SNMP para o controlador SG6000-CN. Você pode fornecer strings de comunidade seguras, ativar Trap SNMP e especificar até cinco destinos SNMP. 
+---
+= Configure as definições SNMP para o controlador SG6000-CN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se estiver familiarizado com a configuração do SNMP para hardware, pode utilizar a interface BMC para configurar as definições SNMP para o controlador SG6000-CN. Você pode fornecer strings de comunidade seguras, ativar Trap SNMP e especificar até cinco destinos SNMP.
+
+.O que você vai precisar
+* Você sabe como acessar o painel do BMC.
+* Tem experiência em configurar definições SNMP para equipamento SNMPv1-v2c.
+
+
+
+NOTE: As definições BMC efetuadas por este procedimento poderão não ser preservadas se o SG6000-CN falhar e tiver de ser substituído. Certifique-se de que tem um registo de todas as definições aplicadas, para que possam ser facilmente reaplicadas após uma substituição de hardware, se necessário.
+
+.Passos
+. No painel BMC, selecione *Configurações* *Configurações* *Configurações SNMP*.
+. Na página Configurações SNMP, selecione *Ativar SNMP V1/V2* e, em seguida, forneça uma String comunitária somente leitura e uma String Comunidade de leitura-escrita.
++
+A String da Comunidade somente leitura é como uma ID de usuário ou senha. Você deve alterar esse valor para evitar que intrusos obtenham informações sobre a configuração da rede. A cadeia de Comunidade de leitura-escrita protege o dispositivo contra alterações não autorizadas.
+
+. Opcionalmente, selecione *Ativar Trap* e insira as informações necessárias.
++
+
+IMPORTANT: Introduza o IP de destino para cada trap SNMP utilizando um endereço IP. Nomes de domínio totalmente qualificados não são suportados.
+
++
+Ative traps se quiser que o controlador SG6000-CN envie notificações imediatas para um console SNMP quando ele estiver em um estado incomum. Os traps podem indicar falhas de hardware de vários componentes ou limites de temperatura que estão sendo excedidos.
+
+. Opcionalmente, clique em *Send Test Trap* para testar suas configurações.
+. Se as configurações estiverem corretas, clique em *Salvar*.
+

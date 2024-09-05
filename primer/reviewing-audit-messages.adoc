@@ -1,0 +1,35 @@
+---
+permalink: primer/reviewing-audit-messages.html 
+sidebar: sidebar 
+keywords: audit message 
+summary: As mensagens de auditoria podem ajudá-lo a entender melhor as operações detalhadas do seu sistema StorageGRID. Você pode usar logs de auditoria para solucionar problemas e avaliar o desempenho. 
+---
+= Rever mensagens de auditoria
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As mensagens de auditoria podem ajudá-lo a entender melhor as operações detalhadas do seu sistema StorageGRID. Você pode usar logs de auditoria para solucionar problemas e avaliar o desempenho.
+
+Durante a operação normal do sistema, todos os serviços StorageGRID geram mensagens de auditoria, como segue:
+
+* As mensagens de auditoria do sistema estão relacionadas ao próprio sistema de auditoria, aos estados dos nós da grade, à atividade de tarefas em todo o sistema e às operações de backup de serviço.
+* As mensagens de auditoria de storage de objetos estão relacionadas ao armazenamento e gerenciamento de objetos no StorageGRID, incluindo armazenamento de objetos e recuperações, transferências de nó de grade para nó de grade e verificações.
+* As mensagens de auditoria de leitura e gravação do cliente são registradas quando um aplicativo cliente S3 ou Swift faz uma solicitação para criar, modificar ou recuperar um objeto.
+* As mensagens de auditoria de gerenciamento Registram solicitações de usuários para a API de gerenciamento.
+
+
+Cada nó Admin armazena mensagens de auditoria em arquivos de texto. O compartilhamento de auditoria contém o arquivo ativo (audit.log), bem como logs de auditoria compatados de dias anteriores. Além disso, cada nó em sua grade armazena uma quantidade limitada de mensagens de auditoria em um arquivo de log local (localaudit.log).
+
+Para facilitar o acesso aos logs de auditoria, você pode configurar o acesso do cliente ao compartilhamento de auditoria para NFS e CIFS (CIFS está obsoleto). Você também pode acessar arquivos de log de auditoria diretamente da linha de comando do nó Admin.
+
+Opcionalmente, você pode enviar informações de auditoria armazenadas em nós de administração e nós locais para um servidor syslog externo. O uso de um servidor syslog externo pode facilitar o gerenciamento de suas informações de auditoria e reduzir o tráfego de rede. Consulte xref:../monitor/configure-audit-messages.adoc[Configurar mensagens de auditoria e destinos de log] para obter mais informações.
+
+Para obter detalhes sobre o arquivo de log de auditoria, o formato das mensagens de auditoria, os tipos de mensagens de auditoria e as ferramentas disponíveis para analisar mensagens de auditoria, consulte o xref:../audit/index.adoc[instruções para mensagens de auditoria]. Para saber como configurar o acesso de cliente de auditoria, xref:../admin/configuring-audit-client-access.adoc[Configurar acesso de cliente de auditoria]consulte .
+
+.Informações relacionadas
+* xref:../audit/index.adoc[Rever registos de auditoria]
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+

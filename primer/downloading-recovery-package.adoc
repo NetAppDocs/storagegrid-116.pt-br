@@ -1,0 +1,31 @@
+---
+permalink: primer/downloading-recovery-package.html 
+sidebar: sidebar 
+keywords: recovery package, download, encryption keys 
+summary: O Pacote de recuperação é um arquivo .zip para download que contém arquivos específicos de implantação e software necessários para instalar, expandir, atualizar e manter um sistema StorageGRID. 
+---
+= Faça o download do pacote de recuperação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Pacote de recuperação é um arquivo .zip para download que contém arquivos específicos de implantação e software necessários para instalar, expandir, atualizar e manter um sistema StorageGRID.
+
+O arquivo Recovery Package também contém informações de configuração e integração específicas do sistema, incluindo nomes de host de servidor e endereços IP, e senhas altamente confidenciais necessárias durante a manutenção, atualização e expansão do sistema. O Pacote de recuperação é necessário para se recuperar da falha do nó de administração principal.
+
+Ao instalar um sistema StorageGRID, é necessário baixar o arquivo do Pacote de recuperação e confirmar que você pode acessar com sucesso o conteúdo deste arquivo. Você também deve baixar o arquivo sempre que a topologia de grade do sistema StorageGRID mudar devido a procedimentos de manutenção ou atualização.
+
+image::../media/recovery_package.png[Página Pacote de recuperação]
+
+Depois de baixar o arquivo Recovery Package e confirmar que você pode extrair o conteúdo, copie o arquivo Recovery Package para dois locais seguros, seguros e separados.
+
+
+IMPORTANT: O arquivo do pacote de recuperação deve ser protegido porque contém chaves de criptografia e senhas que podem ser usadas para obter dados do sistema StorageGRID.
+
+.Informações relacionadas
+* xref:../upgrade/index.adoc[Atualizar o software]
+* xref:../expand/index.adoc[Expanda sua grade]
+* xref:../maintain/index.adoc[Recuperar e manter]
+

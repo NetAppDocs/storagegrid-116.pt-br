@@ -1,0 +1,78 @@
+---
+permalink: tenant/creating-groups-for-swift-tenant.html 
+sidebar: sidebar 
+keywords: how to create Swift tenant groups 
+summary: Você pode gerenciar permissões de acesso para uma conta de locatário Swift importando grupos federados ou criando grupos locais. Pelo menos um grupo deve ter a permissão Swift Administrator, que é necessária para gerenciar os contentores e objetos para uma conta Swift. 
+---
+= Crie grupos para um locatário Swift
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode gerenciar permissões de acesso para uma conta de locatário Swift importando grupos federados ou criando grupos locais. Pelo menos um grupo deve ter a permissão Swift Administrator, que é necessária para gerenciar os contentores e objetos para uma conta Swift.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve pertencer a um grupo de usuários que tenha a permissão de acesso root.
+* Se você pretende importar um grupo federado, você configurou a federação de identidade e o grupo federado já existe na origem de identidade configurada.
+
+
+.Passos
+. Selecione *GERENCIAMENTO DE ACESSO* *grupos*.
++
+image::../media/tenant_add_groups_example.png[Captura de tela mostrando a página grupos de controle de acesso]
+
+. Selecione *criar grupo*.
+. Selecione a guia *local group* para criar um grupo local ou selecione a guia *Federated group* para importar um grupo da origem de identidade configurada anteriormente.
++
+Se o logon único (SSO) estiver habilitado para o sistema StorageGRID, os usuários pertencentes a grupos locais não poderão fazer login no Gerenciador de locatários, embora possam usar aplicativos clientes para gerenciar os recursos do locatário, com base nas permissões de grupo.
+
+. Introduza o nome do grupo.
++
+** *Local group*: Insira um nome de exibição e um nome exclusivo. Pode editar o nome de apresentação mais tarde.
+** *Federated group*: Insira o nome exclusivo. Para o ative Directory, o nome exclusivo é o nome associado ao `sAMAccountName` atributo. Para OpenLDAP, o nome exclusivo é o nome associado ao `uid` atributo.
+
+
+. Selecione *continuar*.
+. Selecione um modo de acesso. Se um usuário pertencer a vários grupos e qualquer grupo estiver definido como somente leitura, o usuário terá acesso somente leitura a todas as configurações e recursos selecionados.
++
+** *Leitura-escrita* (padrão): Os usuários podem fazer login no Gerenciador do Tenant e gerenciar a configuração do locatário.
+** *Somente leitura*: Os usuários só podem visualizar configurações e recursos. Eles não podem fazer alterações nem executar nenhuma operação no Gerenciador do Locatário ou na API de Gerenciamento do Locatário. Os usuários locais só de leitura podem alterar suas próprias senhas.
+
+
+. Defina a permissão Grupo.
++
+** Marque a caixa de seleção *Root Access* se os usuários precisarem fazer login na API de Gerenciamento de Tenant ou Tenant Manager. (Predefinição)
+** Desmarque a caixa de seleção *Root Access* se os usuários não precisarem de acesso ao Gerenciador do locatário ou à API de Gerenciamento do locatário. Por exemplo, desmarque a caixa de seleção para aplicativos que não precisam acessar o locatário. Em seguida, atribua a permissão *Swift Administrator* para permitir que esses usuários gerenciem contentores e objetos.
+
+
+. Selecione *continuar*.
+. Marque a caixa de seleção *Swift administrator* se o usuário precisar usar a Swift REST API.
++
+Os usuários Swift devem ter a permissão de acesso root para acessar o Gerenciador do locatário. No entanto, a permissão de acesso root não permite que os usuários se autentiquem na API REST do Swift para criar contentores e ingerir objetos. Os usuários devem ter a permissão Swift Administrator para se autenticar na API Swift REST.
+
+. Selecione o botão que aparece, dependendo se você está criando um grupo federado ou um grupo local:
++
+** Grupo federado: *Criar grupo*
+** Grupo local: *Continuar*
++
+Se você estiver criando um grupo local, a etapa 4 (Adicionar usuários) será exibida após selecionar *continuar*. Esta etapa não aparece para grupos federados.
+
+
+
+. Marque a caixa de seleção para cada usuário que deseja adicionar ao grupo e selecione *criar grupo*.
++
+Opcionalmente, você pode salvar o grupo sem adicionar usuários. Você pode adicionar usuários ao grupo mais tarde ou selecionar o grupo quando criar novos usuários.
+
+. Selecione *Finish*.
++
+O grupo criado aparece na lista de grupos. As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+
+
+.Informações relacionadas
+xref:tenant-management-permissions.adoc[Permissões de gerenciamento do locatário]
+
+xref:../swift/index.adoc[Use Swift]

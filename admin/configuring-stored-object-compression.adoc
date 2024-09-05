@@ -1,0 +1,49 @@
+---
+permalink: admin/configuring-stored-object-compression.html 
+sidebar: sidebar 
+keywords: stored object compression, compress stored objects, grid options 
+summary: Você pode usar a opção Compress Stored Objects Grid para reduzir o tamanho dos objetos armazenados no StorageGRID, de modo que os objetos consumam menos storage. 
+---
+= Configurar a compactação de objetos armazenados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar a opção Compress Stored Objects Grid para reduzir o tamanho dos objetos armazenados no StorageGRID, de modo que os objetos consumam menos storage.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+A opção Compress Stored Objects Grid (compactar objetos armazenados) está desativada por padrão. Se você habilitar essa opção, o StorageGRID tentará compactar cada objeto ao salvá-lo, usando compactação sem perdas.
+
+
+NOTE: Se alterar esta definição, demora cerca de um minuto para a nova definição ser aplicada. O valor configurado é armazenado em cache para desempenho e dimensionamento.
+
+Antes de ativar esta opção, tenha em atenção o seguinte:
+
+* Você não deve ativar a compactação a menos que você saiba que os dados que estão sendo armazenados são compressíveis.
+* Os aplicativos que salvam objetos no StorageGRID podem compactar objetos antes de salvá-los. Se um aplicativo cliente já tiver compactado um objeto antes de salvá-lo no StorageGRID, ativar a compactação de objetos armazenados não reduzirá ainda mais o tamanho de um objeto.
+* Não ative a compressão se estiver a utilizar o NetApp FabricPool com o StorageGRID.
+* Se a opção Compress Stored Objects Grid estiver ativada, os aplicativos cliente S3 e Swift devem evitar executar operações GET Object que especificam um intervalo de bytes serão retornados. Essas operações de leitura de intervalo são ineficientes porque o StorageGRID deve descompactar efetivamente os objetos para acessar os bytes solicitados. As operações GET Object que solicitam um pequeno intervalo de bytes de um objeto muito grande são especialmente ineficientes; por exemplo, é ineficiente ler um intervalo de 10 MB a partir de um objeto compactado de 50 GB.
++
+Se os intervalos forem lidos a partir de objetos compatados, as solicitações do cliente podem expirar.
+
++
+
+NOTE: Se você precisar compactar objetos e seu aplicativo cliente precisar usar leituras de intervalo, aumente o tempo limite de leitura para o aplicativo.
+
+
+
+.Passos
+. Selecione *CONFIGURATION* > *System* > *Grid options*.
+. Na seção Opções de objetos armazenados, marque a caixa de seleção *Compress Stored Objects*.
++
+image::../media/compress_stored_objects.png[Comprimir objetos armazenados]
+
+. Selecione *Guardar*.
+

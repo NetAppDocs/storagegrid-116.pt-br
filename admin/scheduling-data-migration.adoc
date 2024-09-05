@@ -1,0 +1,65 @@
+---
+permalink: admin/scheduling-data-migration.html 
+sidebar: sidebar 
+keywords: data migration schedule, monitor data migration 
+summary: A migração de dados deve ser agendada e monitorada conforme necessário para garantir que os dados sejam colocados de acordo com a política de ILM dentro do prazo exigido. 
+---
+= Agendar e monitorar a migração de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A migração de dados deve ser agendada e monitorada conforme necessário para garantir que os dados sejam colocados de acordo com a política de ILM dentro do prazo exigido.
+
+
+
+== Agendar a migração de dados
+
+Evite migrar dados durante o horário operacional principal. Limite a migração de dados para noites, fins de semana e outras ocasiões em que o uso do sistema é baixo.
+
+Se possível, não programe a migração de dados durante períodos de alta atividade. No entanto, se não for prático evitar completamente o período de atividade elevada, é seguro prosseguir desde que monitorize de perto os atributos relevantes e tome medidas se excederem os valores aceitáveis.
+
+
+
+== Monitorar a migração de dados
+
+Esta tabela lista os atributos que você deve monitorar durante a migração de dados e os problemas que eles representam.
+
+Se você usar políticas de classificação de tráfego com limites de taxa para reduzir a ingestão, poderá monitorar a taxa observada em conjunto com as estatísticas descritas na tabela a seguir e reduzir os limites, se necessário.
+
+[cols="1a,2a"]
+|===
+| Monitorar | Descrição 
+
+
+ a| 
+Número de objetos aguardando avaliação ILM
+ a| 
+. Selecione *SUPPORT* > *Tools* > *Grid topology*.
+. Selecione *_deployment_* > *Overview* > *Main*.
+. Na seção ILM Activity, monitore o número de objetos mostrados para os seguintes atributos:
++
+** *Aguardando - todos (XQUZ)*: O número total de objetos aguardando avaliação ILM.
+** *Aguardando - Cliente (XCQZ)*: O número total de objetos aguardando avaliação ILM das operações do cliente (por exemplo, ingest).
+
+
+. Se o número de objetos mostrados para qualquer um desses atributos exceder 100.000, diminua a taxa de ingestão de objetos para reduzir a carga no sistema StorageGRID.
+
+
+
+
+ a| 
+Capacidade de armazenamento do sistema de arquivamento direcionado
+ a| 
+Se a política de ILM salvar uma cópia dos dados migrados para um sistema de armazenamento de arquivamento de destino (fita ou nuvem), monitore a capacidade do sistema de armazenamento de arquivamento de destino para garantir que haja capacidade suficiente para os dados migrados.
+
+
+
+ a| 
+*Archive Node* > *ARC* > *Store*
+ a| 
+Se um alarme para o atributo *Store Failures (ARVF)* for acionado, o sistema de armazenamento de arquivos alvo pode ter atingido a capacidade. Verifique o sistema de armazenamento de arquivos alvo e resolva quaisquer problemas que acionaram um alarme.
+
+|===

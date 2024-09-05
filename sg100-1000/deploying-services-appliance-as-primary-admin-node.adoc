@@ -1,0 +1,85 @@
+---
+permalink: sg100-1000/deploying-services-appliance-as-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, admin node, deploy node, deploying node, node, deploy, deploying, primary, primary admin node 
+summary: Ao implantar um dispositivo de serviços como nó de administração principal, você usa o Instalador de dispositivos StorageGRID incluído no dispositivo para instalar o software StorageGRID ou faz o upload da versão de software que deseja instalar. Você deve instalar e configurar o nó Admin principal antes de instalar qualquer outro tipo de nó de dispositivo. Um nó de administração principal pode se conetar à rede de grade e à rede de administração opcional e à rede de cliente, se um ou ambos estiverem configurados. 
+---
+= Implante o dispositivo de serviços como nó de administração principal
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao implantar um dispositivo de serviços como nó de administração principal, você usa o Instalador de dispositivos StorageGRID incluído no dispositivo para instalar o software StorageGRID ou faz o upload da versão de software que deseja instalar. Você deve instalar e configurar o nó Admin principal antes de instalar qualquer outro tipo de nó de dispositivo. Um nó de administração principal pode se conetar à rede de grade e à rede de administração opcional e à rede de cliente, se um ou ambos estiverem configurados.
+
+.O que você vai precisar
+* O dispositivo foi instalado em um rack ou gabinete, conetado às redes e ligado.
+* Links de rede, endereços IP e remapeamento de portas (se necessário) foram configurados para o dispositivo usando o Instalador de dispositivos StorageGRID.
++
+
+IMPORTANT: Se você tiver remapeado quaisquer portas, não poderá usar as mesmas portas para configurar pontos de extremidade do balanceador de carga. Você pode criar endpoints usando portas remapeadas, mas esses endpoints serão remapeados para as portas e serviços CLB originais, não para o serviço Load Balancer. Siga as etapas em xref:../maintain/removing-port-remaps.adoc[Remova os remapas de portas].
+
++
+Consulte xref:../admin/how-load-balancing-works-clb-service.adoc[Como funciona o balanceamento de carga - serviço CLB (obsoleto)] para obter mais informações sobre o serviço CLB.
+
++
+
+NOTE: O serviço CLB está obsoleto.
+
+* Você tem um laptop de serviço com um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você conhece um dos endereços IP atribuídos ao dispositivo. Você pode usar o endereço IP de qualquer rede StorageGRID conetada.
+
+
+.Sobre esta tarefa
+Para instalar o StorageGRID em um nó de administração principal do dispositivo:
+
+* Você usa o Instalador de dispositivos StorageGRID para instalar o software StorageGRID. Se você quiser instalar uma versão diferente do software, primeiro carregue-o usando o Instalador de dispositivos StorageGRID.
+* Você espera enquanto o software está instalado.
+* Quando o software tiver sido instalado, o dispositivo é reinicializado automaticamente.
+
+
+.Passos
+. Abra um navegador e insira o endereço IP do dispositivo. E
+`*https://_services_appliance_IP_:8443*`
++
+A página inicial do instalador do dispositivo StorageGRID é exibida.
+
+. Na seção *this Node*, selecione *Primary Admin*.
+. No campo *Nome do nó*, insira o nome que deseja usar para este nó de appliance e clique em *Salvar*.
++
+O nome do nó é atribuído a este nó do dispositivo no sistema StorageGRID. Ele é mostrado na página Grid Nodes no Grid Manager.
+
+. Opcionalmente, para instalar uma versão diferente do software StorageGRID, siga estas etapas:
++
+.. Baixe o arquivo de instalação: https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Downloads do NetApp: StorageGRID Appliance"^].
+.. Extraia o arquivo.
+.. No Instalador de dispositivos StorageGRID, selecione *Avançado* *carregar software StorageGRID*.
+.. Clique em *Remover* para remover o pacote de software atual.
++
+image::../media/appliance_installer_rmv_current_software.png[Instalador do dispositivo - Remover o software atual]
+
+.. Clique em *Procurar* para obter o pacote de software que transferiu e extraiu e, em seguida, clique em *Procurar* para obter o ficheiro de checksum.
++
+image::../media/appliance_installer_upload_sg_software.png[Instalador do dispositivo - carregar o software SG]
+
+.. Selecione *Home* para voltar à página inicial.
+
+
+. Confirme se o estado atual é "'Pronto para iniciar a instalação do nome do nó de administração principal com a versão do software x.y'" e que o botão *Iniciar instalação* está ativado.
++
+
+NOTE: Se você estiver implantando o dispositivo Admin Node como um destino de clonagem de nós, interrompa o processo de implantação aqui e continue o procedimento de clonagem de nós seguindo as xref:../maintain/index.adoc[Recuperar e manter] instruções.
+
+. Na página inicial do Instalador de dispositivos StorageGRID, clique em *Iniciar instalação*.
++
+image::../media/appliance_installer_home_start_installation_enabled_primary_an.png[Instalação do nó de administração principal do dispositivo]
+
++
+O estado atual muda para ""Instalação está em andamento"" e a página Instalação do Monitor é exibida.
+
++
+
+NOTE: Se você precisar acessar a página Instalação do Monitor manualmente, clique em *Instalação do Monitor* na barra de menus.
+
+

@@ -1,0 +1,48 @@
+---
+permalink: maintain/recovering-storagegrid-appliance-storage-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, appliance storage node failure 
+summary: O procedimento para recuperar um nó de storage de dispositivo StorageGRID com falha é o mesmo se você está se recuperando da perda da unidade do sistema ou da perda de volumes de storage somente. 
+---
+= Recupere o nó de storage do dispositivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O procedimento para recuperar um nó de storage de dispositivo StorageGRID com falha é o mesmo se você está se recuperando da perda da unidade do sistema ou da perda de volumes de storage somente.
+
+.Sobre esta tarefa
+Você deve preparar o dispositivo e reinstalar o software, configurar o nó para reingressar na grade, reformatar o armazenamento e restaurar os dados do objeto.
+
+image::../media/overview_sga_recovery.gif[Fluxograma de recuperação de dispositivos StorageGRID]
+
+
+CAUTION: Se mais de um nó de armazenamento tiver falhado (ou estiver offline), contacte o suporte técnico. Não execute o seguinte procedimento de recuperação. Pode ocorrer perda de dados.
+
+
+CAUTION: Se esta for a segunda falha do nó de storage em menos de 15 dias após uma falha ou recuperação do nó de storage, entre em Contato com o suporte técnico. A reconstrução do Cassandra em dois ou mais nós de storage em até 15 dias pode resultar na perda de dados.
+
+
+NOTE: Se mais de um nó de armazenamento em um local tiver falhado, um procedimento de recuperação do local pode ser necessário. Entre em Contato com o suporte técnico.
+
+xref:how-site-recovery-is-performed-by-technical-support.adoc[Como a recuperação do local é realizada pelo suporte técnico]
+
+
+IMPORTANT: Se as regras ILM estiverem configuradas para armazenar apenas uma cópia replicada e a cópia existir num volume de armazenamento que falhou, não será possível recuperar o objeto.
+
+
+NOTE: Se você encontrar um alarme Serviços: Status - Cassandra (SVST) durante a recuperação, consulte as instruções de monitoramento e solução de problemas para recuperar do alarme reconstruindo o Cassandra. Após a reconstrução do Cassandra, os alarmes devem ser apagados. Se os alarmes não forem apagados, contacte o suporte técnico.
+
+
+NOTE: Para procedimentos de manutenção de hardware, como instruções para substituir um controlador ou reinstalar o SANtricity os, consulte as instruções de instalação e manutenção do seu dispositivo de armazenamento.
+
+.Informações relacionadas
+xref:../monitor/index.adoc[Monitorar e solucionar problemas]
+
+xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+
+xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]

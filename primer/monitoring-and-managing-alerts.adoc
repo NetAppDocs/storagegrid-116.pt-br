@@ -1,0 +1,54 @@
+---
+permalink: primer/monitoring-and-managing-alerts.html 
+sidebar: sidebar 
+keywords: how to manage alerts 
+summary: O sistema de alerta fornece uma interface fácil de usar para detetar, avaliar e resolver os problemas que podem ocorrer durante a operação do StorageGRID. 
+---
+= Monitorar e gerenciar alertas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O sistema de alerta fornece uma interface fácil de usar para detetar, avaliar e resolver os problemas que podem ocorrer durante a operação do StorageGRID.
+
+O sistema de alerta foi concebido para ser a sua principal ferramenta para monitorizar quaisquer problemas que possam ocorrer no seu sistema StorageGRID.
+
+* O sistema de alerta se concentra em problemas acionáveis no sistema. Os alertas são acionados para eventos que exigem sua atenção imediata, não para eventos que podem ser ignorados com segurança.
+* As páginas Alertas atuais e Alertas resolvidos fornecem uma interface amigável para a visualização de problemas atuais e históricos. Você pode classificar a lista por alertas individuais e grupos de alertas. Por exemplo, talvez você queira classificar todos os alertas por nó/site para ver quais alertas estão afetando um nó específico. Ou, talvez você queira classificar os alertas em um grupo por tempo acionado para encontrar a instância mais recente de um alerta específico.
+* Vários alertas do mesmo tipo são agrupados em um e-mail para reduzir o número de notificações. Além disso, vários alertas do mesmo tipo são exibidos como um grupo nas páginas Alertas atuais e Alertas resolvidos. Você pode expandir e recolher grupos de alerta para mostrar ou ocultar os alertas individuais. Por exemplo, se vários nós estiverem relatando o alerta *não é possível se comunicar com nó*, apenas um email é enviado e o alerta é mostrado como um grupo na página Alertas atuais.
++
+image::../media/alerts_current_page.png[Página de alertas]
+
+* Os alertas usam nomes e descrições intuitivas para ajudá-lo a entender mais rapidamente qual é o problema. As notificações de alerta incluem detalhes sobre o nó e o site afetado, a gravidade do alerta, o tempo em que a regra de alerta foi acionada e o valor atual das métricas relacionadas ao alerta.
+* As notificações de alerta por e-mail e as listagens de alerta nas páginas Alertas atuais e alertas resolvidos fornecem ações recomendadas para resolver um alerta. Essas ações recomendadas geralmente incluem links diretos para a documentação do StorageGRID para facilitar a localização e o acesso a procedimentos de solução de problemas mais detalhados.
++
+image::../media/alerts_page_details_modal.png[Detalhes da Página de alertas Modal]
+
+
+
+
+NOTE: O sistema de alarme legado está obsoleto. A interface do usuário e as APIs para o sistema de alarme legado serão removidas em uma versão futura. O sistema de alerta oferece benefícios significativos e é mais fácil de usar.
+
+
+
+== Gerenciar alertas
+
+Todos os usuários do StorageGRID podem visualizar alertas. Se você tiver a permissão Acesso root ou Gerenciar Alertas, também poderá gerenciar alertas, como segue:
+
+* Se você precisar suprimir temporariamente as notificações de um alerta em um ou mais níveis de gravidade, poderá silenciar facilmente uma regra de alerta específica por uma duração especificada. Você pode silenciar uma regra de alerta para toda a grade, um único local ou um único nó.
+* Você pode editar as regras de alerta padrão conforme necessário. Você pode desativar completamente uma regra de alerta ou alterar suas condições de ativação e duração.
+* Você pode criar regras de alerta personalizadas para direcionar as condições específicas que são relevantes para a sua situação e para fornecer suas próprias ações recomendadas. Para definir as condições para um alerta personalizado, você cria expressões usando as métricas Prometheus disponíveis na seção métricas da API de Gerenciamento de Grade.
++
+Por exemplo, essa expressão faz com que um alerta seja acionado se a quantidade de RAM instalada para um nó for inferior a 24.000.000.000 bytes (24 GB).
+
++
+[listing]
+----
+node_memory_MemTotal < 24000000000
+----
+
+
+.Informações relacionadas
+xref:../monitor/index.adoc[Monitorar e solucionar problemas]

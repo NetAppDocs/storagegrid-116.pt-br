@@ -1,0 +1,28 @@
+---
+permalink: sg5600/viewing-boot-up-status-and-reviewing-error-codes-on-sg5600-controllers.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, status, boot codes, boot, error codes, error, code, start, startup, start up, start-up, progress, e5600sg 
+summary: O visor de sete segmentos em cada controlador mostra os códigos de estado e de erro quando o dispositivo liga, enquanto o hardware está a ser inicializado, e quando o hardware falha e tem de ser retirado da inicialização. Se estiver a monitorizar o progresso ou a resolução de problemas, deve observar a sequência dos códigos à medida que estes aparecem. 
+---
+= Visualize o status de inicialização e revisando códigos de erro em controladores SG5600
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O visor de sete segmentos em cada controlador mostra os códigos de estado e de erro quando o dispositivo liga, enquanto o hardware está a ser inicializado, e quando o hardware falha e tem de ser retirado da inicialização. Se estiver a monitorizar o progresso ou a resolução de problemas, deve observar a sequência dos códigos à medida que estes aparecem.
+
+.Sobre esta tarefa
+Os códigos de status e erro do controlador E5600SG não são os mesmos do controlador E2700.
+
+.Passos
+. Durante a inicialização, veja os códigos mostrados nas telas de sete segmentos para monitorar o progresso.
+. Para rever os códigos de erro do controlador E5600SG, consulte as informações de status e código de erro do visor de sete segmentos.
+. Para revisar os códigos de erro do controlador E2700, consulte a documentação do controlador E2700 no site de suporte.
+
+
+.Informações relacionadas
+xref:e5600sg-controller-seven-segment-display-codes.adoc[E5600SG códigos de exibição de sete segmentos do controlador]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61765["Documentação do NetApp: Série E2700"^]

@@ -1,0 +1,71 @@
+---
+permalink: primer/configuring-network-settings.html 
+sidebar: sidebar 
+keywords: network settings, configure, configuring, configuration, domain name, virtual hosted-style requests 
+summary: Você pode configurar várias configurações de rede do Gerenciador de Grade para ajustar a operação do sistema StorageGRID. 
+---
+= Configure as definições de rede
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode configurar várias configurações de rede do Gerenciador de Grade para ajustar a operação do sistema StorageGRID.
+
+
+
+== Nomes de domínio
+
+Se você planeja oferecer suporte a S3 solicitações virtuais de estilo hospedado, você deve configurar a lista de nomes de domínio de endpoint aos quais os clientes S3 se conetam. Exemplos incluem `s3.example.com`, `s3.example.co.uk`, e `s3-east.example.com`.
+
+Os certificados de servidor configurados devem corresponder aos nomes de domínio de endpoint.
+
+
+
+== Grupos de alta disponibilidade
+
+Você pode usar grupos de alta disponibilidade (HA) para fornecer conexões de dados altamente disponíveis para clientes S3 e Swift ou para fornecer conexões altamente disponíveis para o Gerenciador de Grade e o Gerenciador de Tenant.
+
+Ao criar um grupo de HA, você seleciona uma interface de rede para um ou mais nós. Cada grupo de HA fornece acesso aos serviços compartilhados nos nós selecionados.
+
+* Grupos DE HA que incluem interfaces em nós de Gateway, nós de Admin ou ambos fornecem conexões de dados altamente disponíveis para clientes S3 e Swift.
+* Os GRUPOS DE HA que incluem interfaces em nós de administração fornecem apenas conexões altamente disponíveis ao Gerenciador de Grade e ao Gerenciador de locatário.
+
+
+As interfaces podem pertencer à rede de Grade (eth0), à rede de Cliente (eth2) ou a uma rede VLAN.
+
+Pode atribuir até 10 endereços IP (VIP) virtuais a cada grupo de HA. Você especifica uma interface para ser a interface principal e classifica quaisquer outras interfaces em ordem de prioridade. A interface principal é a interface ativa, a menos que ocorra uma falha. Se a interface ativa falhar, os endereços VIP serão movidos para a primeira interface de backup na ordem de prioridade. Se essa interface falhar, os endereços VIP serão movidos para a próxima interface de backup, e assim por diante.
+
+
+
+== Vincular custos
+
+Você pode ajustar os custos de link para refletir a latência entre sites. Quando existem dois ou mais locais de data center, os custos de link priorizam qual local de data center deve fornecer um serviço solicitado.
+
+
+
+== Pontos de extremidade do balanceador de carga
+
+Você pode usar um balanceador de carga para lidar com cargas de trabalho de ingestão e recuperação de clientes S3 e Swift. O balanceamento de carga maximiza a velocidade e a capacidade de conexão distribuindo cargas de trabalho e conexões entre vários nós de storage.
+
+Se você quiser usar o serviço balanceador de carga do StorageGRID, que está incluído em nós de administração e nós de gateway, configure um ou mais pontos de extremidade do balanceador de carga. Cada endpoint define uma porta de nó de gateway ou nó de administrador para solicitações S3 e Swift para nós de storage.
+
+
+
+== Classificação de tráfego
+
+Você pode criar políticas de classificação de tráfego para identificar e lidar com diferentes tipos de tráfego de rede, incluindo tráfego relacionado a buckets específicos, locatários, sub-redes de clientes ou pontos de extremidade do balanceador de carga. Essas políticas podem ajudar na limitação e monitoramento de tráfego.
+
+
+
+== Interfaces VLAN
+
+Você pode criar interfaces de LAN virtual (VLAN) para isolar e particionar o tráfego para segurança, flexibilidade e desempenho. Cada interface VLAN está associada a uma ou mais interfaces pai em nós de administração e nós de gateway. Você pode usar interfaces VLAN em grupos de HA e em endpoints do balanceador de carga para segregar o tráfego de cliente ou administrador por aplicativo ou locatário.
+
+Por exemplo, sua rede pode usar VLAN 100 para tráfego FabricPool e VLAN 200 para um aplicativo de arquivamento.
+
+.Informações relacionadas
+* xref:../admin/index.adoc[Administrar o StorageGRID]
+* xref:managing-tenants-and-client-connections.adoc[Gerenciar locatários e conexões de clientes]
+

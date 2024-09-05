@@ -1,0 +1,20 @@
+---
+permalink: monitor/viewing-grid-topology-tree.html 
+sidebar: sidebar 
+keywords: how to view the Grid Topology tree 
+summary: A árvore de topologia de grade fornece acesso a informações detalhadas sobre elementos do sistema StorageGRID, incluindo sites, nós de grade, serviços e componentes. Na maioria dos casos, você só precisa acessar a árvore de topologia de grade quando instruído na documentação ou quando estiver trabalhando com suporte técnico. 
+---
+= Veja a árvore de topologia de Grade
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A árvore de topologia de grade fornece acesso a informações detalhadas sobre elementos do sistema StorageGRID, incluindo sites, nós de grade, serviços e componentes. Na maioria dos casos, você só precisa acessar a árvore de topologia de grade quando instruído na documentação ou quando estiver trabalhando com suporte técnico.
+
+Para acessar a árvore de topologia de grade, selecione *SUPPORT* *Tools* *Grid topology*.
+
+image::../media/grid_topology_tree.gif[Partes da árvore de topologia de Grade]
+
+Para expandir ou recolher a árvore de topologia de Grade, clique image:../media/nms_tree_expand.gif["ícone de sinal de adição"] ou  no local, nó ou image:../media/nms_tree_collapse.gif["ícone de sinal de menos"]nível de serviço. Para expandir ou recolher todos os itens em todo o site ou em cada nó, mantenha pressionada a tecla *Ctrl* e clique em.

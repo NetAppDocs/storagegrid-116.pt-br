@@ -1,0 +1,46 @@
+---
+permalink: sg5600/turning-power-on-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, power on, power, start 
+summary: A ativação do gabinete fornece energia a ambos os controladores. 
+---
+= Ligar (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A ativação do gabinete fornece energia a ambos os controladores.
+
+.Passos
+. Ligue os dois interrutores da fonte de alimentação na parte traseira do compartimento.
++
+Enquanto a energia está sendo aplicada, os LEDs nos controladores acendem e apagam intermitentemente.
+
++
+O processo de ativação pode levar até dez minutos para ser concluído. Os controladores reiniciam várias vezes durante a sequência inicial de inicialização, o que faz com que os ventiladores aumentem e diminuam e os LEDs pisquem.
+
+. Verifique o LED de alimentação e os LEDs ativos do Host Link em cada controlador para verificar se a alimentação foi ligada.
+. Aguarde que todas as unidades mostrem um LED verde persistente, indicando que elas estão online.
+. Verifique se existem LEDs verdes na parte frontal e traseira do compartimento.
++
+Se vir algum LED âmbar, anote as suas localizações.
+
+. Observe o visor de sete segmentos para o controlador E5600SG.
++
+Este visor mostra *HO*, seguido de uma sequência de repetição de dois dígitos.
+
++
+[listing]
+----
+HO -- IP address for Admin Network -- IP address for Grid Network HO
+----
++
+Na sequência, o primeiro conjunto de números é o endereço IP atribuído pelo DHCP para a porta de gerenciamento 1 do controlador. Este endereço é utilizado para ligar o controlador à rede de administração para StorageGRID. O segundo conjunto de números é o endereço IP atribuído pelo DHCP utilizado para ligar o dispositivo à rede de grelha para StorageGRID.
+
++
+
+NOTE: Se um endereço IP não puder ser atribuído usando DHCP, 0.0.0.0 será exibido.
+
+

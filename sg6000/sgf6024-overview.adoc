@@ -1,0 +1,125 @@
+---
+permalink: sg6000/sgf6024-overview.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, overview, models, features 
+summary: O StorageGRIDSGF6024 inclui um controlador de computação e um compartimento de controladora de storage com capacidade para 24 unidades de estado sólido. 
+---
+= Visão geral do SGF6024
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O StorageGRIDSGF6024 inclui um controlador de computação e um compartimento de controladora de storage com capacidade para 24 unidades de estado sólido.
+
+
+
+== SGF6024 componentes
+
+O aparelho SGF6024 inclui os seguintes componentes:
+
+|===
+| Componente | Descrição 
+
+
+ a| 
+Controlador de computação
+ a| 
+Controlador SG6000-CN, um servidor de unidade de um rack (1UU) que inclui:
+
+* 40 núcleos (80 threads)
+* 192 GB DE RAM
+* Até 4 x 25 Gbps de largura de banda agregada Ethernet
+* Interconexão Fibre Channel (FC) de 4 x 16 Gbps
+* Controlador de gerenciamento de placa base (BMC) que simplifica o gerenciamento de hardware
+* Fontes de alimentação redundantes
+
+
+
+
+ a| 
+Array Flash (compartimento da controladora)
+ a| 
+E-Series EF570 flash array (também conhecido como compartimento de controladora), um compartimento de 2U TB que inclui:
+
+* Dois controladores e-Series EF570 (configuração duplex) para fornecer suporte a failover de controladora de storage
+* 24 unidades de estado sólido (também conhecidas como SSDs ou unidades flash)
+* Fontes de alimentação e ventiladores redundantes
+
+
+|===
+
+
+== SGF6024 diagramas
+
+Esta figura mostra a parte frontal do SGF6024, que inclui uma controladora de computação 1U e um compartimento 2U contendo duas controladoras de storage e 24 unidades flash.
+
+image::../media/sgf6024_front_view_with_and_without_bezels.png[SG6024 vistas frontais]
+
+|===
+| Legenda | Descrição 
+
+
+ a| 
+1
+ a| 
+Controlador de computação SG6000-CN com moldura frontal
+
+
+
+ a| 
+2
+ a| 
+Array Flash EF570 com painel frontal
+
+
+
+ a| 
+3
+ a| 
+Controlador de computação SG6000-CN com painel frontal removido
+
+
+
+ a| 
+4
+ a| 
+Array Flash EF570 com painel frontal removido
+
+|===
+Essa figura mostra a parte traseira do SGF6024, incluindo controladores de computação e storage, ventiladores e fontes de alimentação.
+
+image::../media/sgf6024_rear_view.gif[SG6024 traseira]
+
+|===
+| Legenda | Descrição 
+
+
+ a| 
+1
+ a| 
+Fonte de alimentação (1 de 2) para o controlador de computação SG6000-CN
+
+
+
+ a| 
+2
+ a| 
+Conetores para controlador de computação SG6000-CN
+
+
+
+ a| 
+3
+ a| 
+Fonte de alimentação (1 de 2) para matriz flash EF570
+
+
+
+ a| 
+4
+ a| 
+Controlador de armazenamento e-Series EF570 (1 de 2) e conetores
+
+|===

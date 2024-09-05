@@ -1,0 +1,38 @@
+---
+permalink: maintain/replacing-failed-node-with-services-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, replace failed node, services appliance 
+summary: Você pode usar um dispositivo de serviços SG100 ou SG1000 para recuperar um nó de gateway com falha, um nó de administrador não primário com falha ou um nó de administrador principal com falha hospedado em VMware, um host Linux ou um dispositivo de serviços. Este procedimento é uma etapa do procedimento de recuperação do nó de grade. 
+---
+= Substitua o nó com falha pelo dispositivo de serviços
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar um dispositivo de serviços SG100 ou SG1000 para recuperar um nó de gateway com falha, um nó de administrador não primário com falha ou um nó de administrador principal com falha hospedado em VMware, um host Linux ou um dispositivo de serviços. Este procedimento é uma etapa do procedimento de recuperação do nó de grade.
+
+.O que você vai precisar
+* Você deve ter determinado que uma das seguintes situações é verdadeira:
++
+** A máquina virtual que hospeda o nó não pode ser restaurada.
+** O host físico ou virtual do Linux para o nó de grade falhou e deve ser substituído.
+** O dispositivo de serviços que hospeda o nó de grade deve ser substituído.
+
+
+* Você deve certificar-se de que a versão do Instalador de dispositivos StorageGRID no utilitário de serviços corresponde à versão de software do seu sistema StorageGRID, conforme descrito em instalação e manutenção de hardware para verificar e atualizar a versão do Instalador de dispositivos StorageGRID.
++
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+
+
+
+IMPORTANT: Não implante um dispositivo de serviço SG100 e SG1000 no mesmo local. Pode resultar em performance imprevisível.
+
+.Sobre esta tarefa
+Você pode usar um dispositivo de serviços SG100 ou SG1000 para recuperar um nó de grade com falha nos seguintes casos:
+
+* O nó com falha foi hospedado no VMware ou Linux (mudança de plataforma)
+* O nó com falha foi hospedado em um dispositivo de serviços (substituição da plataforma)
+

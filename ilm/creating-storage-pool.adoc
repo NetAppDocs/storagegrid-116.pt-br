@@ -1,0 +1,90 @@
+---
+permalink: ilm/creating-storage-pool.html 
+sidebar: sidebar 
+keywords: create storage pool 
+summary: Você cria pools de storage para determinar onde o sistema StorageGRID armazena dados de objetos e o tipo de storage usado. Cada pool de storage inclui um ou mais locais e um ou mais tipos de storage. 
+---
+= Crie um pool de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você cria pools de storage para determinar onde o sistema StorageGRID armazena dados de objetos e o tipo de storage usado. Cada pool de storage inclui um ou mais locais e um ou mais tipos de storage.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+* Você revisou as diretrizes para a criação de pools de armazenamento.
+
+
+.Sobre esta tarefa
+Os pools de storage determinam onde os dados do objeto são armazenados. O número de pools de storage de que você precisa depende do número de locais na grade e dos tipos de cópias que você deseja: Replicados ou codificados para apagamento.
+
+* Para replicação e codificação de apagamento de um único local, crie um pool de storage para cada local. Por exemplo, se você quiser armazenar cópias de objetos replicadas em três locais, crie três pools de storage.
+* Para codificação de apagamento em três ou mais locais, crie um pool de storage que inclua uma entrada para cada local. Por exemplo, se você quiser apagar objetos de código em três locais, crie um pool de storage. Selecione o ícone de mais image:../media/icon_plus_sign_black_on_white.gif["insira o ícone"]para adicionar uma entrada para cada site.
++
+
+IMPORTANT: Não inclua o local padrão de todos os sites em um pool de armazenamento que será usado em um perfil de codificação de apagamento. Em vez disso, adicione uma entrada separada ao pool de storage para cada local que armazenará dados codificados de apagamento. <<entries,este passo>>Consulte para obter um exemplo.
+
+* Se você tiver mais de um nível de armazenamento, não crie um pool de armazenamento que inclua diferentes graus de armazenamento em um único local. Consulte xref:guidelines-for-creating-storage-pools.adoc[Diretrizes para a criação de pools de armazenamento].
+
+
+.Passos
+. Selecione *ILM* > *Storage Pools*.
++
+A página pools de armazenamento é exibida e lista todos os pools de armazenamento definidos.
+
++
+image::../media/storage_pools_page.png[Página de pools de armazenamento]
+
++
+A lista inclui o pool de storage padrão do sistema, todos os nós de storage, que usa o site padrão do sistema, todos os sites e a categoria de storage padrão, todos os nós de storage.
+
++
+
+IMPORTANT: Como o pool de storage de todos os nós de storage é atualizado automaticamente sempre que você adiciona novos locais de data center, o uso desse pool de storage em regras de ILM não é recomendado.
+
+. Para criar um novo pool de armazenamento, selecione *criar*.
++
+A caixa de diálogo criar pool de armazenamento é exibida.
+
++
+image::../media/create_storage_pool.png[Criar pool de armazenamento]
+
+. Insira um nome exclusivo para o pool de armazenamento.
++
+Use um nome que será fácil de identificar quando você configurar perfis de codificação de apagamento e regras ILM.
+
+. Na lista suspensa *Site*, selecione um site para esse pool de armazenamento.
++
+Quando você seleciona um site, o número de nós de storage e nós de arquivamento na tabela é atualizado automaticamente.
+
++
+Em geral, não use o site padrão todos os sites em qualquer pool de armazenamento. As regras de ILM que usam um pool de armazenamento de todos os sites colocam objetos em qualquer site disponível, proporcionando menos controle sobre o posicionamento de objetos. Além disso, um pool de storage All Sites usa os nós de storage em um novo local imediatamente, o que pode não ser o comportamento esperado.
+
+. Na lista suspensa *Storage Grade*, selecione o tipo de armazenamento que será usado se uma regra ILM usar esse pool de armazenamento.
++
+O nível de storage padrão de todos os nós de storage inclui todos os nós de storage no local selecionado. O grau de storage padrão dos nós de arquivamento inclui todos os nós de arquivamento no local selecionado. Se você criou graus de storage adicionais para os nós de storage na grade, eles serão listados na lista suspensa.
+
+. [[Entries]]se você quiser usar o pool de armazenamento em um perfil de codificação de apagamento de vários sites, image:../media/icon_plus_sign_black_on_white.gif["insira o ícone"]selecione para adicionar uma entrada para cada site ao pool de armazenamento.
++
+image::../media/storage_pools_all_3_sites_for_ec.png[Todos os 3 locais para EC]
+
++
+[NOTE]
+====
+É impedido de criar entradas duplicadas ou de criar um pool de armazenamento que inclua o grau de armazenamento *Archive Nodes* e qualquer tipo de armazenamento que contenha nós de armazenamento.
+
+Você será avisado se você adicionar mais de uma entrada para um site, mas com diferentes graus de armazenamento.
+
+====
++
+Para remover uma entrada, image:../media/icon_nms_delete_new.gif["eliminar ícone"]selecione .
+
+. Quando estiver satisfeito com suas seleções, selecione *Salvar*.
++
+O novo pool de armazenamento é adicionado à lista.
+
+

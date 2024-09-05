@@ -1,0 +1,113 @@
+---
+permalink: s3/using-s3-object-lock.html 
+sidebar: sidebar 
+keywords: using S3 object lock, object lock, S3 object 
+summary: Se a configuração global de bloqueio de objetos S3 estiver ativada para o seu sistema StorageGRID, você poderá criar buckets com o bloqueio de objetos S3 ativado e, em seguida, especificar as configurações de retenção legal e de retenção para cada versão de objeto adicionada a esse bucket. 
+---
+= Use o bloqueio de objetos S3D.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a configuração global de bloqueio de objetos S3 estiver ativada para o seu sistema StorageGRID, você poderá criar buckets com o bloqueio de objetos S3 ativado e especificar períodos de retenção padrão para cada bucket ou configurações específicas de retenção até a data e retenção legal para cada versão de objeto adicionada a esse bucket.
+
+O bloqueio de objetos S3 permite especificar configurações no nível do objeto para impedir que objetos sejam excluídos ou substituídos por um período fixo de tempo ou indefinidamente.
+
+O recurso bloqueio de objetos do StorageGRID S3 fornece um modo de retenção único equivalente ao modo de conformidade do Amazon S3. Por padrão, uma versão de objeto protegido não pode ser substituída ou excluída por nenhum usuário. O recurso bloqueio de objetos do StorageGRID S3 não suporta um modo de governança e não permite que usuários com permissões especiais ignorem as configurações de retenção ou excluam objetos protegidos.
+
+
+
+== Ative o bloqueio de objetos S3D para o balde
+
+Se a configuração global de bloqueio de objetos S3 estiver ativada para o seu sistema StorageGRID, você poderá ativar opcionalmente o bloqueio de objetos S3 quando criar cada bucket. Você pode usar qualquer um destes métodos:
+
+* Crie o bucket usando o Gerenciador do locatário.
++
+xref:../tenant/index.adoc[Use a conta de locatário]
+
+* Crie o bucket usando uma solicitação DE COLOCAR balde com o `x-amz-bucket-object-lock-enabled` cabeçalho de solicitação.
++
+xref:operations-on-buckets.adoc[Operações em baldes]
+
+
+
+Não é possível adicionar ou desativar o bloqueio de objetos S3 após a criação do bucket. O bloqueio de objetos S3 requer o controle de versão do bucket, que é ativado automaticamente quando você cria o bucket.
+
+Um bucket com S3 Object Lock ativado pode conter uma combinação de objetos com e sem configurações de bloqueio de objeto S3. O StorageGRID oferece suporte a períodos de retenção padrão para os objetos nos buckets do bloqueio de objetos do S3 e suporta a operação do bucket Configuração do bloqueio de objetos do PUT. A `s3:object-lock-remaining-retention-days` chave de condição de política define os períodos de retenção mínimo e máximo permitidos para seus objetos.
+
+
+
+== Determinar se o bloqueio de objetos S3 está ativado para o balde
+
+Para determinar se o bloqueio de objeto S3 está ativado, use a xref:../s3/use-s3-object-lock-default-bucket-retention.adoc#get-object-lock-configuration[OBTER Configuração bloqueio Objeto] solicitação.
+
+
+
+== Crie objeto com as configurações de bloqueio de objeto S3
+
+Para especificar as configurações de bloqueio de objeto S3 ao adicionar uma versão de objeto a um intervalo que tenha o bloqueio de objeto S3 ativado, emita um Objeto PUT, COLOCAR Objeto - Copiar ou inicie uma solicitação de upload de várias partes. Use os cabeçalhos de solicitação a seguir.
+
+
+NOTE: Você deve habilitar o bloqueio de objeto S3 quando criar um bucket. Não é possível adicionar ou desativar o bloqueio de objetos S3 após a criação de um intervalo.
+
+* `x-amz-object-lock-mode`, Que deve ser CONFORMIDADE (sensível a maiúsculas e minúsculas).
++
+
+NOTE: Se você especificar `x-amz-object-lock-mode`, você também deve especificar `x-amz-object-lock-retain-until-date`.
+
+* `x-amz-object-lock-retain-until-date`
++
+** O valor reter-até-data deve estar no formato `2020-08-10T21:46:00Z`. Segundos fracionários são permitidos, mas apenas 3 dígitos decimais são preservados (precisão de milissegundos). Outros formatos ISO 8601 não são permitidos.
+** A data de retenção deve ser no futuro.
+
+
+* `x-amz-object-lock-legal-hold`
++
+Se a retenção legal estiver ATIVADA (sensível a maiúsculas e minúsculas), o objeto é colocado sob uma retenção legal. Se a retenção legal estiver DESLIGADA, nenhuma retenção legal será colocada. Qualquer outro valor resulta em um erro de 400 Bad Request (InvalidArgument).
+
+
+
+Se você usar qualquer um desses cabeçalhos de solicitação, esteja ciente dessas restrições:
+
+* O `Content-MD5` cabeçalho de solicitação é necessário se qualquer `x-amz-object-lock-*` cabeçalho de solicitação estiver presente na solicitação DE Objeto PUT. `Content-MD5` Não é necessário para COLOCAR Objeto - Copiar ou iniciar carregamento Multipart.
+* Se o bucket não tiver o bloqueio de objeto S3 ativado e um `x-amz-object-lock-*` cabeçalho de solicitação estiver presente, um erro de solicitação incorreta 400 (InvalidRequest) será retornado.
+* A solicitação put Object suporta o uso do `x-amz-storage-class: REDUCED_REDUNDANCY` para corresponder ao comportamento da AWS. No entanto, quando um objeto é ingerido em um bucket com o bloqueio de objeto S3 ativado, o StorageGRID sempre realizará uma ingestão de confirmação dupla.
+* Uma resposta DE versão DE GET ou HEAD Object posterior incluirá os cabeçalhos `x-amz-object-lock-mode`, `x-amz-object-lock-retain-until-date`, e `x-amz-object-lock-legal-hold`, se configurado e se o remetente da solicitação tiver as permissões corretas `s3:Get*`.
+* Uma solicitação DE versão DE EXCLUSÃO de objeto subsequente ou versões de EXCLUSÃO de objetos falhará se for antes da data de retenção ou se uma retenção legal estiver ativada.
+
+
+
+
+== Atualizar as definições do bloqueio de objetos do S3
+
+Se você precisar atualizar as configurações de retenção legal ou retenção para uma versão de objeto existente, poderá executar as seguintes operações de subrecursos de objeto:
+
+* `PUT Object legal-hold`
++
+Se o novo valor de retenção legal estiver ATIVADO, o objeto será colocado sob uma retenção legal. Se o valor de retenção legal estiver DESLIGADO, a retenção legal é levantada.
+
+* `PUT Object retention`
++
+** O valor do modo deve ser CONFORMIDADE (sensível a maiúsculas e minúsculas).
+** O valor reter-até-data deve estar no formato `2020-08-10T21:46:00Z`. Segundos fracionários são permitidos, mas apenas 3 dígitos decimais são preservados (precisão de milissegundos). Outros formatos ISO 8601 não são permitidos.
+** Se uma versão de objeto tiver uma data retida-até-data existente, você só poderá aumentá-la. O novo valor deve estar no futuro.
+
+
+
+
+.Informações relacionadas
+xref:../ilm/index.adoc[Gerenciar objetos com ILM]
+
+xref:../tenant/index.adoc[Use a conta de locatário]
+
+xref:put-object.adoc[Objeto PUT]
+
+xref:put-object-copy.adoc[COLOCAR Objeto - Copiar]
+
+xref:initiate-multipart-upload.adoc[Inicie o carregamento de várias peças]
+
+xref:object-versioning.adoc[Controle de versão de objetos]
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["Guia do usuário do Amazon Simple Storage Service: Usando o bloqueio de objeto S3"^]

@@ -1,0 +1,1740 @@
+---
+permalink: monitor/alerts-reference.html 
+sidebar: sidebar 
+keywords: alerts reference 
+summary: A tabela a seguir lista todos os alertas padrão do StorageGRID. Conforme necessário, você pode criar regras de alerta personalizadas para se adequar à sua abordagem de gerenciamento de sistema. 
+---
+= Referência de alertas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A tabela a seguir lista todos os alertas padrão do StorageGRID. Conforme necessário, você pode criar regras de alerta personalizadas para se adequar à sua abordagem de gerenciamento de sistema.
+
+Consulte as informações sobre xref:commonly-used-prometheus-metrics.adoc[Métricas de Prometheus comumente usadas] para saber mais sobre as métricas usadas em alguns desses alertas.
+
+[cols="1a,2a"]
+|===
+| Nome do alerta | Descrição e ações recomendadas 
+
+
+ a| 
+A bateria do aparelho expirou
+ a| 
+A bateria do controlador de armazenamento do aparelho expirou.
+
+. Substitua a bateria. As etapas para remover e substituir uma bateria estão incluídas no procedimento de substituição de um controlador de armazenamento. Consulte as instruções do seu dispositivo de armazenamento:
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+A bateria do aparelho falhou
+ a| 
+A bateria do controlador de armazenamento do aparelho falhou.
+
+. Substitua a bateria. As etapas para remover e substituir uma bateria estão incluídas no procedimento de substituição de um controlador de armazenamento. Consulte as instruções do seu dispositivo de armazenamento:
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+A bateria do aparelho não tem capacidade programada suficiente
+ a| 
+A bateria do controlador de armazenamento do aparelho não tem capacidade de aprendizagem suficiente.
+
+. Substitua a bateria. As etapas para remover e substituir uma bateria estão incluídas no procedimento de substituição de um controlador de armazenamento. Consulte as instruções do seu dispositivo de armazenamento:
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+A bateria do aparelho está quase a expirar
+ a| 
+A bateria do controlador de armazenamento do aparelho está prestes a expirar.
+
+. Substitua a bateria em breve. As etapas para remover e substituir uma bateria estão incluídas no procedimento de substituição de um controlador de armazenamento. Consulte as instruções do seu dispositivo de armazenamento:
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Bateria do aparelho removida
+ a| 
+A bateria do controlador de armazenamento do aparelho está em falta.
+
+. Instale uma bateria. As etapas para remover e substituir uma bateria estão incluídas no procedimento de substituição de um controlador de armazenamento. Consulte as instruções do seu dispositivo de armazenamento:
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Bateria do aparelho demasiado quente
+ a| 
+A bateria do controlador de armazenamento do aparelho está sobreaquecida.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Investigue possíveis razões para o aumento de temperatura, como uma falha da ventoinha ou do sistema de ar condicionado, ventilação e aquecimento (HVAC).
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Erro de comunicação do Appliance BMC
+ a| 
+A comunicação com o controlador de gestão do rodapé (BMC) foi perdida.
+
+. Confirme se o BMC está a funcionar normalmente. Selecione *NÓS* e, em seguida, selecione a guia *hardware* para o nó do dispositivo. Localize o campo IP do controlador de computação BMC e navegue até esse IP.
+. Tente restaurar as comunicações BMC colocando o nó no modo de manutenção e, em seguida, desligando e voltando a ligar o aparelho. Consulte as instruções do seu aparelho:
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Falha no dispositivo de backup do cache do dispositivo
+ a| 
+Um dispositivo de backup de cache persistente falhou.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Dispositivo de backup de cache de dispositivo capacidade insuficiente
+ a| 
+Não há capacidade insuficiente do dispositivo de backup em cache.
+
+Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+Dispositivo de backup protegido contra gravação em cache do dispositivo
+ a| 
+Um dispositivo de backup em cache está protegido contra gravação.
+
+Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+Incompatibilidade do tamanho da memória cache do dispositivo
+ a| 
+Os dois controladores no dispositivo têm tamanhos de cache diferentes.
+
+Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+Temperatura do chassi do controlador de computação do dispositivo muito alta
+ a| 
+A temperatura do controlador de computação em um dispositivo StorageGRID excedeu um limite nominal.
+
+. Verifique os componentes do hardware quanto a condições de sobreaquecimento e siga as ações recomendadas:
++
+** Se você tiver um SG100, SG1000 ou SG6000, use o BMC.
+** Se você tiver um SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Temperatura da CPU do controlador de computação do dispositivo muito alta
+ a| 
+A temperatura da CPU no controlador de computação em um dispositivo StorageGRID excedeu um limite nominal.
+
+. Verifique os componentes do hardware quanto a condições de sobreaquecimento e siga as ações recomendadas:
++
+** Se você tiver um SG100, SG1000 ou SG6000, use o BMC.
+** Se você tiver um SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+O controlador de computação do dispositivo precisa de atenção
+ a| 
+Uma falha de hardware foi detetada no controlador de computação de um dispositivo StorageGRID.
+
+. Verifique se há erros nos componentes de hardware e siga as ações recomendadas:
++
+** Se você tiver um SG100, SG1000 ou SG6000, use o BMC.
+** Se você tiver um SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+A fonte de Alimentação A do controlador de computação do dispositivo tem um problema
+ a| 
+A fonte de Alimentação A no controlador de computação tem um problema.este alerta pode indicar que a fonte de alimentação falhou ou que tem um problema de fornecimento de energia.
+
+. Verifique se há erros nos componentes de hardware e siga as ações recomendadas:
++
+** Se você tiver um SG100, SG1000 ou SG6000, use o BMC.
+** Se você tiver um SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+A fonte de alimentação B do controlador de computação do dispositivo tem um problema
+ a| 
+A fonte de alimentação B no controlador de computação tem um problema.
+
+Este alerta pode indicar que a fonte de alimentação falhou ou que tem um problema de fornecimento de energia.
+
+. Verifique se há erros nos componentes de hardware e siga as ações recomendadas:
++
+** Se você tiver um SG100, SG1000 ou SG6000, use o BMC.
+** Se você tiver um SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+O serviço de monitor de hardware de computação do dispositivo parou
+ a| 
+O serviço que monitora o status do hardware de storage parou de relatar dados.
+
+. Verifique o estado do serviço de estado do sistema eos na base-os.
+. Se o serviço estiver parado ou em estado de erro, reinicie o serviço.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Detectada avaria no canal de fibra do dispositivo
+ a| 
+Foi detetado um problema de link Fibre Channel entre o controlador de storage do dispositivo e o controlador de computação.
+
+Esse alerta pode indicar que há um problema com a conexão Fibre Channel entre os controladores de storage e computação no dispositivo.
+
+. Verifique se há erros nos componentes de hardware (*NÓS* *_Appliance node_* *hardware*). Se o estatuto de qualquer um dos componentes não for "nominal", tomar as seguintes medidas:
++
+.. Verifique se os cabos Fibre Channel entre os controladores estão completamente conetados.
+.. Certifique-se de que os cabos Fibre Channel não apresentam dobras excessivas.
+.. Confirme se os módulos SFP estão devidamente encaixados.
++
+*Nota:* se este problema persistir, o sistema StorageGRID poderá tornar a ligação problemática offline automaticamente.
+
+
+
+. Se necessário, substitua os componentes. Consulte as instruções do seu aparelho:
++
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Falha na porta HBA Fibre Channel do dispositivo
+ a| 
+Uma porta HBA Fibre Channel está falhando ou falhou.
+
+Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+O cache flash do dispositivo não é ideal
+ a| 
+As unidades usadas para o cache SSD não são ideais.
+
+. Substitua as unidades de cache SSD. Consulte as instruções do seu aparelho:
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Recipiente da bateria/interligação do aparelho removido
+ a| 
+O depósito da bateria/interligação está em falta.
+
+. Substitua a bateria. As etapas para remover e substituir uma bateria estão incluídas no procedimento de substituição de um controlador de armazenamento. Consulte as instruções para o seu aparelho de armazenamento.
++
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Porta LACP do aparelho em falta
+ a| 
+Uma porta em um dispositivo StorageGRID não está participando da ligação LACP.
+
+. Verifique a configuração do interrutor. Certifique-se de que a interface está configurada no grupo de agregação de links correto.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+A fonte de alimentação geral do aparelho está degradada
+ a| 
+A alimentação de um aparelho StorageGRID desviou-se da tensão de funcionamento recomendada.
+
+. Verifique o estado das fontes de alimentação A e B para determinar qual fonte de alimentação está a funcionar de forma anormal e siga as ações recomendadas:
++
+** Se você tiver um SG100, SG1000 ou SG6000, use o BMC.
+** Se você tiver um SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+
+
+
+
+
+ a| 
+Falha do controlador de storage do dispositivo A
+ a| 
+O controlador de storage A em um dispositivo StorageGRID falhou.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Falha no controlador B de storage do dispositivo
+ a| 
+O controlador de storage B em um dispositivo StorageGRID falhou.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Falha na unidade do controlador de armazenamento do dispositivo
+ a| 
+Uma ou mais unidades em um dispositivo StorageGRID falhou ou não é ideal.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Problema de hardware do controlador de storage do dispositivo
+ a| 
+O software SANtricity está relatando "precisa de atenção" para um componente em um dispositivo StorageGRID.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Falha na fonte de alimentação do controlador de armazenamento do dispositivo
+ a| 
+A fonte de Alimentação A num aparelho StorageGRID desviou-se da tensão de funcionamento recomendada.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Falha na fonte de alimentação B do controlador de armazenamento do dispositivo
+ a| 
+A fonte de alimentação B num aparelho StorageGRID desviou-se da tensão de funcionamento recomendada.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+O serviço de monitor de hardware de armazenamento do dispositivo parou
+ a| 
+O serviço que monitora o status do hardware de storage parou de relatar dados.
+
+. Verifique o estado do serviço de estado do sistema eos na base-os.
+. Se o serviço estiver parado ou em estado de erro, reinicie o serviço.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Prateleiras de storage do dispositivo degradadas
+ a| 
+O status de um dos componentes na prateleira de armazenamento de um dispositivo de armazenamento é degradado.
+
+. Use o Gerenciador de sistema do SANtricity para verificar os componentes de hardware e siga as ações recomendadas.
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Temperatura do aparelho excedida
+ a| 
+A temperatura nominal ou máxima para o controlador de armazenamento do aparelho foi excedida.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Investigue possíveis razões para o aumento de temperatura, como uma falha da ventoinha ou do sistema de ar condicionado, ventilação e aquecimento (HVAC).
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Sensor de temperatura do aparelho removido
+ a| 
+Um sensor de temperatura foi removido. Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+Erro de auto-compactador Cassandra
+ a| 
+O auto-compactador Cassandra sofreu um erro.
+
+O compactador automático Cassandra existe em todos os nós de storage e gerencia o tamanho do banco de dados Cassandra para substituir e excluir cargas de trabalho pesadas. Embora essa condição persista, certas cargas de trabalho sofrerão um consumo inesperadamente alto de metadados.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Os logs de auditoria estão sendo adicionados à fila na memória
+ a| 
+O nó não pode enviar logs para o servidor syslog local e a fila na memória está sendo preenchida.
+
+. Certifique-se de que o serviço rsyslog está em execução no nó.
+. Se necessário, reinicie o serviço rsyslog no nó usando o comando `service rsyslog restart`.
+. Se o serviço rsyslog não puder ser reiniciado e você não salvar mensagens de auditoria em nós de administração, entre em Contato com o suporte técnico. Os registos de auditoria serão perdidos se esta condição não for corrigida.
+
+
+
+
+ a| 
+Métricas do compactador automático Cassandra desatualizadas
+ a| 
+As métricas que descrevem o compactador automático Cassandra estão desatualizadas.
+
+O compactador automático Cassandra existe em todos os nós de storage e gerencia o tamanho do banco de dados Cassandra para substituir e excluir cargas de trabalho pesadas. Embora esse alerta persista, certas cargas de trabalho sofrerão um consumo inesperadamente alto de metadados.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Erro de comunicação Cassandra
+ a| 
+Os nós que executam o serviço Cassandra estão tendo problemas para se comunicar uns com os outros.
+
+Esse alerta indica que algo está interferindo nas comunicações nó a nó. Pode haver um problema de rede ou o serviço Cassandra pode estar inativo em um ou mais nós de storage.
+
+. Determine se há outro alerta afetando um ou mais nós de storage. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Verifique se há um problema de rede que possa estar afetando um ou mais nós de storage.
+. Selecione *SUPPORT* > *Tools* > *Grid topology*.
+. Para cada nó de armazenamento no seu sistema, selecione *SSM* *Serviços*. Certifique-se de que o status do serviço Cassandra é "em execução".
+. Se o Cassandra não estiver em execução, siga as etapas para xref:../maintain/starting-or-restarting-service.adoc[iniciar ou reiniciar um serviço].
+. Se todas as instâncias do serviço Cassandra estiverem em execução e o alerta não for resolvido, entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Cassandra compactions sobrecarregado
+ a| 
+O processo de compactação Cassandra está sobrecarregado.
+
+Se o processo de compactação estiver sobrecarregado, o desempenho de leitura pode estar degradado e a RAM pode ser usada. O serviço Cassandra também pode ficar sem resposta ou falhar.
+
+. Reinicie o serviço Cassandra seguindo as etapas de xref:../maintain/starting-or-restarting-service.adoc[reiniciar um serviço].
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Métricas de reparo do Cassandra desatualizadas
+ a| 
+As métricas que descrevem os trabalhos de reparo do Cassandra estão desatualizadas. Se essa condição persistir por mais de 48 horas, as consultas de clientes, como listas de intervalos, podem mostrar dados excluídos.
+
+. Reinicie o nó. No Gerenciador de Grade, vá para *NÓS*, selecione o nó e selecione a guia tarefas.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+O progresso do reparo do Cassandra lento
+ a| 
+O progresso dos reparos do banco de dados Cassandra é lento.
+
+Quando os reparos do banco de dados são lentos, as operações de consistência de dados do Cassandra são impedidas. Se essa condição persistir por mais de 48 horas, as consultas de clientes, como listas de intervalos, podem mostrar dados excluídos.
+
+. Confirme se todos os nós de storage estão online e não há alertas relacionados à rede.
+. Monitore esse alerta por até 2 dias para ver se o problema resolve por conta própria.
+. Se as reparações da base de dados continuarem a prosseguir lentamente, contacte a assistência técnica.
+
+
+
+
+ a| 
+O serviço de reparação Cassandra não está disponível
+ a| 
+O serviço de reparação Cassandra não está disponível.
+
+O serviço de reparo Cassandra existe em todos os nós de storage e fornece funções de reparo críticas para o banco de dados Cassandra. Se essa condição persistir por mais de 48 horas, as consultas de clientes, como listas de intervalos, podem mostrar dados excluídos.
+
+. Selecione *SUPPORT* > *Tools* > *Grid topology*.
+. Para cada nó de armazenamento no seu sistema, selecione *SSM* *Serviços*. Certifique-se de que o status do serviço Cassandra Reaper é "em execução".
+. Se o Cassandra Reaper não estiver em execução, siga as etapas para seguir as etapas xref:../maintain/starting-or-restarting-service.adoc[iniciar ou reiniciar um serviço]para .
+. Se todas as instâncias do serviço Cassandra Reaper estiverem em execução e o alerta não for resolvido, entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Corrupção da tabela Cassandra
+ a| 
+Cassandra detetou corrupção de tabela.
+
+O Cassandra reinicia automaticamente se detetar corrupção de tabela.
+
+Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+Erro de conetividade do Cloud Storage Pool
+ a| 
+A verificação de integridade dos pools de armazenamento em nuvem detetou um ou mais erros novos.
+
+. Vá para a seção Cloud Storage Pools da página Storage Pools.
+. Observe a coluna último erro para determinar qual pool de armazenamento em nuvem tem um erro.
+. Consulte as instruções para xref:../ilm/index.adoc[gerenciamento de objetos com gerenciamento do ciclo de vida das informações].
+
+
+
+
+ a| 
+A concessão DHCP expirou
+ a| 
+A concessão de DHCP numa interface de rede expirou. Se a concessão DHCP expirou, siga as ações recomendadas:
+
+. Certifique-se de que existe conetividade entre este nó e o servidor DHCP na interface afetada.
+. Certifique-se de que existem endereços IP disponíveis para atribuir na sub-rede afetada no servidor DHCP.
+. Certifique-se de que existe uma reserva permanente para o endereço IP configurado no servidor DHCP. Ou use a ferramenta StorageGRID Change IP para atribuir um endereço IP estático fora do pool de endereços DHCP. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+
+
+
+
+ a| 
+A concessão DHCP expira em breve
+ a| 
+A concessão de DHCP em uma interface de rede está expirando em breve.
+
+Para evitar que a concessão DHCP expire, siga as ações recomendadas:
+
+. Certifique-se de que existe conetividade entre este nó e o servidor DHCP na interface afetada.
+. Certifique-se de que existem endereços IP disponíveis para atribuir na sub-rede afetada no servidor DHCP.
+. Certifique-se de que existe uma reserva permanente para o endereço IP configurado no servidor DHCP. Ou use a ferramenta StorageGRID Change IP para atribuir um endereço IP estático fora do pool de endereços DHCP. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+
+
+
+
+ a| 
+Servidor DHCP indisponível
+ a| 
+O servidor DHCP não está disponível.
+
+O nó StorageGRID não consegue contactar o servidor DHCP. A concessão DHCP para o endereço IP do nó não pode ser validada.
+
+. Certifique-se de que existe conetividade entre este nó e o servidor DHCP na interface afetada.
+. Certifique-se de que existem endereços IP disponíveis para atribuir na sub-rede afetada no servidor DHCP.
+. Certifique-se de que existe uma reserva permanente para o endereço IP configurado no servidor DHCP. Ou use a ferramenta StorageGRID Change IP para atribuir um endereço IP estático fora do pool de endereços DHCP. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+
+
+
+
+ a| 
+A e/S do disco é muito lenta
+ a| 
+E/S de disco muito lento pode estar impactando o desempenho do StorageGRID.
+
+. Se o problema estiver relacionado a um nó de dispositivo de armazenamento, use o Gerenciador de sistema SANtricity para verificar se há unidades com defeito, unidades com falhas previstas ou reparos em andamento. Verifique também o status dos links Fibre Channel ou SAS entre a computação do dispositivo e os controladores de storage para ver se há algum link inativo ou mostrando taxas de erro excessivas.
+. Examine o sistema de armazenamento que hospeda os volumes deste nó para determinar e corrigir a causa raiz da e/S lenta
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+*Nota:* os nós afetados podem desativar os serviços e reiniciar-se para evitar afetar o desempenho geral da grade. Quando a condição subjacente for limpa e esses nós detetarem o desempenho normal de e/S, eles retornarão ao serviço completo automaticamente.
+
+
+
+ a| 
+Falha no rebalanceamento EC
+ a| 
+O trabalho para rebalancear os dados codificados por apagamento entre nós de storage falhou ou foi pausado pelo usuário.
+
+. Garantir que todos os nós de storage no local que estão sendo rebalanceados estejam on-line e disponíveis.
+. Certifique-se de que não há falhas de volume no local que está sendo rebalanceado. Se houver, encerre o trabalho EC rebalanceamento para que você possa executar um trabalho de reparo.
++
+`'rebalance-data terminate --job-id <ID>'`
+
+. Certifique-se de que não há falhas de serviço no local sendo rebalanceado. Se um serviço não estiver em execução, siga as etapas para iniciar ou reiniciar um serviço nas instruções de recuperação e manutenção.
+. Depois de resolver quaisquer problemas, reinicie a tarefa executando o seguinte comando no nó de administração principal:
++
+`'rebalance-data start --job-id <ID>'`
+
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+Falha na reparação EC
+ a| 
+Um trabalho de reparo para dados codificados de apagamento falhou ou foi interrompido.
+
+. Certifique-se de que existem nós ou volumes de storage disponíveis suficientes para substituir o nó ou o volume de storage com falha.
+. Certifique-se de que haja nós de storage disponíveis suficientes para satisfazer a política de ILM ativa.
+. Certifique-se de que não existem problemas de conetividade de rede.
+. Depois de resolver quaisquer problemas, reinicie a tarefa executando o seguinte comando no nó de administração principal:
++
+`'repair-data start-ec-node-repair --repair-id <ID>'`
+
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+A reparação CE parou
+ a| 
+Um trabalho de reparo para dados codificados de apagamento parou.
+
+. Certifique-se de que existem nós ou volumes de storage disponíveis suficientes para substituir o nó ou o volume de storage com falha.
+. Certifique-se de que não existem problemas de conetividade de rede.
+. Depois de resolver quaisquer problemas, verifique se o alerta está resolvido. Para ver um relatório mais detalhado sobre o progresso da reparação, execute o seguinte comando no nó de administração principal:
++
+`'repair-data show-ec-repair-status --repair-id <ID>'`
+
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+Falha na notificação por e-mail
+ a| 
+Não foi possível enviar a notificação por e-mail para um alerta.
+
+Este alerta é acionado quando uma notificação por e-mail de alerta falhar ou um e-mail de teste (enviado da página *ALERTAS* *Configuração de e-mail*) não pode ser entregue.
+
+. Inicie sessão no Grid Manager a partir do Admin Node listado na coluna *Site/nó* do alerta.
+. Vá para a página *ALERTAS* *Configuração de e-mail*, verifique as configurações e altere-as, se necessário.
+. Clique em *Enviar e-mail de teste* e verifique a caixa de entrada de um destinatário de teste para o e-mail. Uma nova instância desse alerta pode ser acionada se o e-mail de teste não puder ser enviado.
+. Se o e-mail de teste não puder ser enviado, confirme se o servidor de e-mail está online.
+. Se o servidor estiver funcionando, selecione *support* *Tools* *Logs* e colete o log para o Admin Node. Especifique um período de tempo que seja de 15 minutos antes e depois da hora do alerta.
+. Extraia o arquivo baixado e revise o conteúdo do `prometheus.log` `(_/GID<gid><time_stamp>/<site_node>/<time_stamp>/metrics/prometheus.log)`.
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+Expiração dos certificados de cliente configurados na página certificados
+ a| 
+Um ou mais certificados de cliente configurados na página certificados estão prestes a expirar.
+
+. No Gerenciador de Grade, selecione *CONFIGURATION* > *Security* > *Certificates* e, em seguida, selecione a guia *Client*.
+. Selecione um certificado que expirará em breve.
+. Selecione *Anexar novo certificado* ao xref:../admin/configuring-administrator-client-certificates.adoc[carregue ou gere um novo certificado].
+. Repita estas etapas para cada certificado que expirará em breve.
+
+
+
+
+ a| 
+Expiração do certificado de ponto final do balanceador de carga
+ a| 
+Um ou mais certificados de endpoint do balanceador de carga estão prestes a expirar.
+
+. Selecione *CONFIGURATION* > *Network* > *Load balancer endpoints*.
+. Selecione um endpoint que tenha um certificado que expirará em breve.
+. Selecione *Editar endpoint* para carregar ou gerar um novo certificado.
+. Repita essas etapas para cada ponto final que tenha um certificado expirado ou que expirará em breve.
+
+
+Para obter mais informações sobre como gerenciar os pontos de extremidade do balanceador de carga, consulte o xref:../admin/index.adoc[Instruções para administrar o StorageGRID].
+
+
+
+ a| 
+Expiração do certificado de servidor para interface de gerenciamento
+ a| 
+O certificado do servidor usado para a interface de gerenciamento está prestes a expirar.
+
+. Selecione *CONFIGURATION* > *Security* > *Certificates*.
+. Na guia *Global*, selecione *certificado de interface de gerenciamento*.
+. xref:../admin/configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc#add-a-custom-management-interface-certificate[Carregue um novo certificado de interface de gerenciamento.]
+
+
+
+
+ a| 
+Expiração do certificado de servidor global para S3 e Swift API
+ a| 
+O certificado do servidor usado para acessar endpoints da API de armazenamento está prestes a expirar.
+
+. Selecione *CONFIGURATION* > *Security* > *Certificates*.
+. Na guia *Global*, selecione *S3 e Swift API certificate*.
+. xref:../admin/configuring-custom-server-certificate-for-storage-node-or-clb.adoc#add-a-custom-s3-and-swift-api-certificate[Faça upload de um novo certificado API S3 e Swift.]
+
+
+
+
+ a| 
+Expiração do certificado CA do syslog externo
+ a| 
+O certificado de autoridade de certificação (CA) usado para assinar o certificado de servidor syslog externo está prestes a expirar.
+
+. Atualize o certificado CA no servidor syslog externo.
+. Obtenha uma cópia do certificado de CA atualizado.
+. No Gerenciador de Grade, vá para *CONFIGURATION* *Monitoring* *Audit and syslog Server*.
+. Selecione *Editar servidor syslog externo*.
+. Selecione *Procurar* para carregar o novo certificado.
+. Conclua o assistente de configuração para salvar o novo certificado e a chave.
+
+
+
+
+ a| 
+Expiração do certificado do cliente syslog externo
+ a| 
+O certificado de cliente para um servidor syslog externo está prestes a expirar.
+
+. No Gerenciador de Grade, vá para *CONFIGURATION* *Monitoring* *Audit and syslog Server*.
+. Selecione *Editar servidor syslog externo*.
+. Selecione *Procurar* para carregar o novo certificado.
+. Selecione *Procurar* para carregar a nova chave privada.
+. Conclua o assistente de configuração para salvar o novo certificado e a chave.
+
+
+
+
+ a| 
+Expiração do certificado do servidor syslog externo
+ a| 
+O certificado de servidor apresentado pelo servidor syslog externo está prestes a expirar.
+
+. Atualize o certificado do servidor no servidor syslog externo.
+. Se você usou anteriormente a API do Grid Manager para fornecer um certificado de servidor para validação de certificado, faça o upload do certificado de servidor atualizado usando a API.
+
+
+
+
+ a| 
+Erro de encaminhamento do servidor syslog externo
+ a| 
+O nó não pode encaminhar logs para o servidor syslog externo.
+
+. No Gerenciador de Grade, vá para *CONFIGURATION* *Monitoring* *Audit and syslog Server*.
+. Selecione *Editar servidor syslog externo*.
+. Avance pelo assistente de configuração até selecionar *Enviar mensagens de teste*.
+. Selecione *Enviar mensagens de teste* para determinar por que os logs não podem ser encaminhados para o servidor syslog externo.
+. Resolva quaisquer problemas relatados.
+
+
+
+
+ a| 
+Incompatibilidade da MTU da rede da grelha
+ a| 
+A configuração MTU (Maximum Transmission Unit) para a interface Grid Network (eth0) difere significativamente entre nós na grade.
+
+As diferenças nas configurações de MTU podem indicar que algumas, mas não todas, redes eth0 são configuradas para quadros jumbo. Uma incompatibilidade de tamanho da MTU superior a 1000 pode causar problemas de desempenho da rede.
+
+Consulte as instruções para o alerta de incompatibilidade da MTU da rede de Grade xref:troubleshooting-network-hardware-and-platform-issues.adoc[Solucionar problemas de rede, hardware e plataforma]em .
+
+
+
+ a| 
+Alto uso de heap Java
+ a| 
+Uma alta porcentagem de espaço de heap Java está sendo usada.
+
+Se o heap Java ficar cheio, os serviços de metadados podem ficar indisponíveis e as solicitações do cliente podem falhar.
+
+. Reveja a atividade do ILM no Dashboard. Esse alerta pode ser resolvido por conta própria quando a carga de trabalho do ILM diminui.
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Alta latência para consultas de metadados
+ a| 
+O tempo médio para consultas de metadados do Cassandra é muito longo.
+
+Um aumento na latência da consulta pode ser causado por uma alteração de hardware, como a substituição de um disco, uma mudança de carga de trabalho, como um aumento súbito de ingerências ou uma mudança de rede, como um problema de comunicação entre nós e sites.
+
+. Determine se houve alguma alteração de hardware, carga de trabalho ou rede no momento em que a latência da consulta aumentou.
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+Falha na sincronização da federação de identidade
+ a| 
+Não é possível sincronizar grupos federados e usuários da origem da identidade.
+
+. Confirme se o servidor LDAP configurado está online e disponível.
+. Revise as configurações na página Federação de identidade. Confirme se todos os valores são atuais. Consulte xref:../admin/using-identity-federation.adoc[Use a federação de identidade] as instruções para administrar o StorageGRID.
+. Clique em *Test Connection* para validar as configurações do servidor LDAP.
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+Falha na sincronização da federação de identidade para um locatário
+ a| 
+Não é possível sincronizar grupos federados e usuários da origem de identidade configurada por um locatário.
+
+. Inicie sessão no Gestor do Locatário.
+. Confirme se o servidor LDAP configurado pelo locatário está online e disponível.
+. Revise as configurações na página Federação de identidade. Confirme se todos os valores são atuais. Consulte xref:../tenant/using-identity-federation.adoc[Use a federação de identidade] as instruções para usar uma conta de locatário.
+. Clique em *Test Connection* para validar as configurações do servidor LDAP.
+. Se não conseguir resolver o problema, contacte o suporte técnico.
+
+
+
+
+ a| 
+Colocação de ILM inalcançável
+ a| 
+Uma instrução de colocação em uma regra ILM não pode ser alcançada para determinados objetos.
+
+Este alerta indica que um nó exigido por uma instrução de colocação não está disponível ou que uma regra ILM está mal configurada. Por exemplo, uma regra pode especificar mais cópias replicadas do que há nós de storage.
+
+. Certifique-se de que todos os nós estejam online.
+. Se todos os nós estiverem on-line, revise as instruções de posicionamento em todas as regras ILM usadas na política ILM ativa. Confirme se existem instruções válidas para todos os objetos. Consulte xref:../ilm/index.adoc[instruções para gerenciar objetos com gerenciamento do ciclo de vida das informações].
+. Conforme necessário, atualize as configurações das regras e ative uma nova política.
++
+*Nota:* pode demorar até 1 dia para que o alerta seja apagado.
+
+. Se o problema persistir, entre em Contato com o suporte técnico.
+
+
+*Nota:* este alerta pode aparecer durante uma atualização e pode persistir por 1 dia após a atualização ser concluída com sucesso. Quando esse alerta é acionado por uma atualização, ele será apagado por conta própria.
+
+
+
+ a| 
+Período de digitalização ILM demasiado longo
+ a| 
+O tempo necessário para digitalizar, avaliar objetos e aplicar ILM é muito longo.
+
+Se o tempo estimado para concluir uma varredura ILM completa de todos os objetos for muito longo (consulte *período de digitalização - estimado* no Painel de instrumentos), a política ILM ativa pode não ser aplicada a objetos recém-ingeridos. As alterações à política ILM podem não ser aplicadas a objetos existentes.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Confirme se todos os nós de storage estão online.
+. Reduza temporariamente a quantidade de tráfego do cliente. Por exemplo, no Gerenciador de Grade, selecione *CONFIGURAÇÃO* *rede* *classificação de tráfego* e crie uma política que limite a largura de banda ou o número de solicitações.
+. Se a e/S de disco ou a CPU estiverem sobrecarregadas, tente reduzir a carga ou aumentar o recurso.
+. Se necessário, atualize as regras do ILM para usar o posicionamento síncrono (padrão para regras criadas após o StorageGRID 11,3).
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+
+
+ a| 
+Taxa de digitalização ILM baixa
+ a| 
+A taxa de digitalização ILM é definida para menos de 100 objetos/segundo.
+
+Este alerta indica que alguém alterou a taxa de digitalização ILM para o seu sistema para menos de 100 objetos/segundo (predefinição: 400 objetos/segundo). A política ILM ativa pode não ser aplicada a objetos recém-ingeridos. As alterações subsequentes à política ILM não serão aplicadas a objetos existentes.
+
+. Determine se foi efetuada uma alteração temporária à taxa de digitalização ILM como parte de uma investigação de suporte em curso.
+. Entre em Contato com o suporte técnico.
+
+
+
+IMPORTANT: Nunca altere a taxa de digitalização ILM sem contactar o suporte técnico.
+
+
+
+ a| 
+Expiração do certificado CA de KMS
+ a| 
+O certificado de autoridade de certificação (CA) usado para assinar o certificado do servidor de gerenciamento de chaves (KMS) está prestes a expirar.
+
+. Usando o software KMS, atualize o certificado da CA para o servidor de gerenciamento de chaves.
+. No Gerenciador de Grade, selecione *CONFIGURATION* *Security* *Key Management Server*.
+. Selecione o KMS que tem um aviso de status de certificado.
+. Selecione *Editar*.
+. Selecione *Next* para ir para a Etapa 2 (carregar certificado do servidor).
+. Selecione *Procurar* para carregar o novo certificado.
+. Selecione *Guardar*.
+
+
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+
+
+ a| 
+Expiração do certificado do cliente KMS
+ a| 
+O certificado de cliente para um servidor de gerenciamento de chaves está prestes a expirar.
+
+. No Gerenciador de Grade, selecione *CONFIGURATION* *Security* *Key Management Server*.
+. Selecione o KMS que tem um aviso de status de certificado.
+. Selecione *Editar*.
+. Selecione *Next* para ir para a Etapa 3 (carregar certificados de cliente).
+. Selecione *Procurar* para carregar o novo certificado.
+. Selecione *Procurar* para carregar a nova chave privada.
+. Selecione *Guardar*.
+
+
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+
+
+ a| 
+Falha ao carregar a configuração DE KMS
+ a| 
+A configuração para o servidor de gerenciamento de chaves existe, mas não foi possível carregar.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Erro de conetividade DE KMS
+ a| 
+Um nó de dispositivo não pôde se conetar ao servidor de gerenciamento de chaves para seu site.
+
+. No Gerenciador de Grade, selecione *CONFIGURATION* *Security* *Key Management Server*.
+. Confirme se as entradas da porta e do nome do host estão corretas.
+. Confirme se o certificado do servidor, o certificado do cliente e a chave privada do certificado do cliente estão corretos e não expiraram.
+. Certifique-se de que as definições da firewall permitem que o nó do dispositivo comunique com o KMS especificado.
+. Corrija quaisquer problemas de rede ou DNS.
+. Se precisar de assistência ou este alerta persistir, contacte o suporte técnico.
+
+
+
+
+ a| 
+Nome da chave de encriptação KMS não encontrado
+ a| 
+O servidor de gerenciamento de chaves configurado não possui uma chave de criptografia que corresponda ao nome fornecido.
+
+. Confirme se o KMS atribuído ao site está usando o nome correto para a chave de criptografia e quaisquer versões anteriores.
+. Se precisar de assistência ou este alerta persistir, contacte o suporte técnico.
+
+
+
+
+ a| 
+Falha na rotação da chave de CRIPTOGRAFIA KMS
+ a| 
+Todos os volumes de appliance foram descriptografados, mas um ou mais volumes não puderam girar para a chave mais recente.Contate o suporte técnico.
+
+
+
+ a| 
+KMS não está configurado
+ a| 
+Não existe nenhum servidor de gerenciamento de chaves para este site.
+
+. No Gerenciador de Grade, selecione *CONFIGURATION* *Security* *Key Management Server*.
+. Adicione um KMS para este site ou adicione um KMS padrão.
+
+
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+
+
+ a| 
+A chave KMS falhou ao desencriptar um volume de aparelho
+ a| 
+Um ou mais volumes em um dispositivo com criptografia de nó ativada não puderam ser descriptografados com a chave KMS atual.
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Certifique-se de que o servidor de gerenciamento de chaves (KMS) tenha a chave de criptografia configurada e quaisquer versões anteriores de chaves.
+. Se precisar de assistência ou este alerta persistir, contacte o suporte técnico.
+
+
+
+
+ a| 
+Expiração do certificado do servidor DE KMS
+ a| 
+O certificado do servidor usado pelo KMS (Key Management Server) está prestes a expirar.
+
+. Usando o software KMS, atualize o certificado do servidor para o servidor de gerenciamento de chaves.
+. Se precisar de assistência ou este alerta persistir, contacte o suporte técnico.
+
+
+xref:../admin/index.adoc[Administrar o StorageGRID]
+
+
+
+ a| 
+Fila de auditoria grande
+ a| 
+A fila de discos para mensagens de auditoria está cheia.
+
+. Verifique a carga no sistema - se houve um número significativo de transações, o alerta deve resolver-se ao longo do tempo, e você pode ignorar o alerta.
+. Se o alerta persistir e aumentar a gravidade, veja um gráfico do tamanho da fila. Se o número estiver aumentando constantemente ao longo de horas ou dias, a carga de auditoria provavelmente excedeu a capacidade de auditoria do sistema.
+. Reduza a taxa de operação do cliente ou diminua o número de mensagens de auditoria registradas alterando o nível de auditoria para gravações do cliente e leituras do cliente para erro ou Desativado (*CONFIGURAÇÃO* *Monitoramento* *servidor de auditoria e syslog*).
+
+
+xref:../audit/index.adoc[Rever registos de auditoria]
+
+
+
+ a| 
+Detetada atividade do balanceador de carga CLB legada
+ a| 
+Alguns clientes podem estar se conetando ao serviço de balanceador de carga CLB obsoleto usando o certificado padrão S3 e Swift API.
+
+. Para simplificar futuras atualizações, instale um certificado API S3 e Swift personalizado na guia *Global* da página *certificados*. Em seguida, certifique-se de que todos os clientes S3 ou Swift que se conetam ao CLB legado tenham o novo certificado.
+. Crie um ou mais pontos de extremidade do balanceador de carga. Em seguida, direcione todos os clientes S3 e Swift existentes para esses endpoints. Entre em Contato com o suporte técnico se precisar remapear a porta do cliente.
+
+
+Outras atividades podem acionar este alerta, incluindo as verificações de portas. Para determinar se o serviço CLB obsoleto está atualmente em uso, veja a `storagegrid_private_clb_http_connection_established_successful` métrica Prometheus.
+
+Conforme necessário, silencie ou desative essa regra de alerta se o serviço CLB não estiver mais em uso.
+
+
+
+ a| 
+Os logs estão sendo adicionados à fila no disco
+ a| 
+O nó não pode encaminhar logs para o servidor syslog externo e a fila no disco está sendo preenchida.
+
+. No Gerenciador de Grade, vá para *CONFIGURATION* *Monitoring* *Audit and syslog Server*.
+. Selecione *Editar servidor syslog externo*.
+. Avance pelo assistente de configuração até selecionar *Enviar mensagens de teste*.
+. Selecione *Enviar mensagens de teste* para determinar por que os logs não podem ser encaminhados para o servidor syslog externo.
+. Resolva quaisquer problemas relatados.
+
+
+
+
+ a| 
+Baixa capacidade de disco de log de auditoria
+ a| 
+O espaço disponível para logs de auditoria é baixo.
+
+. Monitore esse alerta para ver se o problema resolve sozinho e o espaço em disco se torna disponível novamente.
+. Contacte o suporte técnico se o espaço disponível continuar a diminuir.
+
+
+
+
+ a| 
+Baixa memória disponível do nó
+ a| 
+A quantidade de RAM disponível em um nó é baixa.
+
+A baixa RAM disponível pode indicar uma alteração na carga de trabalho ou um vazamento de memória com um ou mais nós.
+
+. Monitore esse alerta para ver se o problema resolve por conta própria.
+. Se a memória disponível descer abaixo do limite de alerta principal, contacte o suporte técnico.
+
+
+
+
+ a| 
+Baixo espaço livre para piscina de armazenamento
+ a| 
+A quantidade de espaço disponível para armazenar dados de objetos em um pool de armazenamento é baixa.
+
+. Selecione *ILM* > *Storage Pools*.
+. Selecione o pool de armazenamento listado no alerta e selecione *Exibir detalhes*.
+. Determine onde a capacidade de armazenamento adicional é necessária. Você pode adicionar nós de storage a cada local no pool de storage ou adicionar volumes de storage (LUNs) a um ou mais nós de storage existentes.
+. Execute um procedimento de expansão para aumentar a capacidade de armazenamento.
+
+
+xref:../expand/index.adoc[Expanda sua grade]
+
+
+
+ a| 
+Baixa memória do nó instalada
+ a| 
+A quantidade de memória instalada em um nó é baixa.
+
+Aumente a quantidade de RAM disponível para a máquina virtual ou host Linux. Verifique o valor de limite do alerta principal para determinar o requisito mínimo padrão para um nó StorageGRID. Consulte as instruções de instalação da sua plataforma:
+
+* xref:../rhel/index.adoc[Instale o Red Hat Enterprise Linux ou CentOS]
+* xref:../ubuntu/index.adoc[Instale Ubuntu ou Debian]
+* xref:../vmware/index.adoc[Instale o VMware]
+
+
+
+
+ a| 
+Baixo armazenamento de metadados
+ a| 
+O espaço disponível para armazenar metadados de objetos é baixo.
+
+*Alerta crítico*
+
+. Pare de ingerir objetos.
+. Adicione imediatamente nós de storage em um procedimento de expansão.
+
+
+*Alerta principal*
+
+Adicione imediatamente nós de storage em um procedimento de expansão.
+
+*Menor alerta*
+
+. Monitore a taxa na qual o espaço de metadados de objetos está sendo usado. Selecione *NÓS* *_Storage Node_* *Storage* e veja o gráfico Storage Used - Object Metadata.
+. Adicione nós de storage em um xref:../expand/index.adoc[procedimento de expansão] o mais rápido possível.
+
+
+Depois que novos nós de storage são adicionados, o sistema reequilibra automaticamente os metadados de objetos em todos os nós de storage e o alarme é apagado.
+
+Consulte as instruções para o alerta de armazenamento de metadados baixos no xref:troubleshooting-metadata-issues.adoc[Solucionar problemas de metadados].
+
+
+
+ a| 
+Baixa capacidade de disco de métricas
+ a| 
+O espaço disponível para o banco de dados de métricas é baixo.
+
+. Monitore esse alerta para ver se o problema resolve sozinho e o espaço em disco se torna disponível novamente.
+. Contacte o suporte técnico se o espaço disponível continuar a diminuir.
+
+
+
+
+ a| 
+Baixo armazenamento de dados de objetos
+ a| 
+O espaço disponível para armazenar dados de objetos é baixo.
+
+Execute um procedimento de expansão. Você pode adicionar volumes de storage (LUNs) aos nós de storage existentes ou adicionar novos nós de storage.
+
+xref:troubleshooting-low-object-data-storage-alert.adoc[Solucionar problemas do alerta de armazenamento de dados de objetos baixos]
+
+xref:../expand/index.adoc[Expanda sua grade]
+
+
+
+ a| 
+Baixa sobreposição de marca d'água somente leitura
+ a| 
+A Sobreposição da marca d'água apenas de leitura suave do volume de armazenamento é inferior à marca d'água mínima otimizada para um nó de armazenamento.
+
+Para saber como resolver este alerta, vá para xref:../monitor/troubleshoot-low-watermark-alert.html[Solucionar problemas de alertas de substituição de marca d'água somente leitura baixa].
+
+
+
+ a| 
+Baixa capacidade de disco raiz
+ a| 
+O espaço disponível para o disco raiz é baixo.
+
+. Monitore esse alerta para ver se o problema resolve sozinho e o espaço em disco se torna disponível novamente.
+. Contacte o suporte técnico se o espaço disponível continuar a diminuir.
+
+
+
+
+ a| 
+Baixa capacidade de dados do sistema
+ a| 
+O espaço disponível para os dados do sistema StorageGRID no `/var/local` sistema de arquivos é baixo.
+
+. Monitore esse alerta para ver se o problema resolve sozinho e o espaço em disco se torna disponível novamente.
+. Contacte o suporte técnico se o espaço disponível continuar a diminuir.
+
+
+
+
+ a| 
+Espaço livre do diretório de baixa tmp
+ a| 
+O espaço disponível no diretório /tmp é baixo.
+
+. Monitore esse alerta para ver se o problema resolve sozinho e o espaço em disco se torna disponível novamente.
+. Contacte o suporte técnico se o espaço disponível continuar a diminuir.
+
+
+
+
+ a| 
+Erro de conetividade de rede do nó
+ a| 
+Ocorreram erros durante a transferência de dados entre nós.
+
+Os erros de conetividade de rede podem ser apagados sem intervenção manual. Entre em Contato com o suporte técnico se os erros não forem claros.
+
+Consulte as instruções para o alarme Network Receive Error (NRER) em xref:troubleshooting-network-hardware-and-platform-issues.adoc[Solucionar problemas de rede, hardware e plataforma].
+
+
+
+ a| 
+Erro de quadro de receção de rede do nó
+ a| 
+Uma alta porcentagem dos quadros de rede recebidos por um nó teve erros.
+
+Esse alerta pode indicar um problema de hardware, como um cabo com defeito ou um transcetor com falha em qualquer uma das extremidades da conexão Ethernet.
+
+. Se você estiver usando um dispositivo, tente substituir cada transcetor SFP ou SFP28 e cabo, um de cada vez, para ver se o alerta é apagado.
+. Se este alerta persistir, contacte a assistência técnica.
+
+
+
+
+ a| 
+Nó não sincronizado com o servidor NTP
+ a| 
+A hora do nó não está sincronizada com o servidor NTP (Network Time Protocol).
+
+. Verifique se você especificou pelo menos quatro servidores NTP externos, cada um fornecendo uma referência estrato 3 ou melhor.
+. Verifique se todos os servidores NTP estão operando normalmente.
+. Verifique as conexões com os servidores NTP. Certifique-se de que eles não estão bloqueados por um firewall.
+
+
+
+
+ a| 
+Nó não bloqueado com servidor NTP
+ a| 
+O nó não está bloqueado para um servidor NTP (Network Time Protocol).
+
+. Verifique se você especificou pelo menos quatro servidores NTP externos, cada um fornecendo uma referência estrato 3 ou melhor.
+. Verifique se todos os servidores NTP estão operando normalmente.
+. Verifique as conexões com os servidores NTP. Certifique-se de que eles não estão bloqueados por um firewall.
+
+
+
+
+ a| 
+Rede do nó que não é do dispositivo inativa
+ a| 
+Um ou mais dispositivos de rede estão inativos ou desconetados. Este alerta indica que uma interface de rede (eth) para um nó instalado em uma máquina virtual ou host Linux não está acessível.
+
+Entre em Contato com o suporte técnico.
+
+
+
+ a| 
+Falha na verificação de existência do objeto
+ a| 
+O trabalho de verificação de existência de objeto falhou.
+
+. Selecione *MAINTENANCE Object existence check*.
+. Anote a mensagem de erro. Execute as ações corretivas apropriadas:
++
+*Falha ao iniciar*, *conexão perdida*, *erro desconhecido*
+
++
+.. Certifique-se de que os nós de storage e os volumes incluídos no trabalho estejam on-line e disponíveis.
+.. Certifique-se de que não haja falhas de serviço ou volume nos nós de storage. Se um serviço não estiver em execução, inicie ou reinicie o serviço. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+.. Certifique-se de que o controlo de consistência selecionado pode ser satisfeito.
+.. Depois de resolver quaisquer problemas, selecione *Repetir*. O trabalho será retomado a partir do último estado válido.
+
+
++
+*Erro crítico de armazenamento no volume*
+
++
+.. Recupere o volume com falha. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+.. Selecione *Repetir*.
+.. Após a conclusão do trabalho, crie outro trabalho para os volumes restantes no nó para verificar se há erros adicionais.
+
+
+. Se você não conseguir resolver os problemas, entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Verificação de existência de objeto parada
+ a| 
+O trabalho de verificação de existência de objeto parou.
+
+O trabalho de verificação de existência de objeto não pode continuar. Um ou mais nós de storage ou volumes incluídos na tarefa estão offline ou não respondem, ou o controle de consistência selecionado não pode mais ser satisfeito porque muitos nós estão inativos ou indisponíveis.
+
+. Certifique-se de que todos os nós e volumes de storage verificados estejam online e disponíveis (selecione *NÓS*).
+. Certifique-se de que nós de storage suficientes estejam online e disponíveis para permitir que o nó coordenador atual leia metadados de objetos usando o controle de consistência selecionado. Se necessário, inicie ou reinicie um serviço. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
++
+Quando resolver os passos 1 e 2, o trabalho inicia-se automaticamente de onde parou.
+
+. Se o controlo de consistência selecionado não puder ser satisfeito, cancele o trabalho e inicie outro trabalho utilizando um controlo de consistência inferior.
+. Se você não conseguir resolver os problemas, entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Objetos perdidos
+ a| 
+Um ou mais objetos foram perdidos da grade.
+
+Esse alerta pode indicar que os dados foram perdidos permanentemente e não podem ser recuperados.
+
+. Investigue este alerta imediatamente. Talvez seja necessário tomar medidas para evitar mais perda de dados. Você também pode restaurar um objeto perdido se você executar uma ação de prompt.
++
+xref:troubleshooting-lost-and-missing-object-data.adoc[Solucionar problemas de dados de objetos perdidos e ausentes]
+
+. Quando o problema subjacente for resolvido, reinicie o contador:
++
+.. Selecione *SUPPORT* > *Tools* > *Grid topology*.
+.. Para o nó de armazenamento que levantou o alerta, selecione *_site_* *_grid node_* *LDR* *Data Store* *Configuration* *Main*.
+.. Selecione *Redefinir contagem de objetos perdidos* e clique em *aplicar alterações*.
+
+
+
+
+
+
+ a| 
+Serviços de plataforma indisponíveis
+ a| 
+Poucos nós de storage com o serviço RSM estão em execução ou disponíveis em um local.
+
+Certifique-se de que a maioria dos nós de storage que têm o serviço RSM no local afetado esteja em execução e em um estado não-erro.
+
+Consulte ""solução de problemas de serviços de plataforma"" no xref:../admin/index.adoc[Instruções para administrar o StorageGRID].
+
+
+
+ a| 
+S3 COLOQUE o tamanho do objeto muito grande
+ a| 
+Um cliente S3 está tentando executar uma operação PUT Object que excede os limites de tamanho S3.
+
+. Use o ID do locatário mostrado nos detalhes do alerta para identificar a conta do locatário.
+. Vá para *suporte* *Ferramentas* *Logs* e colete os Logs de aplicativos para o nó de armazenamento mostrado nos detalhes do alerta. Especifique um período de tempo que seja de 15 minutos antes e depois da hora do alerta.
+. Extraia o arquivo baixado e navegue até o local do `bycast.log` (`/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`).
+. Procure o conteúdo de `bycast.log` `"method=PUT"` e identifique o endereço IP do cliente S3 olhando para o `clientIP` campo.
+. Informe a todos os usuários do cliente que o tamanho máximo do objeto PUT é de 5 GiB.
+. Use uploads multipart para objetos maiores que 5 GiB.
+
+
+
+
+ a| 
+Link do utilitário de serviços para baixo na porta de rede Admin 1
+ a| 
+A porta Admin Network 1 do aparelho está inativa ou desconetada.
+
+. Verifique o cabo e a conexão física à porta Admin Network 1.
+. Solucione quaisquer problemas de conexão. Consulte as instruções de instalação e manutenção do hardware do seu aparelho.
+. Se esta porta estiver desconetada de propósito, desative esta regra. No Gerenciador de Grade, selecione *ALERTAS* *regras*, selecione a regra e clique em *Editar regra*. Em seguida, desmarque a caixa de seleção *Enabled*.
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:disabling-alert-rules.adoc[Desativar regras de alerta]
+
+
+
+
+
+
+ a| 
+Link do utilitário de serviços para baixo na rede de administração (ou rede de cliente)
+ a| 
+A interface do dispositivo para a rede de administração (eth1) ou a rede de cliente (eth2) está inativa ou desligada.
+
+. Verifique os cabos, SFPs e conexões físicas à rede StorageGRID.
+. Solucione quaisquer problemas de conexão. Consulte as instruções de instalação e manutenção do hardware do seu aparelho.
+. Se esta porta estiver desconetada de propósito, desative esta regra. No Gerenciador de Grade, selecione *ALERTAS* *regras*, selecione a regra e clique em *Editar regra*. Em seguida, desmarque a caixa de seleção *Enabled*.
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:disabling-alert-rules.adoc[Desativar regras de alerta]
+
+
+
+
+
+
+ a| 
+O utilitário de serviços está conetado na porta de rede 1, 2, 3 ou 4
+ a| 
+A porta de rede 1, 2, 3 ou 4 do aparelho está inativa ou desligada.
+
+. Verifique os cabos, SFPs e conexões físicas à rede StorageGRID.
+. Solucione quaisquer problemas de conexão. Consulte as instruções de instalação e manutenção do hardware do seu aparelho.
+. Se esta porta estiver desconetada de propósito, desative esta regra. No Gerenciador de Grade, selecione *ALERTAS* *regras*, selecione a regra e clique em *Editar regra*. Em seguida, desmarque a caixa de seleção *Enabled*.
++
+** xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+** xref:disabling-alert-rules.adoc[Desativar regras de alerta]
+
+
+
+
+
+
+ a| 
+Conectividade de storage do dispositivo de serviços degradada
+ a| 
+Um dos dois SSDs em um dispositivo de serviços falhou ou está fora de sincronização com o outro.
+
+A funcionalidade do dispositivo não é afetada, mas você deve resolver o problema imediatamente. Se ambas as unidades falharem, o aparelho deixará de funcionar.
+
+. No Gerenciador de Grade, selecione *NÓS* ***_Services Appliance_ e, em seguida, selecione a guia **hardware*.
+. Reveja a mensagem no campo *Storage RAID Mode* (modo RAID de armazenamento*).
+. Se a mensagem mostrar o andamento de uma operação de ressincronização, aguarde a conclusão da operação e confirme se o alerta foi resolvido. Uma mensagem de ressincronização significa que o SSD foi substituído recentemente ou que está sendo ressincronizado por outro motivo.
+. Se a mensagem indicar que um dos SSDs falhou, substitua a unidade com falha o mais rápido possível.
++
+Para obter instruções sobre como substituir uma unidade em um dispositivo de serviços, consulte o guia de instalação e manutenção dos aparelhos SG100 e SG1000.
+
++
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+
+
+
+
+ a| 
+Link do dispositivo de armazenamento na porta Admin Network 1
+ a| 
+A porta Admin Network 1 do aparelho está inativa ou desconetada.
+
+. Verifique o cabo e a conexão física à porta Admin Network 1.
+. Solucione quaisquer problemas de conexão. Consulte as instruções de instalação e manutenção do hardware do seu aparelho.
+. Se esta porta estiver desconetada de propósito, desative esta regra. No Gerenciador de Grade, selecione *ALERTAS* *regras*, selecione a regra e clique em *Editar regra*. Em seguida, desmarque a caixa de seleção *Enabled*.
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:disabling-alert-rules.adoc[Desativar regras de alerta]
+
+
+
+
+
+
+ a| 
+Link do dispositivo de armazenamento na rede Admin (ou rede do cliente)
+ a| 
+A interface do dispositivo para a rede de administração (eth1) ou a rede de cliente (eth2) está inativa ou desligada.
+
+. Verifique os cabos, SFPs e conexões físicas à rede StorageGRID.
+. Solucione quaisquer problemas de conexão. Consulte as instruções de instalação e manutenção do hardware do seu aparelho.
+. Se esta porta estiver desconetada de propósito, desative esta regra. No Gerenciador de Grade, selecione *ALERTAS* *regras*, selecione a regra e clique em *Editar regra*. Em seguida, desmarque a caixa de seleção *Enabled*.
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:disabling-alert-rules.adoc[Desativar regras de alerta]
+
+
+
+
+
+
+ a| 
+Ligação do dispositivo de armazenamento na porta de rede 1, 2, 3 ou 4
+ a| 
+A porta de rede 1, 2, 3 ou 4 do aparelho está inativa ou desligada.
+
+. Verifique os cabos, SFPs e conexões físicas à rede StorageGRID.
+. Solucione quaisquer problemas de conexão. Consulte as instruções de instalação e manutenção do hardware do seu aparelho.
+. Se esta porta estiver desconetada de propósito, desative esta regra. No Gerenciador de Grade, selecione *ALERTAS* *regras*, selecione a regra e clique em *Editar regra*. Em seguida, desmarque a caixa de seleção *Enabled*.
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+** xref:disabling-alert-rules.adoc[Desativar regras de alerta]
+
+
+
+
+
+
+ a| 
+Conectividade de storage do dispositivo de storage degradada
+ a| 
+Há um problema com uma ou mais conexões entre o controlador de computação e o controlador de storage.
+
+. Vá ao aparelho para verificar as luzes indicadoras da porta.
+. Se as luzes de uma porta estiverem apagadas, confirme se o cabo está conetado corretamente. Conforme necessário, substitua o cabo.
+. Aguarde até cinco minutos.
++
+*Nota:* se for necessário substituir um segundo cabo, não o desligue durante pelo menos 5 minutos. Caso contrário, o volume raiz pode se tornar somente leitura, o que requer uma reinicialização de hardware.
+
+. No Gerenciador de Grade, selecione *NÓS*. Em seguida, selecione a guia hardware do nó que teve o problema. Verifique se a condição de alerta foi resolvida.
+
+
+
+
+ a| 
+Dispositivo de armazenamento inacessível
+ a| 
+Não é possível aceder a um dispositivo de armazenamento.
+
+Este alerta indica que um volume não pode ser montado ou acessado devido a um problema com um dispositivo de armazenamento subjacente.
+
+. Verifique o status de todos os dispositivos de armazenamento usados para o nó:
++
+** Se o nó estiver instalado em uma máquina virtual ou em um host Linux, siga as instruções para que seu sistema operacional execute diagnósticos de hardware ou execute uma verificação do sistema de arquivos.
++
+*** xref:../rhel/index.adoc[Instale o Red Hat Enterprise Linux ou CentOS]
+*** xref:../ubuntu/index.adoc[Instale Ubuntu ou Debian]
+*** xref:../vmware/index.adoc[Instale o VMware]
+
+
+** Se o nó estiver instalado em um dispositivo SG100, SG1000 ou SG6000, use o BMC.
+** Se o nó estiver instalado em um dispositivo SG5600 ou SG5700, use o Gerenciador de sistema do SANtricity.
+
+
+. Se necessário, substituir o órgão. Consulte as instruções do seu aparelho:
++
+** xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+** xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+** xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]
+
+
+
+
+
+
+ a| 
+Uso de cota de locatário alto
+ a| 
+Uma alta porcentagem de espaço de cota de locatário está sendo usada. Se um inquilino exceder sua cota, novos ingerências são rejeitados.
+
+*Nota:* esta regra de alerta é desativada por padrão porque pode gerar muitas notificações.
+
+. No Gerenciador de Grade, selecione *TENANTS*.
+. Classifique a tabela por *quota de utilização*.
+. Selecione um locatário cuja utilização da cota seja próxima de 100%.
+. Faça um ou ambos os procedimentos a seguir:
++
+** Selecione *Editar* para aumentar a cota de armazenamento do locatário.
+** Notificar o locatário de que a utilização da cota é alta.
+
+
+
+
+
+
+ a| 
+Não é possível comunicar com o nó
+ a| 
+Um ou mais serviços não respondem ou o nó não pode ser alcançado.
+
+Este alerta indica que um nó está desconetado por um motivo desconhecido. Por exemplo, um serviço no nó pode ser interrompido ou o nó pode ter perdido sua conexão de rede devido a uma falha de energia ou interrupção inesperada.
+
+Monitore esse alerta para ver se o problema resolve por conta própria. Se o problema persistir:
+
+. Determine se há outro alerta afetando esse nó. Esse alerta pode ser resolvido quando você resolver o outro alerta.
+. Confirme se todos os serviços neste nó estão em execução. Se um serviço for interrompido, tente iniciá-lo. Consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+. Certifique-se de que o host do nó esteja ligado. Se não estiver, inicie o host.
++
+*Observação:* se mais de um host for desligado, consulte xref:../maintain/index.adoc[instruções de recuperação e manutenção].
+
+. Determine se há um problema de conetividade de rede entre este nó e o nó Admin.
+. Se não conseguir resolver o alerta, contacte o suporte técnico.
+
+
+
+
+ a| 
+Reinicialização inesperada do nó
+ a| 
+Um nó reinicializou inesperadamente nas últimas 24 horas.
+
+. Monitorize este alerta. O alerta será apagado após 24 horas. No entanto, se o nó reiniciar inesperadamente novamente, este alerta será acionado novamente.
+. Se você não conseguir resolver o alerta, pode haver uma falha de hardware. Entre em Contato com o suporte técnico.
+
+
+
+
+ a| 
+Objeto corrompido não identificado detetado
+ a| 
+Um arquivo foi encontrado no storage de objetos replicado que não pôde ser identificado como um objeto replicado.
+
+. Determine se há algum problema com o storage subjacente em um nó de storage. Por exemplo, execute diagnósticos de hardware ou execute uma verificação do sistema de arquivos.
+. Depois de resolver quaisquer problemas de storage, xref:verifying-object-integrity.adoc[executar verificação de existência de objeto]para determinar se as cópias replicadas, conforme definido pela política de ILM, estão ausentes.
+. Monitorize este alerta. O alerta será apagado após 24 horas, mas será acionado novamente se o problema não tiver sido corrigido.
+. Se não conseguir resolver o alerta, contacte o suporte técnico.
+
+
+|===

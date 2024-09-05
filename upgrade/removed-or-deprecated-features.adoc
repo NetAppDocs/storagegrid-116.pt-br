@@ -1,0 +1,48 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords: features, removed, deprecated 
+summary: Alguns recursos foram removidos ou obsoletos nesta versão. Revise esses itens para entender se você precisa atualizar aplicativos do cliente ou modificar sua configuração antes de atualizar. 
+---
+= Recursos removidos ou obsoletos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Alguns recursos foram removidos ou obsoletos nesta versão. Revise esses itens para entender se você precisa atualizar aplicativos do cliente ou modificar sua configuração antes de atualizar.
+
+
+
+== Sistema de alarme e APIs baseadas em alarme obsoletas
+
+A partir do lançamento do StorageGRID 11,6, o sistema de alarme legado está obsoleto. A interface do usuário e as APIs para o sistema de alarme legado serão removidas em uma versão futura.
+
+
+IMPORTANT: Se você ainda estiver usando alarmes herdados, Planeje fazer a transição completa para o sistema de alerta após a atualização para o StorageGRID 11,6. xref:../monitor/managing-alerts-and-alarms.adoc[Gerenciar alertas e alarmes: Visão geral]Consulte para saber mais sobre alertas.
+
+A versão 11,6 obsoleta todas as APIs baseadas em alarme. As seguintes APIs são afetadas por esta alteração:
+
+* `GET /grid/alarms`: Totalmente obsoleto
+* `GET /grid/health/topology`: Totalmente obsoleto
+* `GET /grid/health`: A `alarm-counts` seção da resposta está obsoleta
+
+
+
+
+== As versões futuras não suportarão o tamanho máximo de objeto 5 TIB para COLOCAR Objeto
+
+Em versões futuras do StorageGRID, o tamanho máximo para uma operação DE Objeto PUT único será de 5 GiB, em vez de 5 TIB. Você pode usar o upload multipart para objetos maiores que 5 GiB, até um máximo de 5 TIB (5.497.558.138.880 bytes).
+
+Para ajudá-lo a fazer a transição de clientes para o uso de tamanhos de objetos menores no PUT Object, o alerta *S3 PUT Object Size Too Large* será acionado no StorageGRID 11,6 se um cliente S3 tentar carregar um objeto que exceda 5 GiB.
+
+
+
+== Recurso de Ponte nas obsoleto
+
+A funcionalidade de ponte nas introduziu anteriormente acesso limitado com a versão StorageGRID 11,4. O recurso Ponte nas permanece com acesso limitado e está obsoleto a partir do StorageGRID 11,6.
+
+A Ponte nas 11,4 continua a ser a versão final e continuará a ser compatível com o StorageGRID 11,6. Reveja a https://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoperabilidade do NetApp"^] para ver a compatibilidade contínua entre as versões do nas Bridge 11,4 e do StorageGRID.
+
+Consulte o site de suporte da NetApp para obter informações https://mysupport.netapp.com/site/info/version-support["Cronograma de suporte para nas Bridge"^] sobre o .

@@ -1,0 +1,63 @@
+---
+permalink: ilm/activating-ilm-policy.html 
+sidebar: sidebar 
+keywords: activate ilm policy, information lifecycle policy 
+summary: Depois de adicionar regras ILM a uma política ILM proposta, simule a política e confirme que ela se comporta como você espera, você está pronto para ativar a política proposta. 
+---
+= Ative a política ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de adicionar regras ILM a uma política ILM proposta, simule a política e confirme que ela se comporta como você espera, você está pronto para ativar a política proposta.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+* Você salvou e simulou a política de ILM proposta.
+
+
+
+CAUTION: Erros em uma política ILM podem causar perda de dados irrecuperável. Analise e simule cuidadosamente a política antes de ativá-la para confirmar que funcionará como pretendido.
+
+
+CAUTION: Quando você ativa uma nova política de ILM, o StorageGRID a usa para gerenciar todos os objetos, incluindo objetos existentes e objetos recém-ingeridos. Antes de ativar uma nova política de ILM, revise todas as alterações no posicionamento de objetos replicados e codificados por apagamento existentes. Alterar a localização de um objeto existente pode resultar em problemas de recursos temporários quando os novos posicionamentos são avaliados e implementados.
+
+.Sobre esta tarefa
+Quando você ativa uma política de ILM, o sistema distribui a nova política para todos os nós. No entanto, a nova política ativa pode não ter efeito até que todos os nós de grade estejam disponíveis para receber a nova política. Em alguns casos, o sistema espera implementar uma nova política ativa para garantir que os objetos de grade não sejam removidos acidentalmente.
+
+* Se você fizer alterações de política que aumentem a redundância ou a durabilidade dos dados, essas alterações serão implementadas imediatamente. Por exemplo, se você ativar uma nova política que inclua uma regra de três cópias em vez de uma regra de duas cópias, essa política será implementada imediatamente porque aumenta a redundância de dados.
+* Se você fizer alterações de política que possam diminuir a redundância de dados ou a durabilidade, essas alterações não serão implementadas até que todos os nós de grade estejam disponíveis. Por exemplo, se você ativar uma nova política que usa uma regra de duas cópias em vez de uma regra de três cópias, a nova política será marcada como ""ativa"", mas ela não entrará em vigor até que todos os nós estejam online e disponíveis.
+
+
+.Passos
+. Quando estiver pronto para ativar uma política proposta, selecione a política na página políticas ILM e selecione *Ativar*.
++
+É apresentada uma mensagem de aviso, solicitando-lhe que confirme que pretende ativar a política proposta.
+
++
+image::../media/ilm_policy_activate_warning.gif[Aviso apresentado antes de a política ser ativada]
+
++
+Um prompt aparece na mensagem de aviso se a regra padrão da política não retiver objetos para sempre. Neste exemplo, o diagrama de retenção mostra que a regra padrão excluirá objetos após 2 anos. Você deve digitar *2* na caixa de texto para confirmar que quaisquer objetos não correlacionados por outra regra na política serão removidos do StorageGRID após 2 anos.
+
++
+image::../media/ilm_policy_default_rule_not_forever_prompt.png[Aviso de regra padrão de política ILM não para sempre]
+
+. Selecione *OK*.
+
+
+.Resultado
+Quando uma nova política ILM tiver sido ativada:
+
+* A política é mostrada com um estado de política ativo na tabela na página políticas de ILM. A entrada Data Início indica a data e a hora em que a política foi ativada.
++
+image::../media/ilm_policies_active_and_historical.gif[Políticas ILM - Ativo e Histórico]
+
+* A política anteriormente ativa é mostrada com um Estado Histórico da Política. As entradas Data de início e Data de término indicam quando a política se tornou ativa e quando ela não estava mais em vigor.
+
+
+.Informações relacionadas
+xref:example-6-changing-ilm-policy.adoc[Exemplo 6: Alterando uma política ILM]

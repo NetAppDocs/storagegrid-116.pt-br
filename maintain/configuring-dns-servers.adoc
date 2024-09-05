@@ -1,0 +1,36 @@
+---
+permalink: maintain/configuring-dns-servers.html 
+sidebar: sidebar 
+keywords: storagegrid, dns, configuring dns, configure dns, domain name system 
+summary: 'Você pode adicionar, remover e atualizar servidores de sistema de nomes de domínio (DNS), para que você possa usar nomes de host de nome de domínio totalmente qualificados em vez de endereços IP.' 
+---
+= Configurar servidores DNS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode adicionar, remover e atualizar servidores DNS (sistema de nomes de domínio), para que você possa usar nomes de host FQDN (nome de domínio totalmente qualificado) em vez de endereços IP.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Tem de ter a permissão Manutenção ou Acesso root.
+* Você deve ter os endereços IP dos servidores DNS para configurar.
+
+
+Especificar informações do servidor DNS permite que você use nomes de host de nome de domínio totalmente qualificados (FQDN) em vez de endereços IP para notificações de e-mail ou SNMP e AutoSupport. É recomendável especificar pelo menos dois servidores DNS.
+
+
+IMPORTANT: Forneça entre dois a seis endereços IP para servidores DNS. Em geral, selecione servidores DNS que cada site pode acessar localmente no caso de a rede ser aterrissada. Isso é para garantir que um site islanded continua a ter acesso ao serviço DNS. Depois de configurar a lista de servidores DNS em toda a grade, você pode xref:modifying-dns-configuration-for-single-grid-node.adoc[Personalize ainda mais a lista de servidores DNS para cada nó].
+
+Se as informações do servidor DNS forem omitidas ou configuradas incorretamente, um alarme DNST será acionado no serviço SSM de cada nó da grade. O alarme é apagado quando o DNS está configurado corretamente e as novas informações do servidor atingiram todos os nós da grade.
+
+.Passos
+. Selecione *MAINTENANCE* > *Network* > *DNS Servers*.
+. Na seção servidores, adicione atualizações ou remova entradas do servidor DNS, conforme necessário.
++
+A prática recomendada é especificar pelo menos dois servidores DNS por site. Você pode especificar até seis servidores DNS.
+
+. Clique em *Salvar*.
+

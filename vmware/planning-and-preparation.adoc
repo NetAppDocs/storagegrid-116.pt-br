@@ -1,0 +1,43 @@
+---
+permalink: vmware/planning-and-preparation.html 
+sidebar: sidebar 
+keywords: how to plan before installation 
+summary: Antes de implantar nós de grade e configurar a grade StorageGRID, você deve estar familiarizado com as etapas e requisitos para concluir o procedimento. 
+---
+= Antes de instalar (VMware)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de implantar nós de grade e configurar a grade StorageGRID, você deve estar familiarizado com as etapas e requisitos para concluir o procedimento.
+
+Os procedimentos de implantação e configuração do StorageGRID presumem que você está familiarizado com a arquitetura e a funcionalidade operacional do sistema StorageGRID.
+
+Você pode implantar um único local ou vários locais de uma só vez. No entanto, todos os locais precisam atender ao requisito mínimo de ter pelo menos três nós de storage.
+
+
+IMPORTANT: O StorageGRID não suporta o uso de redes de área de armazenamento virtual (VSANs), porque a proteção de disco subjacente não é RAID de hardware.
+
+Antes de iniciar o procedimento de implantação do nó e configuração da grade, você deve:
+
+* Planeje a implantação do StorageGRID.
+* Instale, conete e configure todo o hardware necessário, incluindo quaisquer dispositivos StorageGRID, de acordo com as especificações.
++
+
+NOTE: As instruções de instalação e integração específicas de hardware não estão incluídas no procedimento de instalação do StorageGRID. Para saber como instalar dispositivos StorageGRID, consulte as instruções de instalação e manutenção do seu aparelho.
+
+* Compreender o xref:../network/index.adoc[opções de rede disponíveis e como cada opção de rede deve ser implementada em nós de grade].
+* Reúna todas as informações de rede com antecedência. A menos que você esteja usando DHCP, reúna os endereços IP para atribuir a cada nó de grade e os endereços IP dos servidores DNS (Domain Name System) e NTP (Network Time Protocol) que serão usados.
+* Decida qual das ferramentas de implantação e configuração disponíveis você deseja usar.
+
+
+.Informações relacionadas
+xref:../sg100-1000/index.adoc[Aparelhos de serviços SG100 e SG1000]
+
+xref:../sg6000/index.adoc[SG6000 dispositivos de armazenamento]
+
+xref:../sg5700/index.adoc[SG5700 dispositivos de armazenamento]
+
+xref:../sg5600/index.adoc[SG5600 dispositivos de armazenamento]

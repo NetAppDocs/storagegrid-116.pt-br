@@ -1,0 +1,43 @@
+---
+permalink: admin/viewing-storagegrid-license-information.html 
+sidebar: sidebar 
+keywords: storagegrid license, view license, licensed capacity of grid 
+summary: Você pode visualizar as informações de licença do seu sistema StorageGRID, como a capacidade máxima de armazenamento da grade, sempre que necessário. 
+---
+= Veja as informações da licença do StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode visualizar as informações de licença do seu sistema StorageGRID, como a capacidade máxima de armazenamento da grade, sempre que necessário.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Sobre esta tarefa
+Se houver um problema com a licença de software para este sistema StorageGRID, o painel Saúde no Painel inclui um ícone de Status da Licença e um link *Licença*. O número indica quantos problemas relacionados à licença existem.
+
+image::../media/dashboard_health_panel_license_status.png[Estado da licença do painel de saúde]
+
+.Passo
+Para visualizar a licença, execute um dos seguintes procedimentos:
+
+* No painel Saúde do Painel, selecione o ícone de status da Licença ou o link *Licença*. Este link aparece somente se houver um problema com a licença.
+* Selecione *MAINTENANCE* > *System* > *License*.
+
+
+A Página de Licença é exibida e fornece as seguintes informações somente de leitura sobre a licença atual:
+
+* ID do sistema StorageGRID, que é o número de identificação exclusivo para esta instalação do StorageGRID
+* Número de série da licença
+* Capacidade de armazenamento licenciada da rede
+* Data de término da licença de software
+* Data de término do contrato de serviço de suporte
+* Conteúdo do arquivo de texto da licença
+
+
+
+NOTE: Para as licenças emitidas antes do StorageGRID 10,3, a capacidade de armazenamento licenciada não está incluída no ficheiro de licença e é apresentada uma mensagem "consulte o Contrato de licença" em vez de um valor.

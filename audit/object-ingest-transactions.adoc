@@ -1,0 +1,83 @@
+---
+permalink: audit/object-ingest-transactions.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, messages, transaction, transactions, Object ingest, S3 ingest, Swift ingest, S3, Swift, SPUT, ORLM, WPUT 
+summary: 'Você pode identificar transações de ingestão de clientes no log de auditoria localizando mensagens de auditoria específicas de API (S3 ou Swift).' 
+---
+= Transações de ingestão de objetos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode identificar transações de ingestão de clientes no log de auditoria localizando mensagens de auditoria específicas da API (S3 ou Swift).
+
+Nem todas as mensagens de auditoria geradas durante uma transação de ingestão são listadas nas tabelas a seguir. Apenas as mensagens necessárias para rastrear a transação de ingestão são incluídas.
+
+
+
+== S3 ingira mensagens de auditoria
+
+|===
+| Código | Nome | Descrição | Traçado | Consulte 
+
+
+ a| 
+SPUT
+ a| 
+S3 COLOQUE a transação
+ a| 
+Uma transação de ingestão de S3 PUT foi concluída com sucesso.
+ a| 
+CBID, S3BK, S3KY
+ a| 
+xref:sput-s3-put.adoc[SPUT: S3 PUT]
+
+
+
+ a| 
+ORLM
+ a| 
+Regras Objeto cumpridas
+ a| 
+A política ILM foi satisfeita para este objeto.
+ a| 
+CBID
+ a| 
+xref:orlm-object-rules-met.adoc[ORLM: Regras Objeto cumpridas]
+
+|===
+
+
+== Mensagens de auditoria de ingestão rápida
+
+|===
+| Código | Nome | Descrição | Traçado | Consulte 
+
+
+ a| 
+WPUT
+ a| 
+Transação de COLOCAÇÃO rápida
+ a| 
+Uma transação de ingestão Swift PUT foi concluída com sucesso.
+ a| 
+CBID, WCON, WOBJ
+ a| 
+xref:wput-swift-put.adoc[WPUT: Swift PUT]
+
+
+
+ a| 
+ORLM
+ a| 
+Regras Objeto cumpridas
+ a| 
+A política ILM foi satisfeita para este objeto.
+ a| 
+CBID
+ a| 
+xref:orlm-object-rules-met.adoc[ORLM: Regras Objeto cumpridas]
+
+|===

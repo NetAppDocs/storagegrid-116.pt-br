@@ -1,0 +1,34 @@
+---
+permalink: admin/updating-link-costs.html 
+sidebar: sidebar 
+keywords: link costs, latency between sites 
+summary: Você pode atualizar os custos de link entre sites de data center para refletir a latência entre sites. 
+---
+= Atualizar custos de link
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atualizar os custos de link entre sites de data center para refletir a latência entre sites.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem a permissão de Configuração de Página de topologia de Grade.
+
+
+.Passos
+. Selecione *CONFIGURATION* > *Network* > *Link Cost*.
++
+image::../media/configuring_link_costs.png[Custo da ligação]
+
+. Selecione um site em *Link Source* e insira um valor de custo entre 0 e 100 em *Link Destination*.
++
+Não é possível alterar o custo do link se a origem for igual ao destino.
+
++
+Para cancelar as alterações, selecione image:../media/nms_revert.gif["anular ícone"]*Revert*.
+
+. Selecione *aplicar alterações*.
+

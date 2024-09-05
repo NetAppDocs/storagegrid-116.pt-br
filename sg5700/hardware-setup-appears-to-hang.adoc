@@ -1,0 +1,60 @@
+---
+permalink: sg5700/hardware-setup-appears-to-hang.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, troubleshoot, troubleshooting, hardware, setup, hang, hangs, fails, failure, stop, terminate, terminates, stuck 
+summary: O Instalador de dispositivos StorageGRID pode não estar disponível se falhas de hardware ou erros de cabeamento impedirem que a controladora E5700SG conclua seu processamento de inicialização. 
+---
+= A configuração do hardware parece travar (SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Instalador de dispositivos StorageGRID pode não estar disponível se falhas de hardware ou erros de cabeamento impedirem que a controladora E5700SG conclua seu processamento de inicialização.
+
+.Passos
+. Observe os códigos nos visores de sete segmentos.
++
+Enquanto o hardware está sendo inicializado durante a inicialização, os dois visores de sete segmentos mostram uma sequência de códigos. Quando o hardware é inicializado com êxito, as telas de sete segmentos mostram códigos diferentes para cada controlador.
+
+. Reveja os códigos no visor de sete segmentos para o controlador E5700SG.
++
+
+NOTE: A instalação e o provisionamento demoram. Algumas fases de instalação não relatam atualizações para o instalador do StorageGRID Appliance por vários minutos.
+
++
+Se ocorrer um erro, o visor de sete segmentos pisca uma sequência, COMO HE.
+
+. Para entender o que esses códigos significam, consulte os seguintes recursos:
++
+|===
+| Controlador | Referência 
+
+
+ a| 
+Controlador E5700SG
+ a| 
+** "Indicadores de status no controlador E5700SG"
+** "HE error: Erro ao sincronizar com o software SANtricity os"
+
+
+
+
+ a| 
+Controlador E2800
+ a| 
+_Guia de monitorização do sistema E5700 e E2800_
+
+*Nota:* os códigos descritos para o controlador e-Series E5700 não se aplicam ao controlador E5700SG no aparelho.
+
+|===
+. Se isso não resolver o problema, entre em Contato com o suporte técnico.
+
+
+.Informações relacionadas
+xref:status-indicators-on-e5700sg-controller.adoc[Indicadores de status no controlador E5700SG]
+
+xref:he-error-error-synchronizing-with-santricity-os-software.adoc[Erro HE: Erro ao sincronizar com o software SANtricity os]
+
+http://mysupport.netapp.com/info/web/ECMP1658252.html["Site de Documentação de sistemas NetApp e-Series"^]

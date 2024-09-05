@@ -1,0 +1,47 @@
+---
+permalink: sg100-1000/network-bond-modes-for-management-ports-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, Network bond, Network bonding, Network bond mode, Network-bond mode, independent, active-backup, active backup, management, management port, management ports 
+summary: Para as duas portas de gerenciamento de 1 GbE no dispositivo de serviços, você pode escolher o modo de ligação de rede independente ou o modo de ligação de rede ative-Backup para se conetar à rede Admin opcional. 
+---
+= Modos de ligação de rede para portas de gestão
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para as duas portas de gerenciamento de 1 GbE no dispositivo de serviços, você pode escolher o modo de ligação de rede independente ou o modo de ligação de rede ative-Backup para se conetar à rede Admin opcional.
+
+*SG100 portas de gerenciamento de rede*
+
+image::../media/sg100_bonded_management_ports.png[sg100 portas de gerenciamento coladas]
+
+*SG1000 portas de gerenciamento de rede*
+
+image::../media/sg1000_bonded_management_ports.png[SG1000 portas de gerenciamento de rede]
+
+No modo independente, apenas a porta de gerenciamento à esquerda está conetada à rede de administração. Este modo não fornece um caminho redundante. A porta de gerenciamento à direita está desconetada e disponível para conexões locais temporárias (usa o endereço IP 169.254.0.1)
+
+No modo ative-Backup, ambas as portas de gerenciamento estão conetadas à rede Admin. Apenas uma porta está ativa de cada vez. Se a porta ativa falhar, sua porta de backup fornecerá automaticamente uma conexão de failover. A ligação dessas duas portas físicas em uma porta de gerenciamento lógico fornece um caminho redundante para a rede de administração.
+
+
+NOTE: Se você precisar fazer uma conexão local temporária com o dispositivo de serviços quando as portas de gerenciamento de 1 GbE estiverem configuradas para o modo ative-Backup, remova os cabos de ambas as portas de gerenciamento, conete o cabo temporário à porta de gerenciamento à direita e acesse o dispositivo usando o endereço IP 169.254.0.1.
+
+|===
+| Legenda | Modo de ligação de rede 
+
+
+ a| 
+A
+ a| 
+Modo ative-Backup (cópia de segurança ativa). Ambas as portas de gerenciamento são ligadas a uma porta de gerenciamento lógico conetada à rede de administração.
+
+
+
+ a| 
+I
+ a| 
+Modo independente. A porta à esquerda está ligada à rede de administração. A porta à direita está disponível para conexões locais temporárias (endereço IP 169.254.0.1).
+
+|===

@@ -1,0 +1,55 @@
+---
+permalink: tenant/viewing-s3-bucket-details.html 
+sidebar: sidebar 
+keywords: how to view s3 bucket details 
+summary: Você pode exibir uma lista dos buckets e configurações do bucket em sua conta de locatário. 
+---
+= Veja os detalhes do balde S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode exibir uma lista dos buckets e configurações do bucket em sua conta de locatário.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Passos
+. Selecione *STORAGE (S3)* > *Buckets*.
++
+A página Buckets é exibida e lista todos os buckets da conta de locatário.
+
++
+image::../media/buckets_table.png[Tabela de baldes]
+
+. Reveja as informações de cada balde.
++
+Conforme necessário, você pode classificar as informações por qualquer coluna, ou pode encaminhar e voltar a página através da lista.
+
++
+** Nome: O nome exclusivo do bucket, que não pode ser alterado.
+** S3 Object Lock: Se o S3 Object Lock está ativado para este bucket.
++
+Esta coluna não será exibida se a configuração global de bloqueio de objetos S3D estiver desativada. Esta coluna também mostra informações para quaisquer buckets em conformidade com o legado.
+
+** Região: A região do balde, que não pode ser alterada.
+** Contagem de objetos: O número de objetos neste intervalo.
+** Espaço usado: O tamanho lógico de todos os objetos neste intervalo. O tamanho lógico não inclui o espaço real necessário para cópias replicadas ou codificadas para apagamento ou metadados de objetos.
+** Data de criação: A data e a hora em que o intervalo foi criado.
+
+
++
+
+IMPORTANT: Os valores contagem de objetos e espaço utilizados apresentados são estimativas. Essas estimativas são afetadas pelo timing de inests, conetividade de rede e status de nó. Se os buckets tiverem o controle de versão habilitado, as versões de objetos excluídos serão incluídas na contagem de objetos.
+
+. Para ver e gerir as definições de um intervalo, selecione o nome do intervalo.
++
+A página de detalhes do balde permite visualizar e editar as definições das opções do balde, acesso ao balde e xref:what-platform-services-are.adoc[serviços de plataforma].
+
++
+image::../media/bucket_details_page.png[Página Detalhes do balde]
+
+

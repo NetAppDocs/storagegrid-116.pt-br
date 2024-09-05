@@ -1,0 +1,95 @@
+---
+permalink: s3/get-bucket-consistency-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, GET bucket consistency request 
+summary: A solicitação GET Bucket Consistency permite determinar o nível de consistência que está sendo aplicado a um determinado bucket. 
+---
+= OBTER pedido de consistência de balde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A solicitação GET Bucket Consistency permite determinar o nível de consistência que está sendo aplicado a um determinado bucket.
+
+Os controles de consistência padrão são definidos para garantir leitura após gravação para objetos recém-criados.
+
+Você tem a permissão S3:GetBucketConsistency, ou seja raiz de conta, para concluir esta operação.
+
+
+
+== Exemplo de solicitação
+
+[source, subs="specialcharacters,quotes"]
+----
+GET /bucket?x-ntap-sg-consistency HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+
+
+== Resposta
+
+No XML de resposta `<Consistency>`, retornará um dos seguintes valores:
+
+|===
+| Controle de consistência | Descrição 
+
+
+ a| 
+tudo
+ a| 
+Todos os nós recebem os dados imediatamente, ou a solicitação falhará.
+
+
+
+ a| 
+forte-global
+ a| 
+Garante consistência de leitura após gravação para todas as solicitações de clientes em todos os sites.
+
+
+
+ a| 
+forte local
+ a| 
+Garante consistência de leitura após gravação para todas as solicitações de clientes dentro de um site.
+
+
+
+ a| 
+leitura-após-nova-gravação
+ a| 
+(Padrão) fornece consistência de leitura após gravação para novos objetos e eventual consistência para atualizações de objetos. Oferece alta disponibilidade e garantias de proteção de dados. Mais de perto corresponde às garantias de consistência do Amazon S3.
+
+*Observação:* se o aplicativo usar SOLICITAÇÕES HEAD em objetos que não existem, você pode receber um número alto de erros de servidor interno 500 se um ou mais nós de armazenamento não estiverem disponíveis. Para evitar esses erros, defina o controle de consistência como "disponível", a menos que você exija garantias de consistência semelhantes ao Amazon S3.
+
+
+
+ a| 
+Disponível (eventual consistência para OPERAÇÕES DE CABEÇA)
+ a| 
+Comporta-se da mesma forma que o nível de consistência "read-after-novo-write", mas apenas fornece consistência eventual para operações HEAD. Oferece maior disponibilidade para OPERAÇÕES HEAD do que "read-after-novo-write" se os nós de storage não estiverem disponíveis. Difere das garantias de consistência do Amazon S3 apenas para operações PRINCIPAIS.
+
+|===
+
+
+== Exemplo de resposta
+
+[listing]
+----
+HTTP/1.1 200 OK
+Date: Fri, 18 Sep 2020 01:02:18 GMT
+Connection: CLOSE
+Server: StorageGRID/11.5.0
+x-amz-request-id: 12345
+Content-Length: 127
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Consistency xmlns="http://s3.storagegrid.com/doc/2015-02-01/">read-after-new-write</Consistency>
+----
+.Informações relacionadas
+xref:consistency-controls.adoc[Controles de consistência]

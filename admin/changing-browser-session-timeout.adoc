@@ -1,0 +1,50 @@
+---
+permalink: admin/changing-browser-session-timeout.html 
+sidebar: sidebar 
+keywords: browser timeout, inactive session timeout 
+summary: Você pode controlar se os usuários do Grid Manager e do Tenant Manager estão desconetados se estiverem inativos por mais de um determinado período de tempo. 
+---
+= Altere o tempo limite da sessão do navegador
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode controlar se os usuários do Grid Manager e do Tenant Manager estão desconetados se estiverem inativos por mais de um determinado período de tempo.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+O tempo limite de inatividade da GUI é predefinido para 900 segundos (15 minutos). Se a sessão do navegador de um usuário não estiver ativa por esse período de tempo, a sessão expirará.
+
+Conforme necessário, você pode aumentar ou diminuir o período de tempo limite definindo a opção de exibição tempo limite de inatividade da GUI.
+
+Se o logon único (SSO) estiver ativado e a sessão do navegador do usuário expirar, o sistema se comportará como se o usuário selecionasse *Sair* manualmente. O usuário deve reinserir suas credenciais SSO para acessar o StorageGRID novamente. xref:configuring-sso.adoc[Configurar o logon único]Consulte .
+
+[NOTE]
+====
+O tempo limite da sessão do usuário também pode ser controlado pelo seguinte:
+
+* Um temporizador StorageGRID separado, não configurável, incluído para a segurança do sistema. Por padrão, o token de autenticação de cada usuário expira 16 horas após o login do usuário. Quando a autenticação de um usuário expira, esse usuário é automaticamente desconetado, mesmo que o valor do tempo limite de inatividade da GUI não tenha sido atingido. Para renovar o token, o usuário deve entrar novamente.
+* Configurações de tempo limite para o provedor de identidade, supondo que o SSO esteja habilitado para o StorageGRID.
+
+
+====
+.Passos
+. Selecione *CONFIGURATION* > *System* > *Display OPTIONS*.
+. Para *tempo limite de inatividade da GUI*, insira um período de tempo limite de 60 segundos ou mais.
++
+Defina este campo como 0 se não pretender utilizar esta funcionalidade. Os usuários são desconetados 16 horas após o início de sessão, quando seus tokens de autenticação expiram.
+
++
+image::../media/configuration_display_options.gif[Exibir página Opções]
+
+. Selecione *aplicar alterações*.
++
+A nova configuração não afeta os usuários conetados atualmente. Os usuários devem entrar novamente ou atualizar seus navegadores para que a nova configuração de tempo limite entre em vigor.
+
+

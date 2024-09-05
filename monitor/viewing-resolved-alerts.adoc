@@ -1,0 +1,114 @@
+---
+permalink: monitor/viewing-resolved-alerts.html 
+sidebar: sidebar 
+keywords: how to view resolved alerts 
+summary: Você pode pesquisar e exibir um histórico de alertas que foram resolvidos. 
+---
+= Exibir alertas resolvidos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode pesquisar e exibir um histórico de alertas que foram resolvidos.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Passos
+. Para exibir alertas resolvidos, siga um destes procedimentos:
++
+** No painel Saúde do Painel, clique em *alertas resolvidos recentemente*.
++
+O link *Recently resolved alerts* (alertas resolvidos recentemente) aparece apenas se um ou mais alertas tiverem sido acionados na semana passada e estiverem agora resolvidos.
+
+** Selecione *ALERTAS* *resolvidos*. A página Alertas resolvidos é exibida. Por padrão, os alertas resolvidos que foram acionados na última semana são exibidos, com os alertas acionados mais recentemente exibidos primeiro. Os alertas nesta página foram exibidos anteriormente na página Alertas atuais ou em uma notificação por e-mail.
++
+image::../media/alerts_resolved_page.png[Página de alertas resolvidos]
+
+
+
+. Reveja as informações na tabela.
++
+|===
+| Cabeçalho da coluna | Descrição 
+
+
+ a| 
+Nome
+ a| 
+O nome do alerta e sua descrição.
+
+
+
+ a| 
+Gravidade
+ a| 
+A gravidade do alerta.
+
+** *Crítico* image:../media/icon_alert_red_critical.png["Ícone Alerta Vermelho crítico"]: existe uma condição anormal que interrompeu as operações normais de um nó ou serviço StorageGRID. Você deve abordar o problema subjacente imediatamente. A interrupção do serviço e a perda de dados podem resultar se o problema não for resolvido.
+** *Major* image:../media/icon_alert_orange_major.png["Ícone Alerta Laranja maior"]: existe uma condição anormal que está afetando as operações atuais ou se aproximando do limite para um alerta crítico. Você deve investigar os principais alertas e resolver quaisquer problemas subjacentes para garantir que a condição anormal não pare a operação normal de um nó ou serviço StorageGRID.
+** *Minor* image:../media/icon_alert_yellow_minor.png["Ícone Alerta Amarelo menor"]: o sistema está operando normalmente, mas existe uma condição anormal que pode afetar a capacidade do sistema de operar se ele continuar. Você deve monitorar e resolver alertas menores que não sejam claros por conta própria para garantir que eles não resultem em um problema mais sério.
+
+
+
+
+ a| 
+Tempo acionado
+ a| 
+Há quanto tempo o alerta foi acionado.
+
+
+
+ a| 
+Tempo resolvido
+ a| 
+Há quanto tempo o alerta foi resolvido.
+
+
+
+ a| 
+Local/nó
+ a| 
+O nome do site e do nó onde o alerta ocorreu.
+
+
+
+ a| 
+Valores acionados
+ a| 
+O valor da métrica que fez com que o alerta fosse acionado. Para alguns alertas, são apresentados valores adicionais para o ajudar a compreender e investigar o alerta. Por exemplo, os valores mostrados para um alerta *armazenamento de dados de objeto baixo* incluem a porcentagem de espaço em disco usado, a quantidade total de espaço em disco e a quantidade de espaço em disco usado.
+
+|===
+. Para classificar toda a lista de alertas resolvidos, clique nas setas para cima/para baixo image:../media/icon_alert_sort_column.png["Ícone de setas de ordenação"]em cada cabeçalho de coluna.
++
+Por exemplo, talvez você queira classificar os alertas resolvidos por *Site/nó* para ver os alertas que afetaram um nó específico.
+
+. Opcionalmente, filtre a lista de alertas resolvidos usando os menus suspensos na parte superior da tabela.
++
+.. Selecione um período de tempo no menu suspenso *When Triggered* para mostrar alertas resolvidos com base em quanto tempo atrás eles foram acionados.
++
+Você pode pesquisar alertas que foram acionados nos seguintes períodos de tempo:
+
++
+*** Na última hora
+*** Último dia
+*** Semana passada (vista predefinida)
+*** No mês passado
+*** Qualquer período de tempo
+*** Personalizado (permite especificar a data de início e a data de fim para o período de tempo)
+
+
+.. Selecione uma ou mais severidades no menu suspenso *gravidade* para filtrar os alertas resolvidos de uma gravidade específica.
+.. Selecione uma ou mais regras de alerta padrão ou personalizadas no menu suspenso *regra de alerta* para filtrar os alertas resolvidos relacionados a uma regra de alerta específica.
+.. Selecione um ou mais nós no menu suspenso *Node* para filtrar os alertas resolvidos relacionados a um nó específico.
+.. Clique em *pesquisar*.
+
+
+. Para exibir detalhes de um alerta resolvido específico, selecione o alerta na tabela.
++
+É apresentada uma caixa de diálogo para o alerta. xref:viewing-specific-alert.adoc[Veja um alerta específico]Consulte .
+
+

@@ -1,0 +1,52 @@
+---
+permalink: maintain/removing-port-remaps.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, remove port remap, removing port remap, port remap 
+summary: Se você quiser configurar um ponto de extremidade para o serviço Load Balancer e quiser usar uma porta que já tenha sido configurada como a porta mapeada de um remapeamento de porta, primeiro remova o remapeamento de porta existente ou o ponto de extremidade não será efetivo. Você deve executar um script em cada nó de administrador e nó de gateway que tenha portas remapeadas conflitantes para remover todos os remapas de portas do nó. 
+---
+= Remova os remapas de portas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você quiser configurar um ponto de extremidade para o serviço Load Balancer e quiser usar uma porta que já tenha sido configurada como a porta mapeada de um remapeamento de porta, primeiro remova o remapeamento de porta existente ou o ponto de extremidade não será efetivo. É necessário executar um script em cada nó Admin e nó Gateway que tenha portas remapeadas conflitantes para remover todos os remapeados de portas do nó.
+
+.Sobre esta tarefa
+
+CAUTION: Este procedimento remove todos os remapas de portas. Se você precisar manter alguns dos remapas, entre em Contato com o suporte técnico.
+
+Para obter informações sobre como configurar pontos de extremidade do balanceador de carga, consulte as instruções para administrar o StorageGRID.
+
+
+IMPORTANT: Se o remapeamento de portas fornecer acesso ao cliente, o cliente deve ser reconfigurado para usar uma porta diferente configurada como um endpoint de balanceador de carga, se possível, para evitar a perda de serviço, caso contrário, remover o mapeamento de portas resultará na perda de acesso ao cliente e deve ser programado adequadamente.
+
+
+IMPORTANT: Este procedimento não funciona para um sistema StorageGRID implantado como um contentor em hosts de metal nu. Consulte as instruções para xref:removing-port-remaps-on-bare-metal-hosts.adoc[remoção de remapas de portas em hosts bare metal].
+
+.Passos
+. Faça login no nó.
++
+.. Introduza o seguinte comando: `ssh -p 8022 admin@node_IP`
++
+A porta 8022 é a porta SSH do sistema operacional base, enquanto a porta 22 é a porta SSH do mecanismo de contentor que executa o StorageGRID.
+
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+.. Digite o seguinte comando para mudar para root: `su -`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
++
+Quando você estiver conetado como root, o prompt mudará de `$` para `#`.
+
+
+
+. Execute o seguinte script: `remove-port-remap.sh`
+. Reinicie o nó.
++
+Siga as instruções para xref:rebooting-grid-node.adoc[reinicializando um nó de grade].
+
+. Repita estas etapas em cada nó de administração e nó de gateway que tenha portas remapeadas conflitantes.
+
+
+.Informações relacionadas
+xref:../admin/index.adoc[Administrar o StorageGRID]

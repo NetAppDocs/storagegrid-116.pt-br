@@ -1,0 +1,71 @@
+---
+permalink: ilm/guidelines-for-creating-storage-pools.html 
+sidebar: sidebar 
+keywords: storage pool guidelines 
+summary: Ao configurar e usar pools de armazenamento, siga estas diretrizes. 
+---
+= Diretrizes para a criação de pools de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao configurar e usar pools de armazenamento, siga estas diretrizes.
+
+
+
+== Diretrizes para todos os pools de armazenamento
+
+* O StorageGRID inclui um pool de storage padrão, todos os nós de storage, que usa o local padrão, todos os locais e o nível de storage padrão, todos os nós de storage. O pool de storage de todos os nós de storage é atualizado automaticamente sempre que você adicionar novos sites de data center.
++
+
+NOTE: O uso do pool de storage todos os nós de storage ou do site todos os sites não é recomendado porque esses itens são atualizados automaticamente para incluir novos sites adicionados em uma expansão, o que pode não ser o comportamento desejado. Antes de usar o pool de storage de todos os nós de storage ou o local padrão, revise cuidadosamente as diretrizes para cópias replicadas e codificadas para apagamento.
+
+* Mantenha as configurações do pool de storage o mais simples possível. Não crie mais pools de armazenamento do que o necessário.
+* Crie pools de storage com tantos nós quanto possível. Cada pool de storage deve conter dois ou mais nós. Um pool de storage com nós insuficientes pode causar backlogs de ILM se um nó ficar indisponível.
+* Evite criar ou usar pools de storage que se sobrepõem (contêm um ou mais dos mesmos nós). Se os pools de armazenamento se sobrepuserem, mais de uma cópia dos dados de objeto poderá ser salva no mesmo nó.
+
+
+
+
+== Diretrizes para pools de storage usados para cópias replicadas
+
+* Crie um pool de armazenamento diferente para cada site. Em seguida, especifique um ou mais pools de armazenamento específicos do local nas instruções de posicionamento para cada regra. O uso de um pool de storage para cada local garante que as cópias de objetos replicadas sejam colocadas exatamente onde você espera (por exemplo, uma cópia de cada objeto em cada local para proteção contra perda de local).
+* Se você adicionar um site em uma expansão, crie um novo pool de armazenamento para o novo site. Em seguida, atualize as regras do ILM para controlar quais objetos são armazenados no novo site.
+* Em geral, não use o pool de storage padrão, todos os nós de storage ou qualquer pool de storage que inclua o site padrão, todos os sites.
+
+
+
+
+== Diretrizes para pools de storage usados para cópias codificadas por apagamento
+
+* Você não pode usar nós de arquivamento para dados codificados por apagamento.
+* O número de nós de storage e sites contidos no pool de storage determina quais esquemas de codificação de apagamento estão disponíveis.
+* Se um pool de armazenamento incluir apenas dois sites, você não poderá usar esse pool de armazenamento para codificação de apagamento. Não há esquemas de codificação de apagamento disponíveis para um pool de storage que tenha dois locais.
+* Em geral, não use o pool de storage padrão, todos os nós de storage ou qualquer pool de storage que inclua o site padrão, todos os sites em qualquer perfil de codificação de apagamento.
++
+
+NOTE: Se a grade incluir apenas um local, você será impedido de usar o pool de storage todos os nós de storage ou o site padrão todos os sites em um perfil de codificação de apagamento. Esse comportamento impede que o perfil de codificação de apagamento se torne inválido se um segundo site for adicionado.
+
+* Se você tiver altos requisitos de taxa de transferência, não é recomendável criar um pool de armazenamento que inclua vários locais se a latência de rede entre locais for superior a 100 ms. À medida que a latência aumenta, a taxa na qual o StorageGRID pode criar, colocar e recuperar fragmentos de objetos diminui drasticamente devido à diminuição da taxa de transferência da rede TCP. A diminuição na taxa de transferência afeta as taxas máximas alcançáveis de ingestão e recuperação de objetos (quando strict ou balanced são selecionados como o comportamento de ingestão) ou pode levar a backlogs de fila ILM (quando Dual Commit é selecionado como o comportamento de ingestão).
+* Se possível, um pool de storage deve incluir mais do que o número mínimo de nós de storage necessário para o esquema de codificação de apagamento selecionado. Por exemplo, se você usar um 3 esquema de codificação de apagamento de mais de 6 anos, precisará ter pelo menos nove nós de storage. No entanto, é recomendável ter pelo menos um nó de armazenamento adicional por local.
+* Distribua os nós de storage entre locais da forma mais uniforme possível. Por exemplo, para dar suporte a um 3 esquema de codificação de apagamento de mais de 6 horas por dia, configure um pool de storage que inclua pelo menos três nós de storage em três locais.
+
+
+
+
+== Diretrizes para pools de storage usados para cópias arquivadas
+
+* Não é possível criar um pool de storage que inclua nós de storage e nós de arquivamento. As cópias arquivadas exigem um pool de storage que inclui apenas nós de arquivamento.
+* Ao usar um pool de storage que inclua nós de arquivamento, você também deve manter pelo menos uma cópia replicada ou codificada de apagamento em um pool de storage que inclua nós de storage.
+* Se a configuração global S3 Object Lock estiver ativada e você estiver criando uma regra ILM compatível, não será possível usar um pool de armazenamento que inclua nós de arquivamento. Consulte as instruções para gerenciar objetos com o S3 Object Lock.
+* Se o tipo de destino de um nó de arquivamento for Cloud Tiering - Simple Storage Service (S3), o nó de arquivamento deverá estar em seu próprio pool de storage. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+
+
+.Informações relacionadas
+* xref:what-replication-is.adoc[O que é replicação]
+* xref:what-erasure-coding-is.adoc[O que é codificação de apagamento]
+* xref:what-erasure-coding-schemes-are.adoc[Quais são os esquemas de codificação de apagamento]
+* xref:using-multiple-storage-pools-for-cross-site-replication.adoc[Use vários pools de storage para replicação entre locais]
+

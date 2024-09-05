@@ -1,0 +1,14 @@
+---
+permalink: sg6000/configuring-storagegrid-connections.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, storagegrid connections, connections, configure, setup, set up 
+summary: 'Antes de implantar um dispositivo StorageGRID como nó de armazenamento em um sistema StorageGRID, você deve configurar as conexões entre o dispositivo e as redes que você planeja usar. Você pode configurar a rede navegando até o Instalador de dispositivos StorageGRID, que é pré-instalado no controlador SG6000-CN (o controlador de computação).' 
+---
+= Configurar conexões StorageGRID (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de implantar um dispositivo StorageGRID como nó de armazenamento em um sistema StorageGRID, você deve configurar as conexões entre o dispositivo e as redes que você planeja usar. Você pode configurar a rede navegando até o Instalador de dispositivos StorageGRID, que é pré-instalado no controlador SG6000-CN (o controlador de computação).

@@ -1,0 +1,120 @@
+---
+permalink: sg100-1000/viewing-status-indicators-on-sg100-and-sg1000-appliances.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, status, indicators, lights, leds, light, led, switch , button, power, reset, identify, alarm, ssd, indicator, boot codes, boot, code, start, startup, start up, start-up, progress 
+summary: O dispositivo inclui indicadores que o ajudam a determinar o status do controlador do dispositivo e dos dois SSDs. 
+---
+= Ver indicadores de estado nos aparelhos SG100 e SG1000
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O dispositivo inclui indicadores que o ajudam a determinar o status do controlador do dispositivo e dos dois SSDs.
+
+
+
+== Indicadores e botões do aparelho
+
+image::../media/sg6000_cn_front_indicators.gif[Indicadores dianteiros - SG1000]
+
+|===
+|  | Visor | Estado 
+
+
+ a| 
+1
+ a| 
+Botão de alimentação
+ a| 
+* Azul: O aparelho está ligado.
+* Desligado: O aparelho está desligado.
+
+
+
+
+ a| 
+2
+ a| 
+Botão Reset (Repor)
+ a| 
+Utilize este botão para executar uma reinicialização total do controlador.
+
+
+
+ a| 
+3
+ a| 
+Botão identificar
+ a| 
+Este botão pode ser definido como intermitente, ligado (sólido) ou desligado.
+
+* Azul intermitente: Identifica o aparelho no gabinete ou rack.
+* Azul, sólido: Identifica o aparelho no gabinete ou rack.
+* Desligado: O aparelho não é visualmente identificável no gabinete ou no rack.
+
+
+
+
+ a| 
+4
+ a| 
+LED de alarme
+ a| 
+* Âmbar, sólido: Ocorreu um erro.
++
+*Nota:* para visualizar os códigos de inicialização e erro, você deve acessar a interface do BMC.
+
+* Desligado: Nenhum erro está presente.
+
+
+|===
+
+
+== Códigos gerais de arranque
+
+Durante a inicialização ou após uma reinicialização forçada do aparelho, ocorre o seguinte:
+
+. O controlador de gerenciamento de placa base (BMC) Registra códigos para a sequência de inicialização, incluindo quaisquer erros que ocorram.
+. O botão liga/desliga acende-se.
+. Se ocorrerem erros durante a inicialização, o LED de alarme acende-se.
++
+Para exibir os códigos de inicialização e erro, você deve acessar a interface do BMC.
+
+
+
+
+
+== Indicadores SSD
+
+image::../media/ssd_indicators.png[Indicadores SSD]
+
+|===
+| LED | Visor | Estado 
+
+
+ a| 
+1
+ a| 
+Estado/avaria da transmissão
+ a| 
+* Azul (sólido): A unidade está online
+* Âmbar (intermitente): Falha da unidade
+* Desligado: A ranhura está vazia
+
+
+
+
+ a| 
+2
+ a| 
+Condução ativa
+ a| 
+Azul (intermitente): A unidade está a ser acedida
+
+|===
+.Informações relacionadas
+xref:troubleshooting-hardware-installation-sg100-and-sg1000.adoc[Solucionar problemas de instalação de hardware (SG100 e SG1000)]
+
+xref:configuring-bmc-interface-sg1000.adoc[Configurar a interface BMC (SG100 e SG1000)]

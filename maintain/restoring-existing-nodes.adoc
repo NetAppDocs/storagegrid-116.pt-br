@@ -1,0 +1,24 @@
+---
+permalink: maintain/restoring-existing-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, restore node to host 
+summary: Para restaurar um nó de grade com falha para um novo host Linux, você restaura o arquivo de configuração do nó usando os comandos apropriados. 
+---
+= Restaure nós de grade para o host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para restaurar um nó de grade com falha para um novo host Linux, você restaura o arquivo de configuração do nó usando os comandos apropriados.
+
+Ao fazer uma nova instalação, você cria um arquivo de configuração de nó para cada nó de grade a ser instalado em um host. Ao restaurar um nó de grade para um host de substituição, você restaura ou substitui o arquivo de configuração do nó para qualquer nó de grade com falha.
+
+Se algum volume de armazenamento de bloco tiver sido preservado do host anterior, talvez seja necessário executar procedimentos de recuperação adicionais. Os comandos nesta seção ajudam a determinar quais procedimentos adicionais são necessários.
+
+.Passos
+* xref:restoring-and-validating-grid-nodes.adoc[Restaure e valide nós de grade]
+* xref:starting-storagegrid-host-service.adoc[Inicie o serviço de host StorageGRID]
+* xref:recovering-nodes-that-fail-to-start-normally.adoc[Recupere nós que não forem iniciados normalmente]
+

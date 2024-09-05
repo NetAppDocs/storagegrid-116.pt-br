@@ -1,0 +1,14 @@
+---
+permalink: sg5600/configuring-santricity-storage-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, SANtricity Storage Manager, SANtricity, Storage Manager, configure, configuring, setup, set up, setting up, e2700 
+summary: 'Você pode usar o SANtricity Storage Manager para monitorar o status dos discos de storage e componentes de hardware no dispositivo StorageGRID. Para acessar este software, você deve saber o endereço IP da porta de gerenciamento 1 no controlador E2700 (o controlador de armazenamento no dispositivo).' 
+---
+= Configurar o SANtricity Storage Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o SANtricity Storage Manager para monitorar o status dos discos de storage e componentes de hardware no dispositivo StorageGRID. Para acessar este software, você deve saber o endereço IP da porta de gerenciamento 1 no controlador E2700 (o controlador de armazenamento no dispositivo).

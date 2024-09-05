@@ -1,0 +1,49 @@
+---
+permalink: upgrade/troubleshooting-upgrade-issues.html 
+sidebar: sidebar 
+keywords: upgrade, troubleshoot, troubleshooting, errors, upgrade precheck 
+summary: Se a atualização não for concluída com êxito, você poderá resolver o problema sozinho. Se não conseguir resolver um problema, deve recolher as informações necessárias antes de contactar o suporte técnico. 
+---
+= A atualização não foi concluída
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a atualização não for concluída com êxito, você poderá resolver o problema sozinho. Se não conseguir resolver um problema, deve recolher as informações necessárias antes de contactar o suporte técnico.
+
+As seções a seguir descrevem como recuperar de situações em que a atualização falhou parcialmente. Contacte o suporte técnico se não conseguir resolver um problema de atualização.
+
+
+
+== Atualizar erros de pré-verificação
+
+Para detetar e resolver problemas, você pode executar manualmente as pré-verificações de atualização antes de iniciar a atualização real. A maioria dos erros de pré-verificação fornece informações sobre como resolver o problema. Se precisar de ajuda, entre em Contato com o suporte técnico.
+
+
+
+== Falhas de provisionamento
+
+Se o processo de provisionamento automático falhar, entre em Contato com o suporte técnico.
+
+
+
+== O nó de grade falha ou falha ao iniciar
+
+Se um nó de grade falhar durante o processo de atualização ou não conseguir iniciar com êxito após a conclusão da atualização, entre em Contato com o suporte técnico para investigar e corrigir quaisquer problemas subjacentes.
+
+
+
+== A obtenção ou recuperação de dados é interrompida
+
+Se a ingestão ou recuperação de dados for inesperadamente interrompida quando você não estiver atualizando um nó de grade, entre em Contato com o suporte técnico.
+
+
+
+== Erros de atualização do banco de dados
+
+Se a atualização do banco de dados falhar com um erro, tente novamente a atualização. Se falhar novamente, entre em Contato com o suporte técnico.
+
+.Informações relacionadas
+xref:checking-systems-condition-before-upgrading-software.adoc[Verificar o estado do sistema antes de atualizar o software]

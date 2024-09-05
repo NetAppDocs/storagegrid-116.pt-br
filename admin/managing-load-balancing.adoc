@@ -1,0 +1,27 @@
+---
+permalink: admin/managing-load-balancing.html 
+sidebar: sidebar 
+keywords: manage load balancing, balance workload, client ingest, client retrieval, distribute connection 
+summary: Você pode usar as funções de balanceamento de carga do StorageGRID para lidar com cargas de trabalho de ingestão e recuperação de clientes S3 e Swift. O balanceamento de carga maximiza a velocidade e a capacidade de conexão distribuindo cargas de trabalho e conexões entre vários nós de storage. 
+---
+= Gerenciar balanceamento de carga: Visão geral
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar as funções de balanceamento de carga do StorageGRID para lidar com cargas de trabalho de ingestão e recuperação de clientes S3 e Swift. O balanceamento de carga maximiza a velocidade e a capacidade de conexão distribuindo cargas de trabalho e conexões entre vários nós de storage.
+
+Você pode equilibrar a carga de trabalho do cliente das seguintes maneiras:
+
+* Use o serviço Load Balancer, que é instalado em nós de administração e nós de gateway. O serviço Load Balancer fornece balanceamento de carga de camada 7 e executa o encerramento TLS das solicitações do cliente, inspeciona as solicitações e estabelece novas conexões seguras aos nós de storage. Este é o mecanismo de balanceamento de carga recomendado.
++
+xref:how-load-balancing-works-load-balancer-service.adoc[Como funciona o balanceamento de carga - Serviço do Load Balancer]Consulte .
+
+* Use o serviço CLB (Connection Load Balancer) obsoleto, que é instalado apenas em nós de Gateway. O serviço CLB fornece balanceamento de carga da camada 4 e suporta custos de link.
++
+xref:how-load-balancing-works-clb-service.adoc[Como funciona o balanceamento de carga - serviço CLB (obsoleto)]Consulte .
+
+* Integre um balanceador de carga de terceiros. Entre em Contato com o representante da sua conta NetApp para obter detalhes.
+

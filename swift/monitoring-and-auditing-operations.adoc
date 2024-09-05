@@ -1,0 +1,143 @@
+---
+permalink: swift/monitoring-and-auditing-operations.html 
+sidebar: sidebar 
+keywords: monitor operations, audit operations 
+summary: Você pode monitorar workloads e eficiências das operações do cliente visualizando tendências de transações para toda a grade ou para nós específicos. Você pode usar mensagens de auditoria para monitorar operações e transações do cliente. 
+---
+= Monitorar e auditar operações
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode monitorar workloads e eficiências das operações do cliente visualizando tendências de transações para toda a grade ou para nós específicos. Você pode usar mensagens de auditoria para monitorar operações e transações do cliente.
+
+
+
+== Monitorar taxas de ingestão e recuperação de objetos
+
+Você pode monitorar taxas de ingestão e recuperação de objetos, bem como métricas para contagens de objetos, consultas e verificação. Você pode exibir o número de tentativas bem-sucedidas e com falha por aplicativos clientes para ler, gravar e modificar objetos no sistema StorageGRID.
+
+.Passos
+. Faça login no Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+. No painel de instrumentos, localize a secção Protocol Operations (operações de protocolo).
++
+Esta seção resume o número de operações do cliente realizadas pelo seu sistema StorageGRID. As taxas de protocolo são médias nos últimos dois minutos.
+
+. Selecione *NODES*.
+. Na página inicial dos nós (nível de implantação), clique na guia *Load Balancer*.
++
+Os gráficos mostram tendências para todo o tráfego do cliente direcionado para pontos de extremidade do balanceador de carga dentro da grade. Você pode selecionar um intervalo de tempo em horas, dias, semanas, meses ou anos, ou pode aplicar um intervalo personalizado.
+
+. Na home page dos nós (nível de implantação), clique na guia *objetos*.
++
+O gráfico mostra as taxas de ingestão e recuperação de todo o seu sistema StorageGRID em bytes por segundo e total de bytes. Você pode selecionar um intervalo de tempo em horas, dias, semanas, meses ou anos, ou pode aplicar um intervalo personalizado.
+
+. Para ver as informações de um nó de armazenamento específico, selecione o nó na lista à esquerda e clique na guia *Objects*.
++
+O gráfico mostra as taxas de ingestão e recuperação de objetos para este nó de armazenamento. A guia também inclui métricas para contagens de objetos, consultas e verificação. Você pode clicar nos rótulos para ver as definições dessas métricas.
+
++
+image::../media/nodes_storage_node_objects_help.png[Captura de tela de nós _Storage Node_ objetos atributo ajuda]
+
+. Se você quiser ainda mais detalhes:
++
+.. Selecione *SUPPORT* > *Tools* > *Grid topology*.
+.. Selecione *_site_* *Visão geral* *Principal*.
++
+A seção operações da API exibe informações resumidas para toda a grade.
+
+.. Selecione *_Storage Node_* *LDR* *_client Application_* *Overview* *Main*
++
+A seção operações exibe informações resumidas para o nó de armazenamento selecionado.
+
+
+
+
+
+
+
+== Acesse e revise logs de auditoria
+
+As mensagens de auditoria são geradas pelos serviços do StorageGRID e armazenadas em arquivos de log de texto. As mensagens de auditoria específicas da API nos logs de auditoria fornecem dados críticos de monitoramento de segurança, operação e desempenho que podem ajudá-lo a avaliar a integridade do sistema.
+
+.O que você vai precisar
+* Você deve ter permissões de acesso específicas.
+* Tem de ter o `Passwords.txt` ficheiro.
+* Você deve saber o endereço IP de um nó Admin.
+
+
+.Sobre esta tarefa
+O arquivo de log de auditoria ativo é `audit.log` chamado , e é armazenado em nós de administração.
+
+Uma vez por dia, o arquivo audit.log ativo é salvo e um novo arquivo audit.log é iniciado. O nome do ficheiro guardado indica quando foi guardado, no formato `yyyy-mm-dd.txt`.
+
+Após um dia, o arquivo salvo é compactado e renomeado, no formato `yyyy-mm-dd.txt.gz`, que preserva a data original.
+
+Este exemplo mostra o arquivo audit.log ativo, o arquivo do dia anterior (2018-04-15.txt) e o arquivo compactado para o dia anterior (`2018-04-14.txt.gz`).
+
+[listing]
+----
+audit.log
+2018-04-15.txt
+2018-04-14.txt.gz
+----
+.Passos
+. Faça login em um nó Admin:
++
+.. Introduza o seguinte comando: `ssh _admin@primary_Admin_Node_IP_`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+
+
+. Vá para o diretório que contém os arquivos de log de auditoria:``cd /var/local/audit/export``
+. Visualize o ficheiro de registo de auditoria atual ou guardado, conforme necessário.
+
+
+.Informações relacionadas
+xref:../audit/index.adoc[Rever registos de auditoria]
+
+
+
+=== Operações rápidas rastreadas nos logs de auditoria
+
+Todas as operações bem-sucedidas de EXCLUSÃO, RECEBIMENTO, CABEÇALHO, POST e PUT DE armazenamento são rastreadas no log de auditoria do StorageGRID. As falhas não são registradas, nem são solicitações de informações, autenticação ou OPÇÕES.
+
+Consulte _Entendendo mensagens de auditoria_ para obter detalhes sobre as informações rastreadas para as seguintes operações do Swift.
+
+
+
+==== Operações de conta
+
+* OBTER conta
+* Conta principal
+
+
+
+
+==== Operações de contêiner
+
+* ELIMINAR recipiente
+* PEGUE o recipiente
+* Recipiente DA cabeça
+* COLOQUE o recipiente
+
+
+
+
+==== Operações de objetos
+
+* ELIMINAR objeto
+* OBTER objeto
+* Objeto PRINCIPAL
+* COLOQUE o objeto
+
+
+.Informações relacionadas
+xref:../audit/index.adoc[Rever registos de auditoria]
+
+xref:account-operations.adoc[Operações de conta]
+
+xref:container-operations.adoc[Operações de contêiner]
+
+xref:object-operations.adoc[Operações de objetos]

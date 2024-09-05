@@ -1,0 +1,525 @@
+---
+permalink: monitor/alarms-that-generate-snmp-notifications.html 
+sidebar: sidebar 
+keywords: alarms, monitor alarms, snmp notification, snmp 
+summary: A tabela a seguir lista os alarmes legados que geram notificações SNMP. Ao contrário dos alertas, nem todos os alarmes geram notificações SNMP. Apenas os alarmes listados geram notificações SNMP e apenas com a gravidade indicada ou superior. 
+---
+= Alarmes que geram notificações SNMP (sistema legado)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A tabela a seguir lista os alarmes legados que geram notificações SNMP. Ao contrário dos alertas, nem todos os alarmes geram notificações SNMP. Apenas os alarmes listados geram notificações SNMP e apenas com a gravidade indicada ou superior.
+
+
+NOTE: Embora o sistema de alarme antigo continue a ser suportado, o sistema de alerta oferece benefícios significativos e é mais fácil de usar.
+
+[cols="1a,2a,1a"]
+|===
+| Código | Nome | Gravidade 
+
+
+ a| 
+ACMS
+ a| 
+Serviços de metadados disponíveis
+ a| 
+Crítico
+
+
+
+ a| 
+AITE
+ a| 
+Recuperar Estado
+ a| 
+Menor
+
+
+
+ a| 
+AITU
+ a| 
+Recuperar Estado
+ a| 
+Maior
+
+
+
+ a| 
+AMQS
+ a| 
+Mensagens de auditoria enfileiradas
+ a| 
+Aviso
+
+
+
+ a| 
+AOTE
+ a| 
+Estado da loja
+ a| 
+Menor
+
+
+
+ a| 
+AOTU
+ a| 
+Estado da loja
+ a| 
+Maior
+
+
+
+ a| 
+AROQ
+ a| 
+Objetos em fila de espera
+ a| 
+Menor
+
+
+
+ a| 
+ARRF
+ a| 
+Falhas de solicitação
+ a| 
+Maior
+
+
+
+ a| 
+ARRV
+ a| 
+Falhas de verificação
+ a| 
+Maior
+
+
+
+ a| 
+ARVF
+ a| 
+Falhas de armazenamento
+ a| 
+Maior
+
+
+
+ a| 
+ASXP
+ a| 
+Compartilhamentos de auditoria
+ a| 
+Menor
+
+
+
+ a| 
+AUMA
+ a| 
+Estado AMS
+ a| 
+Menor
+
+
+
+ a| 
+AUXS
+ a| 
+Estado exportação Auditoria
+ a| 
+Menor
+
+
+
+ a| 
+BTOF
+ a| 
+Desvio
+ a| 
+Aviso
+
+
+
+ a| 
+CAHP
+ a| 
+Porcentagem de uso do Java Heap
+ a| 
+Maior
+
+
+
+ a| 
+CAQH
+ a| 
+Número de destinos disponíveis
+ a| 
+Aviso
+
+
+
+ a| 
+CASA
+ a| 
+Estado do armazenamento de dados
+ a| 
+Maior
+
+
+
+ a| 
+CDLP
+ a| 
+Espaço usado (porcentagem)
+ a| 
+Maior
+
+
+
+ a| 
+CLBE
+ a| 
+Estado CLB
+ a| 
+Crítico
+
+
+
+ a| 
+DNST
+ a| 
+Estado DNS
+ a| 
+Crítico
+
+
+
+ a| 
+ECST
+ a| 
+Estado de verificação
+ a| 
+Maior
+
+
+
+ a| 
+HSTE
+ a| 
+Estado HTTP
+ a| 
+Maior
+
+
+
+ a| 
+HTAS
+ a| 
+Auto-Iniciar HTTP
+ a| 
+Aviso
+
+
+
+ a| 
+PERDIDO
+ a| 
+Objetos perdidos
+ a| 
+Maior
+
+
+
+ a| 
+MINQ
+ a| 
+Notificações de e-mail na fila
+ a| 
+Aviso
+
+
+
+ a| 
+MIN
+ a| 
+Estado das notificações por e-mail
+ a| 
+Menor
+
+
+
+ a| 
+NANG
+ a| 
+Configuração de negociação automática de rede
+ a| 
+Aviso
+
+
+
+ a| 
+NDUP
+ a| 
+Configuração Duplex de rede
+ a| 
+Menor
+
+
+
+ a| 
+NLNK
+ a| 
+Detecção de ligação de rede
+ a| 
+Menor
+
+
+
+ a| 
+NRER
+ a| 
+Receber erros
+ a| 
+Aviso
+
+
+
+ a| 
+VELOCIDADE MÁXIMA
+ a| 
+Velocidade
+ a| 
+Aviso
+
+
+
+ a| 
+NTER
+ a| 
+Transmitir erros
+ a| 
+Aviso
+
+
+
+ a| 
+NTFQ
+ a| 
+Desvio de frequência NTP
+ a| 
+Menor
+
+
+
+ a| 
+NTLK
+ a| 
+Bloqueio NTP
+ a| 
+Menor
+
+
+
+ a| 
+NTOF
+ a| 
+Desvio horário NTP
+ a| 
+Menor
+
+
+
+ a| 
+NTSJ
+ a| 
+Jitter de fonte de tempo escolhido
+ a| 
+Menor
+
+
+
+ a| 
+NTSU
+ a| 
+Estado NTP
+ a| 
+Maior
+
+
+
+ a| 
+OPST
+ a| 
+Estado geral da alimentação
+ a| 
+Maior
+
+
+
+ a| 
+ORSU
+ a| 
+Estado replicação saída
+ a| 
+Aviso
+
+
+
+ a| 
+PSAS
+ a| 
+Estado da fonte de alimentação A.
+ a| 
+Maior
+
+
+
+ a| 
+PSB
+ a| 
+Estado da fonte de alimentação B.
+ a| 
+Maior
+
+
+
+ a| 
+RDTE
+ a| 
+Estado do Tivoli Storage Manager
+ a| 
+Aviso
+
+
+
+ a| 
+RDTU
+ a| 
+Status do Tivoli Storage Manager
+ a| 
+Maior
+
+
+
+ a| 
+SAVP
+ a| 
+Espaço utilizável total (percentagem)
+ a| 
+Aviso
+
+
+
+ a| 
+SHLH
+ a| 
+Saúde
+ a| 
+Aviso
+
+
+
+ a| 
+SLSA
+ a| 
+Média de carga da CPU
+ a| 
+Aviso
+
+
+
+ a| 
+SMTT
+ a| 
+Total de eventos
+ a| 
+Aviso
+
+
+
+ a| 
+SNST
+ a| 
+Estado
+ a| 
+
+
+
+ a| 
+SOSS
+ a| 
+Estado do sistema operativo de armazenamento
+ a| 
+Aviso
+
+
+
+ a| 
+SSTS
+ a| 
+Estado de armazenamento
+ a| 
+Aviso
+
+
+
+ a| 
+SVST
+ a| 
+Estado
+ a| 
+Aviso
+
+
+
+ a| 
+TMEM
+ a| 
+Memória instalada
+ a| 
+Menor
+
+
+
+ a| 
+UMEM
+ a| 
+Memória disponível
+ a| 
+Menor
+
+
+
+ a| 
+VMST
+ a| 
+Estado
+ a| 
+Menor
+
+
+
+ a| 
+VPRI
+ a| 
+Prioridade de verificação
+ a| 
+Aviso
+
+
+
+ a| 
+VSTU
+ a| 
+Estado Verificação Objeto
+ a| 
+Aviso
+
+|===

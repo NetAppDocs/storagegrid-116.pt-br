@@ -1,0 +1,60 @@
+---
+permalink: ilm/what-ilm-policy-is.html 
+sidebar: sidebar 
+keywords: what is information lifecycle management policy, ilm policy 
+summary: Uma política de gerenciamento de ciclo de vida de informações é um conjunto ordenado de regras ILM que determina como o sistema StorageGRID gerencia dados de objetos ao longo do tempo. 
+---
+= O que é uma política ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Uma política de gerenciamento de ciclo de vida das informações (ILM) é um conjunto ordenado de regras ILM que determina como o sistema StorageGRID gerencia os dados de objetos ao longo do tempo.
+
+
+
+== Como uma política ILM avalia objetos?
+
+A política de ILM ativa do seu sistema StorageGRID controla o posicionamento, a duração e a proteção de dados de todos os objetos.
+
+Quando os clientes salvam objetos no StorageGRID, os objetos são avaliados em relação ao conjunto ordenado de regras ILM na política ativa, da seguinte forma:
+
+. Se os filtros da primeira regra na política corresponderem a um objeto, o objeto será ingerido de acordo com o comportamento de ingestão dessa regra e armazenado de acordo com as instruções de colocação dessa regra.
+. Se os filtros da primeira regra não corresponderem ao objeto, o objeto será avaliado em relação a cada regra subsequente na política até que uma correspondência seja feita.
+. Se nenhuma regra corresponder a um objeto, as instruções de comportamento de ingestão e posicionamento da regra padrão na política serão aplicadas. A regra padrão é a última regra de uma política. A regra padrão deve ser aplicada a todos os locatários, todos os buckets e todas as versões de objetos e não pode usar nenhum filtro avançado.
+
+
+
+
+== Exemplo de política ILM
+
+Este exemplo de política ILM usa três regras ILM.
+
+image::../media/policy_for_two_tenants.png[Exemplo de política para dois inquilinos]
+
+Neste exemplo, a regra 1 corresponde a todos os objetos pertencentes ao locatário A. esses objetos são armazenados como três cópias replicadas em três locais. Os objetos pertencentes a outros inquilinos não são correspondidos pela regra 1, por isso são avaliados em relação à regra 2.
+
+A regra 2 corresponde a todos os objetos de outros inquilinos, mas somente se eles forem maiores que 1 MB. Esses objetos maiores são armazenados usando codificação de apagamento 6-3 em três locais. A regra 2 não corresponde a objetos de 1 MB ou menores, portanto, esses objetos são avaliados em relação à regra 3.
+
+A regra 3 é a última regra padrão da política e não usa filtros. A regra 3 faz duas cópias replicadas de todos os objetos não correspondidos pela regra 1 ou pela regra 2 (objetos que não pertencem ao locatário A com 1 MB ou menos).
+
+image::../media/ilm_policy_and_rules.png[Política e regras do ILM]
+
+
+
+== Quais são as políticas propostas, ativas e históricas?
+
+Cada sistema StorageGRID deve ter uma política ILM ativa. Um sistema StorageGRID também pode ter uma política de ILM proposta e qualquer número de políticas históricas.
+
+Ao criar uma política ILM pela primeira vez, você cria uma política proposta selecionando uma ou mais regras ILM e organizando-as em uma ordem específica. Depois de simular a política proposta para confirmar o seu comportamento, ative-a para criar a política ativa.
+
+Quando você ativa uma nova política de ILM, o StorageGRID usa essa política para gerenciar todos os objetos, incluindo objetos existentes e objetos recém-ingeridos. Os objetos existentes podem ser movidos para novos locais quando as regras ILM na nova política são implementadas.
+
+Ativar a política proposta faz com que a política anteriormente ativa se torne uma política histórica. As políticas ILM históricas não podem ser eliminadas.
+
+image::../media/ilm_policies_proposed_active_historical.png[Imagem conceitual para políticas de ILM]
+
+.Informações relacionadas
+xref:creating-ilm-policy.adoc[Crie uma política ILM]

@@ -1,0 +1,169 @@
+---
+permalink: upgrade/obtaining-required-materials-for-software-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, requirements, rhel, red hat, linux, centOS, ubuntu, debian 
+summary: Antes de iniciar a atualização de software, você deve obter todos os materiais necessários para que você possa concluir a atualização com sucesso. 
+---
+= Obtenha os materiais necessários para uma atualização de software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de iniciar a atualização de software, você deve obter todos os materiais necessários para que você possa concluir a atualização com sucesso.
+
+[cols="1a,3a"]
+|===
+| Item | Notas 
+
+
+ a| 
+Ficheiros de atualização do StorageGRID
+ a| 
+<<Transfira os ficheiros de atualização do StorageGRID>> para o seu portátil de serviço.
+
+
+
+ a| 
+Serviço de laptop
+ a| 
+O computador portátil de serviço deve ter:
+
+* Porta de rede
+* Cliente SSH (por exemplo, PuTTY)
+
+
+
+
+ a| 
+xref:../admin/web-browser-requirements.adoc[Navegador da Web suportado]
+ a| 
+O suporte do navegador normalmente muda para cada versão do StorageGRID. Certifique-se de que o seu navegador é compatível com a nova versão do StorageGRID.
+
+
+
+ a| 
+Pacote de recuperação (`.zip`) arquivo
+ a| 
+<<Faça o download do pacote de recuperação>> antes de atualizar, e salve o arquivo em um local seguro. O arquivo do Pacote de recuperação permite restaurar o sistema se ocorrer uma falha.
+
+
+
+ a| 
+`Passwords.txt` ficheiro
+ a| 
+Este arquivo está incluído no REFERIDO pacote, que faz parte do arquivo do Pacote de recuperação `.zip`. Você deve obter a versão mais recente do Pacote de recuperação.
+
+
+
+ a| 
+Frase-passe do aprovisionamento
+ a| 
+A frase-passe é criada e documentada quando o sistema StorageGRID é instalado pela primeira vez. A senha de provisionamento não está listada no `Passwords.txt` arquivo.
+
+
+
+ a| 
+Documentação relacionada
+ a| 
+* xref:../release-notes/index.adoc[Notas de lançamento] Para StorageGRID 11,6. Certifique-se de lê-las cuidadosamente antes de iniciar a atualização.
+* Instruções para xref:../admin/index.adoc[Administrando o StorageGRID].
+* Se você estiver atualizando uma implantação Linux, as instruções de instalação do StorageGRID para sua plataforma Linux:
++
+** xref:../rhel/index.adoc[Instale o Red Hat Enterprise Linux ou CentOS]
+** xref:../ubuntu/index.adoc[Instale Ubuntu ou Debian]
+
+
+* Outra documentação do StorageGRID, conforme necessário.
+
+
+|===
+
+
+== Transfira os ficheiros de atualização do StorageGRID
+
+Você deve baixar um ou mais arquivos, dependendo de onde seus nós estão instalados.
+
+* *Todas as plataformas*: `.upgrade` Arquivo
+
+
+Se algum nó for implantado em hosts Linux, você também deve baixar um arquivo RPM ou DEB, que será instalado antes de iniciar a atualização:
+
+* *Red Hat Enterprise Linux ou CentOS*: Um arquivo RPM adicional (`.zip`ou `.tgz`)
+* * Ubuntu ou Debian*: Um arquivo DEB adicional (`.zip`ou `.tgz`)
+
+
+.Passos
+. Vá para https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp Downloads: StorageGRID"^].
+. Selecione o botão para baixar a versão mais recente ou selecione outra versão no menu suspenso e selecione *Go*.
++
+As versões do software StorageGRID têm este formato: 11._x.y_. Os hotfixes do StorageGRID têm este formato: 11._x.y.z_.
+
+. Inicie sessão com o nome de utilizador e a palavra-passe da sua conta NetApp.
+. Se aparecer uma instrução Caution/MustRead, leia-a e marque a caixa de seleção.
++
+Esta instrução aparece se houver um hotfix necessário para a versão.
+
+. Leia o Contrato de Licença de Usuário final, marque a caixa de seleção e selecione *aceitar e continuar*.
++
+É apresentada a página de transferências para a versão selecionada. A página contém três colunas:
+
++
+** Instale o StorageGRID
+** Atualize o StorageGRID
+** Arquivos de suporte para dispositivos StorageGRID
+
+
+. Na coluna *Upgrade StorageGRID*, selecione e baixe o `.upgrade` arquivo.
++
+Cada plataforma requer o `.upgrade` arquivo.
+
+. Se algum nó for implantado em hosts Linux, baixe também o arquivo RPM ou DEB em qualquer `.tgz` formato ou `.zip`. Selecione o `.zip` ficheiro se estiver a executar o Windows no computador portátil de serviço.
++
+** Red Hat Enterprise Linux ou CentOS
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip`
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
+** Ubuntu ou Debian
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip`
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
++
+
+NOTE: Não são necessários ficheiros adicionais para o SG100 ou SG1000.
+
+
+
+
+
+
+
+== Faça o download do pacote de recuperação
+
+O arquivo do pacote de recuperação permite restaurar o sistema StorageGRID se ocorrer uma falha. Faça o download do arquivo atual do Pacote de recuperação antes de fazer alterações na topologia da grade no sistema StorageGRID ou antes de atualizar o software. Em seguida, faça o download de uma nova cópia do Pacote de recuperação após fazer alterações na topologia da grade ou após atualizar o software.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve ter a senha de provisionamento.
+* Você deve ter permissões de acesso específicas.
+
+
+.Passos
+. Selecione *Manutenção* *sistema* *Pacote de recuperação*.
+. Digite a senha de provisionamento e selecione *Iniciar download*.
++
+O download começa imediatamente.
+
+. Quando o download for concluído:
++
+.. Abra o `.zip` ficheiro.
+.. Confirme que inclui um `gpt-backup` diretório e um arquivo interno `.zip`.
+.. Extraia o arquivo interno `.zip`.
+.. Confirme que você pode abrir o `Passwords.txt` arquivo.
+
+
+. Copie o arquivo do pacote de recuperação baixado (`.zip`) para dois locais seguros, seguros e separados.
++
+
+IMPORTANT: O arquivo do pacote de recuperação deve ser protegido porque contém chaves de criptografia e senhas que podem ser usadas para obter dados do sistema StorageGRID.
+
+

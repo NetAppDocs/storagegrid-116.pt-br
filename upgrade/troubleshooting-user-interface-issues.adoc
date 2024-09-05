@@ -1,0 +1,33 @@
+---
+permalink: upgrade/troubleshooting-user-interface-issues.html 
+sidebar: sidebar 
+keywords: grid manager, tenant manager, error, browser 
+summary: Você pode ver problemas com o Gerenciador de Grade ou o Gerenciador do Locatário após atualizar para uma nova versão do software StorageGRID. 
+---
+= Solucionar problemas de interface do usuário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode ver problemas com o Gerenciador de Grade ou o Gerenciador do Locatário após atualizar para uma nova versão do software StorageGRID.
+
+
+
+== A interface Web não responde como esperado
+
+O Gerenciador de Grade ou o Gerente do Locatário podem não responder como esperado depois que o software StorageGRID for atualizado.
+
+Se você tiver problemas com a interface da Web:
+
+* Certifique-se de que está a utilizar um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
++
+
+NOTE: O suporte do navegador normalmente muda para cada versão do StorageGRID.
+
+* Limpe o cache do navegador da Web.
++
+Limpar o cache remove recursos desatualizados usados pela versão anterior do software StorageGRID e permite que a interface do usuário funcione corretamente novamente. Para obter instruções, consulte a documentação do navegador da Web.
+
+

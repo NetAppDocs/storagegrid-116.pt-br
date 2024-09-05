@@ -1,0 +1,83 @@
+---
+permalink: expand/configuring-expanded-storagegrid-system.html 
+sidebar: sidebar 
+keywords: expansion, configuration 
+summary: Depois de concluir uma expansão, você deve executar etapas adicionais de integração e configuração. 
+---
+= Etapas de configuração após a expansão
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de concluir uma expansão, você deve executar etapas adicionais de integração e configuração.
+
+.Sobre esta tarefa
+Você deve concluir as tarefas de configuração listadas abaixo para os nós de grade que você está adicionando em sua expansão. Algumas tarefas podem ser opcionais, dependendo das opções selecionadas durante a instalação e administração do sistema, e como você deseja configurar os nós de grade adicionados durante a expansão.
+
+.Passos
+. Se você adicionou um nó de storage, execute as seguintes tarefas de configuração:
++
+.. Revise os pools de armazenamento usados em suas regras de ILM para garantir que o novo armazenamento será usado. xref:../ilm/index.adoc[Gerenciar objetos com ILM]Consulte .
++
+*** Se você adicionou um site, crie um pool de armazenamento para o site e atualize as regras do ILM para usar o novo pool de armazenamento.
+*** Se você adicionou um nó de armazenamento a um site existente, confirme se o novo nó usa o grau de armazenamento correto.
++
+
+NOTE: Por padrão, um novo nó de storage é atribuído ao nível de storage de todos os nós de storage e adicionado a pools de storage que usam esse nível para o site. Se você quiser que um novo nó use um grau de armazenamento personalizado, você deve atribuí-lo manualmente ao grau personalizado (*ILM* > *graus de armazenamento*).
+
+
+
+.. Verifique se o nó de armazenamento está ingerindo objetos. xref:verifying-storage-node-is-active.adoc[Verifique se o nó de storage está ativo]Consulte .
+.. Rebalancear os dados codificados por apagamento (somente se você não conseguir adicionar o número recomendado de nós de storage). xref:rebalancing-erasure-coded-data-after-adding-storage-nodes.adoc[Rebalancear os dados codificados por apagamento após adicionar nós de storage]Consulte .
+
+
+. Se você adicionou um nó de gateway, execute a seguinte tarefa de configuração:
++
+** Se os grupos de alta disponibilidade (HA) forem usados para conexões de cliente, adicione opcionalmente o nó de gateway a um grupo de HA. Selecione *CONFIGURATION* > *Network* > *High Availability Groups* para rever a lista de grupos de HA existentes e adicionar o novo nó. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+
+
+. Se você adicionou um nó Admin, execute as seguintes tarefas de configuração:
++
+.. Se o logon único (SSO) estiver ativado para o seu sistema StorageGRID, crie uma confiança de parte confiável para o novo nó de administração. Você não pode entrar no nó até criar essa confiança de parte confiável. xref:../admin/configuring-sso.adoc[Configurar o logon único]Consulte .
+.. Se você planeja usar o serviço Load Balancer em nós de administração, adicione opcionalmente o novo nó de administração a um grupo de HA. Selecione *CONFIGURATION* > *Network* > *High Availability Groups* para rever a lista de grupos de HA existentes e adicionar o novo nó. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+.. Opcionalmente, copie o banco de dados do nó Admin do nó Admin principal para o nó Admin de expansão se quiser manter as informações de atributo e auditoria consistentes em cada nó Admin. xref:copying-admin-node-database.adoc[Copie o banco de dados Admin Node]Consulte .
+.. Opcionalmente, copie o banco de dados Prometheus do nó Admin primário para o nó Admin de expansão se quiser manter as métricas históricas consistentes em cada nó Admin. xref:copying-prometheus-metrics.adoc[Copiar métricas Prometheus]Consulte .
+.. Opcionalmente, copie os logs de auditoria existentes do nó de administração principal para o nó de administração de expansão se quiser manter as informações de log histórico consistentes em cada nó de administração. xref:copying-audit-logs.adoc[Copiar registos de auditoria]Consulte .
+.. Opcionalmente, configure o acesso ao sistema para fins de auditoria por meio de um compartilhamento de arquivos NFS ou CIFS. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
++
+
+NOTE: A exportação de auditoria por meio do CIFS/Samba foi obsoleta e será removida em uma futura versão do StorageGRID.
+
+.. Opcionalmente, altere o remetente preferido para notificações. Você pode tornar o nó de administração de expansão o remetente preferido. Caso contrário, um nó de administração existente configurado como o remetente preferido continua a enviar notificações, incluindo mensagens AutoSupport, notificações SNMP, e-mails de alerta e e-mails de alarme (sistema legado). xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+
+
+. Se tiver adicionado um nó de arquivo, conclua as seguintes tarefas de configuração.
++
+.. Configure a ligação do nó de arquivo ao sistema de armazenamento de arquivo externo de destino. Quando você conclui a expansão, os nós de arquivo estão em um estado de alarme até que você configure as informações de conexão através do componente *ARC* > *Target*. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+.. Atualize a política ILM para arquivar dados de objetos através do novo nó de arquivo. xref:../ilm/index.adoc[Gerenciar objetos com ILM]Consulte .
+.. Configure alarmes personalizados para os atributos usados para monitorar a velocidade e a eficiência da recuperação de dados de objetos a partir de nós de arquivo. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+
+
+. Para verificar se os nós de expansão foram adicionados a uma rede cliente não confiável ou para alterar se a rede cliente de um nó não é confiável ou confiável, vá para *CONFIGURATION* > *Network* > *UnTrusted Client Network*.
++
+Se a rede do cliente no nó de expansão não for confiável, as conexões com o nó na rede do cliente devem ser feitas usando um ponto de extremidade do balanceador de carga. xref:../admin/index.adoc[Administrar o StorageGRID]Consulte .
+
+. Configure o sistema de nomes de domínio (DNS).
++
+Se você tiver especificado as configurações de DNS separadamente para cada nó de grade, você deve adicionar configurações de DNS personalizadas por nó para os novos nós. xref:../maintain/modifying-dns-configuration-for-single-grid-node.adoc[Modifique a configuração DNS para um nó de grade único]Consulte .
+
++
+A melhor prática é que a lista de servidores DNS em toda a grade contenha alguns servidores DNS que são acessíveis localmente a partir de cada site. Se você acabou de adicionar um novo site, adicione novos servidores DNS para o site à configuração DNS em toda a grade.
+
++
+
+IMPORTANT: Forneça dois a seis endereços IPv4 para servidores DNS. Você deve selecionar servidores DNS que cada site pode acessar localmente no caso de rede ser aterrissada. Isso é para garantir que um site islanded continua a ter acesso ao serviço DNS. Depois de configurar a lista de servidores DNS em toda a grade, você pode personalizar ainda mais a lista de servidores DNS para cada nó. Para obter detalhes, xref:../maintain/modifying-dns-configuration-for-single-grid-node.adoc[Modifique a configuração DNS para um nó de grade único]consulte ..
+
+. Se você adicionou um novo site, confirme se os servidores NTP (Network Time Protocol) estão acessíveis a partir desse site. xref:../maintain/configuring-ntp-servers.adoc[Configurar servidores NTP]Consulte .
++
+
+IMPORTANT: Certifique-se de que pelo menos dois nós em cada local possam acessar pelo menos quatro fontes NTP externas. Se apenas um nó em um local puder alcançar as fontes NTP, problemas de tempo ocorrerão se esse nó cair. Além disso, a designação de dois nós por local como fontes primárias de NTP garante um tempo preciso se um local for isolado do resto da grade.
+
+

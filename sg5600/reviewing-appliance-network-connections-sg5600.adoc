@@ -1,0 +1,129 @@
+---
+permalink: sg5600/reviewing-appliance-network-connections-sg5600.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, network connections, network connection, network, connection, grid, admin, client, management, SANtricity System Manager, SANtricity 
+summary: Antes de instalar o dispositivo StorageGRID, você deve entender quais redes podem ser conetadas ao dispositivo e como as portas em cada controlador são usadas. 
+---
+= Revisão de conexões de rede de dispositivos (SG5600)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o dispositivo StorageGRID, você deve entender quais redes podem ser conetadas ao dispositivo e como as portas em cada controlador são usadas.
+
+
+
+== Redes de dispositivos StorageGRID
+
+Ao implantar um dispositivo StorageGRID como nó de armazenamento, você pode conectá-lo às seguintes redes:
+
+* *Rede de grade para StorageGRID*: A rede de grade é usada para todo o tráfego interno de StorageGRID. Ele fornece conetividade entre todos os nós na grade, em todos os sites e sub-redes. A rede de Grade é necessária.
+* *Rede de administração para StorageGRID*: A rede de administração é uma rede fechada usada para administração e manutenção do sistema. A rede Admin é normalmente uma rede privada e não precisa ser roteável entre sites. A rede de administração é opcional.
+* *Rede de clientes para StorageGRID*: A rede de clientes é uma rede aberta usada para fornecer acesso a aplicativos clientes, incluindo S3 e Swift. A rede do cliente fornece acesso ao protocolo do cliente à grade, de modo que a rede da grade possa ser isolada e protegida. A rede do cliente é opcional.
+* *Rede de gerenciamento para SANtricity Storage Manager* (opcional): O controlador E2700 se coneta à rede de gerenciamento onde o SANtricity Storage Manager está instalado, permitindo que você monitore e gerencie os componentes de hardware do dispositivo. Essa rede de gerenciamento pode ser a mesma rede de administração para StorageGRID ou pode ser uma rede de gerenciamento independente.
++
+Se a rede SANtricity Storage Manager opcional não estiver conetada, talvez você não consiga usar alguns recursos do SANtricity.
+
+
+
+
+NOTE: Para obter informações detalhadas sobre redes StorageGRID, consulte _Primer_.
+
+
+
+== Conexões de dispositivos StorageGRID
+
+Ao instalar um dispositivo StorageGRID, você deve conetar os dois controladores entre si e às redes necessárias. A figura mostra os dois controladores no SG5660, com o controlador E2700 na parte superior e o controlador E5600SG na parte inferior. No SG5612, o controlador E2700 está à esquerda do controlador E5600SG.
+
+image::../media/cabling_diagram.gif[Vista traseira de SG5660 mostrando conexões]
+
+|===
+| Item | Porta | Tipo de porta | Função 
+
+
+ a| 
+1
+ a| 
+Porta de gerenciamento 1 no controlador E2700
+ a| 
+Ethernet de 1 GB (RJ-45)
+ a| 
+Liga o controlador E2700 à rede onde o SANtricity Storage Manager está instalado.
+
+
+
+ a| 
+2
+ a| 
+Porta de gerenciamento 2 no controlador E2700
+ a| 
+Ethernet de 1 GB (RJ-45)
+ a| 
+Liga o controlador E2700 a um computador portátil de serviço durante a instalação.
+
+
+
+ a| 
+3
+ a| 
+Duas portas de interconexão SAS em cada controlador, identificadas como Ch 1 e Ch 2
+ a| 
+Controlador E2700: Mini-SAS-HD
+
+Controlador E5600SG: Mini-SAS
+ a| 
+Conete os dois controladores um ao outro.
+
+
+
+ a| 
+4
+ a| 
+Porta de gerenciamento 1 no controlador E5600SG
+ a| 
+Ethernet de 1 GB (RJ-45)
+ a| 
+Liga o controlador E5600SG à rede de administração para StorageGRID.
+
+
+
+ a| 
+5
+ a| 
+Porta de gerenciamento 2 no controlador E5600SG
+ a| 
+Ethernet de 1 GB (RJ-45)
+ a| 
+* Pode ser ligado com a porta de gerenciamento 1 se você quiser uma conexão redundante com a rede de administração.
+* Pode ser deixado sem fios e disponível para acesso local temporário (IP 169.254.0.1).
+* Pode ser usado para conetar o controlador E5600SG a um laptop de serviço durante a instalação, se um endereço IP atribuído pelo DHCP não estiver disponível.
+
+
+
+
+ a| 
+6
+ a| 
+Quatro portas de rede no controlador E5600SG
+ a| 
+10 GbE (ótico)
+ a| 
+Conete-se à rede de grade e à rede de cliente para StorageGRID. Consulte ""conexões de porta de 10 GbE para o controlador E5600SG."
+
+|===
+.Informações relacionadas
+xref:port-bond-modes-for-e5600sg-controller-ports.adoc[Modos de ligação de porta para as portas do controlador E5600SG]
+
+xref:gathering-installation-information-sg5600.adoc[Reunir informações de instalação (SG5600)]
+
+xref:cabling-appliance-sg5600.adoc[Aparelho de cabo (SG5600)]
+
+xref:../network/index.adoc[Diretrizes de rede]
+
+xref:../vmware/index.adoc[Instale o VMware]
+
+xref:../rhel/index.adoc[Instale o Red Hat Enterprise Linux ou CentOS]
+
+xref:../ubuntu/index.adoc[Instale Ubuntu ou Debian]

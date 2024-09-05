@@ -1,0 +1,90 @@
+---
+permalink: sg6000/viewing-status-indicators-and-buttons-on-sg6000-cn-controller.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, status, indicators, lights, leds, light, led, switch , button, power, reset, identify, alarm, indicator, boot codes, boot, code, start, startup, start up, start-up, progress, sg6000-cn 
+summary: O controlador SG6000-CN inclui indicadores que o ajudam a determinar o estado do controlador, incluindo os seguintes indicadores e botões. 
+---
+= Visualizar indicadores de status e botões no controlador SG6000-CN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O controlador SG6000-CN inclui indicadores que o ajudam a determinar o estado do controlador, incluindo os seguintes indicadores e botões.
+
+image::../media/sg6000_cn_front_indicators.gif[Indicadores dianteiros - SG6000-CN]
+
+[cols="1a,2a,3a"]
+|===
+|  | Visor | Descrição 
+
+
+ a| 
+1
+ a| 
+Botão de alimentação
+ a| 
+* Azul: O controlador está ligado.
+* Desligado: O controlador está desligado.
+
+
+
+
+ a| 
+2
+ a| 
+Botão Reset (Repor)
+ a| 
+_Nenhum indicador_
+
+Utilize este botão para executar uma reinicialização total do controlador.
+
+
+
+ a| 
+3
+ a| 
+Botão identificar
+ a| 
+* Azul intermitente ou contínuo: Identifica o controlador no gabinete ou rack.
+* Desligado: O controlador não é visualmente identificável no gabinete ou rack.
+
+
+Este botão pode ser definido como intermitente, ligado (sólido) ou desligado.
+
+
+
+ a| 
+4
+ a| 
+LED de alarme
+ a| 
+* Âmbar: Ocorreu um erro.
++
+*Nota:* para visualizar os códigos de inicialização e erro, você deve acessar a interface do BMC.
+
+* Desligado: Nenhum erro está presente.
+
+
+|===
+
+
+== Códigos gerais de arranque
+
+Durante a inicialização ou após uma reinicialização forçada do controlador SG6000-CN, ocorre o seguinte:
+
+. O controlador de gerenciamento de placa base (BMC) Registra códigos para a sequência de inicialização, incluindo quaisquer erros que ocorram.
+. O botão liga/desliga acende-se.
+. Se ocorrerem erros durante a inicialização, o LED de alarme acende-se.
++
+Para exibir os códigos de inicialização e erro, você deve acessar a interface do BMC.
+
+
+
+.Informações relacionadas
+xref:troubleshooting-hardware-installation.adoc[Solução de problemas de instalação de hardware (SG6000)]
+
+xref:configuring-bmc-interface-sg6000.adoc[Configurar interface BMC (SG6000)]
+
+xref:powering-on-sg6000-cn-controller-and-verifying-operation.adoc[Ligue o controlador SG6000-CN e verifique a operação]

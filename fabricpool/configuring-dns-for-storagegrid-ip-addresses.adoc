@@ -1,0 +1,22 @@
+---
+permalink: fabricpool/configuring-dns-for-storagegrid-ip-addresses.html 
+sidebar: sidebar 
+keywords: fabricPool, DNS, domain name system, FQDN, fully qualified domain name, IP address, VIP 
+summary: 'Depois de configurar grupos de alta disponibilidade e pontos de extremidade do balanceador de carga, você deve garantir que o sistema de nomes de domínio (DNS) do sistema ONTAP inclua um Registro para associar o nome do servidor StorageGRID (nome de domínio totalmente qualificado) ao endereço IP que o FabricPool usará para fazer conexões.' 
+---
+= Configure o servidor DNS para endereços IP StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de configurar grupos de alta disponibilidade e pontos de extremidade do balanceador de carga, você deve garantir que o sistema de nomes de domínio (DNS) do sistema ONTAP inclua um Registro para associar o nome do servidor StorageGRID (nome de domínio totalmente qualificado) ao endereço IP que o FabricPool usará para fazer conexões.
+
+O endereço IP inserido no Registro DNS depende se você está usando um grupo HA de nós de balanceamento de carga:
+
+* Se você tiver configurado um grupo de HA, o FabricPool se conetará aos endereços IP virtuais desse grupo de HA.
+* Se você não estiver usando um grupo de HA, o FabricPool poderá se conetar ao serviço do balanceador de carga do StorageGRID usando o endereço IP de qualquer nó de gateway ou nó de administrador.
+
+
+Você também deve garantir que o Registro DNS faça referência a todos os nomes de domínio de endpoint necessários, incluindo quaisquer nomes de curinga.

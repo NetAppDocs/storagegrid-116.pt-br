@@ -1,0 +1,119 @@
+---
+permalink: sg6000/installation-and-deployment-overview.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, Installation, deployment, Install, deploy, Installing, deploying 
+summary: Você pode instalar um ou mais dispositivos de storage do StorageGRID quando implantar o StorageGRID pela primeira vez ou adicionar nós de storage do dispositivo posteriormente como parte de uma expansão. Você também pode precisar instalar um nó de armazenamento de dispositivos como parte de uma operação de recuperação. 
+---
+= Visão geral da instalação e implantação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode instalar um ou mais dispositivos de storage do StorageGRID quando implantar o StorageGRID pela primeira vez ou adicionar nós de storage do dispositivo posteriormente como parte de uma expansão. Você também pode precisar instalar um nó de armazenamento de dispositivos como parte de uma operação de recuperação.
+
+.O que você vai precisar
+O seu sistema StorageGRID está a utilizar a versão necessária do software StorageGRID.
+
+|===
+| Aparelho | Versão StorageGRID necessária 
+
+
+ a| 
+SG6060 e SG6060X sem gavetas de expansão
+ a| 
+11.1.1 ou posterior
+
+
+
+ a| 
+SG6060 e SG6060X com compartimentos de expansão (uma ou duas)
+ a| 
+11,3 ou posterior
+
+*Observação:* se você adicionar compartimentos de expansão após a implantação inicial, use a versão 11,4 ou posterior.
+
+
+
+ a| 
+SGF6024
+ a| 
+11,3 ou posterior
+
+|===
+
+
+== Tarefas de instalação e implantação
+
+Adicionar um dispositivo de storage StorageGRID a um sistema StorageGRID inclui quatro etapas principais:
+
+. Preparação para a instalação:
++
+** Preparar o local de instalação
+** Desembalar as caixas e verificar o conteúdo
+** Obtenção de equipamentos e ferramentas adicionais
+** Recolha de endereços IP e informações de rede
+** Opcional: Configurando um servidor de gerenciamento de chaves externo (KMS) se você planeja criptografar todos os dados do dispositivo. Consulte detalhes sobre o gerenciamento de chaves externas nas instruções de administração do StorageGRID.
+
+
+. Instalar o hardware:
++
+** Registar o hardware
+** Instalar o aparelho num armário ou num rack
+** Instalar as unidades
+** Instalação das gavetas de expansão opcionais (somente modelos SG6060 e SG6060X; máximo de duas gavetas de expansão)
+** Fazer o cabeamento do dispositivo
+** Conexão dos cabos de energia e alimentação
+** Exibindo códigos de status de inicialização
+
+
+. Configurar o hardware:
++
+** Acessando o Gerenciador do sistema do SANtricity para configurar as configurações do Gerenciador do sistema do SANtricity
+** Acessando o Instalador de dispositivos StorageGRID, definindo um endereço IP estático para a porta de gerenciamento 1 no controlador de armazenamento e configurando as configurações de IP de rede e link necessárias para se conetar a redes StorageGRID
+** Aceder à interface do controlador de gestão de base (BMC) no controlador SG6000-CN
+** Opcional: Habilitando a criptografia de nó se você planeja usar um KMS externo para criptografar dados do dispositivo.
+** Opcional: Alterar o modo RAID.
+
+
+. Implantando o dispositivo como nó de storage:
++
+|===
+| Tarefa | Instruções 
+
+
+ a| 
+Implantando um nó de storage de dispositivos em um novo sistema StorageGRID
+ a| 
+xref:deploying-appliance-storage-node.adoc[Implante o nó de storage do dispositivo]
+
+
+
+ a| 
+Adicionando um nó de storage de dispositivo a um sistema StorageGRID existente
+ a| 
+Instruções para expandir um sistema StorageGRID
+
+
+
+ a| 
+Implantando um nó de storage de dispositivos como parte de uma operação de recuperação de nó de storage
+ a| 
+Instruções para recuperação e manutenção
+
+|===
+
+
+.Informações relacionadas
+xref:preparing-for-installation.adoc[Preparação para instalação (SG6000)]
+
+xref:installing-hardware.adoc[Instalar hardware (SG6000)]
+
+xref:configuring-hardware.adoc[Configurar hardware (SG6000)]
+
+xref:../expand/index.adoc[Expanda sua grade]
+
+xref:../maintain/index.adoc[Recuperar e manter]
+
+xref:../admin/index.adoc[Administrar o StorageGRID]

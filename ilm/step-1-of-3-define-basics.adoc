@@ -1,0 +1,62 @@
+---
+permalink: ilm/step-1-of-3-define-basics.html 
+sidebar: sidebar 
+keywords: ILM rule step 1, define basics 
+summary: O passo 1 do assistente criar regra ILM permite definir os filtros básicos e avançados da regra. 
+---
+= Passo 1 de 3: Defina o básico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A etapa 1 (Definir noções básicas) do assistente criar regra ILM permite definir os filtros básicos e avançados da regra.
+
+.Sobre esta tarefa
+Ao avaliar um objeto em relação a uma regra ILM, o StorageGRID compara os metadados do objeto com os filtros da regra. Se os metadados do objeto corresponderem a todos os filtros, o StorageGRID usará a regra para colocar o objeto. Você pode criar uma regra para aplicar a todos os objetos ou especificar filtros básicos, como uma ou mais contas de locatário ou nomes de bucket, ou filtros avançados, como o tamanho do objeto ou metadados do usuário.
+
+image::../media/ilm_create_ilm_rule_wizard_1.png[Criar regra ILM passo 1 de 3]
+
+.Passos
+. Digite um nome exclusivo para a regra no campo *Nome*.
++
+Tem de introduzir entre 1 e 64 carateres.
+
+. Opcionalmente, insira uma breve descrição para a regra no campo *Description*.
++
+Você deve descrever o propósito ou função da regra para que você possa reconhecer a regra mais tarde.
+
++
+image::../media/ilm_rule_wizard_name_description.gif[Nome e descrição da regra]
+
+. Opcionalmente, selecione uma ou mais contas de inquilino S3 ou Swift às quais esta regra se aplica. Se esta regra se aplicar a todos os inquilinos, deixe este campo em branco.
++
+Se você não tiver a permissão de acesso root ou a permissão Contas do locatário, não poderá selecionar locatários na lista. Em vez disso, insira o ID do locatário ou insira vários IDs como uma cadeia delimitada por vírgulas.
+
+. Opcionalmente, especifique os buckets S3 ou os contentores Swift aos quais esta regra se aplica.
++
+Se *Matches All* estiver selecionado (padrão), a regra se aplica a todos os buckets do S3 ou contentores Swift.
+
+. Opcionalmente, selecione *filtragem avançada* para especificar filtros adicionais.
++
+Se você não configurar a filtragem avançada, a regra se aplica a todos os objetos que correspondem aos filtros básicos.
+
++
+Se esta regra criar cópias codificadas por apagamento, adicione o filtro avançado *Object Size (MB)* e defina-o como *maior que 1*. O filtro de tamanho garante que os objetos com 1 MB ou menos não serão codificados para apagamento.
+
++
+
+IMPORTANT: A codificação de apagamento é mais adequada para objetos com mais de 1 MB. Não use a codificação de apagamento para objetos com menos de 200 KB para evitar a sobrecarga de gerenciamento de fragmentos codificados de apagamento muito pequenos.
+
+. Selecione *seguinte*.
++
+É apresentado o passo 2 (Definir posicionamentos).
+
+
+
+.Informações relacionadas
+* xref:what-ilm-rule-is.adoc[O que é uma regra ILM]
+* xref:using-advanced-filters-in-ilm-rules.adoc[Use filtros avançados nas regras do ILM]
+* xref:step-2-of-3-define-placements.adoc[Passo 2 de 3: Definir posicionamentos]
+

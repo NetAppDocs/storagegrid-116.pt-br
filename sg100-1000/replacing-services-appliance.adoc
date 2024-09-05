@@ -1,0 +1,102 @@
+---
+permalink: sg100-1000/replacing-services-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, Replacing, replace, remove, removing, removal, install, installing, installation 
+summary: Pode ser necessário substituir o aparelho se não estiver a funcionar de forma ideal ou se tiver falhado. 
+---
+= Substitua o dispositivo de serviços
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode ser necessário substituir o aparelho se não estiver a funcionar de forma ideal ou se tiver falhado.
+
+.O que você vai precisar
+* Tem um aparelho de substituição com o mesmo número de peça do aparelho que está a substituir.
+* Tem etiquetas para identificar cada cabo ligado ao aparelho.
+* Você xref:locating-controller-in-data-center.adoc[localizado fisicamente o aparelho]tem .
+* O aparelho foi xref:placing-appliance-into-maintenance-mode.adoc[colocado modo de manutenção].
+
+
+.Sobre esta tarefa
+O nó StorageGRID não estará acessível enquanto você substituir o dispositivo. Se o aparelho estiver a funcionar o suficiente, pode efetuar um encerramento controlado no início deste procedimento.
+
+
+NOTE: Se estiver a substituir o dispositivo antes de instalar o software StorageGRID, poderá não conseguir aceder ao instalador do StorageGRID Appliance imediatamente após concluir este procedimento. Embora você possa acessar o Instalador de dispositivos StorageGRID de outros hosts na mesma sub-rede que o appliance, você não pode acessá-lo de hosts em outras sub-redes. Esta condição deve resolver-se dentro de 15 minutos (quando qualquer entrada de cache ARP para o tempo limite do dispositivo original), ou você pode limpar a condição imediatamente, limpando quaisquer entradas de cache ARP antigas manualmente do roteador ou gateway local.
+
+.Passos
+. Quando o aparelho tiver sido colocado no modo de manutenção, desligue o aparelho.
++
+.. Faça login no nó da grade:
++
+... Introduza o seguinte comando: `ssh admin@_grid_node_IP_`
+... Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+... Digite o seguinte comando para mudar para root: `su -`
+... Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
++
+Quando você estiver conetado como root, o prompt mudará de `$` para `#`.
+
+
+
+.. Desligue o aparelho
+`*shutdown -h now*`
+
+
+. Utilize um de dois métodos para verificar se a alimentação do aparelho está desligada:
++
+** O LED indicador de alimentação na parte frontal do aparelho está apagado.
+** A página Controle de energia da interface BMC indica que o aparelho está desligado.
+
+
+. Se as redes StorageGRID conetadas ao dispositivo usarem servidores DHCP, atualize as configurações de DNS/rede e endereço IP.
++
+.. Localize a etiqueta de endereço MAC na parte frontal do dispositivo e determine o endereço MAC da porta Admin Network.
++
+
+NOTE: O rótulo de endereço MAC lista o endereço MAC da porta de gerenciamento BMC.
+
++
+Para determinar o endereço MAC da porta Admin Network, você deve adicionar *2* ao número hexadecimal na etiqueta. Por exemplo, se o endereço MAC na etiqueta terminar em *09*, o endereço MAC da porta Admin terminaria em *0B*. Se o endereço MAC na etiqueta terminar em *(_y_)FF*, o endereço MAC da porta Admin terminaria em *(_y_(1)01*. Você pode facilmente fazer esse cálculo abrindo o Calculator no Windows, definindo-o para o modo Programador, selecionando Hex, digitando o endereço MAC e, em seguida, digitando * 2 *.
+
+.. Peça ao administrador da rede para associar o DNS/rede e o endereço IP do dispositivo removido com o endereço MAC do dispositivo de substituição.
++
+
+IMPORTANT: Deve certificar-se de que todos os endereços IP do aparelho original foram atualizados antes de ligar a alimentação ao aparelho de substituição. Caso contrário, o dispositivo obterá novos endereços IP DHCP quando inicializa e poderá não conseguir reconetar-se ao StorageGRID. Esta etapa se aplica a todas as redes StorageGRID conetadas ao dispositivo.
+
++
+
+NOTE: Se o dispositivo original tiver utilizado um endereço IP estático, o novo dispositivo irá adotar automaticamente os endereços IP do aparelho que removeu.
+
+
+
+. Retire e substitua o aparelho:
++
+.. Identifique os cabos e, em seguida, desligue os cabos e quaisquer transcetores de rede.
++
+
+IMPORTANT: Para evitar um desempenho degradado, não torça, dobre, aperte ou pise nos cabos.
+
+.. Remova o aparelho com falha do gabinete ou rack.
+.. Transfira as duas fontes de alimentação, oito ventoinhas de arrefecimento e dois SSDs do aparelho com falha para o aparelho de substituição.
++
+Siga as instruções fornecidas para a substituição destes componentes.
+
+.. Instale o aparelho de substituição no gabinete ou rack.
+.. Substitua os cabos e quaisquer transcetores óticos.
+.. Ligue o aparelho e monitorize os LEDs do aparelho e os códigos de arranque.
++
+Use a interface BMC para monitorar o status de inicialização.
+
+
+
+. Confirme se o nó do dispositivo é exibido no Gerenciador de Grade e se nenhum alerta é exibido.
+
+
+.Informações relacionadas
+xref:installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.adoc[Instalar o aparelho em um gabinete ou rack (SG100 e SG1000)]
+
+xref:viewing-status-indicators-on-sg100-and-sg1000-appliances.adoc[Ver indicadores de estado nos aparelhos SG100 e SG1000]
+
+xref:viewing-boot-up-codes-for-appliance-sg100-and-sg1000.adoc[Veja os códigos de inicialização do aparelho]

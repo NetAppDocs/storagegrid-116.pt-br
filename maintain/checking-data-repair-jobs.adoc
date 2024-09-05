@@ -1,0 +1,60 @@
+---
+permalink: maintain/checking-data-repair-jobs.html 
+sidebar: sidebar 
+keywords: storagegrid, data repair 
+summary: Antes de desativar um nó de grade, você deve confirmar que nenhum trabalho de reparo de dados está ativo. Se alguma reparação tiver falhado, tem de as reiniciar e permitir que sejam concluídas antes de executar o procedimento de desativação. 
+---
+= Verifique os trabalhos de reparação de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de desativar um nó de grade, você deve confirmar que nenhum trabalho de reparo de dados está ativo. Se alguma reparação tiver falhado, tem de as reiniciar e permitir que sejam concluídas antes de executar o procedimento de desativação.
+
+Se precisar desativar um nó de armazenamento desconetado, você também concluirá estes passos após a conclusão do procedimento de desativação para garantir que o trabalho de reparo de dados foi concluído com êxito. Você deve garantir que todos os fragmentos codificados de apagamento que estavam no nó removido foram restaurados com sucesso.
+
+Essas etapas se aplicam somente a sistemas que tenham objetos codificados por apagamento.
+
+. Faça login no nó de administração principal:
++
+.. Introduza o seguinte comando: `ssh admin@_grid_node_IP_`
++
+Quando você estiver conetado como root, o prompt mudará de `$` para `#`.
+
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+.. Digite o seguinte comando para mudar para root: `su -`
+.. Introduza a palavra-passe listada no `Passwords.txt` ficheiro.
+
+
+. Verifique se existem reparações em curso: `repair-data show-ec-repair-status`
++
+** Se nunca tiver executado um trabalho de reparação de dados, a saída é `No job found`. Não é necessário reiniciar quaisquer trabalhos de reparação.
+** Se o trabalho de reparação de dados tiver sido executado anteriormente ou estiver em execução atualmente, a saída lista as informações para a reparação. Cada reparação tem um ID de reparação exclusivo. Vá para a próxima etapa.
+
+
++
+[listing]
+----
+root@DC1-ADM1:~ # repair-data show-ec-repair-status
+
+Repair ID Scope Start Time End Time State Est/Affected Bytes Repaired Retry Repair
+===================================================================================
+949283 DC1-S-99-10(Volumes: 1,2) 2016-11-30T15:27:06.9 Success 17359 17359 No
+949292 DC1-S-99-10(Volumes: 1,2) 2016-11-30T15:37:06.9 Failure 17359 0     Yes
+949294 DC1-S-99-10(Volumes: 1,2) 2016-11-30T15:47:06.9 Failure 17359 0     Yes
+949299 DC1-S-99-10(Volumes: 1,2) 2016-11-30T15:57:06.9 Failure 17359 0     Yes
+----
+. Se o Estado para todas as reparações for `Success`, não é necessário reiniciar quaisquer trabalhos de reparação.
+. Se o estado de qualquer reparação for `Failure`, tem de reiniciar a reparação.
++
+.. Obtenha a ID de reparação para a reparação com falha a partir da saída.
+.. Executar o `repair-data start-ec-node-repair` comando.
++
+Utilize a `--repair-id` opção para especificar a ID de reparação. Por exemplo, se você quiser tentar novamente um reparo com a ID de reparo 949292, execute este comando: `repair-data start-ec-node-repair --repair-id 949292`
+
+.. Continuar a acompanhar o estado das reparações de dados CE até que o Estado para todas as reparações seja `Success`de .
+
+
+

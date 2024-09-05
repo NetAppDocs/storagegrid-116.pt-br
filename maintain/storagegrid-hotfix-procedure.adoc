@@ -1,0 +1,16 @@
+---
+permalink: maintain/storagegrid-hotfix-procedure.html 
+sidebar: sidebar 
+keywords: apply hotfix, install hotfix 
+summary: Talvez seja necessário aplicar um hotfix ao seu sistema StorageGRID se problemas com o software forem detetados e resolvidos entre versões de recursos. 
+---
+= Procedimento de correção do StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Talvez seja necessário aplicar um hotfix ao seu sistema StorageGRID se problemas com o software forem detetados e resolvidos entre versões de recursos.
+
+Os hotfixes do StorageGRID contêm alterações de software que são disponibilizadas fora de uma versão de recurso ou patch. As mesmas alterações estão incluídas em uma versão futura. Além disso, cada versão de hotfix contém um roll-up de todos os hotfixes anteriores dentro da versão de recurso ou patch.

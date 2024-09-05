@@ -1,0 +1,67 @@
+---
+permalink: monitor/monitoring-node-connection-states.html 
+sidebar: sidebar 
+keywords: monitor, monitoring node connection states, node connection states 
+summary: Se um ou mais nós forem desconetados da grade, as operações críticas do StorageGRID podem ser afetadas. Você deve monitorar os estados de conexão dos nós e resolver quaisquer problemas imediatamente. 
+---
+= Monitorar os estados de conexão do nó
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se um ou mais nós forem desconetados da grade, as operações críticas do StorageGRID podem ser afetadas. Você deve monitorar os estados de conexão dos nós e resolver quaisquer problemas imediatamente.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+
+
+.Sobre esta tarefa
+Os nós podem ter um de três estados de conexão:
+
+* *Não conetado - desconhecido* image:../media/icon_alarm_blue_unknown.png["ícone de ponto de interrogação azul"]: o nó não está conetado à grade por um motivo desconhecido. Por exemplo, a conexão de rede entre nós foi perdida ou a energia está inativa. O alerta *não é possível se comunicar com o nó* também pode ser acionado. Outros alertas também podem estar ativos. Esta situação requer atenção imediata.
++
+
+NOTE: Um nó pode aparecer como desconhecido durante operações de desligamento gerenciado. Nesses casos, você pode ignorar o estado desconhecido.
+
+* *Não conetado - administrativamente para baixo* image:../media/icon_alarm_gray_administratively_down.png["ícone de marca de interrogação cinzenta"]: o nó não está conetado à grade por um motivo esperado. Por exemplo, o nó, ou serviços no nó, foi desligado graciosamente, o nó está reiniciando ou o software está sendo atualizado. Um ou mais alertas também podem estar ativos.
+* *Conectado* image:../media/icon_alert_green_checkmark.png["ícone alerta verde marca de verificação"]: o nó está conetado à grade.
+
+
+.Passos
+. Se um ícone azul ou cinza aparecer no painel Saúde do Painel, clique no ícone ou clique em *Detalhes da grade*. (Os ícones azul ou cinza e o link *Detalhes da grade* aparecem somente se pelo menos um nó estiver desconetado da grade.)
++
+A página Visão geral do primeiro nó azul na árvore de nós é exibida. Se não houver nós azuis, a página Visão geral do primeiro nó cinza na árvore será exibida.
+
++
+No exemplo, o nó de armazenamento chamado DC1-S3 tem um ícone azul. O *Estado da conexão* no painel informações do nó é *desconhecido* e o alerta *não é possível se comunicar com o nó* está ativo. O alerta indica que um ou mais serviços não respondem ou que o nó não pode ser alcançado.
+
++
+image::../media/node_connection_state_blue.png[Estado ligação nó Azul]
+
+. Se um nó tiver um ícone azul, siga estas etapas:
++
+.. Selecione cada alerta na tabela e siga as ações recomendadas.
++
+Por exemplo, talvez seja necessário reiniciar um serviço que tenha parado ou reiniciado o host para o nó.
+
+.. Se você não conseguir colocar o nó novamente on-line, entre em Contato com o suporte técnico.
+
+
+. Se um nó tiver um ícone cinza, siga estas etapas:
++
+Os nós cinzentos são esperados durante os procedimentos de manutenção e podem estar associados a um ou mais alertas. Com base na questão subjacente, esses nós "administrativamente para baixo" geralmente voltam online sem nenhuma intervenção.
+
++
+.. Revise a seção Alertas e determine se algum alerta está afetando esse nó.
+.. Se um ou mais alertas estiverem ativos, selecione cada alerta na tabela e siga as ações recomendadas.
+.. Se você não conseguir colocar o nó novamente on-line, entre em Contato com o suporte técnico.
+
+
+
+
+.Informações relacionadas
+xref:alerts-reference.adoc[Referência de alertas]
+
+xref:../maintain/index.adoc[Recuperar e manter]

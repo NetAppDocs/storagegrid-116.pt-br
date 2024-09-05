@@ -1,0 +1,72 @@
+---
+permalink: admin/grid-management-api-operations.html 
+sidebar: sidebar 
+keywords: Grid Management API,  API operations 
+summary: A API Grid Management organiza as operações de API disponíveis nas seções a seguir. 
+---
+= Operações da API Grid Management
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A API Grid Management organiza as operações disponíveis nas seções a seguir.
+
+
+NOTE: Esta lista inclui apenas as operações disponíveis na API pública.
+
+* * Contas* -- operações para gerenciar contas de inquilinos de armazenamento, incluindo a criação de novas contas e recuperação de uso de armazenamento para uma determinada conta.
+* *Alarms* -- operações para listar alarmes atuais (sistema legado) e retornar informações sobre a integridade da grade, incluindo os alertas atuais e um resumo dos estados de conexão do nó.
+* *Alert-history* -- operações em alertas resolvidos.
+* *Alert-receivers* -- operações em recetores de notificação de alerta (e-mail).
+* *Alert-rules* -- operações em regras de alerta.
+* *Alert-silences* -- operações em silêncios de alerta.
+* *Alertas* -- operações em alertas.
+* *Audit* -- operações para listar e atualizar a configuração da auditoria.
+* *Auth* -- operações para realizar autenticação de sessão do usuário.
++
+A API de gerenciamento de grade suporta o esquema de autenticação de token do portador. Para fazer login, você fornece um nome de usuário e senha no corpo JSON da solicitação de autenticação (ou seja, `POST /api/v3/authorize` ). Se o usuário for autenticado com êxito, um token de segurança será retornado. Esse token deve ser fornecido no cabeçalho de solicitações de API subsequentes ("autorização: Portador _token_").
+
++
+
+NOTE: Se o logon único estiver ativado para o sistema StorageGRID, você deverá executar etapas diferentes para autenticar. Consulte "'autenticar na API se o logon único estiver ativado.'"
+
++
+Consulte ""proteção contra falsificação de solicitação entre sites"" para obter informações sobre como melhorar a segurança de autenticação.
+
+* *Certificados de cliente* -- operações para configurar certificados de cliente para que o StorageGRID possa ser acessado com segurança usando ferramentas de monitoramento externas.
+* *Config* -- operações relacionadas à versão do produto e versões da API Grid Management. Você pode listar a versão de lançamento do produto e as principais versões da API de Gerenciamento de Grade suportadas por essa versão, e você pode desativar versões obsoletas da API.
+* *Disabled-features* -- operações para visualizar recursos que podem ter sido desativados.
+* *dns-serviders* -- operações para listar e alterar servidores DNS externos configurados.
+* *Endpoint-domain-nanos* -- operações para listar e alterar nomes de domínio de endpoint.
+* *Codificação de apagamento* -- operações em perfis de codificação de apagamento.
+* *Expansão* -- operações de expansão (nível de procedimento).
+* *Expansion-nonos* -- operações em expansão (nível de nó).
+* *Expansão-sites* -- operações em expansão (nível do site).
+* *Grid-networks* -- operações para listar e alterar a Grid Network List.
+* * Grid-passwords* -- operações para gerenciamento de senhas de grade.
+* *Groups* -- operações para gerenciar grupos de Administrador de Grade local e recuperar grupos de Administrador de Grade federados de um servidor LDAP externo.
+* *Identity-source* -- operações para configurar uma fonte de identidade externa e sincronizar manualmente informações de grupo federado e de usuário.
+* *ilm* -- operações de gerenciamento do ciclo de vida da informação (ILM).
+* *Licença* -- operações para recuperar e atualizar a licença StorageGRID.
+* *Logs* -- operações para coletar e baixar arquivos de log.
+* *Métricas* -- operações em métricas do StorageGRID, incluindo consultas instantâneas de métricas em um único ponto no tempo e consultas de métricas de intervalo ao longo de um intervalo de tempo. A API Grid Management usa a ferramenta de monitoramento de sistemas Prometheus como fonte de dados de back-end. Para obter informações sobre a construção de consultas Prometheus, consulte o site Prometheus.
++
+
+NOTE: As métricas que ``_private_``incluem em seus nomes são destinadas apenas para uso interno. Essas métricas estão sujeitas a alterações entre as versões do StorageGRID sem aviso prévio.
+
+* * Node-details* -- operações em detalhes do nó.
+* *Node-health* -- operações no status de integridade do nó.
+* *ntp-serviders* -- operações para listar ou atualizar servidores NTP (Network Time Protocol) externos.
+* *Objects* -- operações em objetos e metadados de objetos.
+* *Recovery* -- operações para o procedimento de recuperação.
+* *Recovery-package* -- operações para baixar o Recovery Package.
+* *Regions* -- operações para visualizar e criar regiões.
+* *S3-object-lock* -- operações em configurações globais de bloqueio de objetos S3D.
+* *Server-certificate* -- operações para visualizar e atualizar certificados de servidor do Grid Manager.
+* *snmp* -- operações na configuração SNMP atual.
+* *Traffic-classes* -- operações para políticas de classificação de tráfego.
+* *Não confiável-cliente-rede* -- operações na configuração de rede cliente não confiável.
+* *Usuários* -- operações para visualizar e gerenciar usuários do Grid Manager.
+

@@ -1,0 +1,24 @@
+---
+permalink: expand/adding-storage-capacity-for-replicated-objects.html 
+sidebar: sidebar 
+keywords: replication, replicated, copies, capacity, storage nodes, expand, expansion 
+summary: Se a política de gerenciamento do ciclo de vida das informações da implantação incluir uma regra que crie cópias replicadas de objetos, você deverá considerar quanto storage adicionar e onde adicionar os novos volumes de storage ou nós de storage. 
+---
+= Adicione capacidade de storage para objetos replicados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a política de gerenciamento do ciclo de vida das informações (ILM) da implantação incluir uma regra que crie cópias replicadas de objetos, você deverá considerar quanto storage adicionar e onde adicionar os novos volumes de storage ou nós de storage.
+
+Para obter orientação sobre onde adicionar armazenamento adicional, examine as regras do ILM que criam cópias replicadas. Se as regras do ILM criarem duas ou mais cópias de objetos, Planeje adicionar storage em cada local em que as cópias de objetos forem feitas. Como um exemplo simples, se você tiver uma grade de dois locais e uma regra ILM que crie uma cópia de objeto em cada local, você deve adicionar armazenamento a cada local para aumentar a capacidade geral de objeto da grade. Consulte as instruções para xref:../ilm/index.adoc[gerenciamento de objetos com gerenciamento do ciclo de vida das informações].
+
+Por motivos de desempenho, você deve tentar manter a capacidade de storage e o poder de computação equilibrados em todos os locais. Portanto, para este exemplo, você deve adicionar o mesmo número de nós de storage a cada local ou volumes de storage adicionais em cada local.
+
+Se você tiver uma política de ILM mais complexa que inclua regras que coloquem objetos em locais diferentes com base em critérios como nome do bucket ou regras que alterem os locais do objeto ao longo do tempo, sua análise de onde o armazenamento é necessário para a expansão será semelhante, mas mais complexa.
+
+Traçar a rapidez com que a capacidade geral de armazenamento está sendo consumida pode ajudá-lo a entender quanto armazenamento adicionar na expansão e quando o espaço de armazenamento adicional será necessário. Você pode usar o Gerenciador de Grade para monitorar e mapear a capacidade de armazenamento, conforme descrito nas instruções para xref:../monitor/index.adoc[Monitoramento e solução de problemas do StorageGRID].
+
+Ao Planejar o momento de uma expansão, lembre-se de considerar quanto tempo pode levar para adquirir e instalar armazenamento adicional.

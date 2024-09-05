@@ -1,0 +1,21 @@
+---
+permalink: maintain/hotfix-planning-and-preparation.html 
+sidebar: sidebar 
+keywords: storagegrid, hotfix, prepare for a hotfix, plan for a hotfix 
+summary: Você deve Planejar antes de aplicar um hotfix para garantir uma interrupção mínima ao seu sistema StorageGRID. 
+---
+= Planeje e prepare-se para um hotfix
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve Planejar antes de aplicar um hotfix para garantir uma interrupção mínima ao seu sistema StorageGRID.
+
+.Passos
+* xref:how-your-system-is-affected-when-you-apply-hotfix.adoc[Como seu sistema é afetado quando você aplica um hotfix]
+* xref:obtaining-required-materials-for-hotfix.adoc[Obter os materiais necessários para um hotfix]
+* xref:downloading-hotfix-file.adoc[Transferir o ficheiro de correção]
+* xref:checking-systems-condition-before-applying-hotfix.adoc[Verificar a condição do sistema antes de aplicar um hotfix]
+

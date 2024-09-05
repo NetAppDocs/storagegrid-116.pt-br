@@ -1,0 +1,43 @@
+---
+permalink: fabricpool/creating-tenant-account-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, tenant, SSO 
+summary: Você deve criar uma conta de locatário no Gerenciador de Grade para uso do FabricPool. 
+---
+= Crie uma conta de locatário para o FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve criar uma conta de locatário no Gerenciador de Grade para uso do FabricPool.
+
+.O que você vai precisar
+* Você está conetado ao Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você tem permissões de acesso específicas.
+
+
+.Sobre esta tarefa
+As contas de inquilino permitem que aplicativos clientes armazenem e recuperem objetos no StorageGRID. Cada conta de locatário tem seu próprio ID de conta, grupos e usuários autorizados, buckets e objetos.
+
+Você pode usar a mesma conta de locatário para vários clusters do ONTAP. Ou você pode criar uma conta de locatário dedicada para cada cluster do ONTAP, conforme necessário.
+
+
+NOTE: Essas instruções assumem que você configurou logon único (SSO) para o Gerenciador de Grade. Se o SSO não estiver ativado, use xref:../admin/creating-tenant-account.adoc[estas instruções para criar uma conta de locatário] em vez disso.
+
+.Passos
+. Selecione *TENANTS*.
+. Selecione *criar*.
+. Introduza um nome de apresentação e uma descrição.
+. Selecione *S3*.
+. Deixe o campo *cota de armazenamento* em branco.
+. Selecione *permitir serviços de plataforma* para habilitar o uso de serviços de plataforma.
++
+Se os serviços de plataforma estiverem ativados, um locatário poderá usar recursos, como a replicação do CloudMirror, que acessam serviços externos.
+
+. Não selecione *Use a própria fonte de identidade*.
+. Não selecione *Allow S3 Select*.
+. Selecione um grupo federado existente no Gerenciador de Grade para ter a permissão de acesso raiz inicial para o locatário.
+. Selecione *criar inquilino*.
+

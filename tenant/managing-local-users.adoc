@@ -1,0 +1,142 @@
+---
+permalink: tenant/managing-local-users.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant, tenant manager, users, local users, managing local users, users page, access users page, accessing users page 
+summary: 'Você pode criar usuários locais e atribuí-los a grupos locais para determinar quais recursos esses usuários podem acessar. O Gerenciador do Tenant inclui um usuário local predefinido, chamado "root". Embora você possa adicionar e remover usuários locais, não é possível remover o usuário root.' 
+---
+= Gerenciar usuários locais
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criar usuários locais e atribuí-los a grupos locais para determinar quais recursos esses usuários podem acessar. O Gerenciador do Tenant inclui um usuário local predefinido, chamado "root". Embora você possa adicionar e remover usuários locais, não é possível remover o usuário root.
+
+.O que você vai precisar
+* Você deve estar conetado ao Gerenciador do Locatário usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
+* Você deve pertencer a um grupo de usuários de leitura e gravação que tenha a permissão de acesso root. xref:tenant-management-permissions.adoc[Permissões de gerenciamento do locatário]Consulte .
+
+
+
+NOTE: Se o logon único (SSO) estiver habilitado para o seu sistema StorageGRID, os usuários locais não poderão fazer login no Gerenciador do Locatário ou na API de Gerenciamento do Locatário, embora possam usar aplicativos cliente S3 ou Swift para acessar os recursos do locatário, com base nas permissões de grupo.
+
+
+
+== Acesse a página usuários
+
+Selecione *GERENCIAMENTO DE ACESSO* *usuários*.
+
+image::../media/tenant_users_list.png[Lista de usuários do locatário]
+
+
+
+== Crie usuários locais
+
+Você pode criar usuários locais e atribuí-los a um ou mais grupos locais para controlar suas permissões de acesso.
+
+S3 os usuários que não pertencem a nenhum grupo não têm permissões de gerenciamento ou políticas de grupo S3 aplicadas a eles. Esses usuários podem ter acesso ao bucket do S3 concedido por meio de uma política de bucket.
+
+Os usuários Swift que não pertencem a nenhum grupo não têm permissões de gerenciamento ou acesso ao contentor Swift.
+
+.Passos
+. Selecione *criar usuário*.
+. Preencha os campos a seguir.
++
+** *Nome completo*: O nome completo deste usuário, por exemplo, o nome e sobrenome de uma pessoa ou o nome de um aplicativo.
+** *Nome de usuário*: O nome que este usuário usará para entrar. Os nomes de usuário devem ser exclusivos e não podem ser alterados.
+** * Senha*: Uma senha, que é usada quando o usuário entra.
+** *Confirm password*: Digite a mesma senha digitada no campo Senha.
+** *Negar acesso*: Se você selecionar *Sim*, esse usuário não poderá entrar na conta de locatário, mesmo que o usuário ainda possa pertencer a um ou mais grupos.
++
+Como exemplo, você pode usar esse recurso para suspender temporariamente a capacidade de um usuário fazer login.
+
+
+
+. Selecione *continuar*.
+. Atribua o usuário a um ou mais grupos locais.
++
+Os usuários que não pertencem a nenhum grupo não terão permissões de gerenciamento. As permissões são cumulativas. Os usuários terão todas as permissões para todos os grupos aos quais pertencem.
+
+. Selecione *criar usuário*.
++
+As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+
+
+
+
+== Editar detalhes do utilizador
+
+Ao editar os detalhes de um usuário, você pode alterar o nome completo e a senha do usuário, adicionar o usuário a diferentes grupos e impedir que o usuário acesse o locatário.
+
+.Passos
+. Na lista Users (utilizadores), selecione o nome do utilizador cujos detalhes pretende ver ou editar.
++
+Alternativamente, você pode selecionar a caixa de seleção para o usuário e, em seguida, selecionar *ações* *Exibir detalhes do usuário*.
+
+. Faça alterações nas definições do utilizador, conforme necessário.
++
+.. Altere o nome completo do usuário conforme necessário selecionando o nome completo ou o ícone de edição image:../media/icon_edit_tm.png["Ícone de edição"]na seção Visão geral.
++
+Você não pode alterar o nome de usuário.
+
+.. Na guia *Senha*, altere a senha do usuário conforme necessário.
+.. Na guia *Access*, permita que o usuário faça login (selecione *não*) ou impeça que o usuário faça login (selecione *Sim*) conforme necessário.
+.. Na guia *Groups*, adicione o usuário aos grupos ou remova o usuário dos grupos conforme necessário.
+.. Conforme necessário para cada seção, selecione *Salvar alterações*.
++
+As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+
+
+
+
+
+
+== Duplicar usuários locais
+
+Você pode duplicar um usuário local para criar um novo usuário mais rapidamente.
+
+.Passos
+. Na lista usuários, selecione o usuário que deseja duplicar.
+. Selecione *Duplicate user*.
+. Modifique os campos a seguir para o novo usuário.
++
+** *Nome completo*: O nome completo deste usuário, por exemplo, o nome e sobrenome de uma pessoa ou o nome de um aplicativo.
+** *Nome de usuário*: O nome que este usuário usará para entrar. Os nomes de usuário devem ser exclusivos e não podem ser alterados.
+** * Senha*: Uma senha, que é usada quando o usuário entra.
+** *Confirm password*: Digite a mesma senha digitada no campo Senha.
+** *Negar acesso*: Se você selecionar *Sim*, esse usuário não poderá entrar na conta de locatário, mesmo que o usuário ainda possa pertencer a um ou mais grupos.
++
+Como exemplo, você pode usar esse recurso para suspender temporariamente a capacidade de um usuário fazer login.
+
+
+
+. Selecione *continuar*.
+. Selecione um ou mais grupos locais.
++
+Os usuários que não pertencem a nenhum grupo não terão permissões de gerenciamento. As permissões são cumulativas. Os usuários terão todas as permissões para todos os grupos aos quais pertencem.
+
+. Selecione *criar usuário*.
++
+As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+
+
+
+
+== Eliminar utilizadores locais
+
+Você pode excluir permanentemente usuários locais que não precisam mais acessar a conta de locatário do StorageGRID.
+
+Usando o Gerenciador do Locatário, você pode excluir usuários locais, mas não usuários federados. Você deve usar a origem de identidade federada para excluir usuários federados.
+
+.Passos
+. Na lista Users (utilizadores), selecione a caixa de verificação para o utilizador local que pretende eliminar.
+. Selecione *ações* > *Excluir usuário*.
+. Na caixa de diálogo de confirmação, selecione *Excluir usuário* para confirmar que deseja excluir o usuário do sistema.
++
+As alterações podem levar até 15 minutos para entrar em vigor devido ao armazenamento em cache.
+
+

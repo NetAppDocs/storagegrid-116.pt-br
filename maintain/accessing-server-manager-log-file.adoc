@@ -1,0 +1,18 @@
+---
+permalink: maintain/accessing-server-manager-log-file.html 
+sidebar: sidebar 
+keywords: storagegrid, server manager, log file 
+summary: Se surgir um problema ao utilizar o Gestor de servidor, verifique o respetivo ficheiro de registo. 
+---
+= Acesse o arquivo de log do Server Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se surgir um problema ao utilizar o Gestor de servidor, verifique o respetivo ficheiro de registo.
+
+As mensagens de erro relacionadas ao Gestor de servidor são capturadas no ficheiro de registo do Gestor de servidor, que se encontra em: `/var/local/log/servermanager.log`
+
+Verifique este arquivo para ver se há mensagens de erro relacionadas a falhas. Encaminhe o problema para o suporte técnico, se necessário. Poderá ser-lhe pedido que encaminhe ficheiros de registo para o suporte técnico.
