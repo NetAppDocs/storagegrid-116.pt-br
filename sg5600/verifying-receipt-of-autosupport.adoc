@@ -2,7 +2,7 @@
 permalink: sg5600/verifying-receipt-of-autosupport.html 
 sidebar: sidebar 
 keywords: storagegrid, sg5600, storage node, storage appliance, verify, verification, verifying, confirm, confirmation, confirming, autosupport, auto-support, status 
-summary: Você deve verificar se o suporte técnico está recebendo suas mensagens do AutoSupport. Você pode encontrar o status do AutoSupport para seus sistemas no portal do Active IQ. Verificar o recebimento dessas mensagens garante que o suporte técnico tenha suas informações se precisar de assistência. 
+summary: Você deve verificar se o suporte técnico está recebendo suas mensagens do AutoSupport. Você pode encontrar o status do AutoSupport para seus sistemas no portal de consultores digitais. Verificar o recebimento dessas mensagens garante que o suporte técnico tenha suas informações se precisar de assistência. 
 ---
 = Verifique a receção do AutoSupport
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Você deve verificar se o suporte técnico está recebendo suas mensage
 
 
 [role="lead"]
-Você deve verificar se o suporte técnico está recebendo suas mensagens do AutoSupport. Você pode encontrar o status do AutoSupport para seus sistemas no portal do Active IQ. Verificar o recebimento dessas mensagens garante que o suporte técnico tenha suas informações se precisar de assistência.
+Você deve verificar se o suporte técnico está recebendo suas mensagens do AutoSupport. Você pode encontrar o status do AutoSupport para seus sistemas no portal de consultores digitais. Verificar o recebimento dessas mensagens garante que o suporte técnico tenha suas informações se precisar de assistência.
 
 .Sobre esta tarefa
 O AutoSupport pode apresentar um dos seguintes Estados:
@@ -33,7 +33,7 @@ Um status DE REJEIÇÃO significa que você notificou o suporte técnico de que 
 Depois que o suporte técnico recebe um Registro semanal do sistema, o status do AutoSupport muda para ATIVADO.
 
 .Passos
-. Vá para o site de suporte da NetApp em http://mysupport.netapp.com/["mysupport.NetApp.com"^]e entre no portal da Active IQ.
+. Vá para o site de suporte da NetApp em http://mysupport.netapp.com/["mysupport.NetApp.com"^] e entre no portal de consultores digitais.
 . Se o estado do AutoSupport estiver DESLIGADO e acreditar que está incorreto, efetue o seguinte:
 +
 .. Verifique a configuração do sistema para garantir que você ativou o AutoSupport.

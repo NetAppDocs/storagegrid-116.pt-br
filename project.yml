@@ -9,7 +9,18 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
     lipi_enabled: false
-  langs: pt-br,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr,it-it
+  versions:
+  - version-number: '11.6'
+    url: "/storagegrid-116"
+  - version-number: '11.9'
+    url: "/storagegrid"
+  - version-number: '11.8'
+    url: "/storagegrid-118"
+  - version-number: '11.7'
+    url: "/storagegrid-117"
+  - version-number: '11.5'
+    url: "/storagegrid-115"
+  langs: pt-br,us-en,de-de,es-es,fr-fr,it-it,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
   - title: Documentos do StorageGRID 11,6
@@ -51,8 +62,6 @@ sidebar:
     - section: audit
   - title: Ative o StorageGRID
     url: "/storagegrid-enable.html"
-  - title: Outras versões
-    url: "/earlier-versions.html"
   - title: Avisos legais
     url: "/legal-notices.html"
 product-family:
