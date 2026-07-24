@@ -16,6 +16,7 @@ Você pode executar várias tarefas para ajudar a determinar a origem dos proble
 
 
 
+[[troubleshoot-the-low-metadata-storage-alert]]
 == Solucionar problemas do alerta de armazenamento de metadados baixos
 
 Se o alerta *armazenamento de metadados baixo* for acionado, você deverá adicionar novos nós de armazenamento.
@@ -73,6 +74,7 @@ Após a expansão, o StorageGRID redistribui os metadados de objetos existentes 
 
 
 
+[[troubleshoot-the-services-status-cassandra-svst-alarm]]
 == Solucionar problemas do alarme Serviços: Status - Cassandra (SVST)
 
 O alarme Serviços: Status - Cassandra (SVST) indica que você pode precisar reconstruir o banco de dados Cassandra para um nó de armazenamento. O Cassandra é usado como o armazenamento de metadados do StorageGRID.
@@ -182,6 +184,7 @@ Para obter instruções, xref:../maintain/recovering-storage-node-that-has-been-
 
 
 
+[[troubleshoot-cassandra-out-of-memory-errors-smtt-alarm]]
 == Resolução de problemas de erros de memória sem Cassandra (alarme SMTT)
 
 Um alarme de Eventos totais (SMTT) é acionado quando o banco de dados Cassandra tem um erro de memória fora. Se este erro ocorrer, contacte o suporte técnico para resolver o problema.

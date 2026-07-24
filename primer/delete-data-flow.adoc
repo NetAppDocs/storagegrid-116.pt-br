@@ -15,6 +15,7 @@ Todas as cópias de objetos são removidas do sistema StorageGRID quando um clie
 
 
 
+[[deletion-hierarchy]]
 == Hierarquia de exclusão
 
 O StorageGRID fornece vários métodos para controlar quando objetos são retidos ou excluídos. Os objetos podem ser excluídos por solicitação do cliente ou automaticamente. O StorageGRID sempre prioriza quaisquer configurações de bloqueio de objetos S3 sobre solicitações de exclusão do cliente, que são priorizadas sobre o ciclo de vida do bucket S3 e instruções de posicionamento do ILM.
@@ -38,6 +39,7 @@ NOTE: A ação de expiração em um ciclo de vida do bucket do S3 sempre substit
 
 
 
+[[data-flow-for-client-deletes]]
 == Fluxo de dados para exclusões do cliente
 
 image::../media/delete_data_flow.png[Fluxo de dados de eliminação do cliente]
@@ -49,6 +51,7 @@ image::../media/delete_data_flow.png[Fluxo de dados de eliminação do cliente]
 
 
 
+[[data-flow-for-ilm-deletes]]
 == Fluxo de dados para exclusões de ILM
 
 image::../media/automatic_deletion_data_flow.png[Fluxo de dados de exclusão automática]

@@ -17,6 +17,7 @@ Um nó de armazenamento inclui os serviços e processos necessários para armaze
 
 
 
+[[what-is-the-adc-service]]
 == O que é o serviço ADC?
 
 O serviço controlador de domínio administrativo (ADC) autentica os nós de grade e suas conexões entre si. O serviço ADC é hospedado em cada um dos três primeiros nós de storage em um local.
@@ -31,12 +32,14 @@ A conexão de cada nó de grade permite que o serviço ADC colete informações 
 
 
 
+[[what-is-the-dds-service]]
 == O que é o serviço DDS?
 
 Hospedado por um nó de armazenamento, o serviço armazenamento de dados distribuído (DDS) faz interface com o banco de dados Cassandra para executar tarefas em segundo plano nos metadados de objetos armazenados no sistema StorageGRID.
 
 
 
+[[object-counts]]
 === Contagens de objetos
 
 O serviço DDS rastreia o número total de objetos ingeridos no sistema StorageGRID, bem como o número total de objetos ingeridos através de cada uma das interfaces suportadas do sistema (S3 ou Swift).
@@ -47,6 +50,7 @@ image::../media/dds_object_counts_queries.png[Página de visão geral do DDS]
 
 
 
+[[queries]]
 === Consultas
 
 Você pode identificar o tempo médio que leva para executar uma consulta contra o armazenamento de metadados através do serviço DDS específico, o número total de consultas bem-sucedidas e o número total de consultas que falharam devido a um problema de tempo limite.
@@ -59,12 +63,14 @@ Você pode usar a página Diagnósticos para obter informações adicionais sobr
 
 
 
+[[consistency-guarantees-and-controls]]
 === Garantias de consistência e controles
 
 O StorageGRID garante consistência de leitura após gravação para objetos recém-criados. Qualquer operação GET após uma operação PUT concluída com êxito poderá ler os dados recém-gravados. As substituições de objetos existentes, atualizações de metadados e exclusões permanecem, eventualmente, consistentes.
 
 
 
+[[what-is-the-ldr-service]]
 == O que é o serviço LDR?
 
 Hospedado por cada nó de armazenamento, o serviço de roteador de distribuição local (LDR) lida com o transporte de conteúdo para o sistema StorageGRID. O transporte de conteúdo abrange muitas tarefas, incluindo armazenamento de dados, roteamento e manuseio de solicitações. O serviço LDR faz a maior parte do trabalho árduo do sistema StorageGRID, manipulando cargas de transferência de dados e funções de tráfego de dados.
@@ -84,6 +90,7 @@ O serviço LDR também gerencia o mapeamento de objetos S3 e Swift para os "mani
 
 
 
+[[queries]]
 === Consultas
 
 As consultas LDR incluem consultas para localização de objetos durante operações de recuperação e arquivamento. Você pode identificar o tempo médio que leva para executar uma consulta, o número total de consultas bem-sucedidas e o número total de consultas que falharam devido a um problema de tempo limite.
@@ -96,12 +103,14 @@ Você pode usar a página Diagnósticos para obter informações adicionais sobr
 
 
 
+[[ilm-activity]]
 === Atividade ILM
 
 As métricas de gerenciamento do ciclo de vida das informações (ILM) permitem monitorar a taxa na qual os objetos são avaliados para a implementação do ILM. Você pode exibir essas métricas no Dashboard ou em *NODES* > *_Storage Node_* > *ILM*.
 
 
 
+[[object-stores]]
 === Armazenamentos de objetos
 
 O armazenamento de dados subjacente de um serviço LDR é dividido em um número fixo de armazenamentos de objetos (também conhecidos como volumes de armazenamento). Cada armazenamento de objetos é um ponto de montagem separado.
@@ -116,6 +125,7 @@ Para garantir até mesmo o uso de espaço para cópias replicadas, os dados de o
 
 
 
+[[metadata-protection]]
 === Proteção de metadados
 
 Metadados de objeto são informações relacionadas ou uma descrição de um objeto; por exemplo, tempo de modificação de objeto ou local de armazenamento. O StorageGRID armazena metadados de objetos em um banco de dados Cassandra, que faz interface com o serviço LDR.

@@ -18,6 +18,7 @@ Observe o seguinte:
 
 
 
+[[about-the-repair-data-script]]
 == Sobre o `repair-data` script
 
 Para restaurar os dados do objeto, execute o `repair-data` script. Este script inicia o processo de restauração de dados de objeto e trabalha com a digitalização ILM para garantir que as regras ILM sejam atendidas.

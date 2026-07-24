@@ -15,6 +15,7 @@ Os dispositivos StorageGRID SG6060 e SG6060X incluem um controlador de computaç
 
 
 
+[[sg6060-and-sg6060x-components]]
 == Componentes SG6060 e SG6060X
 
 Os aparelhos SG6060 e SG660X incluem os seguintes componentes:
@@ -73,6 +74,7 @@ Cada dispositivo SG6060 e SG6060X pode ter uma ou duas gavetas de expansão para
 |===
 
 
+[[sg6060-and-6060x-diagrams]]
 == Diagramas SG6060D e 6060XD.
 
 As frentes dos anos SG6060 e SG6060X são idênticas. A figura a seguir mostra a frente do SG6060, que inclui uma controladora de computação de 1U TB e uma gaveta de 4U TB contendo duas controladoras de storage e 60 unidades em cinco gavetas de unidades.

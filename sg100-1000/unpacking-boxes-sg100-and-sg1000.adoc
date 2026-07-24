@@ -15,6 +15,7 @@ Antes de instalar o dispositivo StorageGRID, desembale todas as caixas e compare
 
 
 
+[[appliance-hardware]]
 == Hardware do dispositivo
 
 * *SG100 ou SG1000*
@@ -29,6 +30,7 @@ image::../media/rail_kit.gif[Kit de calha]
 
 
 
+[[power-cords]]
 == Cabos de energia
 
 O envio para o dispositivo StorageGRID inclui os seguintes cabos de alimentação:

@@ -15,6 +15,7 @@ A clonagem do nó do dispositivo permite substituir facilmente um nó do disposi
 
 
 
+[[why-clone-an-appliance-node]]
 == Por que clonar um nó de dispositivo?
 
 Você pode clonar um nó de dispositivo se precisar:
@@ -28,6 +29,7 @@ Você pode clonar um nó de dispositivo se precisar:
 
 
 
+[[which-storagegrid-network-is-used]]
 == Que rede StorageGRID é utilizada?
 
 A clonagem transfere dados do nó de origem diretamente para o dispositivo de destino em qualquer uma das três redes StorageGRID. Normalmente, a rede de Grade é utilizada, mas também pode utilizar a rede Admin ou a rede Cliente se o utilitário de origem estiver ligado a estas redes. Escolha a rede a ser usada para clonagem de tráfego que forneça a melhor performance de transferência de dados sem prejudicar a performance da rede StorageGRID ou a disponibilidade de dados.
@@ -36,6 +38,7 @@ Ao instalar o dispositivo de substituição, você deve especificar endereços I
 
 
 
+[[target-appliance-compatibility]]
 == Compatibilidade do dispositivo alvo
 
 Os dispositivos de substituição devem ser do mesmo tipo que o nó de origem que estão substituindo e ambos devem fazer parte do mesmo local lógico do StorageGRID.
@@ -71,6 +74,7 @@ Você pode exibir informações sobre o modo RAID atual do nó do dispositivo de
 
 
 
+[[what-information-is-not-cloned]]
 == Que informação não é clonada?
 
 As configurações do dispositivo a seguir não são transferidas para o dispositivo de substituição durante a clonagem. Deve configurá-los durante a configuração inicial do aparelho de substituição.
@@ -84,6 +88,7 @@ As configurações do dispositivo a seguir não são transferidas para o disposi
 
 
 
+[[what-issues-prevent-cloning]]
 == Que problemas impedem a clonagem?
 
 Se algum dos seguintes problemas for encontrado durante a clonagem, o processo de clonagem será interrompido e uma mensagem de erro será gerada:

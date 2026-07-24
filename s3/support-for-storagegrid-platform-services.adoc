@@ -51,6 +51,7 @@ Um administrador de grade deve habilitar o uso de serviços de plataforma para u
 
 
 
+[[recommendations-for-using-platform-services]]
 == Recomendações para o uso de serviços de plataforma
 
 Antes de usar os serviços de plataforma, você deve estar ciente das seguintes recomendações:

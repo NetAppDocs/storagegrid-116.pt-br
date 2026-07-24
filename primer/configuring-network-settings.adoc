@@ -15,6 +15,7 @@ Você pode configurar várias configurações de rede do Gerenciador de Grade pa
 
 
 
+[[domain-names]]
 == Nomes de domínio
 
 Se você planeja oferecer suporte a S3 solicitações virtuais de estilo hospedado, você deve configurar a lista de nomes de domínio de endpoint aos quais os clientes S3 se conetam. Exemplos incluem `s3.example.com`, `s3.example.co.uk`, e `s3-east.example.com`.
@@ -23,6 +24,7 @@ Os certificados de servidor configurados devem corresponder aos nomes de domíni
 
 
 
+[[high-availability-groups]]
 == Grupos de alta disponibilidade
 
 Você pode usar grupos de alta disponibilidade (HA) para fornecer conexões de dados altamente disponíveis para clientes S3 e Swift ou para fornecer conexões altamente disponíveis para o Gerenciador de Grade e o Gerenciador de Tenant.
@@ -39,12 +41,14 @@ Pode atribuir até 10 endereços IP (VIP) virtuais a cada grupo de HA. Você esp
 
 
 
+[[link-costs]]
 == Vincular custos
 
 Você pode ajustar os custos de link para refletir a latência entre sites. Quando existem dois ou mais locais de data center, os custos de link priorizam qual local de data center deve fornecer um serviço solicitado.
 
 
 
+[[load-balancer-endpoints]]
 == Pontos de extremidade do balanceador de carga
 
 Você pode usar um balanceador de carga para lidar com cargas de trabalho de ingestão e recuperação de clientes S3 e Swift. O balanceamento de carga maximiza a velocidade e a capacidade de conexão distribuindo cargas de trabalho e conexões entre vários nós de storage.
@@ -53,12 +57,14 @@ Se você quiser usar o serviço balanceador de carga do StorageGRID, que está i
 
 
 
+[[traffic-classification]]
 == Classificação de tráfego
 
 Você pode criar políticas de classificação de tráfego para identificar e lidar com diferentes tipos de tráfego de rede, incluindo tráfego relacionado a buckets específicos, locatários, sub-redes de clientes ou pontos de extremidade do balanceador de carga. Essas políticas podem ajudar na limitação e monitoramento de tráfego.
 
 
 
+[[vlan-interfaces]]
 == Interfaces VLAN
 
 Você pode criar interfaces de LAN virtual (VLAN) para isolar e particionar o tráfego para segurança, flexibilidade e desempenho. Cada interface VLAN está associada a uma ou mais interfaces pai em nós de administração e nós de gateway. Você pode usar interfaces VLAN em grupos de HA e em endpoints do balanceador de carga para segregar o tráfego de cliente ou administrador por aplicativo ou locatário.

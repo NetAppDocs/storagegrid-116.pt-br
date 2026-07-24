@@ -18,6 +18,7 @@ NOTE: Embora o sistema de alarme antigo continue a ser suportado, o sistema de a
 
 
 
+[[alarm-classes-legacy-system]]
 == Classes de alarme (sistema legado)
 
 Um alarme legado pode pertencer a uma das duas classes de alarme mutuamente exclusivas.
@@ -28,6 +29,7 @@ Um alarme legado pode pertencer a uma das duas classes de alarme mutuamente excl
 
 
 
+[[alarm-triggering-logic-legacy-system]]
 == Lógica de acionamento de alarme (sistema legado)
 
 Um alarme legado é acionado quando um atributo StorageGRID atinge um valor limite que é avaliado como verdadeiro em relação a uma combinação de classe de alarme (padrão ou Personalizado Global) e nível de gravidade de alarme.
@@ -94,6 +96,7 @@ Depois que um alarme ativado para um atributo é encontrado na classe de alarme 
 
 
 
+[[alarm-triggering-example]]
 === Exemplo de acionamento de alarmes
 
 Você pode usar este exemplo para entender como os alarmes personalizados globais e os alarmes padrão são acionados.
@@ -140,6 +143,7 @@ Com o alarme Global Custom desativado, quando o valor do atributo é reavaliado,
 
 
 
+[[alarms-of-same-severity]]
 === Alarmes da mesma gravidade
 
 Se dois alarmes personalizados globais para o mesmo atributo tiverem a mesma gravidade, os alarmes serão avaliados com uma prioridade de "cima para baixo".
@@ -154,6 +158,7 @@ image::../media/alarm_order_reversed.gif[Exemplo de alarme personalizado global]
 
 
 
+[[notifications]]
 === Notificações
 
 Uma notificação relata a ocorrência de um alarme ou a mudança de estado de um serviço. As notificações de alarme podem ser enviadas por e-mail ou usando SNMP.
@@ -164,12 +169,14 @@ O valor do gatilho mostrado na notificação de um estado de alarme é arredonda
 
 
 
+[[new-services]]
 === Novos serviços
 
 À medida que novos serviços são adicionados através da adição de novos nós ou sites de grade, eles herdam alarmes padrão e alarmes personalizados globais.
 
 
 
+[[alarms-and-tables]]
 === Alarmes e tabelas
 
 Os atributos de alarme exibidos nas tabelas podem ser desativados no nível do sistema. Os alarmes não podem ser desativados para linhas individuais de uma tabela.
@@ -182,6 +189,7 @@ image::../media/disabling_alarms.gif[Página volumes mostrando alarmes críticos
 
 
 
+[[acknowledge-current-alarms-legacy-system]]
 == Reconhecer alarmes atuais (sistema legado)
 
 Os alarmes herdados são acionados quando os atributos do sistema atingem os valores de limite de alarme. Opcionalmente, se você quiser reduzir ou limpar a lista de alarmes herdados, você pode reconhecer os alarmes.
@@ -238,6 +246,7 @@ image::../media/current_alarms_page_show_acknowledged.png[Página Alarmes atuais
 
 
 
+[[view-default-alarms-legacy-system]]
 == Exibir alarmes padrão (sistema legado)
 
 Pode ver a lista de todos os alarmes herdados predefinidos.
@@ -265,6 +274,7 @@ image::../media/global_alarms.gif[Página Alarmes globais]
 
 
 
+[[review-historical-alarms-and-alarm-frequency-legacy-system]]
 == Rever alarmes históricos e frequência de alarmes (sistema legado)
 
 Ao solucionar um problema, você pode revisar a frequência com que um alarme legado foi acionado no passado.
@@ -310,6 +320,7 @@ Os alarmes são listados em ordem cronológica inversa.
 
 
 
+[[create-global-custom-alarms-legacy-system]]
 == Criar alarmes personalizados globais (sistema legado)
 
 Você pode ter usado alarmes personalizados globais para o sistema legado para atender a requisitos específicos de monitoramento. Os alarmes personalizados globais podem ter níveis de alarme que substituem os alarmes padrão ou podem monitorar atributos que não têm um alarme padrão.
@@ -436,6 +447,7 @@ image:../media/icon_nms_copy.gif["ícone de cópia"]Copie uma linha
 
 
 
+[[disable-alarms-legacy-system]]
 == Desativar alarmes (sistema legado)
 
 Os alarmes no sistema de alarme antigo são ativados por padrão, mas você pode desativar os alarmes que não são necessários. Você também pode desativar os alarmes herdados depois de fazer a transição completa para o novo sistema de alerta.
@@ -445,6 +457,7 @@ NOTE: Embora o sistema de alarme antigo continue a ser suportado, o sistema de a
 
 
 
+[[disable-a-default-alarm-legacy-system]]
 === Desativar um alarme predefinido (sistema legado)
 
 Você pode desativar um dos alarmes padrão herdados para todo o sistema.
@@ -492,6 +505,7 @@ O alarme predefinido está desativado.
 
 
 
+[[disable-global-custom-alarms-legacy-system]]
 === Desativar alarmes personalizados globais (sistema legado)
 
 Você pode desativar um alarme personalizado global legado para todo o sistema.
@@ -519,6 +533,7 @@ O alarme personalizado global está desativado.
 
 
 
+[[clear-triggered-alarms-legacy-system]]
 === Apagar alarmes acionados (sistema legado)
 
 Se um alarme legado for acionado, você pode limpá-lo em vez de reconhecê-lo.
@@ -550,6 +565,7 @@ O alarme é apagado.
 
 
 
+[[configure-notifications-for-alarms-legacy-system]]
 == Configurar notificações para alarmes (sistema legado)
 
 O sistema StorageGRID pode enviar automaticamente e-mails e xref:using-snmp-monitoring.adoc[Notificações SNMP] quando um alarme é acionado ou um estado de serviço muda.
@@ -558,6 +574,7 @@ Por padrão, as notificações por e-mail de alarme não são enviadas. Para not
 
 
 
+[[types-of-alarm-notifications-legacy-system]]
 === Tipos de notificações de alarme (sistema legado)
 
 Quando um alarme legado é acionado, o sistema StorageGRID envia dois tipos de notificações de alarme: Nível de gravidade e estado de serviço.
@@ -590,6 +607,7 @@ Uma lista de discussão recebe todas as notificações relacionadas a alteraçõ
 
 
 
+[[configure-email-server-settings-for-alarms-legacy-system]]
 === Configurar as definições do servidor de correio eletrónico para alarmes (sistema legado)
 
 Se você quiser que o StorageGRID envie notificações por e-mail quando um alarme legado for acionado, especifique as configurações do servidor de e-mail SMTP. O sistema StorageGRID envia apenas e-mail; ele não pode receber e-mail.
@@ -668,6 +686,7 @@ As definições do servidor de correio SMTP são guardadas. Se você inseriu inf
 
 
 
+[[create-alarm-email-templates-legacy-system]]
 === Criar modelos de e-mail de alarme (sistema legado)
 
 Os modelos de e-mail permitem personalizar o cabeçalho, o rodapé e a linha de assunto de uma notificação por e-mail de alarme legado. Você pode usar modelos de e-mail para enviar notificações exclusivas que contêm o mesmo corpo de texto para diferentes listas de discussão.
@@ -731,6 +750,7 @@ Um novo modelo para notificações é adicionado.
 
 
 
+[[create-mailing-lists-for-alarm-notifications-legacy-system]]
 === Criar listas de discussão para notificações de alarme (sistema legado)
 
 As listas de discussão permitem que você notifique os destinatários quando um alarme legado é acionado ou quando um estado de serviço muda. Você deve criar pelo menos uma lista de discussão antes que qualquer notificação por e-mail de alarme possa ser enviada. Para enviar uma notificação para um único destinatário, crie uma lista de discussão com um endereço de e-mail.
@@ -790,6 +810,7 @@ Uma nova lista de discussão é criada.
 
 
 
+[[configure-email-notifications-for-alarms-legacy-system]]
 === Configurar notificações por e-mail para alarmes (sistema legado)
 
 Para receber notificações por e-mail para o sistema de alarme legado, os destinatários devem ser membros de uma lista de e-mail e essa lista deve ser adicionada à página notificações. As notificações são configuradas para enviar e-mails aos destinatários somente quando um alarme com um nível de gravidade especificado é acionado ou quando um estado de serviço muda. Assim, os destinatários só recebem as notificações que precisam receber.
@@ -819,6 +840,7 @@ As notificações serão enviadas para a lista de discussão quando os alarmes c
 
 
 
+[[suppress-alarm-notifications-for-a-mailing-list-legacy-system]]
 === Suprimir notificações de alarme para uma lista de discussão (sistema legado)
 
 Você pode suprimir notificações de alarme para uma lista de discussão quando não quiser mais que a lista de discussão receba notificações sobre alarmes. Por exemplo, você pode querer suprimir notificações sobre alarmes legados depois de fazer a transição para o uso de notificações por e-mail de alerta.
@@ -846,6 +868,7 @@ As notificações de alarme herdadas são suprimidas para as listas de discussã
 
 
 
+[[suppress-email-notifications-system-wide]]
 === Suprimir notificações de e-mail em todo o sistema
 
 Você pode bloquear a capacidade do sistema StorageGRID de enviar notificações por e-mail para alarmes legados e mensagens AutoSupport acionadas por eventos.

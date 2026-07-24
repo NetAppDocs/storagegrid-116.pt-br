@@ -27,6 +27,7 @@ NOTE: Se você usar o protocolo cliente S3, também poderá usar buckets e polí
 
 
 
+[[create-tenant-accounts]]
 == Criar contas de inquilino
 
 As contas de inquilino são criadas por um administrador de grade do StorageGRID usando o Gerenciador de Grade. Ao criar uma conta de locatário, o administrador da grade especifica as seguintes informações:
@@ -43,6 +44,7 @@ Além disso, os administradores de grade podem ativar a configuração bloqueio 
 
 
 
+[[configure-s3-tenants]]
 == Configurar locatários do S3
 
 Depois que uma conta de locatário do S3 for criada, você poderá acessar o Gerenciador do Locatário para executar tarefas como as seguintes:
@@ -59,6 +61,7 @@ IMPORTANT: Embora você possa criar e gerenciar buckets do S3 com o Gerenciador 
 
 
 
+[[configure-swift-tenants]]
 == Configurar os locatários Swift
 
 Depois que uma conta de locatário Swift for criada, os usuários com a permissão de acesso root podem acessar o Gerenciador do locatário para executar tarefas como as seguintes:

@@ -15,6 +15,7 @@ Antes de anexar o StorageGRID como uma camada de nuvem do FabricPool, você deve
 
 
 
+[[what-is-load-balancing]]
 == O que é balanceamento de carga?
 
 Quando os dados são categorizados de FabricPool para um sistema StorageGRID, o StorageGRID usa um balanceador de carga para gerenciar o workload de ingestão e recuperação. O balanceamento de carga maximiza a velocidade e a capacidade de conexão distribuindo o workload do FabricPool em vários nós de storage.
@@ -23,13 +24,14 @@ O serviço StorageGRID Load Balancer é instalado em todos os nós de administra
 
 O serviço Load Balancer em cada nó opera de forma independente ao encaminhar o tráfego do cliente para os nós de storage. Por meio de um processo de ponderação, o serviço Load Balancer encaminha mais solicitações para nós de storage com maior disponibilidade de CPU.
 
-Embora o serviço de balanceamento de carga StorageGRID seja o mecanismo de balanceamento de carga recomendado, você pode querer integrar um balanceador de carga de terceiros. Para obter informações, contacte o representante da sua conta NetApp ou https://www.netapp.com/pdf.html?item=/media/17068-tr4626pdf.pdf["TR-4626: Balanceadores de carga globais e de terceiros da StorageGRID"^] consulte .
+Embora o serviço StorageGRID Load Balancer seja o mecanismo de balanceamento de carga recomendado, você pode optar por integrar um balanceador de carga de terceiro. Para obter informações, entre em contato com seu representante de contas da NetApp ou consulte  https://www.netapp.com/pdf.html?item=/media/17068-tr4626.pdf["TR-4626: Balanceadores de carga globais e de terceiros da StorageGRID"^].
 
 
 NOTE: O serviço CLB (Connection Load Balancer) separado nos nós de gateway está obsoleto e não é mais recomendado para uso com o FabricPool.
 
 
 
+[[best-practices-for-storagegrid-load-balancing]]
 == Práticas recomendadas para balanceamento de carga StorageGRID
 
 Como prática recomendada geral, cada local no seu sistema StorageGRID deve incluir dois ou mais nós com o serviço de balanceador de carga. Por exemplo, um site pode incluir dois nós de Gateway ou um nó de administrador e um nó de gateway. Verifique se há infraestrutura adequada de rede, hardware ou virtualização para cada nó de balanceamento de carga, esteja você usando dispositivos de serviços SG100 ou SG1000, nós bare metal ou nós baseados em máquina virtual (VM).
@@ -38,6 +40,7 @@ Você deve configurar um ponto de extremidade do balanceador de carga do Storage
 
 
 
+[[best-practices-for-the-load-balancer-endpoint-certificate]]
 == Práticas recomendadas para o certificado de endpoint do balanceador de carga
 
 Ao criar um ponto de extremidade do balanceador de carga para uso com o FabricPool, você deve usar o HTTPS como protocolo. A comunicação com o StorageGRID sem criptografia TLS é suportada, mas não é recomendada

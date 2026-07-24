@@ -15,6 +15,7 @@ Como administrador de grade, você pode ativar o bloqueio de objeto S3 para seu 
 
 
 
+[[what-is-s3-object-lock]]
 == O que é S3 Object Lock?
 
 O recurso bloqueio de objetos do StorageGRID S3 é uma solução de proteção de objetos equivalente ao bloqueio de objetos do S3 no Amazon Simple Storage Service (Amazon S3).
@@ -37,6 +38,7 @@ Para obter detalhes sobre as configurações padrão de retenção do balde, vá
 
 
 
+[[comparing-s3-object-lock-to-legacy-compliance]]
 == Comparação do S3 Object Lock com a conformidade legada
 
 O bloqueio de objetos S3 substitui o recurso de conformidade que estava disponível em versões anteriores do StorageGRID. Como o recurso de bloqueio de objetos S3 está em conformidade com os requisitos do Amazon S3, ele deprecia o recurso proprietário de conformidade do StorageGRID, que agora é conhecido como ""conformidade legada"".

@@ -15,6 +15,7 @@ A migração de dados deve ser agendada e monitorada conforme necessário para g
 
 
 
+[[schedule-data-migration]]
 == Agendar a migração de dados
 
 Evite migrar dados durante o horário operacional principal. Limite a migração de dados para noites, fins de semana e outras ocasiões em que o uso do sistema é baixo.
@@ -23,6 +24,7 @@ Se possível, não programe a migração de dados durante períodos de alta ativ
 
 
 
+[[monitor-data-migration]]
 == Monitorar a migração de dados
 
 Esta tabela lista os atributos que você deve monitorar durante a migração de dados e os problemas que eles representam.

@@ -15,6 +15,7 @@ Alguns recursos foram removidos ou obsoletos nesta versão. Revise esses itens p
 
 
 
+[[alarm-system-and-alarm-based-apis-deprecated]]
 == Sistema de alarme e APIs baseadas em alarme obsoletas
 
 A partir do lançamento do StorageGRID 11,6, o sistema de alarme legado está obsoleto. A interface do usuário e as APIs para o sistema de alarme legado serão removidas em uma versão futura.
@@ -31,6 +32,7 @@ A versão 11,6 obsoleta todas as APIs baseadas em alarme. As seguintes APIs são
 
 
 
+[[future-releases-will-not-support-5-tib-maximum-object-size-for-put-object]]
 == As versões futuras não suportarão o tamanho máximo de objeto 5 TIB para COLOCAR Objeto
 
 Em versões futuras do StorageGRID, o tamanho máximo para uma operação DE Objeto PUT único será de 5 GiB, em vez de 5 TIB. Você pode usar o upload multipart para objetos maiores que 5 GiB, até um máximo de 5 TIB (5.497.558.138.880 bytes).
@@ -39,6 +41,7 @@ Para ajudá-lo a fazer a transição de clientes para o uso de tamanhos de objet
 
 
 
+[[nas-bridge-feature-deprecated]]
 == Recurso de Ponte nas obsoleto
 
 A funcionalidade de ponte nas introduziu anteriormente acesso limitado com a versão StorageGRID 11,4. O recurso Ponte nas permanece com acesso limitado e está obsoleto a partir do StorageGRID 11,6.

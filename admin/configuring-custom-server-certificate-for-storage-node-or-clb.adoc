@@ -27,6 +27,7 @@ Você pode fazer upload ou gerar um certificado personalizado de API S3 e Swift.
 
 
 
+[[add-a-custom-s3-and-swift-api-certificate]]
 == Adicione um certificado personalizado de API S3 e Swift
 
 .Passos
@@ -117,6 +118,7 @@ NOTE: Depois de carregar ou gerar um novo certificado, aguarde até um dia para 
 
 
 
+[[restore-the-default-s3-and-swift-api-certificate]]
 == Restaure o certificado padrão da API S3 e Swift
 
 Você pode reverter para o uso do certificado padrão S3 e Swift API para conexões de clientes S3 e Swift para nós de armazenamento e para o serviço CLB obsoleto em nós de Gateway. No entanto, você não pode usar o certificado padrão S3 e Swift API para um endpoint de balanceador de carga.
@@ -137,6 +139,7 @@ Se você tiver permissão de acesso root e o certificado personalizado S3 e Swif
 
 
 
+[[download-or-copy-the-s3-and-swift-api-certificate]]
 == Faça o download ou copie o certificado API S3 e Swift
 
 Você pode salvar ou copiar o conteúdo do certificado S3 e Swift API para uso em outro lugar.

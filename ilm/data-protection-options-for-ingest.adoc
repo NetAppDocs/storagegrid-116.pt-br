@@ -15,6 +15,7 @@ Ao criar uma regra ILM, você especifica uma das três opções para proteger ob
 
 
 
+[[flowchart-of-three-ingest-options]]
 == Fluxograma de três opções de ingestão
 
 O fluxograma mostra o que acontece quando os objetos são combinados por uma regra ILM que usa cada uma das três opções de ingestão.
@@ -23,12 +24,14 @@ image::../media/ingest_object_lifecycle.png[Diagrama mostrando como ocorre a ing
 
 
 
+[[dual-commit]]
 == Commit duplo
 
 Quando você seleciona a opção de confirmação dupla, o StorageGRID imediatamente faz cópias provisórias de objeto em dois nós de armazenamento diferentes e retorna uma mensagem de ""ingestão bem-sucedida"" para o cliente. O objeto é colocado em fila para avaliação ILM e cópias que atendem às instruções de colocação da regra são feitas posteriormente.
 
 
 
+[[when-to-use-the-dual-commit-option]]
 === Quando usar a opção de confirmação dupla
 
 Use a opção de confirmação dupla em qualquer um desses casos:
@@ -44,12 +47,14 @@ Use a opção de confirmação dupla em qualquer um desses casos:
 
 
 
+[[strict]]
 == Rigoroso
 
 Quando você seleciona a opção estrita, o StorageGRID usa o posicionamento síncrono na ingestão e faz imediatamente todas as cópias de objetos especificadas nas instruções de posicionamento da regra. A ingestão falha se o StorageGRID não puder criar todas as cópias, por exemplo, porque um local de armazenamento necessário está temporariamente indisponível. O cliente deve tentar novamente a operação.
 
 
 
+[[when-to-use-the-strict-option]]
 === Quando usar a opção estrita
 
 Use a opção estrita se você tiver um requisito operacional ou regulamentar para armazenar imediatamente objetos apenas nos locais descritos na regra ILM. Por exemplo, para atender a um requisito regulatório, talvez seja necessário usar a opção estrita e um filtro avançado de restrição de localização para garantir que os objetos nunca sejam armazenados em determinado data center.
@@ -58,12 +63,14 @@ xref:example-5-ilm-rules-and-policy-for-strict-ingest-behavior.adoc[Exemplo 5: R
 
 
 
+[[balanced]]
 == Equilibrado
 
 Quando você seleciona a opção equilibrada, o StorageGRID também usa o posicionamento síncrono na ingestão e faz imediatamente todas as cópias especificadas nas instruções de posicionamento da regra. Em contraste com a opção estrita, se o StorageGRID não puder fazer imediatamente todas as cópias, ele usará o Dual Commit.
 
 
 
+[[when-to-use-the-balanced-option]]
 === Quando usar a opção equilibrada
 
 Use a opção equilibrada para obter a melhor combinação de proteção de dados, desempenho de grade e sucesso de ingestão. Balanced é a opção padrão no assistente de regras ILM.

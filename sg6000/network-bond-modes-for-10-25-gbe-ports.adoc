@@ -15,6 +15,7 @@ As portas de rede 10/25-GbE no controlador SG6000-CN suportam o modo de ligaçã
 
 
 
+[[fixed-port-bond-mode]]
 == Modo de ligação de porta fixa
 
 O modo fixo é a configuração padrão para as portas de rede 10/25-GbE.
@@ -49,6 +50,7 @@ NOTE: Se não precisar de ligações redundantes, pode utilizar apenas uma porta
 
 
 
+[[aggregate-port-bond-mode]]
 == Modo de ligação de porta agregada
 
 O modo de ligação de porta agregada aumenta significativamente o em toda a rede StorageGRID e fornece caminhos de failover adicionais.

@@ -28,6 +28,7 @@ Para acessar a documentação do Swagger para a API de gerenciamento do locatár
 
 
 
+[[api-operations]]
 == Operações da API
 
 A API de Gerenciamento do Tenant organiza as operações de API disponíveis nas seguintes seções:
@@ -74,6 +75,7 @@ NOTE: Se o logon único (SSO) estiver ativado para o sistema StorageGRID, você 
 
 
 
+[[operation-details]]
 == Detalhes da operação
 
 Quando você expande cada operação da API, você pode ver sua ação HTTP, URL do endpoint, uma lista de todos os parâmetros necessários ou opcionais, um exemplo do corpo da solicitação (quando necessário) e as possíveis respostas.
@@ -82,6 +84,7 @@ image::../media/tenant_api_swagger_example.gif[Exemplo mostrando a operação GE
 
 
 
+[[issue-api-requests]]
 == Emitir solicitações de API
 
 

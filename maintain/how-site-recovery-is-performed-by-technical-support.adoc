@@ -31,6 +31,7 @@ CAUTION: Se um site contém a única cópia de um objeto e o site é perdido, o 
 
 
 
+[[overview-of-site-recovery]]
 == Visão geral da recuperação do local
 
 Esta é uma visão geral do processo que o suporte técnico usa para recuperar um site com falha.

@@ -15,6 +15,7 @@ Configurar o StorageGRID para aceitar conexões de aplicativos cliente requer a 
 
 
 
+[[create-and-configure-s3-tenant-accounts]]
 == Criar e configurar contas de locatário do S3
 
 Uma conta de locatário S3 é necessária antes que os clientes API S3D possam armazenar e recuperar objetos no StorageGRID. Cada conta de locatário tem seu próprio ID de conta, grupos e usuários, além de contentores e objetos.
@@ -47,6 +48,7 @@ xref:../tenant/index.adoc[Use a conta de locatário]
 
 
 
+[[how-client-connections-can-be-configured]]
 == Como as conexões do cliente podem ser configuradas
 
 Um administrador de grade faz escolhas de configuração que afetam a forma como os clientes S3 se conetam ao StorageGRID para armazenar e recuperar dados. As informações específicas que você precisa para fazer uma conexão dependem da configuração escolhida.
@@ -85,6 +87,7 @@ xref:../admin/index.adoc[Administrar o StorageGRID]
 
 
 
+[[summary-ip-addresses-and-ports-for-client-connections]]
 === Resumo: Endereços IP e portas para conexões de clientes
 
 Os aplicativos cliente se conetam ao StorageGRID usando o endereço IP de um nó de grade e o número da porta de um serviço nesse nó. Se os grupos de alta disponibilidade (HA) estiverem configurados, os aplicativos clientes poderão se conetar usando o endereço IP virtual do grupo HA.
@@ -206,6 +209,7 @@ xref:../admin/index.adoc[Administrar o StorageGRID]
 
 
 
+[[decide-to-use-https-or-http-connections]]
 === Decida usar conexões HTTPS ou HTTP
 
 Quando as conexões de cliente são feitas usando um endpoint de Load Balancer, as conexões devem ser feitas usando o protocolo (HTTP ou HTTPS) especificado para esse endpoint. Para usar HTTP para conexões de cliente a nós de armazenamento ou ao serviço CLB em nós de gateway, você deve habilitar seu uso.
@@ -227,6 +231,7 @@ xref:benefits-of-active-idle-and-concurrent-http-connections.adoc[Benefícios de
 
 
 
+[[endpoint-domain-names-for-s3-requests]]
 == Nomes de domínio de endpoint para solicitações S3
 
 Antes de poder usar nomes de domínio S3 para solicitações de cliente, um administrador do StorageGRID deve configurar o sistema para aceitar conexões que usam nomes de domínio S3 em solicitações de estilo de caminho S3 e S3 solicitações virtuais de estilo hospedado.
@@ -263,6 +268,7 @@ xref:configuring-security-for-rest-api.adoc[Configure a segurança para a API RE
 
 
 
+[[test-your-s3-rest-api-configuration]]
 == Teste a configuração da API REST do S3
 
 Você pode usar a interface de linha de comando (AWS CLI) do Amazon Web Services para testar sua conexão com o sistema e verificar se é possível ler e gravar objetos no sistema.

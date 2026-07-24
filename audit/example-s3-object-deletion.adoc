@@ -18,6 +18,7 @@ NOTE: Nem todas as mensagens de auditoria geradas durante uma transação de exc
 
 
 
+[[sdel-s3-delete]]
 == SDEL: S3 Excluir
 
 A exclusão de objeto começa quando o cliente envia uma solicitação DE EXCLUSÃO de objeto para um serviço LDR. A mensagem contém o intervalo do qual excluir o objeto e a chave S3 do objeto, que é usada para identificar o objeto.

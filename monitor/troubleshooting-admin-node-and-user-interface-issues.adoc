@@ -16,6 +16,7 @@ Existem várias tarefas que você pode executar para ajudar a determinar a orige
 
 
 
+[[troubleshoot-sign-on-errors]]
 == Solucionar erros de logon
 
 Se ocorrer um erro ao iniciar sessão num nó de administração do StorageGRID, o sistema poderá ter um problema com a configuração da federação de identidade, um problema de rede ou hardware, um problema com os serviços do nó de administração ou um problema com o banco de dados Cassandra nos nós de armazenamento conetados.
@@ -175,12 +176,14 @@ Forneça os Registros que você coletou para o suporte técnico. Consulte també
 
 
 
+[[troubleshoot-user-interface-issues]]
 == Solucionar problemas de interface do usuário
 
 Você pode ver problemas com o Gerenciador de Grade ou o Gerenciador do Locatário após atualizar para uma nova versão do software StorageGRID.
 
 
 
+[[web-interface-does-not-respond-as-expected]]
 === A interface Web não responde como esperado
 
 O Gerenciador de Grade ou o Gerente do Locatário podem não responder como esperado depois que o software StorageGRID for atualizado.
@@ -200,6 +203,7 @@ Limpar o cache remove recursos desatualizados usados pela versão anterior do so
 
 
 
+[[check-the-status-of-an-unavailable-admin-node]]
 == Verifique o status de um Admin Node indisponível
 
 Se o sistema StorageGRID incluir vários nós de administração, você poderá usar outro nó de administração para verificar o status de um nó de administração indisponível.

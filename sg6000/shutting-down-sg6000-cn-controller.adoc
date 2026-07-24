@@ -17,7 +17,7 @@ Desligue o controlador SG6000-CN para efetuar a manutenção do hardware.
 Você localizou fisicamente o controlador SG6000-CN que exige manutenção no data center. xref:locating-controller-in-data-center.adoc[Localize o controlador no data center]Consulte .
 
 .Sobre esta tarefa
-Para evitar interrupções de serviço, confirme se todos os outros nós de armazenamento estão conetados à grade antes de desligar o controlador ou desligue o controlador durante uma janela de manutenção programada quando os períodos de interrupção de serviço são aceitáveis. Consulte as informações sobre xref:monitoring-node-connection-states.adoc[monitorização dos estados de ligação do nó]o .
+Para evitar interrupções de serviço, confirme que todos os outros nós de armazenamento estão conectados à grid antes de desligar o controlador ou desligue o controlador durante uma janela de manutenção programada, quando períodos de interrupção de serviço forem aceitáveis. Veja as informações sobre link:../monitor/monitoring-node-connection-states.html["monitorização dos estados de ligação do nó"].
 
 
 IMPORTANT: Se você já usou uma regra ILM que cria apenas uma cópia de um objeto, você deve encerrar o controlador durante uma janela de manutenção agendada. Caso contrário, você pode perder temporariamente o acesso a esses objetos durante este procedimento. link:../ilm/index.html["Gerenciar objetos com o gerenciamento do ciclo de vida das informações"]Consulte .

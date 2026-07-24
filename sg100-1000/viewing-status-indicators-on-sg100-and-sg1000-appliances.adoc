@@ -15,6 +15,7 @@ O dispositivo inclui indicadores que o ajudam a determinar o status do controlad
 
 
 
+[[appliance-indicators-and-buttons]]
 == Indicadores e botões do aparelho
 
 image::../media/sg6000_cn_front_indicators.gif[Indicadores dianteiros - SG1000]
@@ -72,6 +73,7 @@ LED de alarme
 |===
 
 
+[[general-boot-up-codes]]
 == Códigos gerais de arranque
 
 Durante a inicialização ou após uma reinicialização forçada do aparelho, ocorre o seguinte:
@@ -86,6 +88,7 @@ Para exibir os códigos de inicialização e erro, você deve acessar a interfac
 
 
 
+[[ssd-indicators]]
 == Indicadores SSD
 
 image::../media/ssd_indicators.png[Indicadores SSD]

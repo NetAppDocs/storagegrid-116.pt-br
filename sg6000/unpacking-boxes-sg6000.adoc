@@ -15,6 +15,7 @@ Antes de instalar o dispositivo StorageGRID, desembale todas as caixas e compare
 
 
 
+[[sg6060-and-sg6060x]]
 == SG6060 e SG6060X
 
 * *Controlador SG6000-CN*
@@ -49,6 +50,7 @@ image::../media/back_brackets_table_size.gif[Suportes traseiros e porcas de gaio
 
 
 
+[[sg6060-and-sg6060x-expansion-shelf]]
 == Compartimento de expansão SG6060 e SG6060X
 
 * *Compartimento de expansão sem unidades instaladas*
@@ -79,6 +81,7 @@ image::../media/back_brackets_table_size.gif[Suportes traseiros e porcas de gaio
 
 
 
+[[sgf6024]]
 == SGF6024
 
 * *Controlador SG6000-CN*
@@ -105,6 +108,7 @@ image::../media/endcaps.png[Tampas laterais]
 
 
 
+[[cables-and-connectors]]
 == Cabos e conetores
 
 O envio para o dispositivo StorageGRID inclui os seguintes cabos e conetores:

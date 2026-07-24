@@ -15,6 +15,7 @@ Você pode configurar várias configurações de segurança do Gerenciador de Gr
 
 
 
+[[certificates]]
 == Certificados
 
 O StorageGRID usa dois tipos de certificados de segurança:
@@ -27,6 +28,7 @@ Você pode visualizar todos os certificados StorageGRID na página *CONFIGURATIO
 
 
 
+[[key-management-servers]]
 == Servidores de gerenciamento de chaves
 
 Você pode configurar um ou mais servidores de gerenciamento de chaves externos (KMS) para fornecer chaves de criptografia para serviços StorageGRID e dispositivos de armazenamento. Cada cluster de KMS ou KMS usa o Key Management Interoperability Protocol (KMIP) para fornecer uma chave de criptografia aos nós do dispositivo no site associado do StorageGRID. O uso de servidores de gerenciamento de chaves permite proteger os dados do StorageGRID mesmo que um dispositivo seja removido do data center. Depois que os volumes do dispositivo são criptografados, você não pode acessar nenhum dado no dispositivo, a menos que o nó possa se comunicar com o KMS.
@@ -36,6 +38,7 @@ NOTE: Para usar o gerenciamento de chaves de criptografia, você deve habilitar 
 
 
 
+[[proxy-settings]]
 == Configurações de proxy
 
 Se você estiver usando serviços de plataforma S3 ou pools de storage em nuvem, poderá configurar um servidor proxy não transparente entre nós de storage e os pontos de extremidade externos do S3. Se você enviar mensagens AutoSupport usando HTTPS ou HTTP, poderá configurar um servidor proxy não transparente entre nós de administração e suporte técnico.
@@ -44,6 +47,7 @@ image::../media/proxy_settings_menu_storage.png[Menu Configurações de proxy - 
 
 
 
+[[untrusted-client-networks]]
 == Redes de clientes não confiáveis
 
 Se você estiver usando uma rede cliente, você pode ajudar a proteger o StorageGRID contra ataques hostis especificando que a rede cliente em cada nó não é confiável. Se a rede de cliente de um nó não for confiável, o nó só aceita conexões de entrada em portas explicitamente configuradas como pontos de extremidade do balanceador de carga.

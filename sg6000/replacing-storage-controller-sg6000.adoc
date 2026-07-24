@@ -69,6 +69,7 @@ Esta tarefa tem as seguintes partes:
 
 
 
+[[prepare]]
 == Prepare-se
 
 .Passos
@@ -124,6 +125,7 @@ A placa de interface de host (HIC) de 4 portas. Esta placa tem de ser movida par
 |===
 
 
+[[take-controller-offline]]
 == Coloque o controlador offline
 
 .Passos
@@ -153,6 +155,7 @@ NOTE: A coleta de dados de suporte antes e depois da substituição de um compon
 
 
 
+[[remove-the-controller]]
 == Retire o controlador
 
 .Passos
@@ -178,6 +181,7 @@ IMPORTANT: Utilize sempre duas mãos para suportar o peso do controlador.
 
 
 
+[[move-battery-to-the-new-controller]]
 == Mova a bateria para o novo controlador
 
 .Passos
@@ -267,6 +271,7 @@ image::../media/e2800_battery_flange_not_ok.gif[Flange da bateria incorreta]
 
 
 
+[[move-hic-to-new-controller-if-needed]]
 == Mova o HIC para o novo controlador, se necessário
 
 .Passos
@@ -366,6 +371,7 @@ image::../media/28_dwg_e2800_hic_faceplace_screws_maint-e2800.png[E2800A parafus
 
 
 
+[[replace-controller]]
 == Substitua o controlador
 
 .Passos

@@ -17,6 +17,7 @@ A guia Visão geral é mostrada para todos os nós.
 
 
 
+[[node-information]]
 == Informações do nó
 
 A seção informações do nó da guia Visão geral lista informações básicas sobre o nó da grade.
@@ -52,6 +53,7 @@ NOTE: Um nó pode aparecer como desconhecido durante operações de desligamento
 
 
 
+[[alerts]]
 == Alertas
 
 A seção Alertas da guia Visão geral lista todos os alertas que atualmente afetam esse nó que não foram silenciados. Clique no nome do alerta para ver detalhes adicionais e ações recomendadas.

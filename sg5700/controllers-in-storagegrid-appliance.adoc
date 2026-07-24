@@ -23,6 +23,7 @@ Você deve rever os diagramas para aprender as diferenças entre os controladore
 
 
 
+[[e5700sg-controller]]
 == Controlador E5700SG
 
 * Opera como o servidor de computação do dispositivo.
@@ -116,6 +117,7 @@ Opções:
 |===
 
 
+[[e2800-series-storage-controller]]
 == Controlador de armazenamento da série E2800
 
 Existem duas versões do controlador de armazenamento E2800 usado nos aparelhos SG5700: E2800A e E2800B. O E2800A não tem um HIC, e o E2800B tem um HIC de quatro portas. As duas versões de controlador têm especificações e funções idênticas, exceto para a localização das portas de interconexão.

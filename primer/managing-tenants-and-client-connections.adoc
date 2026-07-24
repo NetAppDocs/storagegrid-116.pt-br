@@ -15,6 +15,7 @@ Como administrador de grade, você cria e gerencia as contas de locatário que o
 
 
 
+[[tenant-accounts]]
 == Contas de inquilino
 
 Uma conta de locatário permite que você especifique quem pode usar seu sistema StorageGRID para armazenar e recuperar objetos e qual funcionalidade está disponível para eles. As contas de locatário permitem que aplicativos clientes que suportam a API REST do S3 ou a API REST do Swift armazenem e recuperem objetos no StorageGRID. Cada conta de locatário usa o protocolo cliente S3 ou o protocolo cliente Swift.
@@ -37,6 +38,7 @@ Depois que uma conta de locatário for criada, os usuários do locatário poder�
 
 
 
+[[client-connections-to-storagegrid-nodes]]
 == Conexões de cliente com nós StorageGRID
 
 Antes que os usuários do locatário possam usar clientes S3 ou Swift para armazenar e recuperar dados no StorageGRID, você deve decidir como esses clientes se conetarão aos nós do StorageGRID.

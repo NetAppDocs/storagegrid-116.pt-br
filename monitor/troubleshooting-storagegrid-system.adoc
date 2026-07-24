@@ -15,6 +15,7 @@ Se você encontrar um problema ao usar um sistema StorageGRID, consulte as dicas
 
 
 
+[[overview-of-problem-determination]]
 == Visão geral da determinação do problema
 
 Se encontrar um problema quando xref:../admin/index.adoc[Administrar um sistema StorageGRID], pode utilizar o processo descrito nesta figura para identificar e analisar o problema. Em muitos casos, você pode resolver problemas sozinho. No entanto, talvez seja necessário encaminhar alguns problemas para o suporte técnico.
@@ -23,6 +24,7 @@ image::../media/problem_determination_methodology.gif[Fluxograma mostrando os pr
 
 
 
+[[define-the-problem]]
 === Defina o problema
 
 O primeiro passo para resolver um problema é definir o problema claramente.
@@ -84,6 +86,7 @@ Esta é a primeira vez que vi esta questão.
 |===
 
 
+[[assess-the-risk-and-impact-on-the-system]]
 === Avaliar o risco e o impactos no sistema
 
 Depois de definir o problema, avalie o risco e o impactos no sistema StorageGRID. Por exemplo, a presença de alertas críticos não significa necessariamente que o sistema não está fornecendo serviços básicos.
@@ -124,6 +127,7 @@ Sim, porque os aplicativos cliente não podem armazenar objetos no sistema Stora
 |===
 
 
+[[collect-data]]
 === Coletar dados
 
 Depois de definir o problema e avaliar o seu risco e impactos, recolha dados para análise. O tipo de dados que é mais útil para coletar depende da natureza do problema.
@@ -407,6 +411,7 @@ Selecione *NÓS* *_Storage Node_* *Objects*. Na tabela consultas, exiba o valor 
 |===
 
 
+[[analyze-data]]
 === Analisar dados
 
 Use as informações coletadas para determinar a causa do problema e possíveis soluções.
@@ -420,6 +425,7 @@ A análise é dependente de problemas, mas em geral:
 
 
 
+[[escalation-information-checklist]]
 === Lista de verificação de informações de encaminhamento
 
 Se você não conseguir resolver o problema sozinho, entre em Contato com o suporte técnico. Antes de entrar em Contato com o suporte técnico, reúna as informações listadas na tabela a seguir para facilitar a resolução de problemas.

@@ -70,6 +70,7 @@ LED de alarme
 |===
 
 
+[[general-boot-up-codes]]
 == Códigos gerais de arranque
 
 Durante a inicialização ou após uma reinicialização forçada do controlador SG6000-CN, ocorre o seguinte:

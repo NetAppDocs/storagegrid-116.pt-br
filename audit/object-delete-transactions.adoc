@@ -17,6 +17,7 @@ Nem todas as mensagens de auditoria geradas durante uma transação de exclusão
 
 
 
+[[s3-delete-audit-messages]]
 == S3 exclua mensagens de auditoria
 
 |===
@@ -37,6 +38,7 @@ xref:sdel-s3-delete.adoc[SDEL: S3 DELETE]
 |===
 
 
+[[swift-delete-audit-messages]]
 == Swift delete mensagens de auditoria
 
 |===

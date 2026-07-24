@@ -19,6 +19,7 @@ O recurso bloqueio de objetos do StorageGRID S3 fornece um modo de retenção ú
 
 
 
+[[enable-s3-object-lock-for-bucket]]
 == Ative o bloqueio de objetos S3D para o balde
 
 Se a configuração global de bloqueio de objetos S3 estiver ativada para o seu sistema StorageGRID, você poderá ativar opcionalmente o bloqueio de objetos S3 quando criar cada bucket. Você pode usar qualquer um destes métodos:
@@ -39,12 +40,14 @@ Um bucket com S3 Object Lock ativado pode conter uma combinação de objetos com
 
 
 
+[[determining-if-s3-object-lock-is-enabled-for-bucket]]
 == Determinar se o bloqueio de objetos S3 está ativado para o balde
 
 Para determinar se o bloqueio de objeto S3 está ativado, use a xref:../s3/use-s3-object-lock-default-bucket-retention.adoc#get-object-lock-configuration[OBTER Configuração bloqueio Objeto] solicitação.
 
 
 
+[[create-object-with-s3-object-lock-settings]]
 == Crie objeto com as configurações de bloqueio de objeto S3
 
 Para especificar as configurações de bloqueio de objeto S3 ao adicionar uma versão de objeto a um intervalo que tenha o bloqueio de objeto S3 ativado, emita um Objeto PUT, COLOCAR Objeto - Copiar ou inicie uma solicitação de upload de várias partes. Use os cabeçalhos de solicitação a seguir.
@@ -80,6 +83,7 @@ Se você usar qualquer um desses cabeçalhos de solicitação, esteja ciente des
 
 
 
+[[update-s3-object-lock-settings]]
 == Atualizar as definições do bloqueio de objetos do S3
 
 Se você precisar atualizar as configurações de retenção legal ou retenção para uma versão de objeto existente, poderá executar as seguintes operações de subrecursos de objeto:

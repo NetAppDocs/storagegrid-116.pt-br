@@ -15,6 +15,7 @@ Você precisa entender os requisitos de storage e desempenho para nós do Storag
 
 
 
+[[performance-requirements]]
 == Requisitos de desempenho
 
 O desempenho do volume do sistema operacional e do primeiro volume de storage impactam significativamente o desempenho geral do sistema. Certifique-se de que eles forneçam desempenho de disco adequado em termos de latência, IOPS e taxa de transferência.
@@ -23,6 +24,7 @@ Todos os nós do StorageGRID exigem que a unidade de sistema operacional e todos
 
 
 
+[[requirements-for-virtual-machines-that-use-netapp-ontap-storage]]
 == Requisitos para máquinas virtuais que usam armazenamento NetApp ONTAP
 
 Se você estiver implantando um nó StorageGRID como uma máquina virtual com armazenamento atribuído a partir de um sistema NetApp ONTAP, você confirmou que o volume não tem uma política de disposição em camadas do FabricPool ativada. Por exemplo, se um nó do StorageGRID estiver sendo executado como uma máquina virtual em um host VMware, verifique se o volume que faz o backup do datastore para o nó não tem uma política de disposição em camadas do FabricPool habilitada. A desativação da disposição em camadas do FabricPool para volumes usados com nós do StorageGRID simplifica a solução de problemas e as operações de storage.
@@ -32,6 +34,7 @@ IMPORTANT: Nunca use o FabricPool para categorizar dados relacionados ao Storage
 
 
 
+[[number-of-virtual-machines-required]]
 == Número de máquinas virtuais necessárias
 
 Cada local do StorageGRID requer um mínimo de três nós de storage.
@@ -43,6 +46,7 @@ Outros tipos de nós, como nós de administração ou nós de gateway, podem ser
 
 
 
+[[storage-requirements-by-node-type]]
 == Requisitos de storage por tipo de nó
 
 Em um ambiente de produção, as máquinas virtuais para nós de grade do StorageGRID devem atender a requisitos diferentes, dependendo dos tipos de nós.
@@ -99,6 +103,7 @@ IMPORTANT: Dependendo do nível de auditoria configurado, do tamanho das entrada
 
 
 
+[[storage-requirements-for-storage-nodes]]
 == Requisitos de storage para nós de storage
 
 Um nó de storage baseado em software pode ter 1 a 16 volumes de armazenamento--3 ou mais volumes de armazenamento são recomendados. Cada volume de armazenamento deve ser de 4 TB ou maior.

@@ -23,6 +23,7 @@ O nó de arquivo continua a aceitar dados de objeto para transferência para o s
 
 
 
+[[prevent-arc-service-from-sending-content-to-tsm-server]]
 == Impedir que o serviço ARC envie conteúdo para o servidor TSM
 
 Para evitar que o serviço ARC envie mais conteúdo para o servidor TSM, você pode colocar o nó de Arquivo offline, colocando o componente *ARC* > *Store* offline. Este procedimento também pode ser útil na prevenção de alarmes quando o servidor TSM não estiver disponível para manutenção.
@@ -41,6 +42,7 @@ image::../media/tsm_offline.gif[Página de configuração de um nó de arquivo]
 
 
 
+[[set-archive-node-to-read-only-if-tsm-middleware-reaches-capacity]]
 == Defina Archive Node como somente leitura se o middleware TSM atingir a capacidade
 
 Se o servidor de middleware TSM visado atingir a capacidade, o nó de arquivo pode ser otimizado para executar apenas recuperações.

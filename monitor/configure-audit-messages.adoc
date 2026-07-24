@@ -25,6 +25,7 @@ Todos os nós do StorageGRID geram mensagens de auditoria e logs para rastrear a
 
 
 
+[[change-audit-message-levels-in-the-audit-log]]
 == Alterar os níveis de mensagens de auditoria no log de auditoria
 
 Você pode definir um nível de auditoria diferente para cada uma das seguintes categorias de mensagens no log de auditoria:
@@ -137,6 +138,7 @@ NOTE: Os cabeçalhos de solicitação de protocolo de auditoria são registrados
 
 
 
+[[use-an-external-syslog-server]]
 == Use um servidor syslog externo
 
 Você pode configurar um servidor syslog externo se quiser salvar informações de auditoria remotamente.
@@ -147,6 +149,8 @@ Você pode configurar um servidor syslog externo se quiser salvar informações 
 
 
 
+[[select-audit-information-destinations]]
+[[Select-audit-information-destinations]]
 == Selecione destinos de informações de auditoria
 
 Você pode especificar onde os logs de auditoria, os logs de eventos de segurança e os logs de aplicativos são enviados.

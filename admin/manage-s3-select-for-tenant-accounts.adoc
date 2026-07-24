@@ -17,12 +17,14 @@ S3 Select fornece uma maneira eficiente de pesquisar grandes quantidades de dado
 
 
 
+[[what-is-s3-select]]
 == O que é o S3 Select?
 
 S3 Select permite que os clientes S3 usem as solicitações SelectObjectContent para filtrar e recuperar apenas os dados necessários de um objeto. A implementação do StorageGRID do S3 Select inclui um subconjunto de comandos e recursos do S3 Select.
 
 
 
+[[considerations-and-requirements-for-using-s3-select]]
 == Considerações e requisitos para usar o S3 Select
 
 O StorageGRID requer o seguinte para consultas S3 Select:

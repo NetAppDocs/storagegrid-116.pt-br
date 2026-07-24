@@ -15,6 +15,7 @@ Um aplicativo cliente pode usar chamadas de API REST do Swift para se conetar a 
 
 
 
+[[swift-object-management]]
 == Gerenciamento de objetos Swift
 
 Depois que os objetos Swift foram ingeridos no sistema StorageGRID, eles são gerenciados pelas regras de gerenciamento do ciclo de vida da informação (ILM) na política ativa de ILM do sistema. As regras e a política do ILM determinam como o StorageGRID cria e distribui cópias de dados de objetos e como gerencia essas cópias ao longo do tempo. Por exemplo, uma regra ILM pode se aplicar a objetos em contentores Swift específicos e pode especificar que várias cópias de objetos sejam salvas em vários data centers por um certo número de anos.
@@ -23,12 +24,14 @@ Entre em Contato com o administrador do StorageGRID se você precisar entender c
 
 
 
+[[conflicting-client-requests]]
 == Solicitações de cliente conflitantes
 
 As solicitações de cliente conflitantes, como dois clientes escrevendo para a mesma chave, são resolvidas com base em "vitórias mais recentes". O tempo para a avaliação "últimos ganhos" é baseado em quando o sistema StorageGRID completa uma determinada solicitação, e não em quando clientes Swift iniciam uma operação.
 
 
 
+[[consistency-guarantees-and-controls]]
 == Garantias de consistência e controles
 
 Por padrão, o StorageGRID fornece consistência de leitura após gravação para objetos recém-criados e consistência para atualizações de objetos e operações HEAD. Qualquer GET seguindo um PUT concluído com sucesso será capaz de ler os dados recém-escritos. As substituições de objetos existentes, atualizações de metadados e exclusões são, eventualmente, consistentes. As substituições geralmente levam segundos ou minutos para se propagar, mas podem levar até 15 dias.

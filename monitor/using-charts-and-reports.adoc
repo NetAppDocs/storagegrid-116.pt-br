@@ -15,6 +15,7 @@ Você pode usar gráficos e relatórios para monitorar o estado do sistema Stora
 
 
 
+[[types-of-charts]]
 == Tipos de gráficos
 
 Gráficos e gráficos resumem os valores de métricas e atributos específicos do StorageGRID.
@@ -71,6 +72,7 @@ xref:reviewing-support-metrics.adoc[Analise as métricas de suporte]
 
 
 
+[[chart-legend]]
 == Legenda da carta
 
 As linhas e cores usadas para desenhar gráficos têm significado específico.
@@ -123,6 +125,7 @@ Uma mistura de sombreamento cinza e azul indica que alguns dos valores de atribu
 |===
 
 
+[[display-charts-and-graphs]]
 == Apresentar gráficos e gráficos
 
 A página nós contém os gráficos e gráficos que você deve acessar regularmente para monitorar atributos como capacidade de storage e taxa de transferência. Em alguns casos, especialmente ao trabalhar com suporte técnico, você pode usar a página *SUPPORT* *Tools* *Grid topology* para acessar gráficos adicionais.
@@ -179,6 +182,7 @@ O visor muda automaticamente para a página *relatórios* *gráficos*. O gráfic
 
 
 
+[[generate-charts]]
 == Gerar gráficos
 
 Os gráficos exibem uma representação gráfica dos valores de dados de atributos. Você pode gerar relatórios em um local de data center, nó de grade, componente ou serviço.

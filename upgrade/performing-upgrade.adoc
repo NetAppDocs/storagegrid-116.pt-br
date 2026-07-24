@@ -18,6 +18,7 @@ Você revisou todas as considerações e concluiu todas as etapas de Planejament
 
 
 
+[[upload-the-upgrade-file]]
 == Carregue o ficheiro de atualização
 
 . Faça login no Gerenciador de Grade usando um xref:../admin/web-browser-requirements.adoc[navegador da web suportado].
@@ -47,6 +48,7 @@ image::../media/storagegrid_upgrade_buttons_enabled.png[Botões de atualização
 
 
 
+[[run-prechecks]]
 == Execute as pré-verificações
 
 Opcionalmente, você pode validar a condição do seu sistema antes de iniciar a atualização real. Selecionar *Executar pré-verificações* permite detetar e resolver problemas antes de iniciar a atualização. As mesmas pré-verificações são realizadas quando você inicia a atualização. As falhas de pré-verificação interromperão o processo de atualização e algumas podem exigir o envolvimento do suporte técnico para serem resolvidas.
@@ -62,6 +64,7 @@ IMPORTANT: Se tiver aberto quaisquer portas de firewall personalizadas, será no
 
 
 
+[[start-upgrade-and-update-primary-admin-node]]
 == Inicie a atualização e atualize o nó de administração principal
 
 Quando a atualização é iniciada, as pré-verificações de atualização são executadas e o nó de administração principal é atualizado, o que inclui parar serviços, atualizar o software e reiniciar serviços. Não é possível acessar o Gerenciador de Grade enquanto o nó Admin principal estiver sendo atualizado. Os logs de auditoria também estarão indisponíveis. Esta atualização pode demorar até 30 minutos.
@@ -96,6 +99,7 @@ image::../media/software_upgrade_400_error.png[Erro de atualização de software
 
 
 
+[[clear-browser-cache-and-sign-back-in]]
 == Limpe o cache do navegador e inicie sessão novamente
 
 . Depois que o nó Admin principal tiver sido atualizado, limpe o cache do seu navegador da Web e inicie sessão novamente.
@@ -126,6 +130,7 @@ image::../media/grid_manager_dashboard.png[Painel do Grid Manager]
 
 
 
+[[download-recovery-package-and-upgrade-all-grid-nodes]]
 == Faça o download do Pacote de recuperação e atualize todos os nós de grade
 
 . Depois que os nós de grade aparecerem na tabela Status do nó de grade, mas antes de aprovar quaisquer nós de grade, xref:obtaining-required-materials-for-software-upgrade.adoc#download-the-recovery-package[Faça o download de uma nova cópia do Pacote de recuperação].
@@ -178,6 +183,7 @@ NOTE: Quando um nó de appliance atinge a fase de atualização dos pacotes base
 
 
 
+[[complete-upgrade]]
 == Atualização completa
 
 Quando todos os nós da grade tiverem concluído os estágios de atualização, a tarefa *Atualizar nós da grade* é mostrada como concluída. As restantes tarefas de atualização são executadas automaticamente e em segundo plano.
@@ -196,6 +202,7 @@ Quando a tarefa etapas de atualização final estiver concluída, a atualizaçã
 
 
 
+[[confirm-upgrade]]
 == Confirme a atualização
 
 . Confirme se a atualização foi concluída com êxito.

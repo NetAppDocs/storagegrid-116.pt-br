@@ -19,6 +19,7 @@ Você pode reduzir a ameaça de ataques hostis em seu sistema StorageGRID especi
 
 
 
+[[example-1-gateway-node-only-accepts-https-s3-requests]]
 == Exemplo 1: O Gateway Node aceita apenas solicitações HTTPS S3
 
 Suponha que você queira que um nó de gateway recuse todo o tráfego de entrada na rede do cliente, exceto para solicitações HTTPS S3. Você executaria estes passos gerais:
@@ -31,6 +32,7 @@ Depois de salvar sua configuração, todo o tráfego de entrada na rede de clien
 
 
 
+[[example-2-storage-node-sends-s3-platform-services-requests]]
 == Exemplo 2: O nó de storage envia S3 solicitações de serviços de plataforma
 
 Suponha que você queira ativar o tráfego de serviço de plataforma S3 de saída de um nó de armazenamento, mas você deseja impedir quaisquer conexões de entrada para esse nó de armazenamento na rede cliente. Você executaria este passo geral:

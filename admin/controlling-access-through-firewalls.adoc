@@ -15,6 +15,7 @@ Quando quiser controlar o acesso através de firewalls, abra ou feche portas esp
 
 
 
+[[control-access-at-the-external-firewall]]
 == Controle o acesso no firewall externo
 
 Você pode controlar o acesso às interfaces de usuário e APIs nos nós de administração do StorageGRID abrindo ou fechando portas específicas no firewall externo. Por exemplo, você pode evitar que os locatários sejam capazes de se conetar ao Gerenciador de Grade no firewall, além de usar outros métodos para controlar o acesso ao sistema.

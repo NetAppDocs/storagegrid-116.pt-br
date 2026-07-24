@@ -36,6 +36,7 @@ NOTE: Não use dispositivos bond ou bridge diretamente como a interface de rede 
 
 
 
+[[considerations-and-recommendations-for-mac-address-cloning]]
 == Considerações e recomendações para clonagem de endereços MAC
 
 .[[mac_address_clonation_ubuntu]]
@@ -43,6 +44,7 @@ A clonagem de endereços MAC faz com que o contentor use o endereço MAC do host
 
 
 
+[[enabling-mac-cloning]]
 === Ativar a clonagem MAC
 
 Em certos ambientes, a segurança pode ser aprimorada por meio da clonagem de endereços MAC, pois permite que você use uma NIC virtual dedicada para a rede Admin, rede Grid e rede Client. Ter o contentor usar o endereço MAC da NIC dedicada no host permite evitar o uso de configurações de rede de modo promíscuas.
@@ -69,6 +71,7 @@ IMPORTANT: Ativar a clonagem MAC em um host virtual sem também ativar o modo pr
 
 
 
+[[mac-cloning-use-cases]]
 === Casos de uso de clonagem DE MAC
 
 Existem dois casos de uso a considerar com clonagem MAC:
@@ -84,6 +87,7 @@ Para ativar a clonagem MAC, consulte o xref:creating-node-configuration-files.ad
 
 
 
+[[mac-cloning-example]]
 === Exemplo de clonagem DE MAC
 
 Exemplo de clonagem MAC ativada com um host com endereço MAC de 11:22:33:44:55:66 para a interface ens256 e as seguintes chaves no arquivo de configuração do nó:
@@ -97,6 +101,7 @@ Resultado: O MAC do host para ens256 é B2:9c:02:C2:27:10 e o MAC da rede Admin 
 
 
 
+[[example-1-1-to-1-mapping-to-physical-or-virtual-nics]]
 == Exemplo 1: Mapeamento de 1 para 1 para NICs físicos ou virtuais
 
 O exemplo 1 descreve um mapeamento de interface física simples que requer pouca ou nenhuma configuração do lado do host.
@@ -111,6 +116,7 @@ Se o Switch 1 for um switch físico, você deve configurar as portas conetadas a
 
 
 
+[[example-2-lacp-bond-carrying-vlans]]
 == Exemplo 2: VLANs de transporte de ligação LACP
 
 O exemplo 2 assume que você está familiarizado com a ligação de interfaces de rede e com a criação de interfaces VLAN na distribuição Linux que você está usando.

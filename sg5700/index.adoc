@@ -99,6 +99,7 @@ O storage bruto máximo disponível no dispositivo StorageGRID é fixo, com base
 
 
 
+[[model-sg5712-and-5712x]]
 == Modelos SG5712 e 5712X
 
 As figuras mostram a parte frontal e traseira do modelo SG5712 e SG5712X, um gabinete 2U com capacidade para 12 unidades.
@@ -175,6 +176,7 @@ Coletores do ventilador de potência
 |===
 
 
+[[model-sg5760-and-sg5760x]]
 == Modelos SG5760 e SG5760X
 
 As figuras mostram a parte frontal e traseira dos modelos SG5760 e SG5760X, um gabinete 4U que acomoda 60 unidades em 5 gavetas de unidade.

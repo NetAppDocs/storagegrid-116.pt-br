@@ -138,6 +138,7 @@ Use o XML de configuração de notificação de metadados de amostra para aprend
 
 
 
+[[metadata-notification-configuration-that-applies-to-all-objects]]
 == Configuração de notificação de metadados que se aplica a todos os objetos
 
 Neste exemplo, metadados de objetos para todos os objetos são enviados para o mesmo destino.
@@ -157,6 +158,7 @@ Neste exemplo, metadados de objetos para todos os objetos são enviados para o m
 ----
 
 
+[[metadata-notification-configuration-with-two-rules]]
 == Configuração de notificação de metadados com duas regras
 
 Neste exemplo, metadados de objetos para objetos que correspondem ao prefixo `/images` são enviados para um destino, enquanto metadados de objetos para objetos que correspondem ao prefixo `/videos` são enviados para um segundo destino.

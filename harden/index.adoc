@@ -21,6 +21,7 @@ O StorageGRID segue a política de manipulação de vulnerabilidades _NetApp_. V
 
 
 
+[[general-considerations-for-hardening-storagegrid-systems]]
 == Considerações gerais para o endurecimento de sistemas StorageGRID
 
 Ao endurecer um sistema StorageGRID, você deve considerar o seguinte:

@@ -15,6 +15,7 @@ Você deve analisar os requisitos para ativar a configuração global de bloquei
 
 
 
+[[requirements-for-using-the-global-s3-object-lock-setting]]
 == Requisitos para usar a configuração global S3 Object Lock
 
 * Você deve ativar a configuração global de bloqueio de objetos S3 usando o Gerenciador de Grade ou a API de Gerenciamento de Grade antes que qualquer locatário S3 possa criar um bucket com o bloqueio de objetos S3 ativado.
@@ -32,6 +33,7 @@ image::../media/compliance_fields_on_ilm_rules_page.png[Campos de conformidade n
 
 
 
+[[requirements-for-compliant-ilm-rules]]
 == Requisitos para regras ILM compatíveis
 
 Se você quiser ativar a configuração global S3 Object Lock, certifique-se de que a regra padrão na política ILM ativa seja compatível. Uma regra em conformidade satisfaz os requisitos de ambos os buckets com o S3 Object Lock ativado e quaisquer buckets existentes que tenham a conformidade legada ativada:
@@ -50,6 +52,7 @@ image::../media/compliant_rule_two_copies_forever.png[Exemplo de regra compatív
 
 
 
+[[requirements-for-active-and-proposed-ilm-policies]]
 == Requisitos para políticas de ILM ativas e propostas
 
 Quando a configuração global S3 Object Lock está ativada, as políticas ILM ativas e propostas podem incluir regras compatíveis e não compatíveis.
@@ -68,6 +71,7 @@ Uma política de ILM compatível pode incluir estas três regras:
 
 
 
+[[requirements-for-buckets-with-s3-object-lock-enabled]]
 == Requisitos para buckets com bloqueio de objeto S3 ativado
 
 * Se a configuração global de bloqueio de objeto S3 estiver ativada para o sistema StorageGRID, você poderá usar o Gerenciador de locatário, a API de gerenciamento de locatário ou a API REST S3 para criar buckets com o bloqueio de objeto S3 ativado.
@@ -87,6 +91,7 @@ image::../media/compliant_bucket.png[Exemplo de balde compatível]
 
 
 
+[[requirements-for-objects-in-buckets-with-s3-object-lock-enabled]]
 == Requisitos para objetos em buckets com o bloqueio de objetos S3 ativado
 
 * Para proteger uma versão de objeto, o aplicativo cliente S3 deve configurar a retenção padrão de bucket ou especificar configurações de retenção em cada solicitação de upload.
@@ -97,6 +102,7 @@ image::../media/compliant_bucket.png[Exemplo de balde compatível]
 
 
 
+[[lifecycle-of-objects-in-buckets-with-s3-object-lock-enabled]]
 == Ciclo de vida dos objetos em buckets com o bloqueio de objetos S3 ativado
 
 Cada objeto que é salvo em um bucket com o S3 Object Lock ativado passa por três estágios:
@@ -127,5 +133,5 @@ Cada objeto que é salvo em um bucket com o S3 Object Lock ativado passa por tr�
 * xref:managing-objects-with-s3-object-lock.adoc#comparing-s3-object-lock-to-legacy-compliance[Comparação do S3 Object Lock com a conformidade legada]
 * xref:example-7-compliant-ilm-policy-for-s3-object-lock.adoc[Exemplo 7: Política de ILM compatível para bloqueio de objetos S3]
 * xref:../audit/index.adoc[Rever registos de auditoria]
-* xref:../s3/operations-on-buckets.adoc#using-s3-object-lock-default-bucket-retention[Use retenção padrão do bucket do bloqueio de objetos S3].
+* xref:../s3/use-s3-object-lock-default-bucket-retention.adoc[Use retenção padrão do bucket do bloqueio de objetos S3].
 

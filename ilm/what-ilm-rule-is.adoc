@@ -28,6 +28,7 @@ Observe que os metadados de objetos não são gerenciados pelas regras do ILM. E
 
 
 
+[[elements-of-an-ilm-rule]]
 == Elementos de uma regra ILM
 
 Uma regra ILM tem três elementos:
@@ -39,6 +40,7 @@ Uma regra ILM tem três elementos:
 
 
 
+[[what-ilm-rule-filtering-is]]
 == O que é a filtragem de regras ILM
 
 Quando você cria uma regra ILM, você especifica filtros para identificar quais objetos a regra se aplica.
@@ -68,6 +70,7 @@ Você também pode combinar filtros básicos e avançados conforme necessário e
 
 
 
+[[what-ilm-rule-placement-instructions-are]]
 == Quais são as instruções de colocação de regras do ILM
 
 As instruções de posicionamento determinam onde, quando e como os dados do objeto são armazenados. Uma regra ILM pode incluir uma ou mais instruções de colocação. Cada instrução de colocação aplica-se a um único período de tempo.
@@ -116,6 +119,7 @@ Quando você define o conjunto de instruções de colocação para uma regra, vo
 
 
 
+[[example-ilm-rule]]
 == Exemplo de regra ILM
 
 Este exemplo de regra ILM aplica-se aos objetos pertencentes ao locatário A. Ele faz duas cópias replicadas desses objetos e armazena cada cópia em um local diferente. As duas cópias são retidas para sempre, o que significa que o StorageGRID não as apagará automaticamente. Em vez disso, o StorageGRID manterá esses objetos até que sejam excluídos por uma solicitação de exclusão de cliente ou pela expiração de um ciclo de vida de bucket.

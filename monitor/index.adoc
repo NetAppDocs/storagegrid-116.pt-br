@@ -15,6 +15,7 @@ Use estas instruções para monitorar um sistema StorageGRID e avaliar e resolve
 
 
 
+[[about-these-instructions]]
 == Sobre estas instruções
 
 Estas instruções descrevem como usar o Gerenciador de Grade para monitorar um sistema StorageGRID. Você aprenderá quais informações você deve monitorar regularmente, como gerenciar alertas e alarmes legados, como usar o SNMP para monitoramento e como obter dados adicionais do StorageGRID, incluindo métricas e diagnósticos.

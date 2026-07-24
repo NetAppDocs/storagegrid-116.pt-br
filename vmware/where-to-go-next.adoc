@@ -15,6 +15,7 @@ Depois de concluir uma instalação, você deve executar uma série de etapas de
 
 
 
+[[required-tasks]]
 == Tarefas necessárias
 
 * Configurar o VMware vSphere Hypervisor para reinicialização automática.
@@ -47,6 +48,7 @@ NOTE: Se algum nó de arquivamento usar o Tivoli Storage Manager como o sistema 
 
 
 
+[[optional-tasks]]
 == Tarefas opcionais
 
 * Se você quiser receber notificações do sistema de alarme (legado), configure listas de e-mail e notificações por e-mail para alarmes.

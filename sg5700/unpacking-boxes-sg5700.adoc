@@ -45,6 +45,7 @@ image::../media/back_brackets_table_size.gif[Suportes traseiros e porcas de gaio
 
 
 
+[[cables-and-connectors]]
 == Cabos e conetores
 
 O envio para o dispositivo StorageGRID inclui os seguintes cabos e conetores:

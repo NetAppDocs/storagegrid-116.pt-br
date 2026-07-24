@@ -15,6 +15,7 @@ Você deve entender como seu sistema StorageGRID será afetado durante a atualiz
 
 
 
+[[storagegrid-upgrades-are-non-disruptive]]
 == As atualizações do StorageGRID não causam interrupções
 
 O sistema StorageGRID pode obter e recuperar dados de aplicativos clientes durante todo o processo de atualização. Os nós de grade são derrubados um de cada vez durante a atualização, portanto, não há um momento em que todos os nós de grade estão indisponíveis.
@@ -29,6 +30,7 @@ Para permitir disponibilidade contínua, você deve garantir que os objetos seja
 
 
 
+[[appliance-firmware-is-upgraded]]
 == O firmware do dispositivo foi atualizado
 
 Durante a atualização do StorageGRID 11,6:
@@ -40,6 +42,7 @@ Durante a atualização do StorageGRID 11,6:
 
 
 
+[[alerts-might-be-triggered]]
 == Os alertas podem ser acionados
 
 Os alertas podem ser acionados quando os serviços começam e param e quando o sistema StorageGRID está operando como um ambiente de versão mista (alguns nós de grade executando uma versão anterior, enquanto outros foram atualizados para uma versão posterior). Outros alertas podem ser acionados após a conclusão da atualização.
@@ -54,12 +57,14 @@ Após a conclusão da atualização, você pode revisar qualquer alerta relacion
 
 
 
+[[many-snmp-notifications-are-generated]]
 == Muitas notificações SNMP são geradas
 
 Esteja ciente de que um grande número de notificações SNMP pode ser gerado quando os nós de grade são interrompidos e reiniciados durante a atualização. Para evitar notificações excessivas, desmarque a caixa de seleção *Ativar notificações de agente SNMP* (*CONFIGURAÇÃO* *Monitoramento* *agente SNMP*) para desativar as notificações SNMP antes de iniciar a atualização. Em seguida, reative as notificações após a atualização estar concluída.
 
 
 
+[[configuration-changes-are-restricted]]
 == As alterações de configuração são restritas
 
 
@@ -83,6 +88,7 @@ Até que a tarefa *etapas de atualização final* seja concluída:
 
 
 
+[[you-cannot-view-bucket-details-or-manage-buckets-from-the-tenant-manager]]
 == Não é possível visualizar os detalhes do bucket ou gerenciar buckets do Gerenciador do locatário
 
 Durante a atualização para o StorageGRID 11,6 (ou seja, enquanto o sistema estiver operando como um ambiente de versão mista), não é possível exibir detalhes do bucket ou gerenciar buckets usando o Gerenciador do locatário. Um dos seguintes erros aparece na página baldes no Tenant Manager:

@@ -38,12 +38,14 @@ O certificado pode usar wildcards para representar os nomes de domínio totalmen
 
 
 
+[[create-a-load-balancer-endpoint]]
 == Crie um ponto de extremidade do balanceador de carga
 
 Cada ponto de extremidade do balanceador de carga especifica uma porta, um tipo de cliente (S3 ou Swift) e um protocolo de rede (HTTP ou HTTPS).
 
 
 
+[[access-the-wizard]]
 === Acesse o assistente
 
 . Selecione *CONFIGURATION* > *Network* > *Load balancer endpoints*.
@@ -52,6 +54,7 @@ Cada ponto de extremidade do balanceador de carga especifica uma porta, um tipo 
 
 
 
+[[enter-endpoint-details]]
 === Introduza os detalhes do endpoint
 
 . Insira os detalhes do endpoint.
@@ -106,6 +109,7 @@ O protocolo de rede que os clientes utilizarão ao ligar a este ponto final.
 
 
 
+[[select-the-binding-mode]]
 === Selecione o modo de encadernação
 
 . Selecione um modo de encadernação para o endpoint controlar como o endpoint é acessado.
@@ -158,6 +162,7 @@ image::../media/load_balancer_endpoint_ha_group_vips_binding_mode.png[Modo de en
 
 
 
+[[attach-certificate]]
 === Anexar certificado
 
 . Se você estiver criando um endpoint *HTTPS*, selecione o tipo de certificado de segurança que deseja anexar ao endpoint.
@@ -243,6 +248,7 @@ O ponto final do balanceador de carga é criado. O certificado personalizado é 
 
 
 
+[[after-you-finishafter-you-finish]]
 === [[After-you-finish]] depois de terminar
 
 . Se você usar um sistema de nomes de domínio (DNS), verifique se o DNS inclui um Registro para associar o nome de domínio totalmente qualificado do StorageGRID a cada endereço IP que os clientes usarão para fazer conexões.
@@ -268,6 +274,7 @@ Você também deve garantir que o Registro DNS faça referência a todos os nome
 
 
 
+[[view-and-edit-load-balancer-endpoints]]
 == Visualize e edite pontos de extremidade do balanceador de carga
 
 Você pode exibir detalhes dos endpoints existentes do balanceador de carga, incluindo os metadados do certificado para um endpoint seguro. Você também pode alterar o nome ou o modo de vinculação de um endpoint e atualizar quaisquer certificados associados.
@@ -348,6 +355,7 @@ Editar certificado de endpoint
 
 
 
+[[remove-load-balancer-endpoints]]
 == Remova os pontos finais do balanceador de carga
 
 Você pode remover um ou mais endpoints usando o menu *ações* ou remover um único endpoint da página de detalhes.

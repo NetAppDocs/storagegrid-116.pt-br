@@ -29,6 +29,7 @@ Você pode configurar grupos de alta disponibilidade (HA) para fornecer acesso a
 
 
 
+[[create-a-high-availability-group]]
 == Crie um grupo de alta disponibilidade
 
 Ao criar um grupo de alta disponibilidade, você seleciona uma ou mais interfaces e as organiza por ordem de prioridade. Em seguida, atribua um ou mais endereços VIP ao grupo.
@@ -37,6 +38,7 @@ Uma interface deve ser incluída em um grupo de HA para um nó de gateway ou um 
 
 
 
+[[access-the-wizard]]
 === Acesse o assistente
 
 . Selecione *CONFIGURATION* > *Network* > *High Availability groups*.
@@ -45,6 +47,7 @@ Uma interface deve ser incluída em um grupo de HA para um nó de gateway ou um 
 
 
 
+[[enter-details-for-the-ha-group]]
 === Introduza os detalhes do grupo HA
 
 . Forneça um nome exclusivo para o grupo HA.
@@ -57,6 +60,7 @@ image::../media/ha-group-create-wizard.png[Assistente de criação de grupos HA]
 
 
 
+[[add-interfaces-to-the-ha-group]]
 === Adicionar interfaces ao grupo HA
 
 . Selecione uma ou mais interfaces para adicionar a esse grupo de HA.
@@ -91,6 +95,7 @@ image::../media/vlan_parent_interface_tooltip.png[Dica da ferramenta Interface V
 
 
 
+[[determine-the-priority-order]]
 === Determine a ordem de prioridade
 
 . Determine a interface principal e todas as interfaces de backup (failover) para esse grupo de HA.
@@ -115,6 +120,7 @@ Se o grupo de HA incluir mais de uma interface e a interface principal falhar, o
 
 
 
+[[enter-ip-addresses]]
 === Introduza endereços IP
 
 . No campo *Subnet CIDR*, especifique a sub-rede VIP na notação CIDR--um endereço IPv4 seguido de uma barra e o comprimento da sub-rede (0-32).
@@ -147,12 +153,14 @@ NOTE: Aguarde até 15 minutos para que as alterações em um grupo de HA sejam a
 
 
 
+[[next-steps]]
 === Próximas etapas
 
 Se você usar esse grupo de HA para balanceamento de carga, crie um ponto de extremidade do balanceador de carga para determinar a porta e o protocolo de rede e para anexar todos os certificados necessários. xref:configuring-load-balancer-endpoints.adoc[Configurar pontos de extremidade do balanceador de carga]Consulte .
 
 
 
+[[edit-a-high-availability-group]]
 == Edite um grupo de alta disponibilidade
 
 Você pode editar um grupo de alta disponibilidade (HA) para alterar seu nome e descrição, adicionar ou remover interfaces, alterar a ordem de prioridade ou adicionar ou atualizar endereços IP virtuais.
@@ -201,6 +209,7 @@ NOTE: Aguarde até 15 minutos para que as alterações em um grupo de HA sejam a
 
 
 
+[[remove-a-high-availability-group]]
 == Remova um grupo de alta disponibilidade
 
 Você pode remover um ou mais grupos de alta disponibilidade (HA) de cada vez. No entanto, não é possível remover um grupo de HA se ele estiver vinculado a um ou mais pontos de extremidade do balanceador de carga.

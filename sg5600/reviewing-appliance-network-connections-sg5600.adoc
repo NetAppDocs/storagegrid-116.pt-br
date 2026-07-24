@@ -15,6 +15,7 @@ Antes de instalar o dispositivo StorageGRID, você deve entender quais redes pod
 
 
 
+[[storagegrid-appliance-networks]]
 == Redes de dispositivos StorageGRID
 
 Ao implantar um dispositivo StorageGRID como nó de armazenamento, você pode conectá-lo às seguintes redes:
@@ -33,6 +34,7 @@ NOTE: Para obter informações detalhadas sobre redes StorageGRID, consulte _Pri
 
 
 
+[[storagegrid-appliance-connections]]
 == Conexões de dispositivos StorageGRID
 
 Ao instalar um dispositivo StorageGRID, você deve conetar os dois controladores entre si e às redes necessárias. A figura mostra os dois controladores no SG5660, com o controlador E2700 na parte superior e o controlador E5600SG na parte inferior. No SG5612, o controlador E2700 está à esquerda do controlador E5600SG.

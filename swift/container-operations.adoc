@@ -15,6 +15,7 @@ O StorageGRID suporta um máximo de 1.000 contentores por conta Swift. As seguin
 
 
 
+[[delete-container]]
 == ELIMINAR recipiente
 
 Esta operação remove um contentor vazio de uma conta Swift em um sistema StorageGRID.
@@ -40,6 +41,7 @@ Uma execução bem-sucedida retorna os seguintes cabeçalhos com uma resposta "H
 
 
 
+[[get-container]]
 == PEGUE o recipiente
 
 Esta operação recupera a lista de objetos associada ao contentor juntamente com estatísticas de contentor e metadados em um sistema StorageGRID.
@@ -80,6 +82,7 @@ Uma execução bem-sucedida retorna os seguintes cabeçalhos com uma resposta "H
 
 
 
+[[head-container]]
 == Recipiente DA cabeça
 
 Esta operação recupera estatísticas de contentor e metadados de um sistema StorageGRID.
@@ -108,6 +111,7 @@ Uma execução bem-sucedida retorna os seguintes cabeçalhos com uma resposta "H
 
 
 
+[[put-container]]
 == COLOQUE o recipiente
 
 Esta operação cria um contentor para uma conta em um sistema StorageGRID.

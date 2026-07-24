@@ -17,12 +17,14 @@ Para obter informações adicionais sobre topologia de rede, requisitos e comuni
 
 
 
+[[deployment-topologies]]
 == Topologias de implantação
 
 O sistema StorageGRID pode ser implantado em um único local de data center ou em vários locais de data center.
 
 
 
+[[single-site]]
 === Um único local
 
 Em uma implantação com um único local, a infraestrutura e as operações do sistema StorageGRID são centralizadas.
@@ -31,6 +33,7 @@ image::../media/data_center_site_single.png[Um único local de data center]
 
 
 
+[[multiple-sites]]
 === Vários locais
 
 Em uma implantação com vários sites, diferentes tipos e números de recursos do StorageGRID podem ser instalados em cada local. Por exemplo, pode ser necessário mais armazenamento em um data center do que em outro.
@@ -43,12 +46,14 @@ Vários locais lógicos também podem existir em um único data center para perm
 
 
 
+[[grid-node-redundancy]]
 === Redundância de nó de grade
 
 Em uma implantação de um único local ou de vários locais, você pode incluir opcionalmente mais de um nó de administrador ou nó de gateway para redundância. Por exemplo, você pode instalar mais de um nó de administrador em um único site ou em vários sites. No entanto, cada sistema StorageGRID só pode ter um nó de administração principal.
 
 
 
+[[system-architecture]]
 == Arquitetura do sistema
 
 Este diagrama mostra como os nós de grade são organizados dentro de um sistema StorageGRID.
@@ -63,6 +68,7 @@ Os objetos podem ser armazenados no StorageGRID em nós de storage baseados em s
 
 
 
+[[grid-nodes-and-services]]
 == Nós e serviços de grade
 
 O componente básico básico de um sistema StorageGRID é o nó de grade. Os nós contêm serviços, que são módulos de software que fornecem um conjunto de recursos para um nó de grade.
@@ -82,6 +88,7 @@ Para saber mais, xref:../admin/index.adoc[Administrar o StorageGRID]consulte .
 
 
 
+[[software-based-nodes]]
 === Nós baseados em software
 
 Os nós de grade baseados em software podem ser implantados das seguintes maneiras:
@@ -108,6 +115,7 @@ Utilize o https://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoper
 
 
 
+[[storagegrid-appliance-nodes]]
 === Nós de dispositivos StorageGRID
 
 Os aparelhos de hardware StorageGRID são especialmente projetados para uso em um sistema StorageGRID. Alguns dispositivos podem ser usados como nós de storage. Outros dispositivos podem ser usados como nós de administrador ou nós de gateway. Você pode combinar nós de dispositivo com nós baseados em software ou implantar grades totalmente projetadas e totalmente compatíveis com dispositivos que não têm dependências de hipervisores externos, storage ou hardware de computação.
@@ -146,6 +154,7 @@ Consulte o seguinte para obter mais informações:
 
 
 
+[[primary-services-for-admin-nodes]]
 === Serviços primários para nós de administração
 
 A tabela a seguir mostra os serviços primários para nós de administração; no entanto, essa tabela não lista todos os serviços de nó.
@@ -216,6 +225,7 @@ Monitora o sistema operacional e o hardware subjacente.
 |===
 
 
+[[primary-services-for-storage-nodes]]
 === Serviços primários para nós de storage
 
 A tabela a seguir mostra os serviços primários para nós de storage; no entanto, essa tabela não lista todos os serviços de nós.
@@ -306,6 +316,7 @@ Monitora o sistema operacional e o hardware subjacente.
 |===
 
 
+[[primary-services-for-gateway-nodes]]
 === Serviços primários para nós de gateway
 
 A tabela a seguir mostra os serviços primários para nós de Gateway; no entanto, essa tabela não lista todos os serviços de nós.
@@ -350,6 +361,7 @@ Monitora o sistema operacional e o hardware subjacente.
 |===
 
 
+[[primary-services-for-archive-nodes]]
 === Serviços primários para nós de arquivamento
 
 A tabela a seguir mostra os serviços primários para nós de arquivamento; no entanto, essa tabela não lista todos os serviços de nós.
@@ -374,6 +386,7 @@ Monitora o sistema operacional e o hardware subjacente.
 |===
 
 
+[[storagegrid-services]]
 === Serviços da StorageGRID
 
 A seguir está uma lista completa de serviços do StorageGRID.

@@ -37,6 +37,7 @@ Esta seção fornece instruções para o cabeamento dos seguintes dispositivos:
 
 
 
+[[cable-the-sg6060-or-sg6060x]]
 == Faça o cabo SG6060 ou SG6060X
 
 As figuras a seguir mostram os três controladores nos dispositivos SG6060 e SG6060X, com o controlador de computação SG6000-CN na parte superior e os dois controladores de storage E2800 na parte inferior.
@@ -57,6 +58,7 @@ image::../media/sg6000x_e2800B_connections.png[SG6060 a E2800B ligações]
 
 
 
+[[cable-the-sgf6024]]
 == Faça o cabo SGF6024
 
 A figura a seguir mostra as três controladoras no dispositivo SGF6024, com o controlador de computação SG6000-CN na parte superior e as duas controladoras de storage EF570 lado a lado abaixo do controlador de computação.

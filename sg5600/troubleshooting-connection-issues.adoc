@@ -15,6 +15,7 @@ Se você encontrar problemas de conexão durante a instalação do StorageGRID A
 
 
 
+[[unable-to-connect-to-storagegrid-appliance-over-network]]
 == Não foi possível ligar ao dispositivo StorageGRID através da rede
 
 Se não conseguir ligar ao dispositivo, poderá haver um problema de rede ou a instalação do hardware poderá não ter sido concluída com êxito.

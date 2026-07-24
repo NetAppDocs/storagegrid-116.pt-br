@@ -15,6 +15,7 @@ Os endpoints usados nos serviços de plataforma são criados e mantidos por usu�
 
 
 
+[[issues-with-new-endpoints]]
 == Problemas com novos endpoints
 
 Antes que um locatário possa usar os serviços da plataforma, ele deve criar um ou mais pontos de extremidade usando o Gerenciador do locatário. Cada endpoint representa um destino externo para um serviço de plataforma, como um bucket do StorageGRID S3, um bucket do Amazon Web Services, um tópico do serviço de notificação simples ou um cluster do Elasticsearch hospedado localmente ou na AWS. Cada endpoint inclui a localização do recurso externo e as credenciais necessárias para acessar esse recurso.
@@ -28,6 +29,7 @@ NOTE: A criação do endpoint falhará se os serviços da plataforma não estive
 
 
 
+[[issues-with-existing-endpoints]]
 == Problemas com endpoints existentes
 
 Se ocorrer um erro quando o StorageGRID tenta alcançar um endpoint existente, uma mensagem é exibida no Dashboard no Gerenciador de locatário.
@@ -43,18 +45,21 @@ NOTE: Algumas mensagens de erro na coluna *último erro* podem incluir um LOGID 
 
 
 
+[[issues-related-to-proxy-servers]]
 == Problemas relacionados aos servidores proxy
 
 Se você tiver configurado um proxy de storage entre nós de storage e endpoints de serviço de plataforma, poderão ocorrer erros se o serviço proxy não permitir mensagens do StorageGRID. Para resolver esses problemas, verifique as configurações do servidor proxy para garantir que as mensagens relacionadas ao serviço da plataforma não sejam bloqueadas.
 
 
 
+[[determine-if-an-error-has-occurred]]
 == Determine se ocorreu um erro
 
 Se algum erro de endpoint tiver ocorrido nos últimos 7 dias, o Dashboard no Gerenciador de inquilinos exibirá uma mensagem de alerta. Pode aceder à página Endpoints para ver mais detalhes sobre o erro.
 
 
 
+[[client-operations-fail]]
 == Falha nas operações do cliente
 
 Alguns problemas de serviços de plataforma podem causar falha nas operações do cliente no bucket do S3. Por exemplo, as operações do cliente S3 falharão se o serviço interno da Máquina de Estado replicado (RSM) parar ou se houver muitas mensagens de serviços de plataforma enfileiradas para entrega.
@@ -67,6 +72,7 @@ Para verificar o status dos serviços:
 
 
 
+[[recoverable-and-unrecoverable-endpoint-errors]]
 == Erros de endpoint recuperáveis e irrecuperáveis
 
 Após a criação de endpoints, os erros de solicitação de serviço da plataforma podem ocorrer por vários motivos. Alguns erros são recuperáveis com a intervenção do usuário. Por exemplo, erros recuperáveis podem ocorrer pelos seguintes motivos:
@@ -99,6 +105,7 @@ O locatário pode reenviar os valores existentes para evitar fazer alterações 
 
 
 
+[[platform-services-messages-cannot-be-delivered]]
 == As mensagens dos serviços da plataforma não podem ser entregues
 
 Se o destino encontrar um problema que o impeça de aceitar mensagens de serviços da plataforma, a operação do cliente no bucket será bem-sucedida, mas a mensagem de serviços da plataforma não será entregue. Por exemplo, esse erro pode acontecer se as credenciais forem atualizadas no destino, de modo que o StorageGRID não possa mais se autenticar no serviço de destino.
@@ -107,6 +114,7 @@ Se as mensagens dos serviços da plataforma não puderem ser entregues devido a 
 
 
 
+[[slower-performance-for-platform-service-requests]]
 == Desempenho mais lento para solicitações de serviço de plataforma
 
 O software StorageGRID pode controlar as solicitações recebidas do S3 para um bucket se a taxa na qual as solicitações estão sendo enviadas exceder a taxa na qual o endpoint de destino pode receber as solicitações. O estrangulamento só ocorre quando há um backlog de solicitações aguardando para serem enviadas para o endpoint de destino.
@@ -117,6 +125,7 @@ As solicitações do CloudMirror são mais propensas a serem afetadas pelo desem
 
 
 
+[[platform-service-requests-fail]]
 == As solicitações de serviço da plataforma falham
 
 Para visualizar a taxa de falha da solicitação para serviços de plataforma:
@@ -131,6 +140,7 @@ image::../media/nodes_page_site_level_platform_services.gif[Serviços de platafo
 
 
 
+[[platform-services-unavailable-alert]]
 == Alerta de serviços de plataforma indisponíveis
 
 O alerta *Platform services unavailable* indica que nenhuma operação de serviço de plataforma pode ser executada em um local porque poucos nós de storage com o serviço RSM estão em execução ou disponíveis.
@@ -144,6 +154,7 @@ NOTE: Se mais de um nó de storage que contém o serviço RSM falhar em um local
 
 
 
+[[additional-troubleshooting-guidance-for-platform-services-endpoints]]
 == Orientação adicional para solução de problemas para endpoints de serviços de plataforma
 
 Para obter informações adicionais sobre a solução de problemas de endpoints de serviços de plataforma, consulte as instruções para xref:../tenant/index.adoc[usando uma conta de locatário].

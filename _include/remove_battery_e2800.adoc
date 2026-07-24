@@ -4,6 +4,7 @@
 
 
 
+[[move-battery-to-the-new-controller]]
 == Mova a bateria para o novo controlador
 
 .Passos

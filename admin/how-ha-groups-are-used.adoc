@@ -79,6 +79,7 @@ Acesso ao cliente S3 ou Swift -- serviço CLB
 |===
 
 
+[[limitations-of-using-ha-groups-with-grid-manager-or-tenant-manager]]
 == Limitações do uso de grupos de HA com Grid Manager ou Tenant Manager
 
 Se um serviço do Grid Manager ou do Tenant Manager falhar, o failover do grupo HA não será acionado.
@@ -89,6 +90,7 @@ Alguns procedimentos de manutenção não podem ser executados quando o nó de a
 
 
 
+[[limitations-of-using-ha-groups-with-the-clb-service]]
 == Limitações do uso de grupos HA com o serviço CLB
 
 A falha do serviço CLB não aciona o failover no grupo HA.

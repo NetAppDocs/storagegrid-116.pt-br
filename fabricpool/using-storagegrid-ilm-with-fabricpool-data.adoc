@@ -38,6 +38,7 @@ NOTE: O uso de pools de armazenamento em nuvem com FabricPool não é suportado 
 
 
 
+[[example-ilm-policy-for-fabricpool-data]]
 == Exemplo de política de ILM para dados do FabricPool
 
 Use esta política de exemplo simples como ponto de partida para suas próprias regras e políticas ILM.

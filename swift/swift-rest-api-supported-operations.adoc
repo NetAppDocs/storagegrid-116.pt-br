@@ -15,6 +15,7 @@ O sistema StorageGRID dá suporte à maioria das operações na API OpenStack Sw
 
 
 
+[[operations-supported-in-storagegrid]]
 == Operações suportadas no StorageGRID
 
 As seguintes operações da API Swift são suportadas:
@@ -26,6 +27,7 @@ As seguintes operações da API Swift são suportadas:
 
 
 
+[[common-response-headers-for-all-operations]]
 == Cabeçalhos de resposta comuns para todas as operações
 
 O sistema StorageGRID implementa todos os cabeçalhos comuns para operações com suporte, conforme definido pela API de armazenamento de objetos OpenStack Swift v1.

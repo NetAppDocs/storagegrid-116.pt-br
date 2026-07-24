@@ -15,6 +15,7 @@ Cada modelo do dispositivo StorageGRID SG6000 inclui um controlador de computaç
 
 
 
+[[all-appliances-sg6000-cn-compute-controller]]
 == Todos os dispositivos: Controlador de computação SG6000-CN
 
 * Fornece recursos de computação para o dispositivo.
@@ -110,6 +111,7 @@ Opções:
 |===
 
 
+[[sg6060-and-sg6060x-e2800-series-storage-controllers]]
 == SG6060 e SG6060X: Controladores de storage da série E2800
 
 * Duas controladoras para suporte a failover.
@@ -278,6 +280,7 @@ Conete as portas às portas de expansão da unidade nas IOMs no compartimento de
 |===
 
 
+[[sgf6024-ef570-storage-controllers]]
 == SGF6024: EF570 controladoras de storage
 
 * Duas controladoras para suporte a failover.
@@ -344,6 +347,7 @@ Ethernet de 1 GB (RJ-45)
 |===
 
 
+[[sg6060-and-sg6060x-inputoutput-modules-for-optional-expansion-shelves]]
 == SG6060 e SG6060X: Módulos de entrada/saída para prateleiras de expansão opcionais
 
 O compartimento de expansão contém dois módulos de entrada/saída (IOMs) que se conectam aos controladores de storage ou a outros compartimentos de expansão.

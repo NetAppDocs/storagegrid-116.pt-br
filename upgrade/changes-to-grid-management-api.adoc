@@ -20,6 +20,7 @@ Para saber mais, xref:../admin/using-grid-management-api.adoc[Use a API de geren
 
 
 
+[[can-access-swagger-docs-for-private-api-operations]]
 == Pode acessar documentos Swagger para operações de API privadas
 
 Agora você pode acessar os documentos do Swagger para a API privada do Gerenciador de Grade. Para ver as operações disponíveis, selecione o ícone de ajuda do Gerenciador de Grade e selecione *Documentação da API*. Em seguida, selecione *ir para a documentação da API privada* na página da API de gerenciamento do StorageGRID.
@@ -28,6 +29,7 @@ As APIs privadas da StorageGRID estão sujeitas a alterações sem aviso prévio
 
 
 
+[[alarm-based-apis-deprecated]]
 == APIs baseadas em alarme obsoletas
 
 A versão 11,6 obsoleta todas as APIs baseadas em alarme. As seguintes APIs são afetadas por esta alteração:
@@ -39,6 +41,7 @@ A versão 11,6 obsoleta todas as APIs baseadas em alarme. As seguintes APIs são
 
 
 
+[[can-import-s3-access-keys]]
 == Pode importar S3 teclas de acesso
 
 Agora você pode usar a API de gerenciamento de grade para importar chaves de acesso S3 para usuários locatários. Por exemplo, você pode migrar chaves de acesso de outro provedor S3 para o StorageGRID ou usar esse recurso para manter as credenciais do usuário iguais entre grades.
@@ -48,6 +51,7 @@ IMPORTANT: Quando esse recurso está ativado, qualquer usuário do Grid Manager 
 
 
 
+[[new-account-operations]]
 == Operações de novas contas
 
 Três novas `grid/account` operações de API foram adicionadas:
@@ -59,12 +63,14 @@ Três novas `grid/account` operações de API foram adicionadas:
 
 
 
+[[patch-method-deprecated]]
 == Método DE CORREÇÃO obsoleto
 
 O método DE PATCH agora foi obsoleto e será removido em uma versão futura. Conforme necessário, execute uma operação PUT para substituir um recurso em vez de usar uma operação DE PATCH para modificar o recurso.
 
 
 
+[[additions-to-gridlogscollect-endpoint]]
 == Adições ao `grid/logs/collect` endpoint
 
 Quatro valores booleanos foram adicionados ao `grid/logs/collect` endpoint:
@@ -77,12 +83,14 @@ Quatro valores booleanos foram adicionados ao `grid/logs/collect` endpoint:
 
 
 
+[[new-node-details-gridservice-ids-endpoint]]
 ==  `​node-details /grid​/service-ids`Novo endpoint
 
 O novo `​/grid​/service-ids` endpoint fornece um mapeamento de UUIDs de nó para os nomes de nó, IDs de serviço e tipos de serviço associados.
 
 
 
+[[can-retrieve-grid-node-console-passwords]]
 == Pode recuperar senhas de console de nó de grade
 
 Agora você pode usar `POST ​/grid​/node-console-passwords` para recuperar a lista de nós de grade e suas senhas de console associadas.

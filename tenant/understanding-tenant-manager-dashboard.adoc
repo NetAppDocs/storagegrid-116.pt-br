@@ -22,6 +22,7 @@ image::../media/tenant_dashboard_with_buckets.png[Painel de instrumentos - Lista
 
 
 
+[[tenant-account-summary]]
 == Resumo da conta do locatário
 
 A parte superior do Painel contém as seguintes informações:
@@ -43,6 +44,7 @@ Para uma conta do S3, se nenhum objeto tiver sido ingerido e você tiver a permi
 
 
 
+[[storage-and-quota-usage]]
 == Uso de storage e cota
 
 O painel uso do armazenamento contém as seguintes informações:
@@ -75,6 +77,7 @@ Se o locatário tiver mais de nove buckets ou contêineres, todos os outros buck
 
 
 
+[[quota-usage-alerts]]
 == Alertas de uso de cota
 
 Se os alertas de uso de cota tiverem sido ativados no Gerenciador de Grade, eles aparecerão no Gerenciador de Locatário quando a cota for baixa ou excedida, da seguinte forma:
@@ -92,6 +95,7 @@ NOTE: Para exibir detalhes adicionais e gerenciar regras e notificações para a
 
 
 
+[[endpoint-errors]]
 == Erros de endpoint
 
 Se você usou o Gerenciador de Grade para configurar um ou mais endpoints para uso com serviços de plataforma, o Painel do Gerenciador do locatário exibirá um alerta se algum erro de endpoint tiver ocorrido nos últimos sete dias.

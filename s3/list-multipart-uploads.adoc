@@ -26,6 +26,7 @@ O `delimiter` parâmetro Request não é suportado.
 
 
 
+[[versioning]]
 == Controle de versão
 
 O upload de várias partes consiste em operações separadas para iniciar o upload, listar uploads, carregar peças, montar as peças carregadas e concluir o upload. Quando a operação completa de Upload Multipart é executada, esse é o ponto em que os objetos são criados (e versionados, se aplicável).

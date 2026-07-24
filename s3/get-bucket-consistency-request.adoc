@@ -19,6 +19,7 @@ Você tem a permissão S3:GetBucketConsistency, ou seja raiz de conta, para conc
 
 
 
+[[request-example]]
 == Exemplo de solicitação
 
 [source, subs="specialcharacters,quotes"]
@@ -30,6 +31,7 @@ Host: _host_
 ----
 
 
+[[response]]
 == Resposta
 
 No XML de resposta `<Consistency>`, retornará um dos seguintes valores:
@@ -76,6 +78,7 @@ Comporta-se da mesma forma que o nível de consistência "read-after-novo-write"
 |===
 
 
+[[response-example]]
 == Exemplo de resposta
 
 [listing]

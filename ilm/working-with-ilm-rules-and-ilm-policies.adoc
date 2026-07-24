@@ -20,6 +20,7 @@ Depois de criar regras ILM e uma política ILM, você poderá continuar trabalha
 
 
 
+[[delete-an-ilm-rule]]
 == Excluir uma regra ILM
 
 Para manter a lista de regras atuais do ILM gerenciável, exclua quaisquer regras do ILM que você provavelmente não usará.
@@ -54,6 +55,7 @@ image::../media/ilm_rule_historical.png[Histórico regra ILM]
 
 
 
+[[edit-an-ilm-rule]]
 == Editar uma regra ILM
 
 Talvez seja necessário editar uma regra ILM para alterar um filtro ou uma instrução de colocação.
@@ -95,6 +97,7 @@ image::../media/ilm_rule_historical.png[Histórico regra ILM]
 
 
 
+[[clone-an-ilm-rule]]
 == Clonar uma regra ILM
 
 Não é possível editar uma regra se ela estiver sendo usada na política ILM proposta ou na política ILM ativa. Em vez disso, você pode clonar uma regra e fazer as alterações necessárias à cópia clonada. Então, se necessário, você pode remover a regra original da política proposta e substituí-la pela versão modificada. Você não pode clonar uma regra ILM se ela foi criada usando o StorageGRID versão 10,2 ou anterior.
@@ -125,6 +128,7 @@ A nova regra ILM é criada.
 
 
 
+[[view-the-ilm-policy-activity-queue]]
 == Exibir a fila de atividades da política ILM
 
 Você pode exibir o número de objetos que estão na fila a serem avaliados em relação à política ILM a qualquer momento. Você pode querer monitorar a fila de processamento ILM para determinar o desempenho do sistema. Uma fila grande pode indicar que o sistema não é capaz de acompanhar a taxa de ingestão, a carga dos aplicativos cliente é muito grande ou que existe alguma condição anormal.

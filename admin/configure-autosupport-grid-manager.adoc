@@ -23,6 +23,7 @@ Você pode ativar o recurso AutoSupport e as opções individuais do AutoSupport
 
 
 
+[[specify-the-protocol-for-autosupport-messages]]
 == Especifique o protocolo para mensagens AutoSupport
 
 Você pode usar qualquer um dos seguintes protocolos para enviar mensagens AutoSupport:
@@ -61,6 +62,7 @@ Todas as mensagens semanais, acionadas pelo utilizador e acionadas por eventos s
 
 
 
+[[disable-weekly-autosupport-messages]]
 == Desativar mensagens AutoSupport semanais
 
 Por padrão, o sistema StorageGRID está configurado para enviar uma mensagem AutoSupport para o suporte da NetApp uma vez por semana.
@@ -79,6 +81,7 @@ Pode desativar o envio automático de mensagens AutoSupport semanais a qualquer 
 
 
 
+[[disable-event-triggered-autosupport-messages]]
 == Desative mensagens AutoSupport acionadas por evento
 
 Por padrão, o sistema StorageGRID é configurado para enviar uma mensagem AutoSupport para o suporte da NetApp quando ocorre um alerta importante ou outro evento significativo do sistema.
@@ -96,6 +99,7 @@ NOTE: As mensagens AutoSupport acionadas por eventos também são suprimidas qua
 
 
 
+[[enable-autosupport-on-demand]]
 == Habilite o AutoSupport sob demanda
 
 O AutoSupport On Demand pode ajudar a resolver problemas nos quais o suporte técnico está trabalhando ativamente.
@@ -117,6 +121,7 @@ O AutoSupport On Demand está ativado e o suporte técnico pode enviar solicita�
 
 
 
+[[disable-checks-for-software-updates]]
 == Desativar verificações para atualizações de software
 
 Por predefinição, o StorageGRID contacta o NetApp para determinar se estão disponíveis atualizações de software para o seu sistema. Se estiver disponível um hotfix do StorageGRID ou uma nova versão, a nova versão será exibida na página Atualização do StorageGRID.
@@ -131,6 +136,7 @@ Conforme necessário, você pode opcionalmente desativar a verificação de atua
 
 
 
+[[add-an-additional-autosupport-destination]]
 == Adicione um destino AutoSupport adicional
 
 Quando você ativa o AutoSupport, as mensagens de estado e de saúde são enviadas para o suporte do NetApp. Você pode especificar um destino adicional para todas as mensagens do AutoSupport.

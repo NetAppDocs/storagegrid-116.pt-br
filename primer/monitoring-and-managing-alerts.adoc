@@ -33,6 +33,7 @@ NOTE: O sistema de alarme legado está obsoleto. A interface do usuário e as AP
 
 
 
+[[manage-alerts]]
 == Gerenciar alertas
 
 Todos os usuários do StorageGRID podem visualizar alertas. Se você tiver a permissão Acesso root ou Gerenciar Alertas, também poderá gerenciar alertas, como segue:

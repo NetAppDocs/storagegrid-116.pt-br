@@ -15,6 +15,7 @@ As portas de rede no dispositivo de serviços suportam o modo de ligação de po
 
 
 
+[[fixed-port-bond-mode]]
 == Modo de ligação de porta fixa
 
 O modo de ligação de porta fixa é a configuração padrão para as portas de rede.
@@ -55,6 +56,7 @@ NOTE: Se não precisar de ligações redundantes, pode utilizar apenas uma porta
 
 
 
+[[aggregate-port-bond-mode]]
 == Modo de ligação de porta agregada
 
 O modo de ligação de porta agregada aumenta significativamente a taxa de transferência para cada rede StorageGRID e fornece caminhos de failover adicionais.

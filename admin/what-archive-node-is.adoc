@@ -26,6 +26,7 @@ NOTE: Os metadados de objetos não são arquivados, mas permanecem em nós de st
 
 
 
+[[what-the-arc-service-is]]
 == O que é o serviço ARC
 
 O serviço de arquivamento (ARC) em nós de arquivamento fornece a interface de gerenciamento que você pode usar para configurar conexões com armazenamento de arquivamento externo, como fita por meio do middleware TSM.

@@ -15,12 +15,14 @@ Os clientes precisam se comunicar com nós de grade para obter e recuperar conte
 
 
 
+[[restricted-access-to-ports]]
 == Acesso restrito às portas
 
 Se as políticas de rede empresarial restringirem o acesso a qualquer uma das portas, você poderá usar xref:../admin/configuring-load-balancer-endpoints.adoc[pontos de extremidade do balanceador de carga] para permitir o acesso em portas definidas pelo usuário. Em seguida, você pode usar xref:../admin/managing-untrusted-client-networks.adoc[Redes de clientes não confiáveis] para permitir acesso apenas em portas de endpoint do balanceador de carga.
 
 
 
+[[port-remapping]]
 == Remapeamento de portas
 
 Para usar sistemas e protocolos como SMTP, DNS, SSH ou DHCP, você deve remapear portas ao implantar nós. No entanto, você não deve remapear os pontos de extremidade do balanceador de carga. Para obter informações sobre o mapeamento de portas, consulte as instruções de instalação da sua plataforma:
@@ -40,6 +42,7 @@ Para usar sistemas e protocolos como SMTP, DNS, SSH ou DHCP, você deve remapear
 
 
 
+[[ports-used-for-external-communications]]
 == Portas usadas para comunicações externas
 
 A tabela a seguir mostra as portas usadas para tráfego nos nós.

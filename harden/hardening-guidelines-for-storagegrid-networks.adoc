@@ -15,6 +15,7 @@ O sistema StorageGRID suporta até três interfaces de rede por nó de grade, pe
 
 
 
+[[guidelines-for-grid-network]]
 == Diretrizes para rede de Grade
 
 Você deve configurar uma rede de grade para todo o tráfego interno do StorageGRID. Todos os nós de grade estão na rede de grade e eles devem ser capazes de falar com todos os outros nós.
@@ -29,6 +30,7 @@ Ao configurar a rede de Grade, siga estas diretrizes:
 
 
 
+[[guidelines-for-admin-network]]
 == Diretrizes para Admin Network
 
 A rede de administração é normalmente usada para tarefas administrativas (funcionários confiáveis usando o Gerenciador de Grade ou SSH) e para se comunicar com outros serviços confiáveis, como LDAP, DNS, NTP ou KMS (ou servidor KMIP). No entanto, o StorageGRID não aplica esse uso internamente.
@@ -41,6 +43,7 @@ Se você estiver usando a rede Admin, siga estas diretrizes:
 
 
 
+[[guidelines-for-client-network]]
 == Diretrizes para rede de clientes
 
 A rede do cliente é normalmente usada para locatários e para se comunicar com serviços externos, como o serviço de replicação do CloudMirror ou outro serviço de plataforma. No entanto, o StorageGRID não aplica esse uso internamente.

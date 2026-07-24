@@ -28,6 +28,7 @@ As tabelas a seguir resumem as configurações do nó de armazenamento.
 
 
 
+[[ldr]]
 == LDR
 
 [cols="2a,1a,3a"]
@@ -60,6 +61,7 @@ HTAS
 |===
 
 
+[[ldr-data-store]]
 == LDR > armazenamento de dados
 
 [cols="2a,1a,3a"]
@@ -77,6 +79,7 @@ Redefina o contador para o número de objetos perdidos neste serviço.
 |===
 
 
+[[ldr-storage]]
 == LDR > armazenamento
 
 [cols="2a,1a,3a"]
@@ -112,6 +115,7 @@ O limite de tempo em segundos no qual um teste de verificação de integridade d
 |===
 
 
+[[ldr-verification]]
 == LDR > Verificação
 
 [cols="2a,1a,3a"]
@@ -158,6 +162,7 @@ Se um alarme de objetos perdidos for acionado, o suporte técnico pode querer ac
 |===
 
 
+[[ldr-erasure-coding]]
 == LDR > codificação de apagamento
 
 [cols="2a,1a,3a"]
@@ -220,6 +225,7 @@ Redefina o contador de fragmentos ausentes de dados de objetos codificados por a
 |===
 
 
+[[ldr-replication]]
 == LDR > replicação
 
 [cols="2a,1a,3a"]

@@ -19,6 +19,7 @@ A tabela nós lista todos os sites e nós no seu sistema StorageGRID. As informa
 
 
 
+[[connection-state-icons]]
 == Ícones de estado da ligação
 
 * *Não conetado - desconhecido* image:../media/icon_alarm_blue_unknown.png["ícone de ponto de interrogação azul"]: o nó não está conetado à grade por um motivo desconhecido. Por exemplo, a conexão de rede entre nós foi perdida ou a energia está inativa. O alerta *não é possível se comunicar com o nó* também pode ser acionado. Outros alertas também podem estar ativos. Esta situação requer atenção imediata.
@@ -33,6 +34,7 @@ Se um nó for desconetado da grade, ele pode ter um alerta subjacente, mas somen
 
 
 
+[[alert-icons]]
 == Ícones de alerta
 
 Se houver um alerta ativo para um nó, um dos seguintes ícones será exibido ao lado do nome do nó:
@@ -44,6 +46,7 @@ Se houver um alerta ativo para um nó, um dos seguintes ícones será exibido ao
 
 
 
+[[viewing-details-for-a-system-site-or-node]]
 == Exibindo detalhes de um sistema, site ou nó
 
 Para exibir as informações disponíveis, selecione o nome da grade, do site ou do nó da seguinte forma:

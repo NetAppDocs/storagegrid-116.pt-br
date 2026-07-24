@@ -28,6 +28,7 @@ Observe que os metadados de objetos não são gerenciados pelas regras do ILM. E
 
 
 
+[[example-ilm-rule]]
 == Exemplo de regra ILM
 
 Este exemplo de regra ILM aplica-se aos objetos pertencentes ao locatário A. Ele faz duas cópias replicadas desses objetos e armazena cada cópia em um local diferente. As duas cópias são retidas para sempre, o que significa que o StorageGRID não as apagará automaticamente. Em vez disso, o StorageGRID manterá esses objetos até que sejam excluídos por uma solicitação de exclusão de cliente ou pela expiração de um ciclo de vida de bucket.
@@ -38,6 +39,7 @@ image::../media/ilm_example_rule_2_copies_tenant_a.png[Exemplo de regra ILM 2 c�
 
 
 
+[[how-an-ilm-policy-evaluates-objects]]
 == Como uma política ILM avalia objetos
 
 A política de ILM ativa do seu sistema StorageGRID controla o posicionamento, a duração e a proteção de dados de todos os objetos.
@@ -51,6 +53,7 @@ Quando os clientes salvam objetos no StorageGRID, os objetos são avaliados em r
 
 
 
+[[example-ilm-policy]]
 == Exemplo de política ILM
 
 Este exemplo de política ILM usa três regras ILM.

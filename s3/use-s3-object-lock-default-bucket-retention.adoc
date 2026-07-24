@@ -25,6 +25,7 @@ Se um bucket tiver o bloqueio de objetos S3 ativado, você poderá especificar u
 
 
 
+[[get-object-lock-configuration]]
 == OBTER Configuração bloqueio Objeto
 
 A solicitação DE configuração GET Object Lock permite determinar se o Object Lock está habilitado para um bucket e, se ele está ativado, ver se há um modo de retenção padrão e período de retenção configurados para o bucket.
@@ -35,6 +36,7 @@ Você deve ter a permissão S3:GetBucketObjectLockConfiguration, ou ser raiz da 
 
 
 
+[[request-example]]
 === Exemplo de solicitação
 
 [listing, subs="specialcharacters,quotes"]
@@ -49,6 +51,7 @@ Authorization: _authorization string_
 ----
 
 
+[[response-example]]
 === Exemplo de resposta
 
 [listing]
@@ -73,6 +76,7 @@ Server: AmazonS3
 ----
 
 
+[[put-object-lock-configuration]]
 == COLOCAR Configuração bloqueio Objeto
 
 A solicitação de configuração de bloqueio de objeto PUT permite modificar o modo de retenção padrão e o período de retenção padrão para um bucket que tem bloqueio de objeto ativado. Você também pode remover as configurações de retenção padrão configuradas anteriormente.
@@ -87,6 +91,7 @@ O `Content-MD5` cabeçalho da solicitação deve ser especificado na solicitaç�
 
 
 
+[[request-example]]
 === Exemplo de solicitação
 
 [listing, subs="specialcharacters,quotes"]

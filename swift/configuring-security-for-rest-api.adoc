@@ -15,6 +15,7 @@ Você deve analisar as medidas de segurança implementadas para a API REST e ent
 
 
 
+[[how-storagegrid-provides-security-for-rest-api]]
 == Como o StorageGRID fornece segurança para API REST
 
 Você deve entender como o sistema StorageGRID implementa segurança, autenticação e autorização para a API REST.
@@ -40,6 +41,7 @@ NOTE: O serviço CLB está obsoleto.
 
 
 
+[[security-certificates-and-client-applications]]
 === Certificados de segurança e aplicativos de cliente
 
 Os clientes podem se conetar ao serviço Load Balancer em nós de gateway ou nós de administrador, diretamente aos nós de armazenamento ou ao serviço CLB obsoleto em nós de gateway.
@@ -56,6 +58,7 @@ Consulte as instruções de administração do StorageGRID para obter informaç�
 
 
 
+[[summary]]
 === Resumo
 
 A tabela a seguir mostra como os problemas de segurança são implementados nas APIs REST S3 e Swift:
@@ -100,12 +103,14 @@ xref:../admin/index.adoc[Administrar o StorageGRID]
 
 
 
+[[supported-hashing-and-encryption-algorithms-for-tls-libraries]]
 == Algoritmos de hash e criptografia suportados para bibliotecas TLS
 
 O sistema StorageGRID suporta um conjunto limitado de conjuntos de codificação que os aplicativos clientes podem usar ao estabelecer uma sessão de Segurança da camada de Transporte (TLS).
 
 
 
+[[supported-versions-of-tls]]
 === Versões suportadas do TLS
 
 O StorageGRID é compatível com TLS 1,2 e TLS 1,3.
@@ -115,6 +120,7 @@ IMPORTANT: SSLv3 e TLS 1,1 (ou versões anteriores) não são mais compatíveis.
 
 
 
+[[supported-cipher-suites]]
 === Suítes de cifra suportadas
 
 [cols="1a,1a"]
@@ -157,6 +163,7 @@ TLS_AES_128_GCM_SHA256
 |===
 
 
+[[deprecated-cipher-suites]]
 === Conjuntos de codificação obsoletos
 
 Os seguintes conjuntos de codificação são obsoletos. O suporte para essas cifras será removido em uma versão futura.

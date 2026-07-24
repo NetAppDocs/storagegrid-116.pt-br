@@ -15,6 +15,7 @@ Use esta introdução para obter uma visão geral do sistema StorageGRID e apren
 
 
 
+[[what-is-storagegrid]]
 == O que é o StorageGRID?
 
 O NetApp StorageGRID é um pacote de storage de objetos definido por software compatível com uma ampla variedade de casos de uso em ambientes multicloud públicos, privados e híbridos. A StorageGRID oferece suporte nativo à API Amazon S3 e oferece inovações líderes do setor, como gerenciamento automatizado do ciclo de vida, para armazenar, proteger e preservar dados não estruturados de maneira econômica por longos períodos.

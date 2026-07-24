@@ -15,6 +15,7 @@ O sistema de alerta StorageGRID foi concebido para o informar sobre problemas op
 
 
 
+[[alert-system]]
 == Sistema de alerta
 
 O sistema de alerta foi concebido para ser a sua principal ferramenta para monitorizar quaisquer problemas que possam ocorrer no seu sistema StorageGRID. O sistema de alerta fornece uma interface fácil de usar para detetar, avaliar e resolver problemas.
@@ -29,6 +30,7 @@ Os alertas são acionados em níveis de gravidade específicos quando as condiç
 
 
 
+[[legacy-alarm-system]]
 == Sistema de alarme legado
 
 Como alertas, os alarmes são acionados em níveis específicos de gravidade quando os atributos atingem valores de limite definidos. No entanto, ao contrário dos alertas, muitos alarmes são acionados para eventos que você pode ignorar com segurança, o que pode resultar em um número excessivo de notificações de e-mail ou SNMP.

@@ -4,6 +4,7 @@
 
 
 
+[[move-hic-to-new-controller-if-needed]]
 == Mova o HIC para o novo controlador, se necessário
 
 .Passos

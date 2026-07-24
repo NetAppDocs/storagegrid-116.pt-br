@@ -88,6 +88,7 @@ Verde intermitente: Existe atividade Ethernet.
 |===
 
 
+[[general-boot-up-codes]]
 == Códigos gerais de arranque
 
 Durante a inicialização ou após uma reinicialização forçada do aparelho, ocorre o seguinte:
@@ -98,6 +99,7 @@ Durante a inicialização ou após uma reinicialização forçada do aparelho, o
 
 
 
+[[e5700sg-controller-boot-up-codes]]
 == Códigos de inicialização do controlador E5700SG
 
 Durante uma inicialização normal do aparelho, o visor de sete segmentos no controlador E5700SG mostra os seguintes códigos na ordem indicada:
@@ -172,6 +174,7 @@ O StorageGRID está em execução.
 |===
 
 
+[[e5700sg-controller-error-codes]]
 == E5700SG códigos de erro do controlador
 
 Estes códigos representam condições de erro que podem ser apresentadas no controlador E5700SG à medida que o aparelho arranca. Códigos hexadecimais de dois dígitos adicionais são exibidos se ocorrerem erros específicos de hardware de baixo nível. Se algum destes códigos persistir durante mais de um segundo ou dois, ou se não conseguir resolver o erro seguindo um dos procedimentos de resolução de problemas prescritos, contacte o suporte técnico.

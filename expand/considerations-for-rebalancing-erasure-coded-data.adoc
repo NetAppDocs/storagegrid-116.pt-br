@@ -19,6 +19,7 @@ Depois de analisar estas considerações, execute a expansão e, em seguida, vá
 
 
 
+[[what-is-ec-rebalancing]]
 == O que é o reequilíbrio CE?
 
 O rebalanceamento EC é um procedimento StorageGRID que pode ser necessário após uma expansão do nó de storage. O procedimento é executado como um script de linha de comando a partir do nó de administração principal. Ao executar o procedimento de rebalancear, o StorageGRID redistribui fragmentos codificados por apagamento entre os nós de storage existentes e recém-expandidos em um local.
@@ -42,6 +43,7 @@ Quando o procedimento de reequilíbrio EC está em execução, o desempenho das 
 
 
 
+[[when-not-to-perform-ec-rebalance]]
 == Quando não realizar o rebalanceamento EC
 
 Como exemplo de quando você não precisa realizar um rebalanceamento EC, considere o seguinte:
@@ -62,6 +64,7 @@ image::../media/used_space_after_3_node_expansion.png[Espaço usado após a expa
 
 
 
+[[when-to-perform-ec-rebalance]]
 == Quando realizar o rebalanceamento EC
 
 Como exemplo de quando você deve executar o procedimento de rebalanceamento de EC, considere o mesmo exemplo, mas suponha que você só pode adicionar dois nós de storage. Como a codificação de apagamento de mais de 2 vezes por dia requer pelo menos 1 nós de storage, os novos nós não podem ser usados para dados codificados por apagamento.
@@ -74,6 +77,7 @@ image::../media/used_space_after_ec_rebalance.png[Espaço usado aAAfter EC reequ
 
 
 
+[[requirements-for-ec-rebalancing]]
 == Requisitos para o reequilíbrio CE
 
 Em geral, só deve executar o procedimento de reequilíbrio CE em casos limitados. Especificamente, você deve realizar o rebalanceamento EC somente se todas as seguintes afirmações forem verdadeiras:
@@ -86,6 +90,7 @@ Em geral, só deve executar o procedimento de reequilíbrio CE em casos limitado
 
 
 
+[[how-ec-rebalance-procedure-interacts-with-other-maintenance-tasks]]
 == Como o procedimento EC Rebalanceance interage com outras tarefas de manutenção
 
 Não é possível executar determinados procedimentos de manutenção ao mesmo tempo que está a executar o procedimento EC Rebalanceance.
@@ -163,6 +168,7 @@ Você deve terminar o procedimento EC Rebalanceance antes de executar outros pro
 |===
 
 
+[[how-ec-rebalance-procedure-interacts-with-ilm]]
 == Como o procedimento EC Rebalanceance interage com o ILM
 
 Enquanto o procedimento de rebalanceamento EC estiver em execução, evite fazer alterações no ILM que possam alterar o local dos objetos codificados por apagamento existentes. Por exemplo, não comece a usar uma regra ILM que tenha um perfil de codificação de apagamento diferente. Se você precisar fazer essas alterações no ILM, você deve abortar o procedimento EC Rebalancance.

@@ -15,6 +15,7 @@ Uma conta de locatário permite que você use a API REST do Simple Storage Servi
 
 
 
+[[what-is-a-tenant-account]]
 == O que é uma conta de locatário?
 
 Cada conta de locatário tem seus próprios grupos federados ou locais, usuários, buckets do S3 ou contentores Swift e objetos.
@@ -31,6 +32,7 @@ NOTE: Se você usar o protocolo cliente S3, também poderá usar buckets e polí
 
 
 
+[[how-to-create-a-tenant-account]]
 == Como criar uma conta de locatário
 
 As contas de inquilino são criadas por um xref:../admin/managing-tenants.adoc[Administrador de grade do StorageGRID usando o Gerenciador de grade]. Ao criar uma conta de locatário, o administrador da grade especifica as seguintes informações:
@@ -47,6 +49,7 @@ Além disso, os administradores de grade podem ativar a configuração bloqueio 
 
 
 
+[[configure-s3-tenants]]
 === Configurar locatários do S3
 
 Depois de um xref:../admin/creating-tenant-account.adoc[S3 conta de locatário é criada], você pode acessar o Gerenciador do Locatário para executar tarefas como as seguintes:
@@ -63,6 +66,7 @@ IMPORTANT: Embora você possa criar e gerenciar buckets do S3 com o Gerenciador 
 
 
 
+[[configure-swift-tenants]]
 === Configurar os locatários Swift
 
 Depois de um xref:../admin/creating-tenant-account.adoc[Conta de locatário Swift foi criada], você pode acessar o Gerenciador do Locatário para executar tarefas como as seguintes:
@@ -76,6 +80,7 @@ IMPORTANT: Os usuários Swift devem ter a permissão de acesso root para acessar
 
 
 
+[[use-the-tenant-manager]]
 == Use o Gerenciador do Locatário
 
 O Gerenciador do Locatário permite gerenciar todos os aspetos de uma conta de locatário do StorageGRID.

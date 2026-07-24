@@ -15,6 +15,7 @@ As seguintes operações da API Swift são executadas em objetos.
 
 
 
+[[delete-object]]
 == ELIMINAR objeto
 
 Esta operação exclui o conteúdo e os metadados de um objeto do sistema StorageGRID.
@@ -45,6 +46,7 @@ Para obter mais informações sobre como os objetos são excluídos, consulte as
 
 
 
+[[get-object]]
 == OBTER objeto
 
 Esta operação recupera o conteúdo do objeto e obtém os metadados do objeto de um sistema StorageGRID.
@@ -87,6 +89,7 @@ Uma execução bem-sucedida retorna os seguintes cabeçalhos com `HTTP/1.1 200 O
 
 
 
+[[head-object]]
 == Objeto PRINCIPAL
 
 Esta operação recupera metadados e propriedades de um objeto ingerido a partir de um sistema StorageGRID.
@@ -119,6 +122,7 @@ Uma execução bem-sucedida retorna os seguintes cabeçalhos com uma resposta "H
 
 
 
+[[put-object]]
 == COLOQUE o objeto
 
 Essa operação cria um novo objeto com dados e metadados ou substitui um objeto existente por dados e metadados em um sistema StorageGRID.

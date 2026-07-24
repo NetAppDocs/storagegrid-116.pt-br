@@ -23,6 +23,7 @@ NOTE: Se o logon único (SSO) estiver habilitado para o seu sistema StorageGRID,
 
 
 
+[[access-users-page]]
 == Acesse a página usuários
 
 Selecione *GERENCIAMENTO DE ACESSO* *usuários*.
@@ -31,6 +32,7 @@ image::../media/tenant_users_list.png[Lista de usuários do locatário]
 
 
 
+[[create-local-users]]
 == Crie usuários locais
 
 Você pode criar usuários locais e atribuí-los a um ou mais grupos locais para controlar suas permissões de acesso.
@@ -66,6 +68,7 @@ As alterações podem levar até 15 minutos para entrar em vigor devido ao armaz
 
 
 
+[[edit-user-details]]
 == Editar detalhes do utilizador
 
 Ao editar os detalhes de um usuário, você pode alterar o nome completo e a senha do usuário, adicionar o usuário a diferentes grupos e impedir que o usuário acesse o locatário.
@@ -94,6 +97,7 @@ As alterações podem levar até 15 minutos para entrar em vigor devido ao armaz
 
 
 
+[[duplicate-local-users]]
 == Duplicar usuários locais
 
 Você pode duplicar um usuário local para criar um novo usuário mais rapidamente.
@@ -126,6 +130,7 @@ As alterações podem levar até 15 minutos para entrar em vigor devido ao armaz
 
 
 
+[[delete-local-users]]
 == Eliminar utilizadores locais
 
 Você pode excluir permanentemente usuários locais que não precisam mais acessar a conta de locatário do StorageGRID.

@@ -77,7 +77,7 @@ A seção S3 Object Lock (bloqueio de objetos) só será exibida se a configura�
 O bloqueio de objetos S3 deve ser ativado para o bucket antes que um aplicativo cliente S3 possa especificar as configurações de retenção legal e de retenção para os objetos adicionados ao bucket.
 
 +
-Se você ativar o bloqueio de objeto S3 para um bucket, o controle de versão do bucket será ativado automaticamente. Você também pode xref:../s3/operations-on-buckets.adoc#using-s3-object-lock-default-bucket-retention[especifique um modo de retenção padrão e um período de retenção padrão para o bucket]aplicar a cada objeto ingerido ao bucket que não especifica suas próprias configurações de retenção.
+Se você habilitar o Bloqueio de Objetos do S3 para um bucket, o versionamento do bucket será habilitado automaticamente. Você também pode xref:../s3/use-s3-object-lock-default-bucket-retention.adoc[especifique um modo de retenção padrão e um período de retenção padrão para o bucket]configurar as opções de retenção que serão aplicadas a cada objeto inserido no bucket que não especificar suas próprias configurações de retenção.
 
 . Selecione *criar bucket*.
 +

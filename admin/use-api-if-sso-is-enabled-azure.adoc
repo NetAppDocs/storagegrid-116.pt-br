@@ -15,6 +15,7 @@ Se você tiver xref:../admin/configuring-sso.adoc[Logon único configurado e hab
 
 
 
+[[sign-in-to-the-api-if-azure-single-sign-on-is-enabled]]
 == Inicie sessão na API se o início de sessão único do Azure estiver ativado
 
 Estas instruções se aplicam se você estiver usando o Azure como provedor de identidade SSO

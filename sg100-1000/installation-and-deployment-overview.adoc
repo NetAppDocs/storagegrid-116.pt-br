@@ -36,6 +36,7 @@ SG1000
 |===
 
 
+[[installation-and-deployment-tasks]]
 == Tarefas de instalação e implantação
 
 Preparar e adicionar um dispositivo StorageGRID à grade inclui quatro etapas principais:

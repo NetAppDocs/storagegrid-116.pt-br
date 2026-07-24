@@ -15,6 +15,7 @@ Como administrador de grade, você cria e gerencia as contas de locatário que o
 
 
 
+[[what-are-tenant-accounts]]
 == O que são contas de inquilino?
 
 As contas de locatário permitem que aplicativos clientes que usam a API REST do Simple Storage Service (S3) ou a API REST Swift armazenem e recuperem objetos no StorageGRID.
@@ -33,6 +34,7 @@ NOTE: Se você usar o protocolo cliente S3, você pode simplesmente usar buckets
 
 
 
+[[create-and-configure-tenant-accounts]]
 == Criar e configurar contas de inquilino
 
 Ao criar uma conta de locatário, você especifica as seguintes informações:
@@ -65,6 +67,7 @@ Se você tiver definido cotas para locatários, poderá ativar o alerta *uso alt
 
 
 
+[[configure-s3-tenants]]
 == Configurar locatários do S3
 
 Depois que uma conta de locatário do S3 for criada, os usuários do locatário poderão acessar o Gerenciador do locatário para executar tarefas como as seguintes:
@@ -81,6 +84,7 @@ IMPORTANT: Os usuários de locatários do S3 podem criar e gerenciar chaves de a
 
 
 
+[[configure-swift-tenants]]
 == Configurar os locatários Swift
 
 Depois que uma conta de locatário Swift for criada, o usuário raiz do locatário poderá acessar o Gerenciador do locatário para executar tarefas como as seguintes:

@@ -15,6 +15,7 @@ Os controles de consistência fornecem um equilíbrio entre a disponibilidade do
 
 
 
+[[request]]
 == Pedido
 
 |===
@@ -43,6 +44,7 @@ O nome do host para o qual a solicitação é direcionada.
 |===
 
 
+[[request-example]]
 == Exemplo de solicitação
 
 [listing]
@@ -54,6 +56,7 @@ Host: test.com
 ----
 
 
+[[response]]
 == Resposta
 
 |===
@@ -106,6 +109,7 @@ O nível de controle de consistência que está sendo aplicado ao recipiente. Os
 |===
 
 
+[[response-example]]
 == Exemplo de resposta
 
 [listing]

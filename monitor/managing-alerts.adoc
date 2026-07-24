@@ -15,6 +15,7 @@ Os alertas permitem-lhe monitorizar vários eventos e condições no seu sistema
 
 
 
+[[about-storagegrid-alerts]]
 == Sobre os alertas do StorageGRID
 
 O sistema de alerta fornece uma interface fácil de usar para detetar, avaliar e resolver os problemas que podem ocorrer durante a operação do StorageGRID.
@@ -32,6 +33,7 @@ O sistema de alerta fornece uma interface fácil de usar para detetar, avaliar e
 
 
 
+[[learn-more]]
 == Saiba mais
 
 Para saber mais, reveja estes vídeos:

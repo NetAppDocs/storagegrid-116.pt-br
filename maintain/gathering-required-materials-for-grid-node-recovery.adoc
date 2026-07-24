@@ -77,6 +77,8 @@ Para obter as versões suportadas atuais da sua plataforma, consulte o https://m
 |===
 
 
+[[download-and-extract-storagegrid-installation-files]]
+[[download-and-extract-install-files-recover]]
 == Baixe e extraia arquivos de instalação do StorageGRID
 
 Baixe o software e extraia os arquivos, a menos que você seja xref:recovering-from-storage-node-failures.adoc[Recuperando volumes de storage com falha em um nó de storage].

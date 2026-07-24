@@ -15,6 +15,7 @@ A solicitação de consistência de contentor PUT permite especificar o nível d
 
 
 
+[[request]]
 == Pedido
 
 |===
@@ -53,6 +54,7 @@ O nome do host para o qual a solicitação é direcionada.
 |===
 
 
+[[how-consistency-controls-and-ilm-rules-interact-to-affect-data-protection]]
 == Como os controles de consistência e as regras de ILM interagem para afetar a proteção de dados
 
 Tanto a sua escolha de controle de consistência quanto a sua regra ILM afetam a forma como os objetos são protegidos. Essas configurações podem interagir.
@@ -71,6 +73,7 @@ NOTE: Antes de selecionar o comportamento de ingestão para uma regra ILM, leia 
 
 
 
+[[example-of-how-consistency-control-and-ilm-rule-can-interact]]
 == Exemplo de como o controle de consistência e a regra ILM podem interagir
 
 Suponha que você tenha uma grade de dois locais com a seguinte regra ILM e a seguinte configuração de nível de consistência:
@@ -89,6 +92,7 @@ A inter-relação entre níveis de consistência e regras de ILM pode ser comple
 
 
 
+[[request-example]]
 == Exemplo de solicitação
 
 [listing]
@@ -100,6 +104,7 @@ Host: test.com
 ----
 
 
+[[response]]
 == Resposta
 
 |===
@@ -135,6 +140,7 @@ O comprimento do corpo de resposta.
 |===
 
 
+[[response-example]]
 == Exemplo de resposta
 
 [listing]

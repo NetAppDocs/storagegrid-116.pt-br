@@ -23,6 +23,7 @@ Para substituir uma unidade, um recipiente do ventilador de alimentação, um re
 
 
 
+[[sg5612-component-replacement-instructions]]
 == SG5612 instruções de substituição de componentes
 
 |===
@@ -51,6 +52,7 @@ Siga as etapas em xref:replacing-e2700-controller.adoc[Substitua o controlador E
 |===
 
 
+[[sg5660-component-replacement-instructions]]
 == SG5660 instruções de substituição de componentes
 
 |===

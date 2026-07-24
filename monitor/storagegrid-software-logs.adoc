@@ -18,6 +18,7 @@ NOTE: Se pretender enviar os seus registos para um servidor syslog externo ou al
 
 
 
+[[general-storagegrid-logs]]
 == Registos gerais do StorageGRID
 
 [cols="3a,3a,1a"]
@@ -56,6 +57,7 @@ Todos os nós
 |===
 
 
+[[server-manager-logs]]
 == Logs do Server Manager
 
 [cols="3a,3a,1a"]
@@ -91,6 +93,7 @@ Todos os nós
 |===
 
 
+[[logs-for-storagegrid-services]]
 == Logs para serviços StorageGRID
 
 [cols="3a,3a,2a"]
@@ -418,6 +421,7 @@ Todos os nós
 |===
 
 
+[[nms-logs]]
 == Registos NMS
 
 [cols="3a,3a,1a"]

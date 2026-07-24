@@ -15,6 +15,7 @@ Use estas instruções para expandir a capacidade ou as funcionalidades do siste
 
 
 
+[[about-these-instructions]]
 == Sobre estas instruções
 
 Essas instruções descrevem como executar uma expansão do StorageGRID para adicionar volumes de storage a nós de storage, novos nós de grade a um local existente ou a um local novo inteiro.
@@ -23,6 +24,7 @@ Estas instruções destinam-se ao pessoal técnico responsável pela configuraç
 
 
 
+[[overview-of-expansion-procedure]]
 == Visão geral do procedimento de expansão
 
 A razão pela qual você está executando a expansão determina quantos novos nós de cada tipo você deve adicionar e o local desses novos nós. Por exemplo, há requisitos de nó diferentes se você estiver executando uma expansão para aumentar a capacidade de storage, adicionar capacidade de metadados ou adicionar redundância ou novos recursos.

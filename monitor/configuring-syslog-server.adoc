@@ -43,6 +43,8 @@ NOTE: Se as opções de configuração disponíveis neste procedimento não fore
 
 
 
+[[access-the-syslog-server-configuration-wizard]]
+[[Access-the-syslog-server-configuration-wizard]]
 == Acesse o assistente de configuração do servidor syslog
 
 .Passos
@@ -55,6 +57,7 @@ image::../media/audit-messages-main-page.png[Página principal de mensagens de a
 
 
 
+[[enter-syslog-info]]
 === Insira informações do syslog
 
 image::../media/enter-syslog-info.png[Insira informações do syslog]
@@ -105,6 +108,7 @@ Uma verificação verde é exibida ao lado do nome do arquivo do certificado ou 
 
 
 
+[[manage-syslog-content]]
 === Gerenciar o conteúdo do syslog
 
 image::../media/manage-syslog-content.png[Gerenciar o conteúdo do syslog]
@@ -460,6 +464,7 @@ local7
 
 
 
+[[send-test-messages]]
 === Enviar mensagens de teste
 
 image::../media/send-test-messages.png[Enviar mensagens de teste]
@@ -500,6 +505,7 @@ NOTE: Suas informações de auditoria do StorageGRID não são enviadas para o s
 
 
 
+[[select-audit-information-destinations]]
 == Selecione destinos de informações de auditoria
 
 Você pode especificar onde os logs de eventos de segurança, os logs de aplicativos e os logs de mensagens de auditoria são enviados.

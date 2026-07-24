@@ -25,6 +25,7 @@ Para obter mais informações, consulte https://docs.aws.amazon.com/AmazonS3/lat
 
 
 
+[[request-syntax-example]]
 == Exemplo de sintaxe de solicitação
 
 [source, asciidoc]
@@ -68,6 +69,7 @@ x-amz-expected-bucket-owner: ExpectedBucketOwner
 ----
 
 
+[[sql-query-example]]
 == Exemplo de consulta SQL
 
 Esta consulta obtém o nome do estado, 2010 populações, 2015 populações estimadas e a porcentagem de mudança dos dados do censo americano. Os Registros no arquivo que não são estados são ignorados.
@@ -95,6 +97,7 @@ POPESTIMATE2020
 ----
 
 
+[[aws-cli-usage-example]]
 == Exemplo de uso da AWS-CLI
 
 [listing]

@@ -19,6 +19,7 @@ A tabela nós lista todos os sites e nós no seu sistema StorageGRID. As informa
 
 
 
+[[connection-state-icons]]
 == Ícones de estado da ligação
 
 * *Não conetado - desconhecido* image:../media/icon_alarm_blue_unknown.png["ícone de ponto de interrogação azul"]: o nó não está conetado à grade por um motivo desconhecido. Por exemplo, a conexão de rede entre nós foi perdida ou a energia está inativa. O alerta *não é possível se comunicar com o nó* também pode ser acionado. Outros alertas também podem estar ativos. Esta situação requer atenção imediata.
@@ -33,6 +34,7 @@ Se um nó for desconetado da grade, ele pode ter um alerta subjacente, mas somen
 
 
 
+[[alert-icons]]
 == Ícones de alerta
 
 Se houver um alerta ativo para um nó, um dos seguintes ícones será exibido ao lado do nome do nó:
@@ -44,6 +46,7 @@ Se houver um alerta ativo para um nó, um dos seguintes ícones será exibido ao
 
 
 
+[[details-for-a-system-site-or-node]]
 == Detalhes de um sistema, local ou nó
 
 Para exibir as informações disponíveis, selecione o nome da grade, do site ou do nó da seguinte forma:
@@ -55,6 +58,7 @@ Para exibir as informações disponíveis, selecione o nome da grade, do site ou
 
 
 
+[[tabs-for-the-nodes-page]]
 == Guias para a página nós
 
 As guias na parte superior da página nós são baseadas no que você seleciona na árvore à esquerda.
@@ -165,6 +169,7 @@ Nós de dispositivos de storage
 |===
 
 
+[[prometheus-metrics]]
 == Métricas Prometheus
 
 O serviço Prometheus nos Admin Nodes coleta métricas de séries temporais dos serviços em todos os nós.
@@ -190,6 +195,7 @@ NOTE: Alguns recursos e itens de menu dentro da página Metrics são intencional
 
 
 
+[[storagegrid-attributes]]
 == Atributos do StorageGRID
 
 Atributos reportam valores e status para muitas das funções do sistema StorageGRID. Os valores de atributo estão disponíveis para cada nó de grade, cada local e toda a grade.
@@ -204,6 +210,7 @@ Os atributos do StorageGRID são usados em vários locais no Gerenciador de Grad
 
 
 
+[[attribute-values]]
 === Valores de atributo
 
 Os atributos são reportados com o melhor esforço e estão aproximadamente corretos. As atualizações de atributos podem ser perdidas em algumas circunstâncias, como a falha de um serviço ou a falha e reconstrução de um nó de grade.

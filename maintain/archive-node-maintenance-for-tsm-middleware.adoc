@@ -17,12 +17,14 @@ Se o servidor que hospeda o nó de arquivo falhar, substitua o servidor e siga o
 
 
 
+[[fault-with-archival-storage-devices]]
 == Falha com dispositivos de armazenamento de arquivo
 
 Se você determinar que há uma falha no dispositivo de armazenamento de arquivos que o nó de arquivamento está acessando por meio do Gerenciador de armazenamento Tivoli (TSM), coloque o nó de arquivamento off-line para limitar o número de alarmes exibidos no sistema StorageGRID. Em seguida, você pode usar as ferramentas administrativas do servidor TSM ou do dispositivo de armazenamento, ou ambos, para diagnosticar e resolver o problema.
 
 
 
+[[take-the-target-component-offline]]
 === Coloque o componente alvo offline
 
 Antes de realizar qualquer manutenção do servidor de middleware TSM que possa resultar na indisponibilidade do Archive Node, coloque o componente Target offline para limitar o número de alarmes que são acionados se o servidor de middleware TSM ficar indisponível.
@@ -39,6 +41,7 @@ Você deve estar conetado ao Gerenciador de Grade usando um xref:../admin/web-br
 
 
 
+[[tivoli-storage-manager-administrative-tools]]
 == Ferramentas administrativas do Tivoli Storage Manager
 
 A ferramenta dsmadmc é o console administrativo do servidor de middleware TSM que está instalado no nó de Arquivo. Você pode acessar a ferramenta digitando `dsmadmc` na linha de comando do servidor. Faça login no console administrativo usando o mesmo nome de usuário administrativo e senha configurados para o serviço ARC.
@@ -49,6 +52,7 @@ Para obter mais informações sobre o console administrativo do TSM dsmadmc, con
 
 
 
+[[object-permanently-unavailable]]
 == Objeto permanentemente indisponível
 
 Quando o Archive Node solicita um objeto do servidor Tivoli Storage Manager (TSM) e a recuperação falha, o Archive Node tenta novamente a solicitação após um intervalo de 10 segundos. Se o objeto estiver permanentemente indisponível (por exemplo, porque o objeto está corrompido na fita), a API TSM não tem como indicar isso para o nó de arquivo, portanto, o nó de arquivo continua a tentar novamente a solicitação.
@@ -63,6 +67,8 @@ Se o sistema StorageGRID estiver configurado para usar uma regra ILM que cria um
 
 
 
+[[determining-if-objects-are-permanently-unavailable]]
+[[determining_objects_permanently_unavailable]]
 === Determinar se os objetos estão permanentemente indisponíveis
 
 Você pode determinar se os objetos estão permanentemente indisponíveis fazendo uma solicitação usando o console administrativo do TSM.

@@ -55,6 +55,7 @@ O modo Sandbox facilita a execução desta configuração de back-and-forth e te
 
 
 
+[[access-sandbox-mode]]
 == Acesse o modo sandbox
 
 . Selecione *CONFIGURATION* > *access control* > *Single sign-on*.
@@ -76,6 +77,7 @@ A seção Provedor de identidade é exibida.
 
 
 
+[[enter-identity-provider-details]]
 == Insira os detalhes do provedor de identidade
 
 . Selecione o *SSO type* na lista suspensa.
@@ -208,6 +210,7 @@ image::../media/save_button_green_checkmark.gif[Botão Save (Guardar) com uma ma
 ====
 
 
+[[configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
 == Configurar trusts de terceiros confiáveis, aplicativos empresariais ou conexões SP
 
 Quando a configuração é salva, o aviso de confirmação do modo Sandbox é exibido. Este aviso confirma que o modo sandbox está agora ativado e fornece instruções de visão geral.
@@ -267,6 +270,7 @@ Você deve criar uma conexão SP para cada nó de administrador mostrado na tabe
 ====
 
 
+[[test-sso-connections]]
 == Testar conexões SSO
 
 Antes de aplicar o uso de logon único para todo o sistema StorageGRID, você deve confirmar que o logon único e o logout único estão configurados corretamente para cada nó de administração.
@@ -345,6 +349,7 @@ Se você vir uma mensagem Página expirada, selecione o botão *voltar* no seu n
 ====
 
 
+[[enable-single-sign-on]]
 == Ative o logon único
 
 Quando você confirmar que pode usar o SSO para fazer login em cada nó de administrador, você pode ativar o SSO para todo o seu sistema StorageGRID.

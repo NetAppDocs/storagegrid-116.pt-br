@@ -19,6 +19,7 @@ Se você quiser executar operações de objeto em um nível de consistência dif
 
 
 
+[[consistency-controls]]
 == Controles de consistência
 
 O controle de consistência afeta como os metadados que o StorageGRID usa para rastrear objetos são distribuídos entre nós e, portanto, a disponibilidade de objetos para solicitações de clientes.
@@ -34,6 +35,7 @@ Você pode definir o controle de consistência para um bucket ou uma operação 
 
 
 
+[[use-read-after-new-write-and-available-consistency-controls]]
 == Use controles de consistência "read-after-new-write" e "available"
 
 Quando uma operação HEAD ou GET usa o controle de consistência "read-after-new-write", o StorageGRID executa a pesquisa em várias etapas, como segue:
@@ -48,6 +50,7 @@ A menos que você precise de garantias de consistência semelhantes ao Amazon S3
 
 
 
+[[specify-consistency-control-for-api-operation]]
 == Especifique o controle de consistência para a operação da API
 
 Para definir o controle de consistência para uma operação de API individual, os controles de consistência devem ser suportados para a operação e você deve especificar o controle de consistência no cabeçalho da solicitação. Este exemplo define o controle de consistência como "local-trong" para uma operação GET Object.
@@ -65,6 +68,7 @@ NOTE: Você deve usar o mesmo controle de consistência para as operações COLO
 
 
 
+[[specify-consistency-control-for-bucket]]
 == Especifique o controle de consistência para o balde
 
 Para definir o controle de consistência para o bucket, você pode usar a solicitação de consistência do bucket do StorageGRID PUT e a solicitação DE consistência do bucket do GET. Ou você pode usar o Gerenciador do Locatário ou a API de Gerenciamento do Locatário.
@@ -78,6 +82,7 @@ Ao definir os controlos de consistência para um balde, tenha em atenção o seg
 
 
 
+[[how-consistency-controls-and-ilm-rules-interact-to-affect-data-protection]]
 == Como os controles de consistência e as regras de ILM interagem para afetar a proteção de dados
 
 Tanto a sua escolha de controle de consistência quanto a sua regra ILM afetam a forma como os objetos são protegidos. Essas configurações podem interagir.
@@ -96,6 +101,7 @@ NOTE: Antes de selecionar o comportamento de ingestão para uma regra ILM, leia 
 
 
 
+[[example-of-how-the-consistency-control-and-ilm-rule-can-interact]]
 == Exemplo de como o controle de consistência e a regra ILM podem interagir
 
 Suponha que você tenha uma grade de dois locais com a seguinte regra ILM e a seguinte configuração de nível de consistência:

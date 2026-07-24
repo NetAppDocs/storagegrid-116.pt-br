@@ -19,6 +19,7 @@ image::../media/compliance_workflow.png[S3 fluxo de trabalho Object Lock]
 
 
 
+[[grid-admin-tasks]]
 == Tarefas de administração de grade
 
 Como mostra o diagrama de fluxo de trabalho, um administrador de grade deve executar duas tarefas de alto nível antes que os usuários de S3 locatários possam usar o bloqueio de objeto S3:
@@ -29,6 +30,7 @@ Como mostra o diagrama de fluxo de trabalho, um administrador de grade deve exec
 
 
 
+[[tenant-user-tasks]]
 == Tarefas do usuário do locatário
 
 Depois que a configuração global S3 Object Lock for ativada, os locatários podem executar estas tarefas:
@@ -42,5 +44,5 @@ Depois que a configuração global S3 Object Lock for ativada, os locatários po
 .Informações relacionadas
 * xref:../tenant/index.adoc[Use uma conta de locatário]
 * xref:../s3/index.adoc[Use S3]
-* xref:../s3/operations-on-buckets.adoc#using-s3-object-lock-default-bucket-retention[Use retenção padrão do bucket do bloqueio de objetos S3]
+* xref:../s3/use-s3-object-lock-default-bucket-retention.adoc[Use retenção padrão do bucket do bloqueio de objetos S3]
 

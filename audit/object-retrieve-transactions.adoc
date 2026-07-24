@@ -17,6 +17,7 @@ Nem todas as mensagens de auditoria geradas durante uma transação de recupera�
 
 
 
+[[s3-retrieval-audit-messages]]
 == S3 mensagens de auditoria de recuperação
 
 [cols="1a,1a,2a,1a,1a"]
@@ -38,6 +39,7 @@ xref:sget-s3-get.adoc[SGET: S3 GET]
 |===
 
 
+[[swift-retrieval-audit-messages]]
 == Mensagens de auditoria de recuperação rápida
 
 [cols="1a,1a,2a,1a,1a"]

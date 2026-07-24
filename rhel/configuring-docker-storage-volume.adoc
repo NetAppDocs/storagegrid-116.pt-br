@@ -52,6 +52,7 @@ Essa etapa garante que o volume de storage seja remontado automaticamente após 
 
 
 
+[[install-docker]]
 == Instale o Docker
 
 O sistema StorageGRID é executado no Red Hat Enterprise Linux ou CentOS como uma coleção de contentores. Se você optou por usar o mecanismo de contentor Docker, siga estas etapas para instalar o Docker. Caso contrário<<Instale o Podman,Instale o Podman>>, .
@@ -86,6 +87,7 @@ As versões Cliente e servidor devem ser 1.11.0 ou posterior.
 
 
 
+[[install-podman]]
 == Instale o Podman
 
 O sistema StorageGRID é executado no Red Hat Enterprise Linux como uma coleção de contentores. Se você escolheu usar o motor de contentor Podman, siga estas etapas para instalar o Podman. Caso contrário<<Instale o Docker,Instale o Docker>>, .

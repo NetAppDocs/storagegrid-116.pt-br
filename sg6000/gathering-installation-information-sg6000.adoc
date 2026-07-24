@@ -18,6 +18,7 @@ Você pode usar as tabelas a seguir para gravar as informações necessárias pa
 
 
 
+[[information-needed-to-connect-to-santricity-system-manager-on-storage-controllers]]
 == Informações necessárias para se conectar ao Gerenciador de sistema do SANtricity em controladores de storage
 
 Você deve conectar ambas as controladoras de storage do dispositivo (controladoras da série E2800 ou controladoras EF570) à rede de gerenciamento que usará no Gerenciador de sistemas do SANtricity. Os controladores estão localizados em cada dispositivo da seguinte forma:
@@ -121,6 +122,7 @@ Deve ser:
 |===
 
 
+[[information-needed-to-connect-sg6000-cn-controller-to-admin-network]]
 == Informações necessárias para conetar o controlador SG6000-CN à rede de administração
 
 A rede de administração para StorageGRID é uma rede opcional, usada para administração e manutenção do sistema. O dispositivo se coneta à rede Admin usando as seguintes portas de gerenciamento de 1 GbE no controlador SG6000-CN.
@@ -202,6 +204,7 @@ Sub-redes de rede Admin (CIDR)
 |===
 
 
+[[information-needed-to-connect-and-configure-1025-gbe-ports-on-sg6000-cn-controller]]
 == Informações necessárias para conetar e configurar portas 10/25-GbE no controlador SG6000-CN
 
 As quatro portas 10/25-GbE no controlador SG6000-CN conetam-se à rede de Grade StorageGRID e à rede de Cliente opcional.
@@ -258,6 +261,7 @@ Porta do switch para a porta 4 (rede de grade para modo fixo)
 |===
 
 
+[[information-needed-to-connect-sg6000-cn-controller-to-grid-network]]
 == Informações necessárias para conetar o controlador SG6000-CN à rede de Grade
 
 A rede de Grade para StorageGRID é uma rede necessária, usada para todo o tráfego interno de StorageGRID. O dispositivo se coneta à rede de Grade usando as portas 10/25-GbE no controlador SG6000-CN.
@@ -322,6 +326,7 @@ Sub-redes de rede de rede (CIDR)
 |===
 
 
+[[information-needed-to-connect-sg6000-cn-controller-to-client-network]]
 == Informações necessárias para conetar o controlador SG6000-CN à rede do cliente
 
 A rede de cliente para StorageGRID é uma rede opcional, normalmente usada para fornecer acesso de protocolo de cliente à grade. O dispositivo se coneta à rede do cliente usando as portas 10/25-GbE no controlador SG6000-CN.
@@ -391,6 +396,7 @@ Endereço IP estático que pretende utilizar para o nó de armazenamento do disp
 |===
 
 
+[[information-needed-to-connect-sg6000-cn-controller-to-bmc-management-network]]
 == Informações necessárias para conetar o controlador SG6000-CN à rede de gerenciamento BMC
 
 Você pode acessar a interface BMC no controlador SG6000-CN usando a seguinte porta de gerenciamento de 1 GbE. Esta porta suporta a gestão remota do hardware do controlador através de Ethernet, utilizando a norma IPMI (Intelligent Platform Management Interface).

@@ -15,24 +15,28 @@ Ao configurar um sistema StorageGRID para uso com o FabricPool, você deve evita
 
 
 
+[[object-encryption]]
 == Criptografia de objetos
 
 Ao configurar o StorageGRID, você pode opcionalmente ativar a configuração global *criptografia de objeto armazenado* se a criptografia de dados for necessária para outros clientes StorageGRID (*CONFIGURAÇÃO* > *sistema* > *Opções de grade*). Os dados dispostos em camadas de FabricPool para StorageGRID já estão criptografados, portanto, a ativação da configuração StorageGRID não é necessária. As chaves de criptografia do lado do cliente são propriedade da ONTAP.
 
 
 
+[[object-compression]]
 == Compactação de objetos
 
 Ao configurar o StorageGRID, não ative a configuração global *Compress Stored Objects* (*CONFIGURATION* > *System* > *Grid options*). Os dados dispostos em camadas de FabricPool para StorageGRID já estão compatados. Ativar *Compress Stored Objects* não reduzirá ainda mais o tamanho de um objeto.
 
 
 
+[[consistency-level]]
 == Nível de consistência
 
 Para buckets do FabricPool, o nível de consistência de bucket recomendado é *leitura após nova gravação*, que é a configuração padrão para um novo bucket. Não edite buckets do FabricPool para usar *Available* ou qualquer outro nível de consistência.
 
 
 
+[[fabricpool-tiering]]
 == Disposição em camadas do FabricPool
 
 Se o nó StorageGRID usar o storage atribuído a partir de um sistema NetApp ONTAP, confirme se o volume não tem uma política de disposição em camadas do FabricPool habilitada. Por exemplo, se um nó StorageGRID estiver sendo executado em um host VMware, verifique se o volume que faz o backup do armazenamento de dados para o nó StorageGRID não tem uma política de disposição em camadas do FabricPool habilitada. A desativação da disposição em camadas do FabricPool para volumes usados com nós do StorageGRID simplifica a solução de problemas e as operações de storage.

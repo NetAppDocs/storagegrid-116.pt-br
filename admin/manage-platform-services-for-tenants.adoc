@@ -15,6 +15,7 @@ Se você ativar os serviços de plataforma para contas de locatário do S3, conf
 
 
 
+[[what-are-platform-services]]
 == O que são serviços de plataforma?
 
 Os serviços de plataforma incluem replicação do CloudMirror, notificações de eventos e o serviço de integração de pesquisa.
@@ -51,6 +52,7 @@ Com os serviços de plataforma, os locatários têm a capacidade de usar recurso
 
 
 
+[[recommendations-for-using-platform-services]]
 == Recomendações para o uso de serviços de plataforma
 
 Antes de usar os serviços da plataforma, esteja ciente das seguintes recomendações:

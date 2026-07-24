@@ -15,6 +15,7 @@ O StorageGRIDSGF6024 inclui um controlador de computação e um compartimento de
 
 
 
+[[sgf6024-components]]
 == SGF6024 componentes
 
 O aparelho SGF6024 inclui os seguintes componentes:
@@ -51,6 +52,7 @@ E-Series EF570 flash array (também conhecido como compartimento de controladora
 |===
 
 
+[[sgf6024-diagrams]]
 == SGF6024 diagramas
 
 Esta figura mostra a parte frontal do SGF6024, que inclui uma controladora de computação 1U e um compartimento 2U contendo duas controladoras de storage e 24 unidades flash.

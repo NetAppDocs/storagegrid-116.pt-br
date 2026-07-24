@@ -15,6 +15,7 @@ Você deve entender o impactos da atualização do StorageGRID para que possa at
 
 
 
+[[changes-to-group-permissions-and-options]]
 == Alterações nas permissões e opções de grupo
 
 Depois de atualizar para o StorageGRID 11,6, opcionalmente selecione as seguintes permissões e opções atualizadas ou novas (*CONFIGURAÇÃO* *controle de acesso* *grupos de administradores*).

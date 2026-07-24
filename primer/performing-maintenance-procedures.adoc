@@ -15,6 +15,7 @@ Executa vários procedimentos de manutenção para manter o sistema StorageGRID 
 
 
 
+[[software-updates]]
 == Atualizações de software
 
 Você pode executar três tipos de atualizações de software na página Atualização de Software no Gerenciador de Grade:
@@ -26,6 +27,7 @@ Você pode executar três tipos de atualizações de software na página Atualiz
 
 
 
+[[storagegrid-software-upgrades]]
 == Atualizações de software StorageGRID
 
 Quando uma nova versão do recurso StorageGRID está disponível, a página Atualização de software orienta você pelo processo de upload do arquivo necessário e atualização do sistema StorageGRID. É necessário atualizar todos os nós de grade para todos os locais de data center a partir do nó de administração principal.
@@ -34,6 +36,7 @@ Durante uma atualização do software StorageGRID, os aplicativos clientes podem
 
 
 
+[[hotfixes]]
 == Hotfixes
 
 Se os problemas com o software forem detetados e resolvidos entre versões de recursos, talvez seja necessário aplicar um hotfix ao sistema StorageGRID.
@@ -51,6 +54,7 @@ NOTE: Embora todos os nós de grade sejam atualizados com a nova versão de hotf
 
 
 
+[[santricity-os-upgrades]]
 == Atualizações do sistema operacional SANtricity
 
 Talvez seja necessário atualizar o software SANtricity os nos controladores de storage dos dispositivos de storage, se os controladores não estiverem funcionando corretamente. Você pode fazer o upload do arquivo do SANtricity os para o nó de administrador principal no sistema StorageGRID e aplicar a atualização do Gerenciador de Grade.
@@ -63,6 +67,7 @@ Depois de fazer o upload do arquivo, você pode aprovar a atualização em nós 
 
 
 
+[[expansion-procedures]]
 == Procedimentos de expansão
 
 Você pode expandir um sistema StorageGRID adicionando volumes de storage aos nós de storage, adicionando novos nós de grade a um local existente ou adicionando um novo local de data center. Se você tiver nós de storage que usam o dispositivo de storage SG6060 ou SG6060X, poderá adicionar uma ou duas gavetas de expansão para dobrar ou triplicar a capacidade de storage do nó.
@@ -73,6 +78,7 @@ image::../media/grid_expansion_progress.png[Esta imagem é explicada pelo texto 
 
 
 
+[[node-recovery-procedures]]
 == Procedimentos de recuperação do nó
 
 Os nós de grade podem falhar se uma falha de hardware, virtualização, sistema operacional ou software tornar o nó inoperável ou não confiável.
@@ -85,6 +91,7 @@ image::../media/overview_admin_node_recovery.png[Visão geral: Admin Node Recove
 
 
 
+[[decommission-procedures]]
 == Procedimentos de desativação
 
 Você pode querer remover permanentemente nós de grade ou um site inteiro de data center do seu sistema StorageGRID.
@@ -112,6 +119,7 @@ image::../media/decommission_site_step_select_site.png[Desativar local passo 1]
 
 
 
+[[network-maintenance-procedures]]
 == Procedimentos de manutenção da rede
 
 Alguns dos procedimentos de manutenção de rede que você pode precisar executar incluem o seguinte:
@@ -125,18 +133,21 @@ Alguns dos procedimentos de manutenção de rede que você pode precisar executa
 
 
 
+[[host-level-and-middleware-procedures]]
 == Procedimentos de nível de host e middleware
 
 Alguns procedimentos de manutenção são específicos para nós StorageGRID que são implantados no Linux ou VMware, ou são específicos para outros componentes da solução StorageGRID. Por exemplo, você pode querer migrar um nó de grade para um host Linux diferente ou executar manutenção em um nó de arquivo conetado ao Tivoli Storage Manager (TSM).
 
 
 
+[[appliance-node-cloning]]
 == Clonagem do nó do dispositivo
 
 A clonagem do nó do dispositivo permite substituir facilmente um nó do dispositivo existente na grade por um dispositivo de design mais recente ou mais funcionalidades que fazem parte do mesmo site de StorageGRID lógico. O processo transfere todos os dados para o novo dispositivo, colocando-os em serviço para substituir o nó antigo do dispositivo e deixando o dispositivo antigo em um estado de pré-instalação. A clonagem fornece um processo de atualização de hardware fácil de executar e fornece um método alternativo para a substituição de dispositivos.
 
 
 
+[[grid-node-procedures]]
 == Procedimentos do nó de grade
 
 Talvez seja necessário executar determinados procedimentos em um nó de grade específico. Por exemplo, talvez seja necessário reinicializar um nó de grade ou parar e reiniciar manualmente um serviço de nó de grade específico. Alguns procedimentos de nó de grade podem ser executados a partir do Gerenciador de Grade; outros exigem que você faça login no nó de grade e use a linha de comando do nó.

@@ -15,6 +15,7 @@ Use estas instruções para configurar e administrar um sistema StorageGRID.
 
 
 
+[[about-these-instructions]]
 == Sobre estas instruções
 
 Essas instruções descrevem como usar o Gerenciador de Grade para configurar grupos e usuários, criar contas de locatário para permitir que aplicativos clientes S3 e Swift armazenem e recuperem objetos, configurem e gerenciem redes StorageGRID, configurem AutoSupport, gerenciem configurações de nó e muito mais.
@@ -23,6 +24,7 @@ Estas instruções destinam-se ao pessoal técnico que irá configurar, administ
 
 
 
+[[before-you-begin]]
 == Antes de começar
 
 * Você tem uma compreensão geral do sistema StorageGRID.

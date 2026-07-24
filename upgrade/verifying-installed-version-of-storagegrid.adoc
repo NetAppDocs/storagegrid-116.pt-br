@@ -44,6 +44,7 @@ Consulte xref:../maintain/storagegrid-hotfix-procedure.adoc[Procedimento de corr
 
 
 
+[[example-upgrade-to-storagegrid-11-5-from-version-11-3-0-8]]
 == Exemplo: Atualize para o StorageGRID 11,5 a partir da versão 11.3.0.8
 
 O exemplo a seguir mostra as etapas para atualizar do StorageGRID versão 11.3.0.8 para a versão 11,5 em preparação para uma atualização do StorageGRID 11,6.

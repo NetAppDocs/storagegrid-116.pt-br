@@ -15,18 +15,21 @@ Você pode usar a solicitação de restauração PÓS-objeto S3 para restaurar u
 
 
 
+[[supported-request-type]]
 == Tipo de solicitação suportada
 
 O StorageGRID suporta apenas solicitações de restauração PÓS-objeto para restaurar um objeto. Não suporta o `SELECT` tipo de restauração. Selecione Requests Return (retornar solicitações `XNotImplemented`).
 
 
 
+[[versioning]]
 == Controle de versão
 
 Opcionalmente, especifique `versionId` para restaurar uma versão específica de um objeto em um bucket com versão. Se você não especificar `versionId`, a versão mais recente do objeto será restaurada
 
 
 
+[[behavior-of-post-object-restore-on-cloud-storage-pool-objects]]
 == Comportamento da restauração PÓS-objeto em objetos do Cloud Storage Pool
 
 Se um objeto tiver sido armazenado em um pool de armazenamento em nuvem (consulte as instruções para gerenciar objetos com gerenciamento do ciclo de vida das informações), uma solicitação de restauração PÓS-objeto terá o seguinte comportamento, com base no estado do objeto. Consulte "Objeto PRINCIPAL" para obter mais detalhes.

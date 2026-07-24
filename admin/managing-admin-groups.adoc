@@ -21,12 +21,14 @@ Você pode criar grupos de administração para gerenciar as permissões de segu
 
 
 
+[[create-an-admin-group]]
 == Crie um grupo de administração
 
 Os grupos de administração permitem determinar quais usuários podem acessar quais recursos e operações no Gerenciador de Grade e na API de Gerenciamento de Grade.
 
 
 
+[[access-the-wizard]]
 === Acesse o assistente
 
 . Selecione *CONFIGURATION* > *Access Control* > *Admin Groups*.
@@ -35,6 +37,7 @@ Os grupos de administração permitem determinar quais usuários podem acessar q
 
 
 
+[[choose-a-group-type]]
 === Escolha um tipo de grupo
 
 Você pode criar um grupo local ou importar um grupo federado.
@@ -71,6 +74,7 @@ Você pode criar um grupo local ou importar um grupo federado.
 ====
 
 
+[[manage-group-permissions]]
 === Gerenciar permissões de grupo
 
 . Para *modo de acesso*, selecione se os usuários do grupo podem alterar as configurações e executar operações no Gerenciador de Grade e na API de Gerenciamento de Grade ou se eles só podem exibir configurações e recursos.
@@ -92,6 +96,7 @@ Você deve atribuir pelo menos uma permissão a cada grupo; caso contrário, os 
 
 
 
+[[add-users-local-groups-only]]
 === Adicionar utilizadores (apenas grupos locais)
 
 . Opcionalmente, selecione um ou mais usuários locais para este grupo.
@@ -103,6 +108,7 @@ Se ainda não tiver criado utilizadores locais, pode guardar o grupo sem adicion
 
 
 
+[[view-and-edit-admin-groups]]
 == Exibir e editar grupos de administração
 
 Você pode exibir detalhes de grupos existentes, modificar um grupo ou duplicar um grupo.
@@ -164,6 +170,7 @@ Editar o modo de acesso ou permissões
 
 
 
+[[duplicate-a-group]]
 == Duplicar um grupo
 
 . Marque a caixa de seleção do grupo.
@@ -173,6 +180,7 @@ Editar o modo de acesso ou permissões
 
 
 
+[[delete-a-group]]
 == Eliminar um grupo
 
 Você pode excluir um grupo de administração quando quiser remover o grupo do sistema e remover todas as permissões associadas ao grupo. A exclusão de um grupo de administração remove todos os usuários do grupo, mas não exclui os usuários.
@@ -184,6 +192,7 @@ Você pode excluir um grupo de administração quando quiser remover o grupo do 
 
 
 
+[[group-permissions]]
 == Permissões de grupo
 
 Ao criar grupos de usuários admin, você seleciona uma ou mais permissões para controlar o acesso a recursos específicos do Gerenciador de Grade. Em seguida, você pode atribuir cada usuário a um ou mais desses grupos de administração para determinar quais tarefas o usuário pode executar.
@@ -204,6 +213,7 @@ Por padrão, qualquer usuário que pertença a um grupo que tenha pelo menos uma
 
 
 
+[[interaction-between-permissions-and-access-mode]]
 === Interação entre permissões e modo de acesso
 
 Para todas as permissões, a configuração *modo de acesso* do grupo determina se os usuários podem alterar configurações e executar operações ou se eles podem exibir somente as configurações e recursos relacionados. Se um usuário pertencer a vários grupos e qualquer grupo estiver definido como *somente leitura*, o usuário terá acesso somente leitura a todas as configurações e recursos selecionados.
@@ -212,12 +222,14 @@ As seções a seguir descrevem as permissões que você pode atribuir ao criar o
 
 
 
+[[root-access]]
 === Acesso à raiz
 
 Essa permissão fornece acesso a todos os recursos de administração de grade.
 
 
 
+[[acknowledge-alarms-legacy]]
 === Reconhecer alarmes (legado)
 
 Esta permissão fornece acesso para reconhecer e responder a alarmes (sistema legado). Todos os usuários conetados podem visualizar alarmes atuais e históricos.
@@ -226,6 +238,7 @@ Se você quiser que um usuário monitore a topologia da grade e reconheça somen
 
 
 
+[[change-tenant-root-password]]
 === Altere a senha raiz do locatário
 
 Essa permissão fornece acesso à opção *alterar senha de root* na página de locatários, permitindo que você controle quem pode alterar a senha para o usuário raiz local do locatário. Essa permissão também é usada para migrar chaves S3 quando o recurso de importação de chaves S3 estiver ativado. Os usuários que não têm essa permissão não podem ver a opção *alterar senha de root*.
@@ -235,12 +248,14 @@ NOTE: Para conceder acesso à página de locatários, que contém a opção *alt
 
 
 
+[[grid-topology-page-configuration]]
 === Configuração da página de topologia de grade
 
 Esta permissão fornece acesso às guias Configuração na página *SUPPORT* > *Tools* > *Grid topology*.
 
 
 
+[[ilm]]
 === ILM
 
 Esta permissão fornece acesso às seguintes opções de menu *ILM*:
@@ -257,6 +272,7 @@ NOTE: Os usuários devem ter as permissões *outras configurações de grade* e 
 
 
 
+[[maintenance]]
 === Manutenção
 
 Os usuários devem ter a permissão Manutenção para usar estas opções:
@@ -316,24 +332,28 @@ Os utilizadores que não têm a permissão Manutenção podem ver, mas não edit
 
 
 
+[[manage-alerts]]
 === Gerenciar alertas
 
 Essa permissão fornece acesso a opções de gerenciamento de alertas. Os usuários devem ter essa permissão para gerenciar silêncios, notificações de alerta e regras de alerta.
 
 
 
+[[metrics-query]]
 === Consulta de métricas
 
 Esta permissão fornece acesso à página *SUPPORT* > *Tools* > *Metrics*. Essa permissão também fornece acesso a consultas de métricas personalizadas do Prometheus usando a seção *Metrics* da API Grid Management.
 
 
 
+[[object-metadata-lookup]]
 === Pesquisa de metadados de objetos
 
 Esta permissão fornece acesso à página *ILM* > *Object metadata lookup*.
 
 
 
+[[other-grid-configuration]]
 === Outra configuração de grade
 
 Esta permissão fornece acesso a opções de configuração de grade adicionais.
@@ -369,12 +389,14 @@ IMPORTANT: Para ver essas opções adicionais, os usuários também devem ter a 
 
 
 
+[[storage-appliance-administrator]]
 === Administrador do dispositivo de storage
 
 Essa permissão fornece acesso ao Gerenciador de sistemas do e-Series SANtricity em dispositivos de storage por meio do Gerenciador de Grade.
 
 
 
+[[tenant-accounts]]
 === Contas de inquilino
 
 Essa permissão fornece acesso à página de locatários, onde você pode criar, editar e remover contas de locatários. Essa permissão também permite que os usuários visualizem as políticas de classificação de tráfego existentes.

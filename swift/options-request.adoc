@@ -15,6 +15,7 @@ A SOLICITAÇÃO DE OPÇÕES verifica a disponibilidade de um serviço Swift indi
 
 
 
+[[options-method]]
 == Método de OPÇÕES
 
 Por exemplo, os aplicativos clientes podem emitir uma SOLICITAÇÃO DE OPÇÕES para a porta Swift em um nó de armazenamento, sem fornecer credenciais de autenticação Swift, para determinar se o nó de armazenamento está disponível. Você pode usar essa solicitação para monitoramento ou para permitir que balanceadores de carga externos identifiquem quando um nó de storage está inativo.

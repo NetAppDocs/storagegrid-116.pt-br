@@ -17,12 +17,14 @@ image::../media/grid_manager_dashboard.png[Painel do Grid Manager]
 
 
 
+[[search-field]]
 == Campo de pesquisa
 
 O campo *Search* na barra de cabeçalho permite que você navegue rapidamente para uma página específica ou entrada da barra lateral dentro do Gerenciador de Grade. Por exemplo, você pode inserir *key* para acessar a página Key Management Server.
 
 
 
+[[health-panel]]
 == Painel de saúde
 
 |===
@@ -51,6 +53,7 @@ Você pode ver um ou mais dos seguintes links:
 |===
 
 
+[[available-storage-panel]]
 == Painel de armazenamento disponível
 
 |===
@@ -76,6 +79,7 @@ Você pode usar essas informações para comparar o armazenamento usado com o ar
 |===
 
 
+[[information-lifecycle-management-ilm-panel]]
 == Painel ILM (Information Lifecycle Management)
 
 |===
@@ -102,6 +106,7 @@ Exibe as operações ILM atuais e as filas ILM para o seu sistema. Você pode us
 |===
 
 
+[[protocol-operations-panel]]
 == Painel Protocol Operations (operações de protocolo)
 
 |===

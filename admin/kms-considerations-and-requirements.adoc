@@ -15,6 +15,7 @@ Antes de configurar um servidor de gerenciamento de chaves externo (KMS), você 
 
 
 
+[[what-are-the-kmip-requirements]]
 == Quais são os requisitos do KMIP?
 
 O StorageGRID é compatível com KMIP versão 1,4.
@@ -33,6 +34,7 @@ As configurações do firewall de rede devem permitir que cada nó do dispositiv
 
 
 
+[[which-appliances-are-supported]]
 == Quais aparelhos são suportados?
 
 Você pode usar um servidor de gerenciamento de chaves (KMS) para gerenciar chaves de criptografia para qualquer dispositivo StorageGRID em sua grade que tenha a configuração *criptografia de nó* ativada. Esta definição só pode ser ativada durante a fase de configuração de hardware da instalação do dispositivo utilizando o Instalador de dispositivos StorageGRID.
@@ -91,6 +93,7 @@ Os nós implantados nessas outras plataformas podem usar criptografia fora do St
 
 
 
+[[when-should-i-configure-key-management-servers]]
 == Quando devo configurar servidores de gerenciamento de chaves?
 
 Para uma nova instalação, você normalmente deve configurar um ou mais servidores de gerenciamento de chaves no Gerenciador de Grade antes de criar locatários. Essa ordem garante que os nós sejam protegidos antes que quaisquer dados de objeto sejam armazenados neles.
@@ -99,6 +102,7 @@ Você pode configurar os servidores de gerenciamento de chaves no Gerenciador de
 
 
 
+[[how-many-key-management-servers-do-i-need]]
 == Quantos servidores de gerenciamento de chaves eu preciso?
 
 Você pode configurar um ou mais servidores de gerenciamento de chaves externos para fornecer chaves de criptografia aos nós do dispositivo em seu sistema StorageGRID. Cada KMS fornece uma única chave de criptografia para os nós do dispositivo StorageGRID em um único local ou em um grupo de sites.
@@ -113,6 +117,7 @@ image::../media/kms_per_site.png[KMS por local]
 
 
 
+[[what-happens-when-a-key-is-rotated]]
 == O que acontece quando uma chave é girada?
 
 Como prática recomendada de segurança, você deve girar periodicamente a chave de criptografia usada por cada KMS configurado.
@@ -131,6 +136,7 @@ Quando a nova versão da chave estiver disponível:
 
 
 
+[[can-i-reuse-an-appliance-node-after-it-has-been-encrypted]]
 == Posso reutilizar um nó de appliance depois que ele foi criptografado?
 
 Se você precisar instalar um dispositivo criptografado em outro sistema StorageGRID, primeiro será necessário desativar o nó da grade para mover dados de objeto para outro nó. Em seguida, você pode usar o Instalador de dispositivos StorageGRID para limpar a configuração do KMS. A limpeza da configuração KMS desativa a configuração *criptografia de nó* e remove a associação entre o nó do dispositivo e a configuração KMS para o site StorageGRID.

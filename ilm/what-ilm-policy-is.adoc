@@ -15,6 +15,7 @@ Uma política de gerenciamento de ciclo de vida das informações (ILM) é um co
 
 
 
+[[how-does-an-ilm-policy-evaluate-objects]]
 == Como uma política ILM avalia objetos?
 
 A política de ILM ativa do seu sistema StorageGRID controla o posicionamento, a duração e a proteção de dados de todos os objetos.
@@ -28,6 +29,7 @@ Quando os clientes salvam objetos no StorageGRID, os objetos são avaliados em r
 
 
 
+[[example-ilm-policy]]
 == Exemplo de política ILM
 
 Este exemplo de política ILM usa três regras ILM.
@@ -44,6 +46,7 @@ image::../media/ilm_policy_and_rules.png[Política e regras do ILM]
 
 
 
+[[what-are-proposed-active-and-historical-policies]]
 == Quais são as políticas propostas, ativas e históricas?
 
 Cada sistema StorageGRID deve ter uma política ILM ativa. Um sistema StorageGRID também pode ter uma política de ILM proposta e qualquer número de políticas históricas.

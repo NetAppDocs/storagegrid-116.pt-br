@@ -4,6 +4,7 @@
 
 
 
+[[remove-the-controller]]
 == Retire o controlador
 
 .Passos

@@ -20,6 +20,7 @@ Para saber mais, xref:../tenant/understanding-tenant-management-api.adoc[Entenda
 
 
 
+[[patch-method-deprecated]]
 == Método DE CORREÇÃO obsoleto
 
 O método DE PATCH agora foi obsoleto e será removido em uma versão futura. Conforme necessário, execute uma operação PUT para substituir um recurso em vez de usar uma operação DE PATCH para modificar o recurso.

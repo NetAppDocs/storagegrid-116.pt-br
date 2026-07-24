@@ -22,6 +22,7 @@ CAUTION: As seguintes regras e políticas do ILM são apenas exemplos. Existem m
 
 
 
+[[how-does-changing-an-ilm-policy-affect-performance]]
 == Como a alteração de uma política ILM afeta o desempenho
 
 Quando você ativa uma nova política de ILM, o desempenho do seu sistema StorageGRID pode ser temporariamente afetado, especialmente se as instruções de colocação na nova política exigirem que muitos objetos existentes sejam movidos para novos locais.
@@ -45,6 +46,7 @@ xref:creating-ilm-policy.adoc[Crie uma política ILM]
 
 
 
+[[active-ilm-policy-for-example-6-data-protection-at-two-sites]]
 == Política ILM ativa, por exemplo, 6: Proteção de dados em dois locais
 
 Neste exemplo, a política ILM ativa foi inicialmente projetada para um sistema StorageGRID de dois locais e usa duas regras ILM.
@@ -58,6 +60,7 @@ NOTE: A primeira regra neste exemplo usa um filtro avançado para garantir que a
 
 
 
+[[rule-1-one-site-erasure-coding-for-tenant-a]]
 === Regra 1: Codificação de apagamento de um local para o Locatário A.
 
 [cols="1a,2a"]
@@ -94,6 +97,7 @@ Codificação de apagamento 2-1 no Data Center 1 do dia 0 para sempre
 |===
 
 
+[[rule-2-two-site-replication-for-other-tenants]]
 === Regra 2: Replicação de dois locais para outros locatários
 
 [cols="1a,2a"]
@@ -130,6 +134,7 @@ Duas cópias replicadas do dia 0 para sempre: Uma cópia no data center 1 e uma 
 |===
 
 
+[[proposed-ilm-policy-for-example-6-data-protection-at-three-sites]]
 == Proposta de política de ILM, por exemplo, 6: Proteção de dados em três locais
 
 Neste exemplo, a política ILM está sendo atualizada para um sistema StorageGRID de três locais.
@@ -142,6 +147,7 @@ Quando esta nova política ILM é ativada, os objetos pertencentes ao Locatário
 
 
 
+[[rule-1-three-site-erasure-coding-for-tenant-a]]
 === Regra 1: Codificação de apagamento de três locais para o Locatário A.
 
 [cols="1a,2a"]
@@ -178,6 +184,7 @@ Codificação de apagamento 2-1 em todos os 3 Data Centers, desde o dia 0 até s
 |===
 
 
+[[rule-2-three-site-replication-for-other-tenants]]
 === Regra 2: Replicação de três locais para outros locatários
 
 [cols="1a,2a"]
@@ -214,6 +221,7 @@ Três cópias replicadas do dia 0 para sempre: Uma cópia no data center 1, uma 
 |===
 
 
+[[activating-the-proposed-ilm-policy-for-example-6]]
 == Ativar a política de ILM proposta, por exemplo, 6
 
 Quando você ativa uma nova política proposta de ILM, objetos existentes podem ser movidos para novos locais ou novas cópias de objetos podem ser criadas para objetos existentes, com base nas instruções de posicionamento em quaisquer regras novas ou atualizadas.
@@ -226,6 +234,7 @@ CAUTION: Quando você ativa uma nova política de ILM, o StorageGRID a usa para 
 
 
 
+[[what-happens-when-erasure-coding-instructions-change]]
 === O que acontece quando as instruções de codificação de apagamento mudam
 
 Na política ILM atualmente ativa para este exemplo, os objetos pertencentes ao Tenant A são protegidos usando codificação de apagamento 2-1 no Data Center 1. Na nova política proposta de ILM, os objetos pertencentes ao Tenant A serão protegidos usando codificação de apagamento 2-1 nos Data Centers 1, 2 e 3.
@@ -242,6 +251,7 @@ NOTE: Os fragmentos 2 mais 1 existentes no Data Center 1 não são reutilizados.
 
 
 
+[[what-happens-when-replication-instructions-change]]
 === O que acontece quando as instruções de replicação mudam
 
 Na política de ILM atualmente ativa, neste exemplo, os objetos pertencentes a outros locatários são protegidos usando duas cópias replicadas em pools de storage nos Data Centers 1 e 2. Na nova política de ILM proposta, os objetos pertencentes a outros locatários serão protegidos usando três cópias replicadas em pools de storage nos Data Centers 1, 2 e 3.
@@ -254,6 +264,7 @@ Quando a nova política ILM é ativada, ocorrem as seguintes operações ILM:
 
 
 
+[[performance-impact-of-activating-this-policy]]
 === Impacto da ativação desta política no desempenho
 
 Quando a política de ILM proposta neste exemplo é ativada, o desempenho geral deste sistema StorageGRID será temporariamente afetado. Níveis mais altos que o normal de recursos de grade serão necessários para criar novos fragmentos codificados por apagamento para os objetos existentes do Locatário A e novas cópias replicadas no Data Center 3 para objetos existentes de outros locatários.

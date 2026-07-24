@@ -15,6 +15,7 @@ Se você encontrar problemas de conexão durante a instalação do StorageGRID A
 
 
 
+[[unable-to-connect-to-appliance]]
 == Não foi possível ligar ao aparelho
 
 Se você não conseguir se conetar ao utilitário de serviços, pode haver um problema de rede ou a instalação de hardware pode não ter sido concluída com êxito.

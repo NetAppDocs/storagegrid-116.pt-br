@@ -61,6 +61,7 @@ Para obter detalhes, consulte a documentação do e-Series E5600.
 
 
 
+[[general-boot-up-codes]]
 == Códigos gerais de arranque
 
 Durante a inicialização ou após uma reinicialização total do hardware, os LEDs Ação de Serviço permitida e Ação de Serviço necessária acendem-se enquanto o hardware está sendo inicializado. O visor de sete segmentos mostra uma sequência de códigos iguais para o hardware e-Series e não específicos para o controlador E5600SG.
@@ -109,6 +110,7 @@ Depois que os códigos AA e FF aparecem, os códigos de inicialização normais 
 
 
 
+[[normal-boot-up-codes]]
 == Códigos de arranque normais
 
 Estes códigos representam os eventos normais de arranque que ocorrem no aparelho, por ordem cronológica.
@@ -181,6 +183,7 @@ O sistema operacional Linux e o StorageGRID estão em execução.
 |===
 
 
+[[e5600sg-controller-error-codes]]
 == E5600SG códigos de erro do controlador
 
 Estes códigos representam condições de erro que podem ser apresentadas no controlador E5600SG à medida que o aparelho arranca. Códigos hexadecimais de dois dígitos adicionais são exibidos se ocorrerem erros específicos de hardware de baixo nível. Se algum destes códigos persistir durante mais de um segundo ou dois, ou se não conseguir resolver o erro seguindo um dos procedimentos de resolução de problemas prescritos, contacte o suporte técnico.

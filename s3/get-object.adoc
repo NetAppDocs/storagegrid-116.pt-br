@@ -15,6 +15,7 @@ Você pode usar a solicitação S3 GET Object para recuperar um objeto de um buc
 
 
 
+[[get-object-and-multipart-objects]]
 == OBTER objetos e multipartes
 
 Você pode usar o `partNumber` parâmetro Request para recuperar uma parte específica de um objeto multipart ou segmentado. O `x-amz-mp-parts-count` elemento de resposta indica quantas partes o objeto tem.
@@ -23,6 +24,7 @@ Você pode definir `partNumber` como 1 para objetos segmentados/multipartes e ob
 
 
 
+[[request-headers-for-server-side-encryption-with-customer-provided-encryption-keys-sse-c]]
 == Cabeçalhos de solicitação para criptografia no lado do servidor com chaves de criptografia fornecidas pelo cliente (SSE-C)
 
 Use todos os três cabeçalhos se o objeto for criptografado com uma chave exclusiva que você forneceu.
@@ -37,12 +39,14 @@ IMPORTANT: As chaves de criptografia que você fornece nunca são armazenadas. S
 
 
 
+[[utf-8-characters-in-user-metadata]]
 == UTF-8 carateres em metadados do usuário
 
 O StorageGRID não analisa nem interpreta carateres UTF-8 escapados em metadados definidos pelo usuário. Obter solicitações para um objeto com carateres UTF-8 escapados em metadados definidos pelo usuário não retornam o `x-amz-missing-meta` cabeçalho se o nome ou valor da chave incluir carateres não imprimíveis.
 
 
 
+[[unsupported-request-header]]
 == Cabeçalho de pedido não suportado
 
 O seguinte cabeçalho de solicitação não é suportado e retorna `XNotImplemented`:
@@ -52,12 +56,14 @@ O seguinte cabeçalho de solicitação não é suportado e retorna `XNotImplemen
 
 
 
+[[versioning]]
 == Controle de versão
 
 Se um `versionId` sub-recurso não for especificado, a operação busca a versão mais recente do objeto em um bucket com versão. Se a versão atual do objeto for um marcador de exclusão, um status "não encontrado" será retornado com o `x-amz-delete-marker` cabeçalho de resposta definido como `true`.
 
 
 
+[[behavior-of-get-object-for-cloud-storage-pool-objects]]
 == Comportamento DO GET Object para objetos Pool de storage de nuvem
 
 Se um objeto tiver sido armazenado em um pool de armazenamento em nuvem (consulte as instruções para gerenciar objetos com gerenciamento do ciclo de vida das informações), o comportamento de uma SOLICITAÇÃO GET Object depende do estado do objeto. Consulte "Objeto PRINCIPAL" para obter mais detalhes.
@@ -115,6 +121,7 @@ Uma cópia do objeto é recuperada.
 |===
 
 
+[[multipart-or-segmented-objects-in-a-cloud-storage-pool]]
 == Objetos segmentados ou multiparte em um pool de armazenamento em nuvem
 
 Se você carregou um objeto multipart ou se o StorageGRID dividir um objeto grande em segmentos, o StorageGRID determina se o objeto está disponível no pool de armazenamento em nuvem amostrando um subconjunto das partes ou segmentos do objeto. Em alguns casos, uma solicitação GET Object pode retornar incorretamente `200 OK` quando algumas partes do objeto já tiverem sido transferidas para um estado não recuperável ou quando algumas partes do objeto ainda não tiverem sido restauradas.

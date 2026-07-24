@@ -81,6 +81,7 @@ Documentação relacionada
 |===
 
 
+[[download-the-storagegrid-upgrade-files]]
 == Transfira os ficheiros de atualização do StorageGRID
 
 Você deve baixar um ou mais arquivos, dependendo de onde seus nós estão instalados.
@@ -137,6 +138,7 @@ NOTE: Não são necessários ficheiros adicionais para o SG100 ou SG1000.
 
 
 
+[[download-the-recovery-package]]
 == Faça o download do pacote de recuperação
 
 O arquivo do pacote de recuperação permite restaurar o sistema StorageGRID se ocorrer uma falha. Faça o download do arquivo atual do Pacote de recuperação antes de fazer alterações na topologia da grade no sistema StorageGRID ou antes de atualizar o software. Em seguida, faça o download de uma nova cópia do Pacote de recuperação após fazer alterações na topologia da grade ou após atualizar o software.

@@ -17,6 +17,7 @@ O uso do AutoSupport pode acelerar significativamente a determinação e resolu�
 
 
 
+[[information-included-in-autosupport-messages]]
 == Informações incluídas nas mensagens do AutoSupport
 
 As mensagens do AutoSupport incluem informações como as seguintes:
@@ -43,6 +44,7 @@ Se você fechar a mensagem, ela não aparecerá novamente até que o cache do na
 
 
 
+[[what-is-digital-advisor]]
 == O que é o Digital Advisor?
 
 O consultor digital é baseado na nuvem e aproveita as análises preditivas e o conhecimento da comunidade fornecidos pela base instalada da NetApp. Suas avaliações de risco contínuas, alertas preditivos, orientações prescritivas e ações automatizadas ajudam a evitar problemas antes que eles ocorram, levando a uma melhor integridade do sistema e maior disponibilidade do sistema.
@@ -53,6 +55,7 @@ https://docs.netapp.com/us-en/active-iq/index.html["Documentação do Digital Ad
 
 
 
+[[protocols-for-sending-autosupport-messages]]
 == Protocolos para envio de mensagens AutoSupport
 
 Você pode escolher um dos três protocolos para enviar mensagens AutoSupport:
@@ -68,6 +71,7 @@ Se utilizar SMTP como protocolo para mensagens AutoSupport, tem de configurar um
 
 
 
+[[autosupport-options]]
 == Opções de AutoSupport
 
 Você pode usar qualquer combinação das seguintes opções para enviar mensagens do AutoSupport para o suporte técnico:

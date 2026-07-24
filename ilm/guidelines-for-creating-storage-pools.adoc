@@ -15,6 +15,7 @@ Ao configurar e usar pools de armazenamento, siga estas diretrizes.
 
 
 
+[[guidelines-for-all-storage-pools]]
 == Diretrizes para todos os pools de armazenamento
 
 * O StorageGRID inclui um pool de storage padrão, todos os nós de storage, que usa o local padrão, todos os locais e o nível de storage padrão, todos os nós de storage. O pool de storage de todos os nós de storage é atualizado automaticamente sempre que você adicionar novos sites de data center.
@@ -29,6 +30,7 @@ NOTE: O uso do pool de storage todos os nós de storage ou do site todos os site
 
 
 
+[[guidelines-for-storage-pools-used-for-replicated-copies]]
 == Diretrizes para pools de storage usados para cópias replicadas
 
 * Crie um pool de armazenamento diferente para cada site. Em seguida, especifique um ou mais pools de armazenamento específicos do local nas instruções de posicionamento para cada regra. O uso de um pool de storage para cada local garante que as cópias de objetos replicadas sejam colocadas exatamente onde você espera (por exemplo, uma cópia de cada objeto em cada local para proteção contra perda de local).
@@ -38,6 +40,7 @@ NOTE: O uso do pool de storage todos os nós de storage ou do site todos os site
 
 
 
+[[guidelines-for-storage-pools-used-for-erasure-coded-copies]]
 == Diretrizes para pools de storage usados para cópias codificadas por apagamento
 
 * Você não pode usar nós de arquivamento para dados codificados por apagamento.
@@ -55,6 +58,7 @@ NOTE: Se a grade incluir apenas um local, você será impedido de usar o pool de
 
 
 
+[[guidelines-for-storage-pools-used-for-archived-copies]]
 == Diretrizes para pools de storage usados para cópias arquivadas
 
 * Não é possível criar um pool de storage que inclua nós de storage e nós de arquivamento. As cópias arquivadas exigem um pool de storage que inclui apenas nós de arquivamento.

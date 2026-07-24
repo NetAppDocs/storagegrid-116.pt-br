@@ -19,6 +19,7 @@ Você pode acessar o Gerenciador de Grade usando um xref:../admin/web-browser-re
 
 
 
+[[grid-manager-dashboard]]
 == Painel do Grid Manager
 
 Ao iniciar sessão pela primeira vez no Gestor de grelha, pode utilizar o Painel para monitorizar rapidamente as atividades do sistema.
@@ -35,12 +36,14 @@ Para obter uma explicação das informações em cada painel, clique no ícone d
 
 
 
+[[search-field]]
 == Campo de pesquisa
 
 O campo *Search* na barra de cabeçalho permite que você navegue rapidamente para uma página específica dentro do Gerenciador de Grade. Por exemplo, você pode digitar *km* para acessar a página do Key Management Server (KMS). Você pode usar *Search* para encontrar entradas na barra lateral do Gerenciador de Grade e nos menus Configuração, Manutenção e suporte.
 
 
 
+[[alerts-menu]]
 == Menu de alertas
 
 O menu Alertas fornece uma interface fácil de usar para detetar, avaliar e resolver problemas que possam ocorrer durante a operação do StorageGRID.
@@ -63,6 +66,7 @@ No menu Alertas, você pode fazer o seguinte:
 
 
 
+[[nodes-page]]
 == Página de nós
 
 A página nós exibe informações sobre toda a grade, cada local na grade e cada nó em um local.
@@ -78,6 +82,7 @@ image::../media/nodes_menu.png[página principal dos nós]
 
 
 
+[[tenants-page]]
 == Página de inquilinos
 
 A página locatários permite criar e monitorar as contas de locatários de storage do seu sistema StorageGRID. Você deve criar pelo menos uma conta de locatário para especificar quem pode armazenar e recuperar objetos e qual funcionalidade está disponível para eles.
@@ -94,6 +99,7 @@ image::../media/tenants_menu_and_page.png[Menu e Página de inquilinos]
 
 
 
+[[ilm-menu]]
 == Menu ILM
 
 O menu ILM permite configurar as regras e políticas de gerenciamento do ciclo de vida das informações (ILM) que regem a durabilidade e a disponibilidade dos dados. Você também pode inserir um identificador de objeto para exibir os metadados desse objeto.
@@ -107,6 +113,7 @@ image::../media/ilm_menu_and_page.png[Menu e Página ILM]
 
 
 
+[[configuration-menu]]
 == Menu de configuração
 
 O menu Configuração permite especificar as definições de rede, as definições de segurança, as definições do sistema, as opções de monitorização e as opções de controlo de acesso.
@@ -125,6 +132,7 @@ image::../media/configuration_menu.png[Menu de configuração]
 
 
 
+[[maintenance-menu]]
 == Menu de manutenção
 
 O menu Manutenção permite executar tarefas de manutenção, manutenção do sistema e manutenção da rede.
@@ -133,6 +141,7 @@ image::../media/maintenance_menu.png[Menu e Página de Manutenção]
 
 
 
+[[tasks]]
 === Tarefas
 
 As tarefas de manutenção incluem:
@@ -145,6 +154,7 @@ As tarefas de manutenção incluem:
 
 
 
+[[system]]
 === Sistema
 
 As tarefas de manutenção do sistema que você pode executar incluem:
@@ -156,6 +166,7 @@ As tarefas de manutenção do sistema que você pode executar incluem:
 
 
 
+[[network]]
 === Rede
 
 As tarefas de manutenção de rede que você pode executar incluem:
@@ -178,6 +189,7 @@ As tarefas de manutenção de rede que você pode executar incluem:
 
 
 
+[[support-menu]]
 == Menu de suporte
 
 O menu suporte fornece opções que ajudam o suporte técnico a analisar e solucionar problemas do seu sistema. Existem duas partes no menu suporte: Ferramentas e Alarmes (legado).
@@ -186,6 +198,7 @@ image::../media/support_menu.png[Menu de suporte]
 
 
 
+[[tools]]
 === Ferramentas
 
 Na seção Ferramentas do menu suporte, você pode:
@@ -203,6 +216,7 @@ IMPORTANT: As ferramentas disponíveis na opção *Metrics* destinam-se a ser ut
 
 
 
+[[alarms-legacy]]
 === Alarmes (legado)
 
 Na seção Alarmes (legado) do menu suporte, você pode revisar alarmes atuais, históricos e globais, configurar eventos personalizados e configurar notificações por e-mail para alarmes legados e AutoSupport.
@@ -220,6 +234,7 @@ NOTE: Embora o sistema de alarme antigo continue a ser suportado, o sistema de a
 
 
 
+[[help-menu]]
 == Menu Ajuda
 
 A opção Ajuda fornece acesso ao Centro de Documentação do StorageGRID para a versão atual e para a documentação da API. Você também pode determinar qual versão do StorageGRID está instalada atualmente.

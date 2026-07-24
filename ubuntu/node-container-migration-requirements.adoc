@@ -27,6 +27,7 @@ Antes de executar a migração ou a manutenção do hipervisor, encerre os nós 
 
 
 
+[[vmware-live-migration-not-supported]]
 == Migração do VMware Live não suportada
 
 O OpenStack Live Migration e o VMware Live vMotion fazem com que a hora do relógio da máquina virtual salte e não seja compatível com nós de grade de qualquer tipo. Embora raros, tempos de clock incorretos podem resultar em perda de dados ou atualizações de configuração.
@@ -35,6 +36,7 @@ A migração fria é suportada. Na migração fria, você desliga os nós do Sto
 
 
 
+[[consistent-network-interface-names]]
 == Nomes de interface de rede consistentes
 
 Para mover um nó de um host para outro, o serviço de host do StorageGRID precisa ter alguma confiança de que a conetividade de rede externa que o nó tem em seu local atual pode ser duplicada no novo local. Ele obtém essa confiança através do uso de nomes de interface de rede consistentes nos hosts.
@@ -51,6 +53,7 @@ Há muitas maneiras de obter nomes consistentes de interface de rede entre vári
 
 
 
+[[shared-storage]]
 == Armazenamento compartilhado
 
 Para conseguir migrações de nós rápidas e de baixa sobrecarga, o recurso de migração de nós do StorageGRID não move fisicamente os dados dos nós. Em vez disso, a migração de nós é realizada como um par de operações de exportação e importação, da seguinte forma:

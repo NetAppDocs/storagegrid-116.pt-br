@@ -17,6 +17,7 @@ Quando os usuários do locatário entram no Gerenciador do locatário, eles est�
 
 
 
+[[tenant-manager-dashboard]]
 == Painel do Gerenciador do locatário
 
 Depois que um administrador de grade criar uma conta de locatário usando o Gerenciador de Grade ou a API de Gerenciamento de Grade, os usuários do locatário podem fazer login no Gerenciador do locatário.
@@ -29,6 +30,7 @@ image::../media/tenant_dashboard_with_buckets.png[Painel do Gerenciador do locat
 
 
 
+[[storage-menu-s3-tenants-only]]
 == Menu de storage (somente S3 locatários)
 
 O menu armazenamento é fornecido apenas para contas de inquilino do S3. Esse menu permite que os usuários do S3 gerenciem chaves de acesso, criem e excluam buckets e gerenciem endpoints de serviço da plataforma.
@@ -37,6 +39,7 @@ image::../media/s3_menu.png[S3 Menu]
 
 
 
+[[my-access-keys]]
 === As minhas chaves de acesso
 
 Os usuários do S3 locatário podem gerenciar chaves de acesso da seguinte forma:
@@ -51,6 +54,7 @@ NOTE: O gerenciamento das chaves de acesso para outros usuários ocorre no menu 
 
 
 
+[[buckets]]
 === Baldes
 
 S3 os usuários locatários com as permissões apropriadas podem executar as seguintes tarefas relacionadas aos buckets:
@@ -74,12 +78,14 @@ Se um administrador de grade tiver habilitado o uso de serviços de plataforma p
 
 
 
+[[platform-services-endpoints]]
 === Endpoints de serviços de plataforma
 
 Se um administrador de grade tiver habilitado o uso de serviços de plataforma para a conta de locatário, um usuário de locatário do S3 com a permissão Gerenciar Endpoints poderá configurar um endpoint de destino para cada serviço de plataforma.
 
 
 
+[[access-management-menu]]
 == Menu Gerenciamento de Acesso
 
 O menu Gerenciamento de acesso permite que os locatários do StorageGRID importem grupos de usuários de uma origem de identidade federada e atribuam permissões de gerenciamento. Os locatários também podem gerenciar grupos de locatários locais e usuários, a menos que o logon único (SSO) esteja em vigor para todo o sistema StorageGRID.

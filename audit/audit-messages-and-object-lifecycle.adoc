@@ -41,18 +41,21 @@ CBID (Identificador Interno do Objeto)
 |===
 
 
+[[timing-of-audit-messages]]
 == Calendário das mensagens de auditoria
 
 Devido a fatores como diferenças de tempo entre nós de grade, tamanho do objeto e atrasos na rede, a ordem das mensagens de auditoria geradas pelos diferentes serviços pode variar da mostrada nos exemplos nesta seção.
 
 
 
+[[information-lifecycle-management-policy-configuration]]
 == Configuração da política de gerenciamento do ciclo de vida das informações
 
 Com a política ILM padrão (cópia de linha de base 2), os dados do objeto são copiados uma vez para um total de duas cópias. Se a política ILM exigir mais de duas cópias, haverá um conjunto adicional de mensagens CBRE, CBSE e SCMT para cada cópia extra. Para obter mais informações sobre políticas de ILM, consulte informações sobre como gerenciar objetos com gerenciamento do ciclo de vida das informações.
 
 
 
+[[archive-nodes]]
 == Nós de arquivamento
 
 A série de mensagens de auditoria geradas quando um nó de arquivo envia dados de objeto para um sistema de armazenamento de arquivo externo é semelhante à dos nós de armazenamento, exceto que não há mensagem SCMT (Store Object Commit), e as mensagens ATCE (Archive Object Store Begin) e ASCE (Archive Object Store End) são geradas para cada cópia arquivada de dados de objeto.

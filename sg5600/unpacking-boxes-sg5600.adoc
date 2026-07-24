@@ -52,6 +52,7 @@ image::../media/appliance_enclosure_handles.gif[Alças do compartimento]
 
 
 
+[[cables-and-connectors]]
 == Cabos e conetores
 
 O envio para o dispositivo StorageGRID inclui os seguintes cabos e conetores:

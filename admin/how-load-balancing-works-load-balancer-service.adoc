@@ -23,6 +23,7 @@ Cada ponto de extremidade do balanceador de carga especifica uma porta, um proto
 
 
 
+[[port-considerations]]
 == Considerações de porta
 
 Os clientes podem acessar qualquer um dos pontos de extremidade que você configurar em qualquer nó executando o serviço Load Balancer, com duas exceções: As portas 80 e 443 são reservadas em nós de administração, portanto, os pontos de extremidade configurados nessas portas suportam operações de balanceamento de carga somente em nós de Gateway.
@@ -34,6 +35,7 @@ NOTE: O serviço CLB está obsoleto.
 
 
 
+[[cpu-availability]]
 == Disponibilidade da CPU
 
 O serviço Load Balancer em cada nó de administração e nó de gateway opera independentemente ao encaminhar tráfego S3 ou Swift para os nós de storage. Por meio de um processo de ponderação, o serviço Load Balancer encaminha mais solicitações para nós de storage com maior disponibilidade de CPU. As informações de carga da CPU do nó são atualizadas a cada poucos minutos, mas a ponderação pode ser atualizada com mais frequência. Todos os nós de storage recebem um valor mínimo de peso básico, mesmo que um nó informe a utilização de 100% ou não consiga relatar sua utilização.

@@ -17,6 +17,7 @@ Nem todas as mensagens de auditoria geradas durante uma transação de ingestão
 
 
 
+[[s3-ingest-audit-messages]]
 == S3 ingira mensagens de auditoria
 
 |===
@@ -50,6 +51,7 @@ xref:orlm-object-rules-met.adoc[ORLM: Regras Objeto cumpridas]
 |===
 
 
+[[swift-ingest-audit-messages]]
 == Mensagens de auditoria de ingestão rápida
 
 |===

@@ -23,6 +23,7 @@ Quando um cliente se coneta ao servidor usando HTTPS, o servidor responde com o 
 
 O StorageGRID funciona como o servidor para algumas conexões (como o endpoint do balanceador de carga) ou como o cliente para outras conexões (como o serviço de replicação do CloudMirror).
 
+[[gridca_details]]
 * Certificado padrão de CA de grade*
 
 O StorageGRID inclui uma autoridade de certificação (CA) integrada que gera um certificado interno da CA de grade durante a instalação do sistema. O certificado de CA de grade é usado, por padrão, para proteger o tráfego interno do StorageGRID. Uma autoridade de certificação externa (CA) pode emitir certificados personalizados que são totalmente compatíveis com as políticas de segurança de informações da sua organização. Embora seja possível usar o certificado da CA de Grade para um ambiente que não seja de produção, a prática recomendada para um ambiente de produção é usar certificados personalizados assinados por uma autoridade de certificação externa. Conexões não protegidas sem certificado também são suportadas, mas não são recomendadas.
@@ -39,6 +40,7 @@ Variantes dos tipos de certificado de servidor e cliente são implementadas de v
 
 
 
+[[access-security-certificates]]
 == Acesse certificados de segurança
 
 Você pode acessar informações sobre todos os certificados do StorageGRID em um único local, juntamente com links para o fluxo de trabalho de configuração de cada certificado.
@@ -182,19 +184,22 @@ Você pode:
 * xref:../ilm/creating-cloud-storage-pool.adoc[Especifique um certificado do Cloud Storage Pool para S3, C2S S3 ou Azure]
 * xref:creating-relying-party-trusts-in-ad-fs.adoc#create-a-relying-party-trust-manually[Especifique manualmente um certificado SSO para confiança de parte confiável]
 * xref:../monitor/email-alert-notifications.adoc[Especifique um certificado para notificações por e-mail de alerta]
-* xref:../monitor/configuring-syslog-server.adoc#attach-certificate.adoc[Especifique um certificado de servidor syslog externo]
+* xref:../monitor/configuring-syslog-server.adoc#enter-syslog-info.adoc[Especifique um certificado de servidor syslog externo]
 
 
 --
 ====
 
 
+[[security-certificate-details]]
 == Detalhes do certificado de segurança
 
 Cada tipo de certificado de segurança é descrito abaixo, com links para artigos que contêm instruções de implementação.
 
 
 
+[[management-interface-certificate]]
+[[adminclientcert_details]]
 === Certificado de interface de gerenciamento
 
 [cols="1a,1a,1a,1a"]
@@ -218,6 +223,7 @@ xref:configuring-custom-server-certificate-for-grid-manager-tenant-manager.adoc[
 |===
 
 
+[[s3-and-swift-api-certificate]]
 === Certificado API S3 e Swift
 
 [cols="1a,1a,1a,1a"]
@@ -237,12 +243,14 @@ xref:configuring-custom-server-certificate-for-storage-node-or-clb.adoc[Configur
 |===
 
 
+[[grid-ca-certificate]]
 === Certificado CA de grade
 
 Consulte <<gridca_details,Descrição do certificado da CA de Grade padrão>>.
 
 
 
+[[administrator-client-certificate]]
 === Certificado de cliente administrador
 
 [cols="1a,1a,1a,1a"]
@@ -266,6 +274,7 @@ xref:configuring-administrator-client-certificates.adoc[Configurar certificados 
 |===
 
 
+[[load-balancer-endpoint-certificate]]
 === Certificado de ponto final do balanceador de carga
 
 [cols="1a,1a,1a,1a"]
@@ -291,6 +300,7 @@ Você também pode usar uma versão personalizada do certificado global <<Certif
 |===
 
 
+[[identity-federation-certificate]]
 === Certificado de federação de identidade
 
 [cols="1a,1a,1a,1a"]
@@ -310,6 +320,7 @@ xref:using-identity-federation.adoc[Use a federação de identidade]
 |===
 
 
+[[platform-services-endpoint-certificate]]
 === Certificado de endpoint de serviços de plataforma
 
 [cols="1a,1a,1a,1a"]
@@ -331,6 +342,7 @@ xref:../tenant/editing-platform-services-endpoint.adoc[Editar endpoint de servi�
 |===
 
 
+[[cloud-storage-pool-endpoint-certificate]]
 === Certificado de endpoint do Cloud Storage Pool
 
 [cols="1a,1a,1a,1a"]
@@ -350,6 +362,7 @@ xref:../ilm/creating-cloud-storage-pool.adoc[Crie um pool de storage em nuvem]
 |===
 
 
+[[key-management-server-kms-certificate]]
 === Certificado de servidor de gerenciamento de chaves (KMS)
 
 [cols="1a,1a,1a,1a"]
@@ -369,6 +382,7 @@ xref:kms-adding.adoc[Adicionar servidor de gerenciamento de chaves (KMS)]
 |===
 
 
+[[single-sign-on-sso-certificate]]
 === Certificado de logon único (SSO)
 
 [cols="1a,1a,1a,1a"]
@@ -388,6 +402,7 @@ xref:configuring-sso.adoc[Configurar o logon único]
 |===
 
 
+[[email-alert-notification-certificate]]
 === Certificado de notificação de alerta por e-mail
 
 [cols="1a,1a,1a,1a"]
@@ -411,6 +426,7 @@ xref:../monitor/email-alert-notifications.adoc[Configurar notificações por e-m
 |===
 
 
+[[external-syslog-server-certificate]]
 === Certificado de servidor syslog externo
 
 [cols="1a,1a,1a,1a"]
@@ -432,10 +448,12 @@ xref:../monitor/configuring-syslog-server.adoc[Configurar um servidor syslog ext
 |===
 
 
+[[certificate-examples]]
 == Exemplos de certificados
 
 
 
+[[example-1-load-balancer-service]]
 === Exemplo 1: Serviço do Load Balancer
 
 Neste exemplo, o StorageGRID atua como servidor.
@@ -450,6 +468,7 @@ Neste exemplo, o StorageGRID atua como servidor.
 
 
 
+[[example-2-external-key-management-server-kms]]
 === Exemplo 2: Servidor de gerenciamento de chaves externas (KMS)
 
 Neste exemplo, o StorageGRID atua como cliente.

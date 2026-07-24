@@ -15,6 +15,7 @@ Você pode monitorar workloads e eficiências das operações do cliente visuali
 
 
 
+[[monitor-object-ingest-and-retrieval-rates]]
 == Monitorar taxas de ingestão e recuperação de objetos
 
 Você pode monitorar taxas de ingestão e recuperação de objetos, bem como métricas para contagens de objetos, consultas e verificação. Você pode exibir o número de tentativas bem-sucedidas e com falha por aplicativos clientes para ler, gravar e modificar objetos no sistema StorageGRID.
@@ -58,6 +59,7 @@ A seção operações exibe informações resumidas para o nó de armazenamento 
 
 
 
+[[access-and-review-audit-logs]]
 == Acesse e revise logs de auditoria
 
 As mensagens de auditoria são geradas pelos serviços do StorageGRID e armazenadas em arquivos de log de texto. As mensagens de auditoria específicas da API nos logs de auditoria fornecem dados críticos de monitoramento de segurança, operação e desempenho que podem ajudá-lo a avaliar a integridade do sistema.
@@ -99,6 +101,7 @@ xref:../audit/index.adoc[Rever registos de auditoria]
 
 
 
+[[swift-operations-tracked-in-the-audit-logs]]
 === Operações rápidas rastreadas nos logs de auditoria
 
 Todas as operações bem-sucedidas de EXCLUSÃO, RECEBIMENTO, CABEÇALHO, POST e PUT DE armazenamento são rastreadas no log de auditoria do StorageGRID. As falhas não são registradas, nem são solicitações de informações, autenticação ou OPÇÕES.

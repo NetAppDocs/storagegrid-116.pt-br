@@ -15,6 +15,7 @@ O StorageGRID oferece suporte aos seguintes endpoints da API Swift: O URL de inf
 
 
 
+[[info-url]]
 == URL de informações
 
 Você pode determinar os recursos e limitações da implementação do StorageGRID Swift emitindo uma solicitação GET para o URL base do Swift com o caminho /info.
@@ -38,6 +39,7 @@ A implementação do StorageGRID do Swift permite o acesso não autenticado ao U
 
 
 
+[[auth-url]]
 == URL de autenticação
 
 Um cliente pode usar o URL de autenticação Swift para autenticar como usuário de conta de locatário.
@@ -77,6 +79,7 @@ Os tokens são gerados para uma conta de locatário específica. Um token válid
 
 
 
+[[storage-url]]
 == URL de armazenamento
 
 Um aplicativo cliente pode emitir chamadas de API REST Swift para executar operações de conta, contentor e objeto com suporte em um nó de gateway ou nó de storage. As solicitações de armazenamento são endereçadas ao URL de armazenamento retornado na resposta de autenticação. A solicitação também deve incluir o cabeçalho X-Auth-Token e o valor retornado da solicitação de autenticação.

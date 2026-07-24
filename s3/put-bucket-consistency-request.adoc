@@ -19,6 +19,7 @@ Você tem a permissão S3:PutBucketConsistency, ou seja raiz de conta, para conc
 
 
 
+[[request]]
 == Pedido
 
 O `x-ntap-sg-consistency` parâmetro deve conter um dos seguintes valores:
@@ -67,6 +68,7 @@ Comporta-se da mesma forma que o nível de consistência "read-after-novo-write"
 
 
 
+[[request-example]]
 == Exemplo de solicitação
 
 [source, subs="specialcharacters,quotes"]

@@ -25,6 +25,7 @@ Para substituir uma unidade, um recipiente do ventilador, um recipiente do venti
 
 
 
+[[sg5712-component-replacement-instructions]]
 == SG5712 instruções de substituição de componentes
 
 |===
@@ -46,6 +47,7 @@ Substituição de um recipiente do ventilador elétrico em E2800 prateleiras
 |===
 
 
+[[sg5760-component-replacement-instructions]]
 == SG5760 instruções de substituição de componentes
 
 |===

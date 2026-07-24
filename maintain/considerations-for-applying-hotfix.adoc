@@ -26,6 +26,7 @@ Embora os nós de grade sejam atualizados com a nova versão de hotfix, as alter
 
 
 
+[[how-hotfixes-are-applied-for-recovery-and-expansion]]
 == Como os hotfixes são aplicados para recuperação e expansão
 
 Depois que um hotfix foi aplicado à sua grade, o nó de administrador principal instala automaticamente a mesma versão de hotfix para todos os nós restaurados por operações de recuperação ou adicionados em uma expansão.

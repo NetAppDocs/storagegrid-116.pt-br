@@ -137,6 +137,7 @@ Um método de criptografia externo fornece controle mais rigoroso sobre algoritm
 |===
 
 
+[[use-multiple-encryption-methods]]
 == Use vários métodos de criptografia
 
 Dependendo dos seus requisitos, você pode usar mais de um método de criptografia de cada vez. Por exemplo:

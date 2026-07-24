@@ -15,6 +15,7 @@ O dispositivo de serviços StorageGRID SG100 e o dispositivo de serviços SG1000
 
 
 
+[[appliance-features]]
 == Caraterísticas do aparelho
 
 Ambos os modelos do dispositivo de serviços fornecem os seguintes recursos:
@@ -33,6 +34,7 @@ Ambos os modelos do dispositivo de serviços fornecem os seguintes recursos:
 
 
 
+[[sg100-and-sg1000-diagrams]]
 == Diagramas SG100D e SG1000D.
 
 Esta figura mostra a parte frontal do SG100 e do SG1000 com a moldura removida.
@@ -48,6 +50,7 @@ image::../media/sg1000_front_with_ssds.png[Frente com SSDs SG100 e SG1000]
 
 
 
+[[connectors-on-the-rear-of-sg100]]
 == Conetores na parte traseira do SG100
 
 Esta figura mostra os conetores na parte de trás do SG100.
@@ -122,6 +125,7 @@ Opções:
 |===
 
 
+[[connectors-on-the-rear-of-sg1000]]
 == Conetores na parte traseira do SG1000
 
 Esta figura mostra os conetores na parte de trás do SG1000.

@@ -21,6 +21,7 @@ A singularidade e a ordem das notificações não são garantidas. Mais de uma n
 
 
 
+[[supported-notifications-and-messages]]
 == Notificações e mensagens suportadas
 
 A notificação de eventos do StorageGRID segue a API do Amazon S3 com as seguintes limitações:

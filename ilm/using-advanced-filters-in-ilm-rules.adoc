@@ -158,6 +158,7 @@ Por exemplo, para filtrar objetos que têm uma tag de objeto de `Image=True`, es
 |===
 
 
+[[specifying-multiple-metadata-types-and-values]]
 == Especificando vários tipos e valores de metadados
 
 Ao definir filtragem avançada, você pode especificar vários tipos de metadados e vários valores de metadados. Por exemplo, se você quiser que uma regra corresponda a objetos entre 10 MB e 100 MB de tamanho, você selecionaria o tipo de metadados *tamanho do objeto* e especificaria dois valores de metadados.

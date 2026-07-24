@@ -19,6 +19,7 @@ O número de nós que você precisa adicionar também depende de quão cheios os
 
 
 
+[[general-recommendation-for-adding-storage-capacity-for-erasure-coded-objects]]
 == Recomendação geral para adicionar capacidade de storage para objetos codificados por apagamento
 
 Se você quiser evitar cálculos detalhados, pode adicionar dois nós de storage por local quando os nós de storage existentes atingirem 70% de capacidade.
@@ -29,6 +30,7 @@ Para entender melhor os fatores que levam a esta recomendação ou para desenvol
 
 
 
+[[calculate-number-of-expansion-storage-nodes-to-add-for-erasure-coded-objects]]
 == Calcule o número de nós de storage de expansão a serem adicionados para objetos codificados por apagamento
 
 Para otimizar a forma como você expande uma implantação que armazena objetos codificados por apagamento, considere muitos fatores:
@@ -48,6 +50,7 @@ IMPORTANT: Os exemplos nesta seção representam as práticas recomendadas para 
 
 
 
+[[example-1-expand-one-site-grid-that-uses-21-erasure-coding]]
 == Exemplo 1: Expanda a grade de um site que usa codificação de apagamento 2-1
 
 Este exemplo mostra como expandir uma grade simples que inclui apenas três nós de storage.
@@ -103,6 +106,7 @@ image::../media/node_expansion_example_33_percent.png[Exemplo de expansão do n�
 
 
 
+[[example-2-expand-three-site-grid-that-uses-63-erasure-coding]]
 == Exemplo 2: Expanda a grade de três locais que usa codificação de apagamento 6-3
 
 Este exemplo mostra como desenvolver um plano de expansão para uma grade multi-site que tenha um esquema de codificação de apagamento com um número maior de fragmentos. Apesar das diferenças entre esses exemplos, o plano de expansão recomendado é muito semelhante.

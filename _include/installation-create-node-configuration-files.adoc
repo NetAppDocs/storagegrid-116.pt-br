@@ -4,12 +4,14 @@
 
 
 
+[[where-do-i-put-the-node-configuration-files]]
 == Onde coloco os arquivos de configuração do nó?
 
 Você deve colocar o arquivo de configuração para cada nó do StorageGRID `/etc/storagegrid/nodes` no diretório no host onde o nó será executado. Por exemplo, se você planeja executar um nó de administrador, um nó de gateway e um nó de armazenamento no HostA, você deve colocar três arquivos de configuração de nó no `/etc/storagegrid/nodes` HostA. Você pode criar os arquivos de configuração diretamente em cada host usando um editor de texto, como vim ou nano, ou você pode criá-los em outro lugar e movê-los para cada host.
 
 
 
+[[what-do-i-name-the-node-configuration-files]]
 == O que nomeo os arquivos de configuração do nó?
 
 Os nomes dos arquivos de configuração são significativos. O formato é `node-name.conf`, onde `node-name` é um nome atribuído ao nó. Esse nome aparece no Instalador do StorageGRID e é usado para operações de manutenção de nós, como a migração de nós.
@@ -36,6 +38,7 @@ Por exemplo, você pode usar `dc1-adm1.conf` para o primeiro nó de administrado
 
 
 
+[[what-is-in-a-node-configuration-file]]
 == O que está em um arquivo de configuração de nó?
 
 Os arquivos de configuração contêm pares chave/valor, com uma chave e um valor por linha. Para cada par chave/valor, você deve seguir estas regras:

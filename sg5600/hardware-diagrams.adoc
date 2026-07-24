@@ -15,6 +15,7 @@ Os modelos SG5612 e SG5660 do dispositivo StorageGRID incluem um controlador E27
 
 
 
+[[model-sg5612-2u-rear-view-of-e2700-controller-and-e5600sg-controller]]
 == Modelo SG5612 2U: Vista traseira do controlador E2700 e do controlador E5600SG
 
 image::../media/sg5612_2u_rear_view.gif[Vista traseira do SG5612 com dois controladores]
@@ -38,6 +39,7 @@ Controlador E5600SG
 |===
 
 
+[[model-sg5660-4u-rear-view-of-e2700-controller-and-e5600sg-controller]]
 == Modelo SG5660 4U: Vista traseira do controlador E2700 e do controlador E5600SG
 
 O controlador E2700 está acima do controlador E5600SG.
@@ -63,6 +65,7 @@ Controlador E5600SG
 |===
 
 
+[[rear-view-of-e2700-controller]]
 == Vista traseira do controlador E2700
 
 image::../media/sga_controller_2700_diagram_callouts.gif[Diagrama E2700D.]
@@ -117,6 +120,7 @@ NOTE: As duas portas SAS com o rótulo Drive Expansion (verde) na parte traseira
 
 
 
+[[rear-view-of-e5600sg-controller]]
 == Vista traseira do controlador E5600SG
 
 image::../media/sga_controller_5600_diagram_callouts.gif[Diagrama E5600D.]

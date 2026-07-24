@@ -60,6 +60,7 @@ Received call to deprecated v1 API at POST "/api/v1/authorize"
 
 
 
+[[determine-which-api-versions-are-supported-in-the-current-release]]
 == Determine quais versões de API são suportadas na versão atual
 
 Use a seguinte solicitação de API para retornar uma lista das principais versões da API suportada:
@@ -79,6 +80,7 @@ GET https://{{IP-Address}}/api/versions
 ----
 
 
+[[specify-an-api-version-for-a-request]]
 == Especifique uma versão da API para uma solicitação
 
 Você pode especificar a versão da API usando um parâmetro de caminho (`/api/v3`) ou um cabeçalho (`Api-Version: 3`). Se você fornecer ambos os valores, o valor do cabeçalho substitui o valor do caminho.

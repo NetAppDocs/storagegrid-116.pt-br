@@ -15,6 +15,7 @@ Esta versão do StorageGRID apresenta os seguintes recursos.
 
 
 
+[[usability-enhancements]]
 == Melhorias de usabilidade
 
 A interface do usuário do Grid Manager foi substancialmente redesenhada para melhorar a experiência do usuário.
@@ -39,6 +40,7 @@ Veja o seguinte:
 
 
 
+[[multiple-vlan-interfaces]]
 == Várias interfaces VLAN
 
 Agora você pode criar interfaces de LAN virtual (VLAN) para nós de administração e nós de gateway. Você pode usar interfaces VLAN em grupos de HA e pontos de extremidade do balanceador de carga para isolar e particionar o tráfego do cliente para obter segurança, flexibilidade e desempenho.
@@ -55,18 +57,21 @@ Agora você pode criar interfaces de LAN virtual (VLAN) para nós de administra�
 
 
 
+[[can-use-azure-ad-for-identity-federation]]
 == Pode usar o Azure AD para federação de identidade
 
 Agora você pode selecionar o Azure ative Directory (Azure AD) como a fonte de identidade ao configurar a federação de identidade para o Gerenciador de Grade ou o Gerenciador de locatário. xref:../admin/using-identity-federation.adoc[Use a federação de identidade]Consulte .
 
 
 
+[[can-use-azure-ad-and-pingfederate-for-sso]]
 == Pode usar o Azure AD e o PingFederate para SSO
 
 Agora você pode selecionar Azure AD ou PingFederate como o tipo SSO ao configurar o logon único (SSO) para sua grade. Em seguida, você pode usar o modo sandbox para configurar e testar as conexões do Azure AD Enterprise Applications ou do provedor de serviços PingFederate (SP) para cada nó de administração do StorageGRID. xref:../admin/configuring-sso.adoc[Configurar o logon único]Consulte .
 
 
 
+[[centralized-certificate-management]]
 == Gerenciamento centralizado de certificados
 
 * A nova página de certificados (*CONFIGURAÇÃO* *Segurança* *certificados*) consolida informações sobre todos os certificados de segurança do StorageGRID em um único local. Você pode gerenciar certificados globais, de CA de grade e de cliente do StorageGRID na nova página ou exibir informações sobre outros certificados, como os usados para endpoints do balanceador de carga, locatários e federação de identidade. xref:../admin/using-storagegrid-security-certificates.adoc[Sobre certificados de segurança]Consulte .
@@ -81,6 +86,7 @@ Agora você pode selecionar Azure AD ou PingFederate como o tipo SSO ao configur
 
 
 
+[[other-grid-manager-enhancements]]
 == Outros aprimoramentos do Grid Manager
 
 * *Atualizações para grupos de alta disponibilidade (HA)*. Agora, um assistente orienta você pelo processo de criação de um grupo HA. xref:../admin/configure-high-availability-group.html[Configurar grupos de alta disponibilidade]Consulte .
@@ -104,6 +110,7 @@ NOTE: Este certificado global foi usado anteriormente para conexões com o servi
 
 
 
+[[new-tenant-manager-features]]
 == Novos recursos do Tenant Manager
 
 * *Novo Console experimental S3*. Disponível como um link na página Buckets no Tenant Manager, o novo console experimental S3 permite que os usuários de locatário S3 visualizem e gerenciem os objetos em seus buckets. xref:../tenant/use-s3-console.adoc[Use o experimental S3 Console]Consulte .
@@ -118,6 +125,7 @@ IMPORTANT: O console experimental S3 não foi totalmente testado e não se desti
 
 
 
+[[new-upgrade-and-hotfix-process]]
 == Novo processo de atualização e hotfix
 
 * A página *Atualização do StorageGRID* foi redesenhada (*MANUTENÇÃO* *sistema* *Atualização do software* *Atualização do StorageGRID*).
@@ -138,6 +146,7 @@ NOTE: Para a atualização para o StorageGRID 11,6, você pode opcionalmente usa
 
 
 
+[[external-syslog-server-support]]
 == Suporte a servidor syslog externo
 
 * Agora você pode configurar um servidor syslog externo se quiser salvar e gerenciar mensagens de auditoria e um subconjunto de logs do StorageGRID remotamente (*CONFIGURAÇÃO* *Monitoramento* *servidor de auditoria e syslog*). Depois que um servidor syslog externo é configurado, você pode salvar mensagens de auditoria e determinados arquivos de log localmente, remotamente ou ambos. Ao configurar os destinos das informações de auditoria, você pode reduzir o tráfego de rede nos nós de administração. xref:../monitor/configure-audit-messages.adoc[Configurar mensagens de auditoria e destinos de log]Consulte .
@@ -146,6 +155,7 @@ NOTE: Para a atualização para o StorageGRID 11,6, você pode opcionalmente usa
 
 
 
+[[s3-select]]
 == S3 Selecione
 
 Agora, você pode permitir que os locatários do S3 emita solicitações SelectObjectContent para objetos individuais. S3 Select fornece uma maneira eficiente de pesquisar grandes quantidades de dados sem ter que implantar um banco de dados e recursos associados para habilitar pesquisas. Ele também reduz o custo e a latência da recuperação de dados. xref:../admin/manage-s3-select-for-tenant-accounts.adoc[Gerenciar S3 Selecione para contas de inquilino]Consulte e xref:../s3/use-s3-select.adoc[Utilize S3 Select (Selecionar)].
@@ -154,24 +164,28 @@ Gráficos Grafana para operações S3 Select também foram adicionados. xref:../
 
 
 
+[[s3-object-lock-default-bucket-retention-period]]
 == S3 período de retenção padrão do balde de bloqueio de objetos
 
 Ao usar o bloqueio de objetos S3D, agora você pode especificar um período de retenção padrão para o intervalo. O período de retenção padrão se aplica a quaisquer objetos adicionados ao bucket que não tenham suas próprias configurações de retenção. xref:../s3/using-s3-object-lock.adoc[Use o bloqueio de objetos S3D.]Consulte .
 
 
 
+[[google-cloud-platform-support]]
 == Suporte ao Google Cloud Platform
 
 Agora você pode usar o Google Cloud Platform (GCP) como um ponto de extremidade para Cloud Storage Pools e o serviço de plataforma CloudMirror. xref:../tenant/specifying-urn-for-platform-services-endpoint.adoc[Especifique a URN para um endpoint de serviços de plataforma]Consulte e xref:../ilm/creating-cloud-storage-pool.adoc[Crie um pool de storage em nuvem].
 
 
 
+[[aws-c2s-support]]
 == Suporte ao AWS C2S
 
 Agora você pode usar os pontos de extremidade do AWS Commercial Cloud Services (C2S) para replicação do CloudMirror. xref:../tenant/creating-platform-services-endpoint.adoc[Criar endpoint de serviços de plataforma]Consulte .
 
 
 
+[[other-s3-changes]]
 == Outras S3 alterações
 
 * *OBTER suporte a objetos e objetos HEAD para objetos multipart*. Anteriormente, o StorageGRID não oferecia suporte ao `partNumber` parâmetro Request em GET Object ou HEAD Object Requests. Agora você pode emitir SOLICITAÇÕES GET e HEAD para recuperar uma parte específica de um objeto multipart. GET e HEAD Object também suportam o `x-amz-mp-parts-count` elemento de resposta para indicar quantas partes um objeto tem.
@@ -183,6 +197,7 @@ xref:../s3/index.adoc[Use S3]
 
 
 
+[[performance-enhancements]]
 == Melhorias de performance
 
 * *Os nós de storage podem suportar 2 bilhões de objetos*. A estrutura de diretórios subjacente nos nós de storage foi otimizada para melhor escalabilidade e desempenho. Os nós de storage agora usam subdiretórios adicionais para armazenar até dois bilhões de objetos replicados e maximizar a performance. Os subdiretórios de nós são modificados quando você atualiza para o StorageGRID 11,6, mas os objetos existentes não são redistribuídos para os novos diretórios.
@@ -216,6 +231,7 @@ NOTE: Se você ainda não fez isso e se seus nós de storage tiverem RAM suficie
 
 
 
+[[enhancements-to-maintenance-procedures-and-support-tools]]
 == Melhorias nos procedimentos de manutenção e nas ferramentas de suporte
 
 * * Pode alterar senhas de console de nó*. Agora você pode usar o Gerenciador de Grade para alterar as senhas do console do nó (*CONFIGURAÇÃO* *controle de acesso* *senhas de grade*). Essas senhas são usadas para fazer login em um nó como "admin" usando SSH, ou para o usuário raiz em uma conexão VM/console físico. xref:../admin/change-node-console-password.adoc[Altere as senhas do console do nó]Consulte .
@@ -241,6 +257,7 @@ Quando o `/var/local/mysql_ibdata/` volume atinge a capacidade, as métricas mai
 
 
 
+[[installation-enhancements]]
 == Melhorias na instalação
 
 * Agora você tem a opção de usar o Podman como um contentor durante a instalação do Red Hat Enterprise Linux. Anteriormente, o StorageGRID suportava apenas um contentor Docker.
@@ -259,6 +276,7 @@ Para compatibilidade com implantações existentes, as chaves de dois dígitos a
 
 
 
+[[new-alerts]]
 == Novos alertas
 
 Os seguintes novos alertas foram adicionados para o StorageGRID 11,6:
@@ -287,6 +305,7 @@ Consulte xref:../monitor/alerts-reference.adoc[Referência de alertas].
 
 
 
+[[changes-to-audit-messages]]
 == Alterações nas mensagens de auditoria
 
 * Um novo campo *BUID* foi adicionado à mensagem de auditoria ORLM: Object Rules met. O campo *BUID* mostra o ID do bucket, que é usado para operações internas. O novo campo aparece somente se o status da mensagem for PRGD.
@@ -304,6 +323,7 @@ xref:../audit/index.adoc[Rever registos de auditoria]Consulte .
 
 
 
+[[storagegrid-documentation-changes]]
 == Alterações na documentação do StorageGRID
 
 A aparência do site de documentação do StorageGRID 11,6 foi modificada e agora usa o GitHub como a plataforma subjacente.

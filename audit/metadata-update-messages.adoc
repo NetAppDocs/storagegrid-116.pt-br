@@ -15,6 +15,7 @@ As mensagens de auditoria são geradas quando um cliente S3 atualiza os metadado
 
 
 
+[[s3-metadata-update-audit-messages]]
 == Mensagens de auditoria de atualização de metadados do S3
 
 |===

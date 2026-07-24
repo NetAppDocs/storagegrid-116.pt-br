@@ -15,6 +15,7 @@ Várias operações de bucket e operações de objetos são rastreadas nos logs 
 
 
 
+[[bucket-operations-tracked-in-the-audit-logs]]
 == Operações de bucket rastreadas nos logs de auditoria
 
 * ELIMINAR balde
@@ -32,6 +33,7 @@ Várias operações de bucket e operações de objetos são rastreadas nos logs 
 
 
 
+[[object-operations-tracked-in-the-audit-logs]]
 == Operações de objeto rastreadas nos logs de auditoria
 
 * Concluir carregamento Multipart

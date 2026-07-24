@@ -44,6 +44,7 @@ SGF6024
 |===
 
 
+[[installation-and-deployment-tasks]]
 == Tarefas de instalação e implantação
 
 Adicionar um dispositivo de storage StorageGRID a um sistema StorageGRID inclui quatro etapas principais:

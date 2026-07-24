@@ -15,6 +15,7 @@ Você pode configurar um ou mais servidores de gerenciamento de chaves externos 
 
 
 
+[[what-is-a-key-management-server-kms]]
 == O que é um servidor de gerenciamento de chaves (KMS)?
 
 Um servidor de gerenciamento de chaves (KMS) é um sistema externo de terceiros que fornece chaves de criptografia para nós de dispositivos StorageGRID no site associado do StorageGRID usando o Protocolo de interoperabilidade de Gerenciamento de chaves (KMIP).

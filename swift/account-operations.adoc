@@ -15,6 +15,7 @@ As seguintes operações da API Swift são realizadas em contas.
 
 
 
+[[get-account]]
 == OBTER conta
 
 Esta operação recupera a lista de contentores associada às estatísticas de uso de conta e conta.
@@ -54,6 +55,7 @@ Uma execução bem-sucedida retorna os seguintes cabeçalhos com uma resposta HT
 
 
 
+[[head-account]]
 == Conta principal
 
 Esta operação recupera informações de conta e estatísticas de uma conta Swift.

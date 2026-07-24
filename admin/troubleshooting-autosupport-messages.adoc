@@ -22,6 +22,7 @@ image::../media/autosupport_results_tab.png[guia resultados do AutoSupport]
 
 
 
+[[weekly-autosupport-message-failure]]
 == Falha semanal da mensagem AutoSupport
 
 Se uma mensagem AutoSupport semanal não for enviada, o sistema StorageGRID executa as seguintes ações:
@@ -36,6 +37,7 @@ Se uma mensagem AutoSupport semanal não for enviada, o sistema StorageGRID exec
 
 
 
+[[user-triggered-or-event-triggered-autosupport-message-failure]]
 == Falha de mensagem AutoSupport acionada pelo usuário ou por evento
 
 Se uma mensagem AutoSupport acionada pelo usuário ou por um evento não for enviada, o sistema StorageGRID executará as seguintes ações:
@@ -51,6 +53,7 @@ Saiba como configurar as definições do servidor de correio eletrónico no xref
 
 
 
+[[correct-an-autosupport-message-failure]]
 == Corrija uma falha de mensagem do AutoSupport
 
 Se ocorrer uma falha e o SMTP for o protocolo selecionado, verifique se o servidor de e-mail do sistema StorageGRID está configurado corretamente e se o servidor de e-mail está em execução. A seguinte mensagem de erro pode aparecer na página AutoSupport: `AutoSupport messages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`

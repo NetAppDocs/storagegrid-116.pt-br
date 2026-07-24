@@ -15,6 +15,7 @@ Configurar o StorageGRID para aceitar conexões de aplicativos cliente requer a 
 
 
 
+[[create-and-configure-swift-tenant-accounts]]
 == Criar e configurar contas de locatário Swift
 
 Uma conta de locatário Swift é necessária antes que os clientes da API Swift possam armazenar e recuperar objetos no StorageGRID. Cada conta de locatário tem seu próprio ID de conta, grupos e usuários, além de contentores e objetos.
@@ -47,6 +48,7 @@ xref:supported-swift-api-endpoints.adoc[Endpoints de API Swift compatíveis]
 
 
 
+[[how-client-connections-can-be-configured]]
 == Como as conexões do cliente podem ser configuradas
 
 Um administrador de grade faz escolhas de configuração que afetam a forma como os clientes Swift se conetam ao StorageGRID para armazenar e recuperar dados. As informações específicas que você precisa para fazer uma conexão dependem da configuração escolhida.
@@ -82,6 +84,7 @@ Para obter mais informações sobre cada opção, consulte as instruções para 
 
 
 
+[[summary-ip-addresses-and-ports-for-client-connections]]
 === Resumo: Endereços IP e portas para conexões de clientes
 
 Os aplicativos cliente se conetam ao StorageGRID usando o endereço IP de um nó de grade e o número da porta de um serviço nesse nó. Se os grupos de alta disponibilidade (HA) estiverem configurados, os aplicativos clientes poderão se conetar usando o endereço IP virtual do grupo HA.
@@ -200,6 +203,7 @@ Por exemplo, se o endereço IP virtual do grupo HA for 192.0.2.6 e o número da 
 
 
 
+[[decide-to-use-https-or-http-connections]]
 === Decida usar conexões HTTPS ou HTTP
 
 Quando as conexões de cliente são feitas usando um endpoint de Load Balancer, as conexões devem ser feitas usando o protocolo (HTTP ou HTTPS) especificado para esse endpoint. Para usar HTTP para conexões de cliente a nós de armazenamento ou ao serviço CLB em nós de gateway, você deve habilitar seu uso.
@@ -219,6 +223,7 @@ xref:../admin/index.adoc[Administrar o StorageGRID]
 
 
 
+[[test-your-connection-in-swift-api-configuration]]
 == Teste sua conexão na configuração da API Swift
 
 Você pode usar o Swift CLI para testar sua conexão com o sistema StorageGRID e verificar se você pode ler e gravar objetos no sistema.
@@ -226,7 +231,7 @@ Você pode usar o Swift CLI para testar sua conexão com o sistema StorageGRID e
 .O que você vai precisar
 * Você deve ter baixado e instalado Python-swiftclient, o cliente de linha de comando Swift.
 +
-https://platform.swiftstack.com/docs/integration/python-swiftclient.html["SwiftStack: python-swiftclient"^]
+https://docs.openstack.org/python-swiftclient/latest/["SwiftStack: python-swiftclient"^]
 
 * Você deve ter uma conta de locatário Swift no sistema StorageGRID.
 

@@ -18,6 +18,7 @@ Você pode usar as tabelas a seguir para gravar informações de cada rede conet
 
 
 
+[[information-needed-to-connect-e2700-controller-to-santricity-storage-manager]]
 == Informações necessárias para conetar o controlador E2700 ao SANtricity Storage Manager
 
 Tem de ligar o controlador E2700 à rede de gestão que irá utilizar para o SANtricity Storage Manager.
@@ -89,6 +90,7 @@ Para IPv6:
 |===
 
 
+[[information-needed-to-connect-e5600sg-controller-to-admin-network]]
 == Informações necessárias para conetar o controlador E5600SG à rede de administração
 
 A rede de administração para StorageGRID é uma rede opcional, usada para administração e manutenção do sistema. O dispositivo se coneta à rede Admin usando as portas de gerenciamento de 1 GbE no controlador E5600SG.
@@ -166,6 +168,7 @@ Sub-redes de rede Admin (CIDR)
 |===
 
 
+[[information-needed-to-connect-and-configure-10-gbe-ports-on-e5600sg-controller]]
 == Informações necessárias para conetar e configurar portas de 10 GbE no controlador E5600SG
 
 As quatro portas de 10 GbE no controlador E5600SG conetam-se à rede de Grade StorageGRID e à rede de Cliente.
@@ -213,6 +216,7 @@ Porta do switch para a porta 4 (rede de grade para modo fixo)
 |===
 
 
+[[information-needed-to-connect-e5600sg-controller-to-grid-network]]
 == Informações necessárias para conetar o controlador E5600SG à rede de Grade
 
 A rede de Grade para StorageGRID é uma rede necessária, usada para todo o tráfego interno de StorageGRID. O dispositivo se coneta à rede de Grade usando as portas de 10 GbE no controlador E5600SG.
@@ -284,6 +288,7 @@ Sub-redes de rede de rede (CIDR)
 |===
 
 
+[[information-needed-to-connect-e5600sg-controller-to-client-network]]
 == Informações necessárias para conetar o controlador E5600SG à rede do cliente
 
 A rede de cliente para StorageGRID é uma rede opcional, usada para fornecer acesso ao protocolo de cliente à grade. O dispositivo se coneta à rede do cliente usando as portas de 10 GbE no controlador E5600SG.

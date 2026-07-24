@@ -15,6 +15,7 @@ Você deve manter seu sistema StorageGRID e serviços relacionados atualizados p
 
 
 
+[[upgrades-to-storagegrid-software]]
 == Atualizações para o software StorageGRID
 
 Sempre que possível, você deve atualizar o software StorageGRID para a versão principal mais recente ou para a versão principal anterior. Manter o StorageGRID atualizado ajuda a reduzir o tempo em que as vulnerabilidades conhecidas estão ativas e reduz a área geral da superfície de ataque. Além disso, as versões mais recentes do StorageGRID geralmente contêm recursos de proteção de segurança que não estão incluídos em versões anteriores.
@@ -25,6 +26,7 @@ Para baixar as versões e hotfixes mais recentes do StorageGRID, acesse a págin
 
 
 
+[[upgrades-to-external-services]]
 == Upgrades para serviços externos
 
 Os serviços externos podem ter vulnerabilidades que afetam o StorageGRID indiretamente. Você deve garantir que os serviços dos quais o StorageGRID depende são atualizados. Esses serviços incluem LDAP, KMS (ou servidor KMIP), DNS e NTP.
@@ -33,6 +35,7 @@ Use a ferramenta Matriz de interoperabilidade do NetApp para obter uma lista de 
 
 
 
+[[upgrades-to-hypervisors]]
 == Atualizações para hypervisors
 
 Se seus nós do StorageGRID estiverem em execução no VMware ou em outro hypervisor, você deverá garantir que o software e o firmware do hypervisor estejam atualizados.
@@ -41,6 +44,7 @@ Use a ferramenta Matriz de interoperabilidade do NetApp para obter uma lista de 
 
 
 
+[[upgrade-to-linux-nodes]]
 == *Upgrade para nós Linux*
 
 Se seus nós do StorageGRID estiverem usando plataformas host Linux, você deve garantir que as atualizações de segurança e as atualizações do kernel sejam aplicadas ao sistema operacional do host. Além disso, você deve aplicar atualizações de firmware a hardware vulnerável quando essas atualizações estiverem disponíveis.

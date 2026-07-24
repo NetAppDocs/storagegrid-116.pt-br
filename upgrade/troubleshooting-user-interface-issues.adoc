@@ -15,6 +15,7 @@ Você pode ver problemas com o Gerenciador de Grade ou o Gerenciador do Locatár
 
 
 
+[[web-interface-does-not-respond-as-expected]]
 == A interface Web não responde como esperado
 
 O Gerenciador de Grade ou o Gerente do Locatário podem não responder como esperado depois que o software StorageGRID for atualizado.

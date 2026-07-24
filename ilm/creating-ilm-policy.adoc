@@ -18,6 +18,7 @@ CAUTION: Uma política de ILM que foi configurada incorretamente pode resultar e
 
 
 
+[[considerations-for-creating-an-ilm-policy]]
 == Considerações para criar uma política ILM
 
 * Utilize a política incorporada do sistema, a Política de cópias da linha de base 2, apenas em sistemas de teste. A regra fazer cópias 2 nesta política usa o pool de storage todos os nós de storage, que contém todos os sites. Se o seu sistema StorageGRID tiver mais de um local, duas cópias de um objeto poderão ser colocadas no mesmo local.

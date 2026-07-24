@@ -15,6 +15,7 @@ O StorageGRID usa a linguagem de política da Amazon Web Services (AWS) para per
 
 
 
+[[access-policy-overview]]
 == Visão geral da política de acesso
 
 Existem dois tipos de políticas de acesso suportadas pelo StorageGRID.
@@ -132,6 +133,7 @@ xref:../tenant/index.adoc[Use a conta de locatário]
 
 
 
+[[consistency-control-settings-for-policies]]
 == Configurações de controle de consistência para políticas
 
 Por padrão, quaisquer atualizações feitas para políticas de grupo são eventualmente consistentes. Uma vez que uma política de grupo se torna consistente, as alterações podem levar mais 15 minutos para entrar em vigor, devido ao armazenamento em cache de políticas. Por padrão, todas as atualizações feitas às políticas de bucket também são, eventualmente, consistentes.
@@ -145,6 +147,7 @@ NOTE: Se você definir o nível de consistência como *All* para forçar uma nov
 
 
 
+[[use-arn-in-policy-statements]]
 == Use ARN em declarações de política
 
 Em declarações de política, o ARN é usado em elementos Principal e recursos.
@@ -182,6 +185,7 @@ O corpo de solicitação HTTP para a operação de política PUT Bucket deve ser
 
 
 
+[[specify-resources-in-a-policy]]
 == Especifique recursos em uma política
 
 Em declarações de política, você pode usar o elemento recurso para especificar o intervalo ou objeto para o qual as permissões são permitidas ou negadas.
@@ -207,6 +211,7 @@ Em declarações de política, você pode usar o elemento recurso para especific
 
 
 
+[[specify-principals-in-a-policy]]
 == Especifique princípios em uma política
 
 Use o elemento principal para identificar a conta de usuário, grupo ou locatário que é permitido/negado acesso ao recurso pela declaração de política.
@@ -264,6 +269,7 @@ Por exemplo, suponha que Alex deixe a organização e o nome de usuário `Alex` 
 
 
 
+[[specify-permissions-in-a-policy]]
 == Especifique permissões em uma política
 
 Em uma política, o elemento Ação é usado para permitir/negar permissões a um recurso. Há um conjunto de permissões que você pode especificar em uma política, que são denotadas pelo elemento "Ação" ou, alternativamente, "NotAction" para exclusão. Cada um desses elementos mapeia para operações específicas da API REST do S3.
@@ -278,6 +284,7 @@ NOTE: Uma EXCLUSÃO é executada quando uma PUT é usada para substituir um valo
 
 
 
+[[permissions-that-apply-to-buckets]]
 === Permissões que se aplicam a buckets
 
 [cols="35,35,30"]
@@ -611,6 +618,7 @@ Sim, permissões separadas para COLOCAR e EXCLUIR*
 |===
 
 
+[[permissions-that-apply-to-objects]]
 === Permissões que se aplicam a objetos
 
 [cols="35,35,30"]
@@ -801,6 +809,7 @@ Restauração PÓS-objeto
 |===
 
 
+[[use-putoverwriteobject-permission]]
 == Use a permissão PutOverwriteObject
 
 A permissão S3:PutOverwriteObject é uma permissão StorageGRID personalizada que se aplica a operações que criam ou atualizam objetos. A configuração dessa permissão determina se o cliente pode substituir os dados de um objeto, metadados definidos pelo usuário ou marcação de objeto S3.
@@ -831,6 +840,7 @@ IMPORTANT: Se a política S3 atual permitir a substituição e a permissão PutO
 
 
 
+[[specify-conditions-in-a-policy]]
 == Especifique condições em uma política
 
 As condições definem quando uma política estará em vigor. As condições consistem em operadores e pares de valor-chave.
@@ -856,6 +866,7 @@ No exemplo a seguir, a condição ipaddress usa a chave de condição SourceIp.
 ----
 
 
+[[supported-condition-operators]]
 === Operadores de condição suportados
 
 Os operadores de condição são categorizados da seguinte forma:
@@ -984,6 +995,7 @@ Verifica se uma chave de condição está presente no contexto de solicitação 
 |===
 
 
+[[supported-condition-keys]]
 === Teclas de condição suportadas
 
 |===
@@ -1069,6 +1081,7 @@ Compara com a data de retenção até especificada na solicitação DE retençã
 |===
 
 
+[[specify-variables-in-a-policy]]
 == Especifique variáveis em uma política
 
 Você pode usar variáveis em políticas para preencher informações de política quando elas estiverem disponíveis. Você pode usar variáveis de política no `Resource` elemento e em comparações de string no `Condition` elemento.
@@ -1144,6 +1157,7 @@ Caráter especial. Usa o caractere como um caractere literal.
 |===
 
 
+[[create-policies-requiring-special-handling]]
 == Crie políticas que exijam tratamento especial
 
 Às vezes, uma diretiva pode conceder permissões que são perigosas para a segurança ou perigosas para operações contínuas, como bloquear o usuário raiz da conta. A implementação da API REST do StorageGRID S3 é menos restritiva durante a validação de políticas do que a Amazon, mas igualmente rigorosa durante a avaliação de políticas.
@@ -1263,6 +1277,7 @@ Válido. Os objetos são propriedade da conta de proprietário do bucket. Aplica
 |===
 
 
+[[write-once-read-many-worm-protection]]
 == Proteção WORM (write-once-read-many)
 
 Você pode criar buckets do WORM (write-once-read-many) para proteger dados, metadados de objetos definidos pelo usuário e marcação de objetos do S3. Você configura os buckets WORM para permitir a criação de novos objetos e impedir substituições ou exclusões de conteúdo existente. Use uma das abordagens descritas aqui.
@@ -1311,12 +1326,14 @@ xref:how-storagegrid-ilm-rules-manage-objects.adoc[Como as regras do StorageGRID
 
 
 
+[[s3-policy-examples]]
 == S3 exemplos de políticas
 
 Use os exemplos nesta seção para criar políticas de acesso ao StorageGRID para buckets e grupos.
 
 
 
+[[s3-bucket-policy-examples]]
 === S3 exemplos de política de bucket
 
 As políticas de bucket especificam as permissões de acesso para o bucket ao qual a diretiva está anexada. As políticas de bucket são configuradas usando a API S3 PutBucketPolicy.
@@ -1537,6 +1554,7 @@ xref:operations-on-buckets.adoc[Operações em baldes]
 
 
 
+[[s3-group-policy-examples]]
 === S3 exemplos de políticas de grupo
 
 As políticas de grupo especificam as permissões de acesso para o grupo ao qual a diretiva está anexada. Não `Principal` há nenhum elemento na política, uma vez que está implícita. As políticas de grupo são configuradas usando o Gerenciador de inquilinos ou a API.

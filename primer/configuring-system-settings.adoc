@@ -15,12 +15,14 @@ Você pode configurar várias configurações do sistema a partir do Gerenciador
 
 
 
+[[display-options]]
 == Opções de visualização
 
 As opções de exibição permitem especificar o período de tempo limite para sessões do usuário e suprimir notificações de e-mail para alarmes legados e mensagens AutoSupport acionadas por eventos.
 
 
 
+[[grid-options]]
 == Opções de grelha
 
 Você pode usar Opções de Grade para configurar as configurações de todos os objetos armazenados no seu sistema StorageGRID, incluindo compactação de objetos armazenados, criptografia de objetos armazenados e hash de objetos armazenados.
@@ -29,6 +31,7 @@ Você também pode usar essas opções para especificar configurações globais 
 
 
 
+[[s3-object-lock]]
 == S3 bloqueio de objetos
 
 O recurso bloqueio de objetos do StorageGRID S3 é uma solução de proteção de objetos equivalente ao bloqueio de objetos do S3 no Amazon Simple Storage Service (Amazon S3). Você pode habilitar a configuração global de bloqueio de objeto S3 para um sistema StorageGRID para permitir que as contas de locatário S3 criem buckets com o bloqueio de objeto S3 ativado. O locatário pode então usar um aplicativo cliente S3 para especificar opcionalmente as configurações de retenção (reter até a data, retenção legal ou ambos) para os objetos nesses buckets. Além disso, cada bucket com o bloqueio de objetos S3 ativado pode, opcionalmente, ter um modo de retenção padrão e um período de retenção, que se aplicam se objetos forem adicionados ao bucket sem suas próprias configurações de retenção.
@@ -37,6 +40,7 @@ image::../media/s3_object_lock_architecture.png[S3 arquitetura de bloqueio de ob
 
 
 
+[[storage-options]]
 == Opções de armazenamento
 
 As opções de armazenamento permitem controlar a segmentação de objetos e substituir as definições de marca d'água do volume de armazenamento para gerir o espaço de armazenamento utilizável de um nó de armazenamento.

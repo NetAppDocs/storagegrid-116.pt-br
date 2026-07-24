@@ -44,6 +44,7 @@ Os esquemas de codificação de apagamento com um número menor de fragmentos s�
 
 
 
+[[erasure-coding-schemes-for-storage-pools-containing-three-or-more-sites]]
 == Esquemas de codificação de apagamento para pools de storage que contêm três ou mais locais
 
 A tabela a seguir descreve os esquemas de codificação de apagamento atualmente compatíveis com o StorageGRID para pools de storage que incluem três ou mais locais. Todos esses esquemas fornecem proteção contra perdas de sites. Um site pode ser perdido, e o objeto ainda estará acessível.
@@ -207,6 +208,7 @@ NOTE: Se você não tiver certeza de qual esquema usar, selecione 4 3 ou 2 ou 6 
 
 
 
+[[erasure-coding-schemes-for-one-site-storage-pools]]
 == Esquemas de codificação de apagamento para pools de storage de um local
 
 Um pool de storage de um local dá suporte a todos os esquemas de codificação de apagamento definidos para três ou mais locais, desde que o local tenha nós de storage suficientes.

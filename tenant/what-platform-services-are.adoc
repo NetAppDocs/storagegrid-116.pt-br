@@ -50,6 +50,7 @@ IMPORTANT: O uso de serviços de plataforma deve ser habilitado para cada conta 
 
 
 
+[[how-platform-services-are-configured]]
 == Como os serviços de plataforma são configurados
 
 Os serviços de plataforma comunicam-se com endpoints externos que você configura usando o Gerenciador do locatário ou a API de gerenciamento do locatário. Cada endpoint representa um destino externo, como um bucket do StorageGRID S3, um bucket do Amazon Web Services, um tópico do serviço de notificação simples (SNS) ou um cluster do Elasticsearch hospedado localmente, na AWS ou em outro lugar.

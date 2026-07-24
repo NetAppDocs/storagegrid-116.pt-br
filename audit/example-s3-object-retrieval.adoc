@@ -17,6 +17,7 @@ Observe que nem todas as mensagens de auditoria geradas durante uma transação 
 
 
 
+[[sget-s3-get]]
 == SGET: S3 GET
 
 A recuperação de objetos começa quando o cliente envia uma SOLICITAÇÃO GET Object a um serviço LDR. A mensagem contém o intervalo do qual recuperar o objeto e a chave S3 do objeto, que é usada para identificar o objeto.
